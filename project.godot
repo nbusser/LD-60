@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="LD-Base"
-config/description="Ludum Dare 51"
+config/name="LD-60"
+config/description="Ludum Dare 60"
 run/main_scene="res://src/SceneManager/scene_manager.tscn"
-config/features=PackedStringArray("4.5")
+config/features=PackedStringArray("4.7")
 config/icon="res://assets/sprites/player.png"
 
 [autoload]
