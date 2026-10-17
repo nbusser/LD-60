@@ -1,7 +1,7 @@
 class_name Desktop
 extends Control
 
-const DEFAULT_WINDOW_SPAWN := Vector2(400, 400)
+const DEFAULT_WINDOW_SPAWN := Vector2(200, 300)
 const DEFAULT_WINDOW_SIZE := Vector2(800, 400)
 
 @export var programs: Array[Program]
