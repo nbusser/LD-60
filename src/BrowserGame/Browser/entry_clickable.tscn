@@ -22,6 +22,7 @@ layout_mode = 2
 [node name="NameAndLink" parent="VBoxContainer" unique_id=68694191 instance=ExtResource("1_d6aiv")]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/line_separation = 4
 
 [node name="Description" type="Label" parent="VBoxContainer" unique_id=918700805]
 unique_name_in_owner = true

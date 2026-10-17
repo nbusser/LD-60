@@ -6,8 +6,8 @@ class_name ClickableLabel
 extends RichTextLabel
 
 
-func set_label_text(value: String):
-	text = "[color=blue][url]" + value
+func set_label_text(title: String, description: String):
+	text = "[color=blue][url]" + title + "[/url][/color][br][color=black]" + description
 
 
 func _on_meta_hover_started(_meta: Variant) -> void:
@@ -19,4 +19,5 @@ func _on_meta_hover_ended(_meta: Variant) -> void:
 
 
 func _on_meta_clicked(_meta: Variant) -> void:
+	# TODO not remembered
 	text = text.replace("=blue", "=purple")

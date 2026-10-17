@@ -13,7 +13,7 @@ var category: Category:
 
 func _ready() -> void:
 	assert(category != null)
-	label.set_label_text(category.name)
+	label.set_label_text(category.name, "")
 	label.meta_clicked.connect(_on_meta_clicked)
 
 

@@ -173,13 +173,8 @@ name = "Driving"
 subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_bbfdx")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
-[sub_resource type="Resource" id="Resource_s4oq2"]
-script = ExtResource("2_bbfdx")
-name = "Granny Porn"
-metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
-
 [resource]
 script = ExtResource("2_bbfdx")
 name = "Adult (18+ restricted)"
-subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_jl3bh"), SubResource("Resource_lmok2"), SubResource("Resource_cihqw"), SubResource("Resource_ogpfh"), SubResource("Resource_u77tl"), SubResource("Resource_5sq0y"), SubResource("Resource_s4oq2")])
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_jl3bh"), SubResource("Resource_lmok2"), SubResource("Resource_cihqw"), SubResource("Resource_ogpfh"), SubResource("Resource_u77tl"), SubResource("Resource_5sq0y")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

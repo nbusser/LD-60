@@ -16,7 +16,7 @@ var entry: Entry:
 func _ready() -> void:
 	assert(entry != null)
 	image.texture = entry.image
-	label.set_label_text(entry.name + " " + entry.link)
+	label.set_label_text(entry.name + "[br][font_size=12]" + entry.link + "[/font_size]", entry.description)
 	description.text = entry.description
 	label.meta_clicked.connect(_on_meta_clicked)
 
