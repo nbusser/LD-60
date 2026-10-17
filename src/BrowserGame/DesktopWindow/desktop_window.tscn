@@ -2,6 +2,32 @@
 
 [ext_resource type="Script" uid="uid://ca6wie48ortpb" path="res://src/BrowserGame/DesktopWindow/desktop_window.gd" id="1_us0oo"]
 
+[sub_resource type="Theme" id="Theme_ooua1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us0oo"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.5019608, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cffs2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2509804, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="DesktopWindow" type="Control" unique_id=275882818]
 layout_mode = 3
 anchors_preset = 0
@@ -33,15 +59,20 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -40.0
-offset_bottom = 31.0
+offset_top = -1.0
+offset_bottom = 34.0
 grow_horizontal = 0
+theme = SubResource("Theme_ooua1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_us0oo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cffs2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_us0oo")
 text = "X"
 
 [node name="Border" type="ColorRect" parent="VBoxContainer" unique_id=1465632139]
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.69467324, 0.6946736, 0.69467336, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Border" unique_id=1406505633]
 layout_mode = 1
