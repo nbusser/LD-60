@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_jiydr"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_cwphx"]
+[ext_resource type="Texture2D" uid="uid://fp1eobwkd4cs" path="res://assets/sprites/category_icons/recreation_placeholder.png" id="2_fdu8n"]
 
 [sub_resource type="Resource" id="Resource_64sff"]
 script = ExtResource("2_cwphx")
@@ -42,5 +43,6 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 [resource]
 script = ExtResource("2_cwphx")
 name = "Recreation"
+icon = ExtResource("2_fdu8n")
 subcategories = Array[ExtResource("2_cwphx")]([SubResource("Resource_64sff"), SubResource("Resource_ofxpu"), SubResource("Resource_xr3hy"), SubResource("Resource_ooua1")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

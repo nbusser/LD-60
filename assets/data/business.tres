@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_gmbac"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_axlbp"]
+[ext_resource type="Texture2D" uid="uid://c87ap0mduojw5" path="res://assets/sprites/category_icons/business_placeholder.png" id="2_e6ytr"]
 [ext_resource type="Texture2D" uid="uid://dtycgnynrj7jd" path="res://assets/sprites/rich_sick.png" id="3_axlbp"]
 [ext_resource type="Texture2D" uid="uid://cvd1ghn5a3ynu" path="res://assets/sprites/rich_sick_2.png" id="4_jia2a"]
 
@@ -51,5 +52,6 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 [resource]
 script = ExtResource("2_axlbp")
 name = "Business & Getting Rich"
+icon = ExtResource("2_e6ytr")
 subcategories = Array[ExtResource("2_axlbp")]([SubResource("Resource_u810h"), SubResource("Resource_1g33u")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

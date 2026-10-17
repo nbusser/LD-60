@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_hmly0"]
 [ext_resource type="Resource" uid="uid://bcd1xswrfniow" path="res://assets/data/entry/thc.tres" id="2_xmhba"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="3_ajfs7"]
+[ext_resource type="Texture2D" uid="uid://plrays58v0ep" path="res://assets/sprites/category_icons/people_placeholder.png" id="3_usqai"]
 
 [sub_resource type="Resource" id="Resource_dt71x"]
 script = ExtResource("3_ajfs7")
@@ -53,6 +54,7 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 [resource]
 script = ExtResource("3_ajfs7")
 name = "People"
+icon = ExtResource("3_usqai")
 subcategories = Array[ExtResource("3_ajfs7")]([SubResource("Resource_dt71x"), SubResource("Resource_8uog7"), SubResource("Resource_cdsfw"), SubResource("Resource_khuml"), SubResource("Resource_j5ial"), SubResource("Resource_cn75j")])
 entries = Array[ExtResource("1_hmly0")]([ExtResource("2_xmhba")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

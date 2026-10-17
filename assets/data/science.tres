@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Category" format=3 uid="uid://b3qjx3hn6chc8"]
 
 [ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_63aml"]
+[ext_resource type="Texture2D" uid="uid://6h48ravnhpfp" path="res://assets/sprites/category_icons/science_placeholder.png" id="2_578mi"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_rsc5w"]
 
 [sub_resource type="Resource" id="Resource_578mi"]
@@ -75,5 +76,6 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 [resource]
 script = ExtResource("2_rsc5w")
 name = "Science"
+icon = ExtResource("2_578mi")
 subcategories = Array[ExtResource("2_rsc5w")]([SubResource("Resource_578mi"), SubResource("Resource_46i7j"), SubResource("Resource_pi6gb"), SubResource("Resource_6yrlj")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

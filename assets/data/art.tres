@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_mis1t"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_6tq24"]
+[ext_resource type="Texture2D" uid="uid://tobh8diyldam" path="res://assets/sprites/category_icons/art_placeholder.png" id="2_aqc8j"]
 
 [sub_resource type="Resource" id="Resource_n4y2n"]
 script = ExtResource("2_6tq24")
@@ -67,5 +68,6 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 [resource]
 script = ExtResource("2_6tq24")
 name = "Art"
+icon = ExtResource("2_aqc8j")
 subcategories = Array[ExtResource("2_6tq24")]([SubResource("Resource_n4y2n"), SubResource("Resource_aqc8j"), SubResource("Resource_ujk5d"), SubResource("Resource_mis1t"), SubResource("Resource_r135m")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

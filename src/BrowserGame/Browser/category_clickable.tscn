@@ -6,5 +6,14 @@
 [node name="CategoryClickable" type="VBoxContainer" unique_id=502459233]
 script = ExtResource("2_gebul")
 
-[node name="ClickableLabel" parent="." unique_id=68694191 instance=ExtResource("1_81i41")]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=685637812]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1490488240]
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=667359629]
+layout_mode = 2
+
+[node name="ClickableLabel" parent="CenterContainer2" unique_id=68694191 instance=ExtResource("1_81i41")]
 layout_mode = 2

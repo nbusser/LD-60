@@ -8,11 +8,15 @@ var category: Category:
 		assert(category == null)
 		category = value
 
-@onready var label: ClickableLabel = $ClickableLabel
+
+@onready var icon: TextureRect = $CenterContainer/TextureRect
+@onready var label: ClickableLabel = $CenterContainer2/ClickableLabel
 
 
 func _ready() -> void:
 	assert(category != null)
+	if category.icon:
+		icon.set_texture(category.icon)
 	label.set_label_text(category.name, "")
 	label.meta_clicked.connect(_on_meta_clicked)
 

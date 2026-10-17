@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Category" format=3 uid="uid://cua3tm8ys0s4c"]
 
 [ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_lexk8"]
+[ext_resource type="Texture2D" uid="uid://cepnt6qg8scmr" path="res://assets/sprites/category_icons/health_placeholder.png" id="2_8uog7"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_dt71x"]
 [ext_resource type="Resource" uid="uid://qnq55mkmioq8" path="res://assets/data/entry/dr_franky_vincent.tres" id="3_8uog7"]
 [ext_resource type="Resource" uid="uid://wgpgqsdhomt2" path="res://assets/data/entry/dr_dre.tres" id="4_dt71x"]
@@ -51,5 +52,6 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 [resource]
 script = ExtResource("2_dt71x")
 name = "Health"
+icon = ExtResource("2_8uog7")
 subcategories = Array[ExtResource("2_dt71x")]([SubResource("Resource_ooua1"), SubResource("Resource_dt71x"), SubResource("Resource_7yi0h")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
