@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b3v5sqaib7qx7"]
+
+[ext_resource type="PackedScene" uid="uid://btkwjma1arxro" path="res://src/BrowserGame/Browser/clickable.tscn" id="1_81i41"]
+[ext_resource type="Script" uid="uid://drxjpoeg5nbiy" path="res://src/BrowserGame/Browser/category_clickable.gd" id="2_gebul"]
+
+[node name="CategoryClickable" unique_id=68694191 instance=ExtResource("1_81i41")]
+script = ExtResource("2_gebul")
