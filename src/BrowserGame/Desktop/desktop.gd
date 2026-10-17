@@ -11,6 +11,10 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 @onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
 
 
+func _window_to_foreground(selected_window: DesktopWindow):
+	%Windows.move_child(selected_window, get_child_count() - 1)
+
+
 func _create_window(
 	program: Program,
 	app_scene: PackedScene = program.app_scene,
@@ -20,6 +24,7 @@ func _create_window(
 	desktop_window.content_scene = app_scene
 	desktop_window.on_instantiate_callback = callback
 	desktop_window.closed.connect(func(): _close_window(program))
+	desktop_window.dragged.connect(_window_to_foreground)
 	desktop_window.size = Vector2(800, 400)
 	_programs_to_window.set(program, desktop_window)
 	return desktop_window
@@ -47,8 +52,7 @@ func _open_or_show_window(program: Program):
 		_programs_to_window.set(program, desktop_window)
 		%Windows.add_child(desktop_window)
 	else:
-		# TODO: focus the window
-		pass
+		_window_to_foreground(desktop_window)
 
 
 func _close_window(program: Program):

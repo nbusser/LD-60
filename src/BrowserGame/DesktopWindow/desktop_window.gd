@@ -2,6 +2,7 @@ class_name DesktopWindow
 extends Control
 
 signal closed
+signal dragged
 
 @export var content_scene: PackedScene
 # Arbitrary callback to be called with the content_scene
@@ -34,6 +35,7 @@ func _on_close_button_pressed() -> void:
 func _on_bar_button_down() -> void:
 	_dragging = true
 	_drag_offset = get_global_mouse_position() - global_position
+	dragged.emit(self)
 
 
 func _on_bar_button_up() -> void:
