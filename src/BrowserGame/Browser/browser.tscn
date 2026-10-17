@@ -17,11 +17,39 @@ offset_bottom = 638.0
 layout_mode = 2
 columns = 3
 
-[node name="People" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=869746047]
+[node name="People" type="MarginContainer" parent="Directory/ScrollContainer/GridContainer" unique_id=1882909001]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Directory/ScrollContainer/GridContainer/People" unique_id=69433705]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer/People/VBoxContainer" unique_id=869746047]
 layout_mode = 2
 theme_override_constants/underline_alpha = 100
 bbcode_enabled = true
 text = "[color=blue][u]People"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Directory/ScrollContainer/GridContainer/People/VBoxContainer" unique_id=43741923]
+layout_mode = 2
+
+[node name="tag" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer/People/VBoxContainer/HBoxContainer" unique_id=818754926]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[u][color=blue]gossip"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator" type="HSeparator" parent="Directory/ScrollContainer/GridContainer/People/VBoxContainer/HBoxContainer" unique_id=297543560]
+layout_mode = 2
+
+[node name="tag2" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer/People/VBoxContainer/HBoxContainer" unique_id=1283583619]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[u][color=blue]deaths"
 fit_content = true
 autowrap_mode = 0
 
