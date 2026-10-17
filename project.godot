@@ -14,11 +14,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="LD-60"
-config/description="Ludum Dare 60"
+config/name="Youpi?"
+config/description="A game by team 👑 Ludum Darons 👑 for Ludum Dare 60"
 run/main_scene="res://src/SceneManager/scene_manager.tscn"
 config/features=PackedStringArray("4.7")
-config/icon="res://assets/sprites/player.png"
+config/icon="uid://3v5h5fc5re8x"
 
 [autoload]
 

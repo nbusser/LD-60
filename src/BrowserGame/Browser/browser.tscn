@@ -5,15 +5,11 @@
 [ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/art.tres" id="3_bmnu7"]
 [ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/people.tres" id="4_twlh7"]
 [ext_resource type="Resource" uid="uid://cmy78s5qxg3bx" path="res://assets/data/adult.tres" id="5_y51eb"]
-[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="6_gg30d"]
 [ext_resource type="Resource" uid="uid://cua3tm8ys0s4c" path="res://assets/data/health.tres" id="6_ne582"]
 [ext_resource type="Resource" uid="uid://b3qjx3hn6chc8" path="res://assets/data/science.tres" id="7_gg30d"]
 [ext_resource type="Resource" uid="uid://c33pp1bqjjotg" path="res://assets/data/regional.tres" id="8_0vxej"]
-
-[sub_resource type="Resource" id="Resource_1tf3x"]
-script = ExtResource("2_bmnu7")
-name = "Recreation"
-metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+[ext_resource type="Resource" uid="uid://s7ecgysqfpqn" path="res://assets/data/recreation.tres" id="9_0vxej"]
+[ext_resource type="Resource" uid="uid://hpkxj32omhoi" path="res://assets/data/business.tres" id="10_joe2o"]
 
 [node name="Browser" type="Control" unique_id=599933122]
 layout_mode = 3
@@ -24,7 +20,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_py2cu")
-root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("4_twlh7"), ExtResource("5_y51eb"), ExtResource("6_ne582"), ExtResource("7_gg30d"), ExtResource("8_0vxej"), SubResource("Resource_1tf3x")])
+root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("4_twlh7"), ExtResource("5_y51eb"), ExtResource("6_ne582"), ExtResource("7_gg30d"), ExtResource("8_0vxej"), ExtResource("9_0vxej"), ExtResource("10_joe2o")])
 
 [node name="Grid" type="GridContainer" parent="Directory" unique_id=297059214]
 layout_mode = 0

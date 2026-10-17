@@ -13,9 +13,20 @@ script = ExtResource("2_rsc5w")
 name = "Astrology"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
+[sub_resource type="Resource" id="Resource_n4y2n"]
+script = ExtResource("2_rsc5w")
+name = "Enlightenment"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ooua1"]
+script = ExtResource("2_rsc5w")
+name = "Comparative Theology"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
 [sub_resource type="Resource" id="Resource_pi6gb"]
 script = ExtResource("2_rsc5w")
 name = "Theology"
+subcategories = Array[ExtResource("2_rsc5w")]([SubResource("Resource_n4y2n"), SubResource("Resource_ooua1")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [sub_resource type="Resource" id="Resource_kqfrt"]
@@ -23,9 +34,15 @@ script = ExtResource("2_rsc5w")
 name = "Physics (who cares?)"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
+[sub_resource type="Resource" id="Resource_ujk5d"]
+script = ExtResource("2_rsc5w")
+name = "Loops"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
 [sub_resource type="Resource" id="Resource_1usgq"]
 script = ExtResource("2_rsc5w")
 name = "Computer Science (BOOORING)"
+subcategories = Array[ExtResource("2_rsc5w")]([SubResource("Resource_ujk5d")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [sub_resource type="Resource" id="Resource_61en8"]
@@ -33,21 +50,26 @@ script = ExtResource("2_rsc5w")
 name = "Chemistry"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
-[sub_resource type="Resource" id="Resource_ooua1"]
+[sub_resource type="Resource" id="Resource_rsc5w"]
 script = ExtResource("2_rsc5w")
 name = "Combinatorial Species"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
-[sub_resource type="Resource" id="Resource_n4y2n"]
+[sub_resource type="Resource" id="Resource_63aml"]
+script = ExtResource("2_rsc5w")
+name = "Cycles"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_vjkqf"]
 script = ExtResource("2_rsc5w")
 name = "Mathematics"
-subcategories = Array[ExtResource("2_rsc5w")]([SubResource("Resource_ooua1")])
+subcategories = Array[ExtResource("2_rsc5w")]([SubResource("Resource_rsc5w"), SubResource("Resource_63aml")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [sub_resource type="Resource" id="Resource_6yrlj"]
 script = ExtResource("2_rsc5w")
 name = "Lame Sciences"
-subcategories = Array[ExtResource("2_rsc5w")]([SubResource("Resource_kqfrt"), SubResource("Resource_1usgq"), SubResource("Resource_61en8"), SubResource("Resource_n4y2n")])
+subcategories = Array[ExtResource("2_rsc5w")]([SubResource("Resource_kqfrt"), SubResource("Resource_1usgq"), SubResource("Resource_61en8"), SubResource("Resource_vjkqf")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [resource]

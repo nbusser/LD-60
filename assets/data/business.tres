@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="Category" format=3 uid="uid://hpkxj32omhoi"]
+
+[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_gmbac"]
+[ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_axlbp"]
+
+[sub_resource type="Resource" id="Resource_ooua1"]
+script = ExtResource("2_axlbp")
+name = "Marrying an Old and Sick Rich Person"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ipbxj"]
+script = ExtResource("2_axlbp")
+name = "Buying a Winning Lottery Ticket"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ujk5d"]
+script = ExtResource("2_axlbp")
+name = "Finding a Big Bag of Money"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_u810h"]
+script = ExtResource("2_axlbp")
+name = "Getting Rich Quick"
+subcategories = Array[ExtResource("2_axlbp")]([SubResource("Resource_ooua1"), SubResource("Resource_ipbxj"), SubResource("Resource_ujk5d")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_1g33u"]
+script = ExtResource("2_axlbp")
+name = "Expensive Cars"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[resource]
+script = ExtResource("2_axlbp")
+name = "Business & Getting Rich"
+subcategories = Array[ExtResource("2_axlbp")]([SubResource("Resource_u810h"), SubResource("Resource_1g33u")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
