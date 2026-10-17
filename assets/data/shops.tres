@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Category" format=3 uid="uid://cb4ymn3mx4ubv"]
+
+[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_hmly0"]
+[ext_resource type="Resource" uid="uid://bcd1xswrfniow" path="res://assets/data/entry/thc.tres" id="2_xmhba"]
+[ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="3_ajfs7"]
+
+[resource]
+script = ExtResource("3_ajfs7")
+name = "Shops"
+entries = Array[ExtResource("1_hmly0")]([ExtResource("2_xmhba")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

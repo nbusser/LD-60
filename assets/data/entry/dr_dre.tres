@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_xcm6j")
 name = "Dr. Dre"
-link = "http://dr-dre.com"
-description = "Beat doctor"
+link = "http://bite_by_dre"
+description = "Beat Doctor"
 image = ExtResource("1_maw35")
 metadata/_custom_type_script = "uid://by28hxdfjs5yw"

@@ -1,5 +1,4 @@
 class_name Entry
-
 extends Resource
 
 @export var name: String

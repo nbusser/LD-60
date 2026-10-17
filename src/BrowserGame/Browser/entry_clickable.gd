@@ -8,10 +8,10 @@ var entry: Entry:
 		assert(entry == null)
 		entry = value
 
-
 @onready var image: TextureRect = $Image
 @onready var label: ClickableLabel = %NameAndLink
 @onready var description: Label = %Description
+
 
 func _ready() -> void:
 	assert(entry != null)

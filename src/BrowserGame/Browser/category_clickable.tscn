@@ -4,12 +4,9 @@
 [ext_resource type="Script" uid="uid://drxjpoeg5nbiy" path="res://src/BrowserGame/Browser/category_clickable.gd" id="2_gebul"]
 
 [node name="CategorieClickable" type="Control" unique_id=1503381314]
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("2_gebul")
 
 [node name="ClickableLabel" parent="." unique_id=68694191 instance=ExtResource("1_81i41")]

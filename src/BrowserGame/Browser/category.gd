@@ -1,5 +1,4 @@
 class_name Category
-
 extends Resource
 
 @export var name: String

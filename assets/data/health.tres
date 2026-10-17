@@ -9,10 +9,12 @@
 script = ExtResource("2_dt71x")
 name = "Doctor"
 entries = Array[ExtResource("1_lexk8")]([ExtResource("3_8uog7"), ExtResource("4_dt71x")])
+name = "Doctor"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [resource]
 script = ExtResource("2_dt71x")
 name = "Health"
 subcategories = Array[ExtResource("2_dt71x")]([SubResource("Resource_twlh7")])
+name = "Health"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

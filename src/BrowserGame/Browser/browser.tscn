@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_bmnu7"]
 [ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/health.tres" id="3_bmnu7"]
+[ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/shops.tres" id="4_twlh7"]
 
 [node name="Browser" type="Node2D" unique_id=192436045]
 
@@ -12,7 +13,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_py2cu")
-root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7")])
+root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("4_twlh7")])
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Directory" unique_id=1697266125]
 layout_mode = 0
