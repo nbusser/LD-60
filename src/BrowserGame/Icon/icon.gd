@@ -2,10 +2,17 @@ class_name Icon
 extends TextureButton
 
 signal double_clicked
+signal selected
 
 @export var text: String
 
-var selected := false
+var is_selected := false:
+	set(value):
+		if value:
+			modulate = Color.BLUE
+			selected.emit(self)
+		else:
+			modulate = Color.WHITE
 
 
 func _ready():
@@ -18,5 +25,4 @@ func _gui_input(event: InputEvent) -> void:
 		if event.double_click:
 			double_clicked.emit()
 		else:
-			selected = true
-			modulate = Color.BLUE
+			is_selected = true

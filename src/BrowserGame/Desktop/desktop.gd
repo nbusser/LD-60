@@ -66,4 +66,13 @@ func _ready() -> void:
 		icon.text = program.icon_label
 		icon.texture_normal = program.icon_texture
 		icon.double_clicked.connect(func(): _open_or_show_window(program))
+		# On icon selected, un-select all other icons
+		icon.selected.connect(
+			func(selected: Icon):
+				for other in %Icons.get_children():
+					assert(other is Icon)
+					if other == selected:
+						continue
+					other.is_selected = false
+		)
 		%Icons.add_child(icon)
