@@ -15,7 +15,7 @@ var selected_category: Category:
 			else:
 				_build_category_entries(category.entries)
 
-@onready var directory = $Grid
+@onready var directory = $CenterContainer/Grid
 
 
 func _clear_directory() -> void:
