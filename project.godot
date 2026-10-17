@@ -37,10 +37,6 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/optional/plugin.cfg")
 
-[gui]
-
-theme/custom="res://assets/fonts/w95_theme.tres"
-
 [input]
 
 quit={
