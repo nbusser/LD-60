@@ -23,7 +23,7 @@ func _create_window(
 	program: Program,
 	app_scene: PackedScene = program.app_scene,
 	callback: Callable = func(_node: Control): pass,
-	size = DEFAULT_WINDOW_SIZE
+	window_size = DEFAULT_WINDOW_SIZE
 ) -> DesktopWindow:
 	var desktop_window: DesktopWindow = desktop_window_scene.instantiate()
 	desktop_window.content_scene = app_scene
@@ -31,7 +31,7 @@ func _create_window(
 	desktop_window.closed.connect(func(): _close_window(program))
 	desktop_window.dragged.connect(_window_to_foreground)
 	desktop_window.position = DEFAULT_WINDOW_SPAWN
-	desktop_window.size = size
+	desktop_window.size = window_size
 	_programs_to_window.set(program, desktop_window)
 	return desktop_window
 
