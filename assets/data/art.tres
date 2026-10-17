@@ -38,10 +38,15 @@ script = ExtResource("2_6tq24")
 name = "Music for Old People"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
+[sub_resource type="Resource" id="Resource_6tq24"]
+script = ExtResource("2_6tq24")
+name = "Boys Band"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
 [sub_resource type="Resource" id="Resource_aqc8j"]
 script = ExtResource("2_6tq24")
 name = "Music"
-subcategories = Array[ExtResource("2_6tq24")]([SubResource("Resource_qpkem"), SubResource("Resource_bi63i"), SubResource("Resource_dvkna"), SubResource("Resource_j06r2"), SubResource("Resource_jh7xt"), SubResource("Resource_ooua1")])
+subcategories = Array[ExtResource("2_6tq24")]([SubResource("Resource_qpkem"), SubResource("Resource_bi63i"), SubResource("Resource_dvkna"), SubResource("Resource_j06r2"), SubResource("Resource_jh7xt"), SubResource("Resource_ooua1"), SubResource("Resource_6tq24")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [sub_resource type="Resource" id="Resource_ujk5d"]
@@ -54,8 +59,13 @@ script = ExtResource("2_6tq24")
 name = "The Art of Gardening"
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
+[sub_resource type="Resource" id="Resource_r135m"]
+script = ExtResource("2_6tq24")
+name = "Gastronomy"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
 [resource]
 script = ExtResource("2_6tq24")
 name = "Art"
-subcategories = Array[ExtResource("2_6tq24")]([SubResource("Resource_n4y2n"), SubResource("Resource_aqc8j"), SubResource("Resource_ujk5d"), SubResource("Resource_mis1t")])
+subcategories = Array[ExtResource("2_6tq24")]([SubResource("Resource_n4y2n"), SubResource("Resource_aqc8j"), SubResource("Resource_ujk5d"), SubResource("Resource_mis1t"), SubResource("Resource_r135m")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

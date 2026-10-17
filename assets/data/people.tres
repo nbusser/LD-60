@@ -4,8 +4,55 @@
 [ext_resource type="Resource" uid="uid://bcd1xswrfniow" path="res://assets/data/entry/thc.tres" id="2_xmhba"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="3_ajfs7"]
 
+[sub_resource type="Resource" id="Resource_dt71x"]
+script = ExtResource("3_ajfs7")
+name = "Famous Births"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_8uog7"]
+script = ExtResource("3_ajfs7")
+name = "Famous Deaths"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_cdsfw"]
+script = ExtResource("3_ajfs7")
+name = "Latest Gossip"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_7yi0h"]
+script = ExtResource("3_ajfs7")
+name = "Cutting Bridges with Childhood Friends"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_g5njy"]
+script = ExtResource("3_ajfs7")
+name = "Burning Money"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_v33f2"]
+script = ExtResource("3_ajfs7")
+name = "Going to Rehab"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_khuml"]
+script = ExtResource("3_ajfs7")
+name = "Becoming Famous"
+subcategories = Array[ExtResource("3_ajfs7")]([SubResource("Resource_7yi0h"), SubResource("Resource_g5njy"), SubResource("Resource_v33f2")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_j5ial"]
+script = ExtResource("3_ajfs7")
+name = "Famous for Bad Reasons"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_cn75j"]
+script = ExtResource("3_ajfs7")
+name = "Famous Animals"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
 [resource]
 script = ExtResource("3_ajfs7")
 name = "People"
+subcategories = Array[ExtResource("3_ajfs7")]([SubResource("Resource_dt71x"), SubResource("Resource_8uog7"), SubResource("Resource_cdsfw"), SubResource("Resource_khuml"), SubResource("Resource_j5ial"), SubResource("Resource_cn75j")])
 entries = Array[ExtResource("1_hmly0")]([ExtResource("2_xmhba")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
