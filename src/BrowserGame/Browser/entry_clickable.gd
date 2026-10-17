@@ -8,12 +8,16 @@ var entry: Entry:
 		assert(entry == null)
 		entry = value
 
-@onready var label: ClickableLabel = $ClickableLabel
 
+@onready var image: TextureRect = $Image
+@onready var label: ClickableLabel = %NameAndLink
+@onready var description: Label = %Description
 
 func _ready() -> void:
 	assert(entry != null)
-	label.set_label_text(entry.name)
+	image.texture = entry.image
+	label.set_label_text(entry.name + " " + entry.link)
+	description.text = entry.description
 	label.meta_clicked.connect(_on_meta_clicked)
 
 

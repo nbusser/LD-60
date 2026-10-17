@@ -15,7 +15,7 @@ var selected_category: Category:
 			else:
 				_build_category_entries(category.entries)
 
-@onready var directory = $ScrollContainer
+@onready var directory = $ScrollContainer/List
 
 
 func _clear_directory() -> void:
@@ -39,7 +39,7 @@ func _build_category_entries(entries: Array[Entry]) -> void:
 	for entry in entries:
 		var entry_clickable: EntryClickable = ENTRY_CLICKABLE_PRELOAD.instantiate()
 		entry_clickable.entry = entry
-		entry_clickable.entry_clicked.connect(_category_clicked)
+		entry_clickable.entry_clicked.connect(_entry_clicked)
 		directory.add_child(entry_clickable)
 
 
