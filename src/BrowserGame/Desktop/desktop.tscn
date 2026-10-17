@@ -38,6 +38,15 @@ layout_mode = 2
 texture = ExtResource("3_q1rlw")
 text = "Outbacks"
 
-[node name="DesktopWindow" parent="." unique_id=275882818 instance=ExtResource("4_8hs48")]
-layout_mode = 1
+[node name="YoupiWindow" parent="." unique_id=275882818 instance=ExtResource("4_8hs48")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 121.0
+offset_top = 139.0
+offset_right = 921.0
+offset_bottom = 539.0
+grow_horizontal = 1
+grow_vertical = 1
 content_scene = ExtResource("5_65cfl")
