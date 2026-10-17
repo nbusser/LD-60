@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cimnfmsjswo3e"]
+
+[ext_resource type="Script" uid="uid://bi3d1dolhhewy" path="res://src/BrowserGame/UI/progress_bar.gd" id="1_22akx"]
+
+[node name="ProgressBar" type="Control" unique_id=1856599209]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+script = ExtResource("1_22akx")
