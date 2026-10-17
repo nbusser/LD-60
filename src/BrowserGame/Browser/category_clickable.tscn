@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://btkwjma1arxro" path="res://src/BrowserGame/Browser/clickable_label.tscn" id="1_81i41"]
 [ext_resource type="Script" uid="uid://drxjpoeg5nbiy" path="res://src/BrowserGame/Browser/category_clickable.gd" id="2_gebul"]
-[ext_resource type="PackedScene" uid="uid://b07ydqbitwcj8" path="res://src/BrowserGame/Browser/tag_separator.tscn" id="3_ngx20"]
 
 [node name="CategoryClickable" type="VBoxContainer" unique_id=502459233]
 script = ExtResource("2_gebul")
@@ -23,26 +22,8 @@ theme_override_font_sizes/normal_font_size = 20
 [node name="CenterContainer3" type="CenterContainer" parent="." unique_id=984081212]
 layout_mode = 2
 
-[node name="Tags" type="BoxContainer" parent="CenterContainer3" unique_id=1999541198]
+[node name="Tags" type="HFlowContainer" parent="CenterContainer3" unique_id=275178756]
 layout_mode = 2
 offset_transform_enabled = true
 offset_transform_position = Vector2(0, -16)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer3/Tags" unique_id=710407560]
-layout_mode = 2
-bbcode_enabled = true
-text = "[color=blue][u]ABC"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="TagSeparator" parent="CenterContainer3/Tags" unique_id=1926134896 instance=ExtResource("3_ngx20")]
-layout_mode = 2
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CenterContainer3/Tags" unique_id=510540069]
-layout_mode = 2
-bbcode_enabled = true
-text = "[color=blue][u]DEF"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+alignment = 1

@@ -11,11 +11,37 @@
 [ext_resource type="Resource" uid="uid://s7ecgysqfpqn" path="res://assets/data/recreation.tres" id="9_0vxej"]
 [ext_resource type="Resource" uid="uid://hpkxj32omhoi" path="res://assets/data/business.tres" id="10_joe2o"]
 
-[node name="Directory" type="CenterContainer" unique_id=657002301]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4y2n"]
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+
+[node name="Directory" type="ScrollContainer" unique_id=514740387]
+custom_minimum_size = Vector2(400, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n4y2n")
 script = ExtResource("1_py2cu")
 root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("9_0vxej"), ExtResource("4_twlh7"), ExtResource("6_ne582"), ExtResource("7_gg30d"), ExtResource("10_joe2o"), ExtResource("8_0vxej"), ExtResource("5_y51eb")])
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=1554786993]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=356390566]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer" unique_id=1788922066]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/MarginContainer" unique_id=1554786993]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
