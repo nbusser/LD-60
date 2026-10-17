@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://d3mn4hyunnwko"]
+
+[node name="Browser" type="Node2D" unique_id=564246495]
+
+[node name="Directory" type="Control" parent="." unique_id=1582323239]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Directory" unique_id=1697266125]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 638.0
+
+[node name="GridContainer" type="GridContainer" parent="Directory/ScrollContainer" unique_id=1876640070]
+layout_mode = 2
+columns = 3
+
+[node name="People" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=869746047]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]People"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Tech" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=1011432047]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Tech"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Cool" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=434262117]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Cool"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Arts" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=1431561028]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Arts"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Recreation" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=312545074]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Recreation"
+fit_content = true
+autowrap_mode = 0
+
+[node name="News" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=539680086]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]News"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Adult" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=1358108911]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Adult"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Science" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=1774188657]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Science"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Regional" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=567966817]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Regional"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Education" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=65956163]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Education"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Health" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer" unique_id=1469037748]
+layout_mode = 2
+theme_override_constants/underline_alpha = 100
+bbcode_enabled = true
+text = "[color=blue][u]Health"
+fit_content = true
+autowrap_mode = 0

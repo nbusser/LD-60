@@ -27,8 +27,6 @@ func _ready():
 
 	hud.init(level_state)
 
-	timer.start(level_state.level_data.timer_duration)
-
 	$UI/Fadein.fade()
 
 
