@@ -85,3 +85,9 @@ func _ready() -> void:
 					other.is_selected = false
 		)
 		%Icons.add_child(icon)
+
+
+func _on_background_color_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		for icon in %Icons.get_children():
+			icon.is_selected = false
