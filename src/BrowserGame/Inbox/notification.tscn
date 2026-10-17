@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://t5nlomopn206"]
+
+[ext_resource type="Script" uid="uid://osgh1qbnm8mj" path="res://src/BrowserGame/Inbox/notification.gd" id="1_e0xgp"]
+[ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="2_arrhu"]
+
+[node name="Notification" type="Control" unique_id=736615540]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_e0xgp")
+
+[node name="Panel" type="Panel" parent="." unique_id=1167664385]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=745356627]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1254109469]
+layout_mode = 2
+text = "Notif"
+
+[node name="ProgressBar" parent="Panel/VBoxContainer" unique_id=1505447566 instance=ExtResource("2_arrhu")]
+layout_mode = 2
+value = 0.5
