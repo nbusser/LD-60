@@ -4,6 +4,8 @@
 
 [node name="Icon" type="TextureButton" unique_id=1327430444]
 custom_minimum_size = Vector2(128, 128)
+custom_maximum_size = Vector2(128, 128)
+propagate_maximum_size = true
 offset_right = 128.0
 offset_bottom = 128.0
 stretch_mode = 0

@@ -3,23 +3,14 @@
 [ext_resource type="Script" uid="uid://ceraldpkbcd7" path="res://src/BrowserGame/Desktop/desktop.gd" id="1_kw43y"]
 [ext_resource type="Theme" uid="uid://b6jj30j8q32fe" path="res://assets/fonts/w95_theme.tres" id="1_u2oub"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="2_u2oub"]
-[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="3_65cfl"]
-[ext_resource type="Texture2D" uid="uid://cx521lrv2yi5a" path="res://assets/sprites/icons/outbacks.png" id="3_q1rlw"]
-[ext_resource type="PackedScene" uid="uid://d3mn4hyunnwko" path="res://src/BrowserGame/Browser/browser.tscn" id="5_65cfl"]
-[ext_resource type="PackedScene" uid="uid://d2nhr3pggkiib" path="res://src/BrowserGame/Inbox/inbox.tscn" id="8_h03nu"]
+[ext_resource type="Resource" uid="uid://cmuhyvkuqh3g1" path="res://assets/data/program/youpi.tres" id="4_65cfl"]
+[ext_resource type="Resource" uid="uid://bkcy5mxuvdaq7" path="res://assets/data/program/outbacks.tres" id="5_u2oub"]
+[ext_resource type="Texture2D" uid="uid://bfcxwohohoe35" path="res://assets/sprites/franky-vincent.png" id="8_35n26"]
 
-[sub_resource type="Resource" id="Resource_h03nu"]
+[sub_resource type="Resource" id="Resource_n4y2n"]
 script = ExtResource("2_u2oub")
-icon_texture = ExtResource("3_65cfl")
-icon_label = "Youpi?"
-app_scene = ExtResource("5_65cfl")
-metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"
-
-[sub_resource type="Resource" id="Resource_1r8gy"]
-script = ExtResource("2_u2oub")
-icon_texture = ExtResource("3_q1rlw")
-icon_label = "Outbacks"
-app_scene = ExtResource("8_h03nu")
+icon_texture = ExtResource("8_35n26")
+icon_label = "Zouk"
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"
 
 [node name="Desktop" type="Control" unique_id=585668165]
@@ -31,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_u2oub")
 script = ExtResource("1_kw43y")
-programs = Array[ExtResource("2_u2oub")]([SubResource("Resource_h03nu"), SubResource("Resource_1r8gy")])
+programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), SubResource("Resource_n4y2n")])
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1208212921]
 layout_mode = 1
