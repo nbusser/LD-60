@@ -1,5 +1,6 @@
 extends Control
 
+@export var categories: Array[Category]
 @onready var directory = $ScrollContainer/GridContainer
 
 

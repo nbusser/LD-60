@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Entry" format=3 uid="uid://wgpgqsdhomt2"]
+
+[ext_resource type="Texture2D" uid="uid://co882g46m7npf" path="res://assets/sprites/dr-dre.png" id="1_maw35"]
+[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="2_xcm6j"]
+
+[resource]
+script = ExtResource("2_xcm6j")
+name = "Dr. Dre"
+link = "http://dr-dre.com"
+description = "Beat doctor"
+image = ExtResource("1_maw35")
+metadata/_custom_type_script = "uid://by28hxdfjs5yw"

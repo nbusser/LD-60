@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Entry" format=3 uid="uid://qnq55mkmioq8"]
+
+[ext_resource type="Texture2D" uid="uid://bfcxwohohoe35" path="res://assets/sprites/franky-vincent.png" id="1_armss"]
+[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="2_ykfhp"]
+
+[resource]
+script = ExtResource("2_ykfhp")
+name = "Dr. Franky Vincent"
+link = "http://dr-franky-vincent.com"
+description = "Zouk Therapy"
+image = ExtResource("1_armss")

@@ -20,3 +20,5 @@ exports/*
 
 # MacOS
 .DS_Store
+
+.env
