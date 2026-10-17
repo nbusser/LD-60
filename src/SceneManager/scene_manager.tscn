@@ -8,11 +8,6 @@
 [sub_resource type="Resource" id="Resource_r4gm4"]
 script = ExtResource("2_38vrh")
 name = "J'aime pu ma mère !"
-type = 1
-
-[sub_resource type="Resource" id="Resource_o3yet"]
-script = ExtResource("2_38vrh")
-name = "Babibulles"
 
 [node name="SceneManager" type="Control" unique_id=340014767]
 layout_mode = 3
@@ -22,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qc8yu")
-levels = Array[ExtResource("2_38vrh")]([SubResource("Resource_r4gm4"), SubResource("Resource_o3yet")])
+levels = Array[ExtResource("2_38vrh")]([SubResource("Resource_r4gm4")])
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=752066692]
 layout_mode = 0
