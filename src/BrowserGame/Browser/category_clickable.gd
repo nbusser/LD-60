@@ -9,8 +9,8 @@ var category: Category:
 		category = value
 
 
-@onready var icon: TextureRect = $CenterContainer/TextureRect
-@onready var label: ClickableLabel = $CenterContainer2/ClickableLabel
+@onready var icon: TextureRect = $CenterContainer/Icon
+@onready var label: ClickableLabel = $CenterContainer2/Label
 
 
 func _ready() -> void:

@@ -176,7 +176,7 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [resource]
 script = ExtResource("2_bbfdx")
-name = "Adult (18+ restricted)"
+name = "Adult (18+)"
 icon = ExtResource("2_s4oq2")
 subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_jl3bh"), SubResource("Resource_lmok2"), SubResource("Resource_cihqw"), SubResource("Resource_ogpfh"), SubResource("Resource_u77tl"), SubResource("Resource_5sq0y")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

@@ -51,7 +51,7 @@ metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [resource]
 script = ExtResource("2_axlbp")
-name = "Business & Getting Rich"
+name = "Business &[br]Getting Rich"
 icon = ExtResource("2_e6ytr")
 subcategories = Array[ExtResource("2_axlbp")]([SubResource("Resource_u810h"), SubResource("Resource_1g33u")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

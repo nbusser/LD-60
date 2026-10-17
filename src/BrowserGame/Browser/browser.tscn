@@ -13,8 +13,10 @@
 
 [node name="Directory" type="CenterContainer" unique_id=657002301]
 script = ExtResource("1_py2cu")
-root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("4_twlh7"), ExtResource("5_y51eb"), ExtResource("6_ne582"), ExtResource("7_gg30d"), ExtResource("8_0vxej"), ExtResource("9_0vxej"), ExtResource("10_joe2o")])
+root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("9_0vxej"), ExtResource("4_twlh7"), ExtResource("6_ne582"), ExtResource("7_gg30d"), ExtResource("10_joe2o"), ExtResource("8_0vxej"), ExtResource("5_y51eb")])
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=1554786993]
 layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
 columns = 4
