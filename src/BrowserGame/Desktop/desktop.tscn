@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ceraldpkbcd7" path="res://src/BrowserGame/Desktop/desktop.gd" id="1_kw43y"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="2_u2oub"]
+[ext_resource type="Theme" uid="uid://b6jj30j8q32fe" path="res://assets/fonts/w95_theme.tres" id="1_u2oub"]
+[ext_resource type="PackedScene" uid="uid://8q15f1wcimte" path="res://src/BrowserGame/Icon/icon.tscn" id="2_km2qg"]
 [ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="3_65cfl"]
 [ext_resource type="Texture2D" uid="uid://cx521lrv2yi5a" path="res://assets/sprites/icons/outbacks.png" id="3_q1rlw"]
 [ext_resource type="PackedScene" uid="uid://d3mn4hyunnwko" path="res://src/BrowserGame/Browser/browser.tscn" id="5_65cfl"]
@@ -26,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_u2oub")
 script = ExtResource("1_kw43y")
 programs = Array[ExtResource("2_u2oub")]([SubResource("Resource_h03nu"), SubResource("Resource_1r8gy")])
 
