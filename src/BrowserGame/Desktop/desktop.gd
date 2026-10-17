@@ -15,7 +15,7 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
-	%Windows.move_child(selected_window, get_child_count() - 1)
+	%Windows.move_child(selected_window, get_child_count() - 2)
 
 
 func _create_window(
