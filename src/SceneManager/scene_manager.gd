@@ -35,7 +35,7 @@ func set_scene(new_scene: Node) -> void:
 func _ready() -> void:
 	randomize()
 	Globals.scene_ended.connect(self._on_end_scene)
-	_run_main_menu()
+	_start_game()
 
 
 func _process(_delta: float) -> void:

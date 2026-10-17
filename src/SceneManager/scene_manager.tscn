@@ -29,7 +29,7 @@ stretch = true
 handle_input_locally = false
 audio_listener_enable_2d = true
 physics_object_picking = true
-size = Vector2i(1152, 648)
+size = Vector2i(1200, 900)
 render_target_update_mode = 4
 
 [node name="Musics" type="Node" parent="." unique_id=2046625464]
