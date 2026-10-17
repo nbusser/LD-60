@@ -2,10 +2,29 @@
 
 [ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_gmbac"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_axlbp"]
+[ext_resource type="Texture2D" uid="uid://dtycgnynrj7jd" path="res://assets/sprites/rich_sick.png" id="3_axlbp"]
+[ext_resource type="Texture2D" uid="uid://cvd1ghn5a3ynu" path="res://assets/sprites/rich_sick_2.png" id="4_jia2a"]
+
+[sub_resource type="Resource" id="Resource_n4y2n"]
+script = ExtResource("1_gmbac")
+name = "The Richest and Most Sick Singles in your Area"
+link = "richandsick.gov"
+description = "Until death do you appart"
+image = ExtResource("3_axlbp")
+metadata/_custom_type_script = "uid://by28hxdfjs5yw"
+
+[sub_resource type="Resource" id="Resource_e6ytr"]
+script = ExtResource("1_gmbac")
+name = "Marrying Sick Billionaires: a Tutorial"
+link = "everytutorial.com/marrying-a-billionaire"
+description = "Tutorials for everything"
+image = ExtResource("4_jia2a")
+metadata/_custom_type_script = "uid://by28hxdfjs5yw"
 
 [sub_resource type="Resource" id="Resource_ooua1"]
 script = ExtResource("2_axlbp")
 name = "Marrying an Old and Sick Rich Person"
+entries = Array[ExtResource("1_gmbac")]([SubResource("Resource_n4y2n"), SubResource("Resource_e6ytr")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [sub_resource type="Resource" id="Resource_ipbxj"]
