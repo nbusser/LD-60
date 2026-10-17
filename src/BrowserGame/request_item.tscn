@@ -1,0 +1,98 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/BrowserGame/request_item.gd" id="1_item"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.97, 0.97, 0.97, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.45, 0.45, 0.45, 1)
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+
+[node name="RequestItem" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 104)
+size_flags_horizontal = 3
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+script = ExtResource("1_item")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="HeaderRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Header" type="Label" parent="VBox/HeaderRow"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.65, 0, 0, 1)
+text = "NEW REQUEST!"
+
+[node name="Spacer" type="Control" parent="VBox/HeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Close" type="Button" parent="VBox/HeaderRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+tooltip_text = "Close request"
+text = "X"
+
+[node name="RequestText" type="Label" parent="VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Request text"
+autowrap_mode = 3
+
+[node name="SourceIp" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.35, 0.35, 0.35, 1)
+text = "IP: 0.0.0.0"
+
+[node name="TimerRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="SegmentBar" type="HBoxContainer" parent="VBox/TimerRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Time" type="Label" parent="VBox/TimerRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+text = "40s"
+horizontal_alignment = 2
+
+[node name="Status" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = ""

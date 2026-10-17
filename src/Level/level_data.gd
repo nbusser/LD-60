@@ -9,3 +9,4 @@ enum LevelType { BROWSER }
 @export var name := "Level"
 @export var timer_duration := 10
 @export var type := LevelType.BROWSER
+@export var requests: Array[SearchRequest]

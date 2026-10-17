@@ -25,9 +25,21 @@ config/icon="res://assets/sprites/player.png"
 Globals="*res://src/globals.gd"
 GameState="*res://src/SceneManager/game_state.gd"
 
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=900
+window/size/window_width_override=1200
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/optional/plugin.cfg")
+
+[gui]
+
+theme/custom="res://assets/fonts/w95_theme.tres"
 
 [input]
 

@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" format=3 uid="uid://56d2foby112k"]
+
+[ext_resource type="FontFile" uid="uid://bdxqheuqqj56l" path="res://assets/fonts/W95F.otf" id="1_i6rw4"]
+
+[resource]
+base_font = ExtResource("1_i6rw4")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SearchRequest" format=3]
+
+[ext_resource type="Script" path="res://src/BrowserGame/search_request.gd" id="1_script"]
+[ext_resource type="Resource" path="res://assets/data/entry/dr_dre.tres" id="2_target"]
+
+[resource]
+script = ExtResource("1_script")
+text = "My back is killing me after the LAN party. Any doctor with a good beat?"
+source_ip = "82.64.12.37"
+target = ExtResource("2_target")
+time_limit = 40.0

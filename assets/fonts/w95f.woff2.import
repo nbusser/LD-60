@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://yno87q5jq4mk"
-path="res://.godot/imported/Jokerman.ttf-184ae50d083af7a7c149f717a3f10b72.fontdata"
+uid="uid://bo0ox5fyh3bke"
+path="res://.godot/imported/w95f.woff2-885a77d9274a1ff3ae1576ec07624b3b.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Jokerman.ttf"
-dest_files=["res://.godot/imported/Jokerman.ttf-184ae50d083af7a7c149f717a3f10b72.fontdata"]
+source_file="res://assets/fonts/w95f.woff2"
+dest_files=["res://.godot/imported/w95f.woff2-885a77d9274a1ff3ae1576ec07624b3b.fontdata"]
 
 [params]
 
@@ -23,7 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 modulate_color_glyphs=false
 hinting=1
-subpixel_positioning=1
+subpixel_positioning=0
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null

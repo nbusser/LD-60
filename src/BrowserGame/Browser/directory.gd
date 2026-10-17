@@ -1,31 +1,70 @@
+class_name DirectoryPanel
 extends Control
+
+# Old-fashioned HTTP directory. Emits the clicked entry so the game can use it
+# as an answer, and tracks the current path for the browser chrome.
+
+signal entry_selected(entry: Entry)
+signal path_changed(path: String)
 
 const CATEGORY_CLICKABLE_PRELOAD = preload("res://src/BrowserGame/Browser/category_clickable.tscn")
 const ENTRY_CLICKABLE_PRELOAD = preload("res://src/BrowserGame/Browser/entry_clickable.tscn")
 
 @export var root_categories: Array[Category]
 
-var selected_category: Category:
-	set(category):
-		if category == null:
-			_build_categories(root_categories)
-		else:
-			if len(category.subcategories):
-				_build_categories(category.subcategories)
-			else:
-				_build_category_entries(category.entries)
+var _category_stack: Array[Category] = []
 
 @onready var directory = $ScrollContainer/List
 
 
+func _ready() -> void:
+	show_root()
+
+
+func show_root() -> void:
+	_category_stack.clear()
+	_rebuild()
+
+
+func go_back() -> void:
+	if _category_stack.is_empty():
+		return
+	_category_stack.pop_back()
+	_rebuild()
+
+
+func _rebuild() -> void:
+	_clear_directory()
+
+	if _category_stack.is_empty():
+		_build_categories(root_categories)
+	else:
+		var current: Category = _category_stack.back()
+		if len(current.subcategories):
+			_build_categories(current.subcategories)
+		else:
+			_build_category_entries(current.entries)
+
+	path_changed.emit(_current_path())
+
+
+func _current_path() -> String:
+	if _category_stack.is_empty():
+		return "/"
+
+	var parts := PackedStringArray()
+	for category in _category_stack:
+		parts.append(category.name)
+	return "/" + "/".join(parts) + "/"
+
+
 func _clear_directory() -> void:
 	for child in directory.get_children():
+		directory.remove_child(child)
 		child.queue_free()
 
 
 func _build_categories(categories: Array[Category]) -> void:
-	_clear_directory()
-
 	for category in categories:
 		var category_clickable: CategoryClickable = CATEGORY_CLICKABLE_PRELOAD.instantiate()
 		category_clickable.category = category
@@ -34,8 +73,6 @@ func _build_categories(categories: Array[Category]) -> void:
 
 
 func _build_category_entries(entries: Array[Entry]) -> void:
-	_clear_directory()
-
 	for entry in entries:
 		var entry_clickable: EntryClickable = ENTRY_CLICKABLE_PRELOAD.instantiate()
 		entry_clickable.entry = entry
@@ -43,14 +80,10 @@ func _build_category_entries(entries: Array[Entry]) -> void:
 		directory.add_child(entry_clickable)
 
 
-func _ready() -> void:
-	selected_category = null
+func _category_clicked(category: Category) -> void:
+	_category_stack.append(category)
+	_rebuild()
 
 
-func _category_clicked(category: Category):
-	selected_category = category
-
-
-func _entry_clicked(entry: Entry):
-	print("Clicked", entry)
-	selected_category = null
+func _entry_clicked(entry: Entry) -> void:
+	entry_selected.emit(entry)

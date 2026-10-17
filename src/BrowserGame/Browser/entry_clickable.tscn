@@ -26,3 +26,4 @@ layout_mode = 2
 [node name="Description" type="Label" parent="VBoxContainer" unique_id=918700805]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)

@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://usjwuymaf8pi"
+path="res://.godot/imported/dina_10_bold_italic.fnt-a5a4e7f311fe92e5fc6843f73d09e95d.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/dina/dina_10_bold_italic.fnt"
+dest_files=["res://.godot/imported/dina_10_bold_italic.fnt-a5a4e7f311fe92e5fc6843f73d09e95d.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

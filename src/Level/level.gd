@@ -11,10 +11,12 @@ func _ready():
 	assert(level_state, "init must be called before creating Level scene")
 
 	# For this base project, we have two different games.
-	var map: Node2D
+	var map: Node
 	match self.level_state.level_data.type:
 		LevelData.LevelType.BROWSER:
-			map = _browser.instantiate()
+			var browser: BrowserGame = _browser.instantiate()
+			browser.init(level_state.level_data)
+			map = browser
 		_:
 			assert(false, "Invalid level type")
 	add_child(map)

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://b6jj30j8q32fe"]
+
+[ext_resource type="FontFile" uid="uid://dfhk1nwxalhy5" path="res://assets/fonts/w95fa_13.fnt" id="1_6y8ad"]
+
+[resource]
+default_font = ExtResource("1_6y8ad")
+default_font_size = 13

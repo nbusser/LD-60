@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SearchRequest" format=3]
+
+[ext_resource type="Script" path="res://src/BrowserGame/search_request.gd" id="1_script"]
+[ext_resource type="Resource" path="res://assets/data/entry/thc.tres" id="2_target"]
+
+[resource]
+script = ExtResource("1_script")
+text = "Where can I find a cheap shirt? Bonus if it says 45 sa meurt pa."
+source_ip = "24.15.77.2"
+target = ExtResource("2_target")
+time_limit = 40.0

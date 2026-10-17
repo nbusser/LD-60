@@ -1,24 +1,314 @@
 [gd_scene format=3 uid="uid://d3mn4hyunnwko"]
 
-[ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
-[ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_bmnu7"]
-[ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/health.tres" id="3_bmnu7"]
-[ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/shops.tres" id="4_twlh7"]
+[ext_resource type="Script" uid="uid://borax7w6nv3dr" path="res://src/BrowserGame/Browser/browser.gd" id="1_browser"]
+[ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="2_directory"]
+[ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="3_category"]
+[ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/health.tres" id="4_health"]
+[ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/shops.tres" id="5_shops"]
 
-[node name="Browser" type="Node2D" unique_id=192436045]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
 
-[node name="Directory" type="Control" parent="." unique_id=1582323239]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.843137, 0.843137, 0.843137, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.752941, 0.752941, 0.752941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_pressed"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.639216, 0.639216, 0.639216, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.3, 0.3, 1)
+
+[sub_resource type="Theme" id="Theme_win"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_focus")
+Button/styles/hover = SubResource("StyleBoxFlat_button_hover")
+Button/styles/normal = SubResource("StyleBoxFlat_button")
+Button/styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_window"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.752941, 0.752941, 0.752941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.25, 0.25, 0.25, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_status"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.713726, 0.713726, 0.713726, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.45, 0.45, 0.45, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inset"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.35, 0.35, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_page"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.35, 0.35, 1)
+
+[node name="Browser" type="Control" unique_id=1539124167]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_py2cu")
-root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("4_twlh7")])
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_win")
+script = ExtResource("1_browser")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Directory" unique_id=1697266125]
+[node name="Desktop" type="ColorRect" parent="." unique_id=1895704320]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0.501961, 0.501961, 1)
+
+[node name="MailWindow" type="PanelContainer" parent="." unique_id=1296034133]
 layout_mode = 0
-offset_right = 880.0
-offset_bottom = 638.0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 324.0
+offset_bottom = 576.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_window")
 
-[node name="List" type="VBoxContainer" parent="Directory/ScrollContainer" unique_id=1479904394]
+[node name="VBox" type="VBoxContainer" parent="MailWindow" unique_id=910501526]
 layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBar" type="PanelContainer" parent="MailWindow/VBox" unique_id=1140345295]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_title")
+
+[node name="HBox" type="HBoxContainer" parent="MailWindow/VBox/TitleBar" unique_id=51215902]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MailTitle" type="Label" parent="MailWindow/VBox/TitleBar/HBox" unique_id=1518900042]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Inbox - 3 new requests"
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="MailWindow/VBox/TitleBar/HBox" unique_id=1094356711]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "X"
+
+[node name="MailScroll" type="ScrollContainer" parent="MailWindow/VBox" unique_id=1100058373]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="RequestList" type="VBoxContainer" parent="MailWindow/VBox/MailScroll" unique_id=697713530]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="MailStatusBar" type="PanelContainer" parent="MailWindow/VBox" unique_id=1817218189]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_status")
+
+[node name="MailStatus" type="Label" parent="MailWindow/VBox/MailStatusBar" unique_id=724386277]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+text = "Served: 0    Timed out: 0    Pending: 3"
+vertical_alignment = 1
+
+[node name="BrowserWindow" type="PanelContainer" parent="." unique_id=376903814]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 24.0
+offset_right = 784.0
+offset_bottom = 576.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_window")
+
+[node name="VBox" type="VBoxContainer" parent="BrowserWindow" unique_id=1717718316]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleBar" type="PanelContainer" parent="BrowserWindow/VBox" unique_id=1964013936]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_title")
+
+[node name="HBox" type="HBoxContainer" parent="BrowserWindow/VBox/TitleBar" unique_id=425410797]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BrowserTitle" type="Label" parent="BrowserWindow/VBox/TitleBar/HBox" unique_id=1334463430]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Directory - Internet Explorer"
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="BrowserWindow/VBox/TitleBar/HBox" unique_id=814814975]
+custom_minimum_size = Vector2(18, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "X"
+
+[node name="Toolbar" type="PanelContainer" parent="BrowserWindow/VBox" unique_id=1136985063]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_status")
+
+[node name="HBox" type="HBoxContainer" parent="BrowserWindow/VBox/Toolbar" unique_id=1151585097]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="BackButton" type="Button" parent="BrowserWindow/VBox/Toolbar/HBox" unique_id=1374714769]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+text = "Back"
+
+[node name="IndexButton" type="Button" parent="BrowserWindow/VBox/Toolbar/HBox" unique_id=365055860]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+text = "Index"
+
+[node name="Address" type="PanelContainer" parent="BrowserWindow/VBox/Toolbar/HBox" unique_id=2021217157]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_inset")
+
+[node name="PathLabel" type="Label" parent="BrowserWindow/VBox/Toolbar/HBox/Address" unique_id=500348455]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
+text = "http://directory.local/"
+vertical_alignment = 1
+
+[node name="Page" type="PanelContainer" parent="BrowserWindow/VBox" unique_id=1991627672]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_page")
+
+[node name="VBox" type="VBoxContainer" parent="BrowserWindow/VBox/Page" unique_id=614507425]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PageHeader" type="Label" parent="BrowserWindow/VBox/Page/VBox" unique_id=591000248]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Index of /"
+
+[node name="Rule" type="ColorRect" parent="BrowserWindow/VBox/Page/VBox" unique_id=2067159627]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Directory" type="Control" parent="BrowserWindow/VBox/Page/VBox" unique_id=1965348675]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_directory")
+root_categories = Array[ExtResource("3_category")]([ExtResource("4_health"), ExtResource("5_shops")])
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BrowserWindow/VBox/Page/VBox/Directory" unique_id=1199672481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="List" type="VBoxContainer" parent="BrowserWindow/VBox/Page/VBox/Directory/ScrollContainer" unique_id=1425713884]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="BrowserStatusBar" type="PanelContainer" parent="BrowserWindow/VBox" unique_id=1320584100]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_status")
+
+[node name="BrowserStatus" type="Label" parent="BrowserWindow/VBox/BrowserStatusBar" unique_id=619847676]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+text = "Done."
+vertical_alignment = 1
+
+[node name="ArrivalTimer" type="Timer" parent="." unique_id=292668947]
+wait_time = 6.0
+one_shot = true

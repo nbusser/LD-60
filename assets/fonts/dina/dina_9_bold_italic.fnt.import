@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bp542mlgcsmm6"
+path="res://.godot/imported/dina_9_bold_italic.fnt-0db64f01a28014a57aeac8c4393a3413.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/dina/dina_9_bold_italic.fnt"
+dest_files=["res://.godot/imported/dina_9_bold_italic.fnt-0db64f01a28014a57aeac8c4393a3413.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

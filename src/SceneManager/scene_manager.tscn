@@ -4,10 +4,23 @@
 [ext_resource type="Script" uid="uid://dtbff18d2g0t7" path="res://src/Level/level_data.gd" id="2_38vrh"]
 [ext_resource type="AudioStream" uid="uid://ba7shxyukh22w" path="res://assets/musics/example.ogg" id="3_knii6"]
 [ext_resource type="AudioStream" uid="uid://c8hkt50a1hi0t" path="res://assets/musics/example2.ogg" id="4_bb0s7"]
+[ext_resource type="Script" uid="uid://djppqxj3w0tdw" path="res://src/BrowserGame/search_request.gd" id="5_reqscript"]
+[ext_resource type="Resource" path="res://assets/data/request/back_pain.tres" id="6_reqback"]
+[ext_resource type="Resource" path="res://assets/data/request/zouk_therapy.tres" id="7_reqzouk"]
+[ext_resource type="Resource" path="res://assets/data/request/cheap_shirt.tres" id="8_reqshirt"]
 
 [sub_resource type="Resource" id="Resource_r4gm4"]
 script = ExtResource("2_38vrh")
 name = "J'aime pu ma mère !"
+requests = Array[ExtResource("5_reqscript")]([ExtResource("6_reqback"), ExtResource("7_reqzouk"), ExtResource("8_reqshirt")])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_screen_frame"]
+bg_color = Color(0.04, 0.04, 0.04, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22, 0.22, 0.25, 1)
 
 [node name="SceneManager" type="Control" unique_id=340014767]
 layout_mode = 3
@@ -19,17 +32,52 @@ grow_vertical = 2
 script = ExtResource("1_qc8yu")
 levels = Array[ExtResource("2_38vrh")]([SubResource("Resource_r4gm4")])
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=752066692]
-layout_mode = 0
+[node name="Background" type="ColorRect" parent="." unique_id=1025138398]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.105882, 0.113725, 0.129412, 1)
+
+[node name="ScreenFrame" type="Panel" parent="." unique_id=122153309]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = -246.0
+offset_right = 326.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_screen_frame")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=752066692]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 150.0
+offset_right = -200.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 300)
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=200585439]
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
 physics_object_picking = true
-size = Vector2i(1152, 648)
+oversampling = false
+size = Vector2i(800, 600)
 render_target_update_mode = 4
 
 [node name="Musics" type="Node" parent="." unique_id=2046625464]

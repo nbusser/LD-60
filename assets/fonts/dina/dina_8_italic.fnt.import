@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://clnu4eso410cf"
+path="res://.godot/imported/dina_8_italic.fnt-e8fcf14a3b36b3c0240b5c75f4951090.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/dina/dina_8_italic.fnt"
+dest_files=["res://.godot/imported/dina_8_italic.fnt-e8fcf14a3b36b3c0240b5c75f4951090.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

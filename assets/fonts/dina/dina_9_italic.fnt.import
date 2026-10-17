@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://pemgjamjikyq"
+path="res://.godot/imported/dina_9_italic.fnt-19d563c4dae26f8d8507133d5f488991.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/dina/dina_9_italic.fnt"
+dest_files=["res://.godot/imported/dina_9_italic.fnt-19d563c4dae26f8d8507133d5f488991.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

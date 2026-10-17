@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://rfasx0mxnhia"
+path="res://.godot/imported/dina_10.fnt-1440771751aff8a7a54a54537bcd4245.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/dina/dina_10.fnt"
+dest_files=["res://.godot/imported/dina_10.fnt-1440771751aff8a7a54a54537bcd4245.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
