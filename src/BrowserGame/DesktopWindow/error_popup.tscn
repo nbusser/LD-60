@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c2nyuktkuajyh"]
+
+[ext_resource type="Script" uid="uid://d11c23rnccyqw" path="res://src/BrowserGame/DesktopWindow/error_popup.gd" id="1_1r8gy"]
+[ext_resource type="Texture2D" uid="uid://bag0q3i8cnhv1" path="res://assets/sprites/icons/error.png" id="1_fnvr3"]
+
+[node name="ErrorPopup" type="Control" unique_id=1679577526]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1r8gy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1275065818]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1657534790]
+layout_mode = 2
+texture = ExtResource("1_fnvr3")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1903869554]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=826216480]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Error message"

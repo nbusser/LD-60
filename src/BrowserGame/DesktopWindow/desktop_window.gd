@@ -4,6 +4,8 @@ extends Control
 signal closed
 
 @export var content_scene: PackedScene
+# Arbitrary callback to be called with the content_scene
+@export var on_instantiate_callback: Callable
 
 var _dragging := false
 var _drag_offset := Vector2.ZERO
@@ -12,6 +14,10 @@ var _drag_offset := Vector2.ZERO
 func _ready() -> void:
 	var content = content_scene.instantiate()
 	assert(content is Control)
+
+	if on_instantiate_callback != null:
+		on_instantiate_callback.call(content)
+
 	%Content.add_child(content)
 
 
