@@ -1,6 +1,9 @@
 class_name Desktop
 extends Control
 
+const DEFAULT_WINDOW_SPAWN := Vector2(400, 400)
+const DEFAULT_WINDOW_SIZE := Vector2(800, 400)
+
 @export var programs: Array[Program]
 
 var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
@@ -25,7 +28,8 @@ func _create_window(
 	desktop_window.on_instantiate_callback = callback
 	desktop_window.closed.connect(func(): _close_window(program))
 	desktop_window.dragged.connect(_window_to_foreground)
-	desktop_window.size = Vector2(800, 400)
+	desktop_window.position = DEFAULT_WINDOW_SPAWN
+	desktop_window.size = DEFAULT_WINDOW_SIZE
 	_programs_to_window.set(program, desktop_window)
 	return desktop_window
 
@@ -36,7 +40,6 @@ func _create_error_popup(program: Program, error_message: String) -> DesktopWind
 		error_popup_scene,
 		func(error_popup: ErrorPopup): error_popup.error_message = error_message
 	)
-	desktop_window.size = Vector2(400, 200)
 	return desktop_window
 
 
@@ -53,6 +56,8 @@ func _open_or_show_window(program: Program):
 		%Windows.add_child(desktop_window)
 	else:
 		_window_to_foreground(desktop_window)
+		# Reset window position
+		desktop_window.position = DEFAULT_WINDOW_SPAWN
 
 
 func _close_window(program: Program):
