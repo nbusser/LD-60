@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://ceraldpkbcd7" path="res://src/BrowserGame/Desktop/desktop.gd" id="1_kw43y"]
 [ext_resource type="PackedScene" uid="uid://8q15f1wcimte" path="res://src/BrowserGame/Icon/icon.tscn" id="2_km2qg"]
 [ext_resource type="Texture2D" uid="uid://cx521lrv2yi5a" path="res://assets/sprites/icons/outbacks.png" id="3_q1rlw"]
+[ext_resource type="PackedScene" uid="uid://chrr4m8diajy" path="res://src/BrowserGame/DesktopWindow/desktop_window.tscn" id="4_8hs48"]
+[ext_resource type="PackedScene" uid="uid://d3mn4hyunnwko" path="res://src/BrowserGame/Browser/browser.tscn" id="5_65cfl"]
 
 [node name="Desktop" type="Control" unique_id=585668165]
 layout_mode = 3
@@ -35,3 +37,7 @@ columns = 3
 layout_mode = 2
 texture = ExtResource("3_q1rlw")
 text = "Outbacks"
+
+[node name="DesktopWindow" parent="." unique_id=275882818 instance=ExtResource("4_8hs48")]
+layout_mode = 1
+content_scene = ExtResource("5_65cfl")

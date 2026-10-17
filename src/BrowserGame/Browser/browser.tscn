@@ -5,10 +5,11 @@
 [ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/health.tres" id="3_bmnu7"]
 [ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/shops.tres" id="4_twlh7"]
 
-[node name="Browser" type="Node2D" unique_id=192436045]
+[node name="Browser" type="Control" unique_id=599933122]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Directory" type="Control" parent="." unique_id=1582323239]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
