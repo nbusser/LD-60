@@ -1,0 +1,185 @@
+[gd_resource type="Resource" script_class="Category" format=3 uid="uid://cmy78s5qxg3bx"]
+
+[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_5sq0y"]
+[ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_bbfdx"]
+
+[sub_resource type="Resource" id="Resource_n4y2n"]
+script = ExtResource("2_bbfdx")
+name = "Payment"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ooua1"]
+script = ExtResource("2_bbfdx")
+name = "Fraud"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_jl3bh"]
+script = ExtResource("2_bbfdx")
+name = "Taxes"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_n4y2n"), SubResource("Resource_ooua1")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_1xiu7"]
+script = ExtResource("2_bbfdx")
+name = "Unmaking Babies"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_q4rbb"]
+script = ExtResource("2_bbfdx")
+name = "Midwifery"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ujk5d"]
+script = ExtResource("2_bbfdx")
+name = "Paternity tests"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_gk03p"]
+script = ExtResource("2_bbfdx")
+name = "Maternity tests"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_rgskd"]
+script = ExtResource("2_bbfdx")
+name = "Pickup"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_qpkem"]
+script = ExtResource("2_bbfdx")
+name = "Delivery"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_megyo"]
+script = ExtResource("2_bbfdx")
+name = "Orphanages"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_rgskd"), SubResource("Resource_qpkem")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_lmok2"]
+script = ExtResource("2_bbfdx")
+name = "Making Babies"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_1xiu7"), SubResource("Resource_q4rbb"), SubResource("Resource_ujk5d"), SubResource("Resource_gk03p"), SubResource("Resource_megyo")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_lygs7"]
+script = ExtResource("2_bbfdx")
+name = "Devil's Lettuce "
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_bi63i"]
+script = ExtResource("2_bbfdx")
+name = "Sniffing Glue"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_dvkna"]
+script = ExtResource("2_bbfdx")
+name = "Ayahuasca"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_cihqw"]
+script = ExtResource("2_bbfdx")
+name = "Drugs & Illicit Substances"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_lygs7"), SubResource("Resource_bi63i"), SubResource("Resource_dvkna")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_5737w"]
+script = ExtResource("2_bbfdx")
+name = "Outreach"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_kq51f"]
+script = ExtResource("2_bbfdx")
+name = "Public Image"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_q13jm"]
+script = ExtResource("2_bbfdx")
+name = "Being a Good Gang Leader"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_5737w"), SubResource("Resource_kq51f")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_cdqaw"]
+script = ExtResource("2_bbfdx")
+name = "Murdering People"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ginhn"]
+script = ExtResource("2_bbfdx")
+name = "Escaping the Police"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_7dob5"]
+script = ExtResource("2_bbfdx")
+name = "Disorganized Crime"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ogpfh"]
+script = ExtResource("2_bbfdx")
+name = "Guns, Hitmen & Gang Life"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_q13jm"), SubResource("Resource_cdqaw"), SubResource("Resource_ginhn"), SubResource("Resource_7dob5")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_6miqx"]
+script = ExtResource("2_bbfdx")
+name = "Retirement Homes"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_002cd"]
+script = ExtResource("2_bbfdx")
+name = "Memory Loss"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_freal"]
+script = ExtResource("2_bbfdx")
+name = "Death"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_17ve4"]
+script = ExtResource("2_bbfdx")
+name = "Old People Issues"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_002cd"), SubResource("Resource_freal")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_uh3si"]
+script = ExtResource("2_bbfdx")
+name = "Old Tech"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_u77tl"]
+script = ExtResource("2_bbfdx")
+name = "Retirement"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_6miqx"), SubResource("Resource_17ve4"), SubResource("Resource_uh3si")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_b0ur1"]
+script = ExtResource("2_bbfdx")
+name = "Declaring Accident"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_o8w78"]
+script = ExtResource("2_bbfdx")
+name = "Tips and tricks"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_bbfdx"]
+script = ExtResource("2_bbfdx")
+name = "Driving and drinking"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_b0ur1"), SubResource("Resource_o8w78")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_5sq0y"]
+script = ExtResource("2_bbfdx")
+name = "Driving"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_bbfdx")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_s4oq2"]
+script = ExtResource("2_bbfdx")
+name = "Granny Porn"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[resource]
+script = ExtResource("2_bbfdx")
+name = "Adult (18+ restricted)"
+subcategories = Array[ExtResource("2_bbfdx")]([SubResource("Resource_jl3bh"), SubResource("Resource_lmok2"), SubResource("Resource_cihqw"), SubResource("Resource_ogpfh"), SubResource("Resource_u77tl"), SubResource("Resource_5sq0y"), SubResource("Resource_s4oq2")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

@@ -6,6 +6,6 @@
 
 [resource]
 script = ExtResource("3_ajfs7")
-name = "Shops"
+name = "People"
 entries = Array[ExtResource("1_hmly0")]([ExtResource("2_xmhba")])
 metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

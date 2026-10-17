@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="Category" format=3 uid="uid://d4bv4uodx7ffw"]
+
+[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="1_mis1t"]
+[ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_6tq24"]
+
+[sub_resource type="Resource" id="Resource_n4y2n"]
+script = ExtResource("2_6tq24")
+name = "Painting"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_qpkem"]
+script = ExtResource("2_6tq24")
+name = "Good Singers"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_bi63i"]
+script = ExtResource("2_6tq24")
+name = "OK Singers"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_dvkna"]
+script = ExtResource("2_6tq24")
+name = "Lame Singers"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_j06r2"]
+script = ExtResource("2_6tq24")
+name = "Dead Singers"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_jh7xt"]
+script = ExtResource("2_6tq24")
+name = "Music Without Singers"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ooua1"]
+script = ExtResource("2_6tq24")
+name = "Music for Old People"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_aqc8j"]
+script = ExtResource("2_6tq24")
+name = "Music"
+subcategories = Array[ExtResource("2_6tq24")]([SubResource("Resource_qpkem"), SubResource("Resource_bi63i"), SubResource("Resource_dvkna"), SubResource("Resource_j06r2"), SubResource("Resource_jh7xt"), SubResource("Resource_ooua1")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_ujk5d"]
+script = ExtResource("2_6tq24")
+name = "Weird Art"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_mis1t"]
+script = ExtResource("2_6tq24")
+name = "The Art of Gardening"
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[resource]
+script = ExtResource("2_6tq24")
+name = "Art"
+subcategories = Array[ExtResource("2_6tq24")]([SubResource("Resource_n4y2n"), SubResource("Resource_aqc8j"), SubResource("Resource_ujk5d"), SubResource("Resource_mis1t")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"

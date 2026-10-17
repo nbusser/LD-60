@@ -3,17 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://btkwjma1arxro" path="res://src/BrowserGame/Browser/clickable_label.tscn" id="1_81i41"]
 [ext_resource type="Script" uid="uid://drxjpoeg5nbiy" path="res://src/BrowserGame/Browser/category_clickable.gd" id="2_gebul"]
 
-[node name="CategorieClickable" type="Control" unique_id=1503381314]
-custom_minimum_size = Vector2(0, 15)
-layout_mode = 3
-anchors_preset = 0
+[node name="CategoryClickable" type="VBoxContainer" unique_id=502459233]
 script = ExtResource("2_gebul")
 
 [node name="ClickableLabel" parent="." unique_id=68694191 instance=ExtResource("1_81i41")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 1.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 2

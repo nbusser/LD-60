@@ -2,8 +2,24 @@
 
 [ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
 [ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_bmnu7"]
-[ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/health.tres" id="3_bmnu7"]
-[ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/shops.tres" id="4_twlh7"]
+[ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/art.tres" id="3_bmnu7"]
+[ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/people.tres" id="4_twlh7"]
+[ext_resource type="Resource" uid="uid://cmy78s5qxg3bx" path="res://assets/data/adult.tres" id="5_y51eb"]
+[ext_resource type="Script" uid="uid://by28hxdfjs5yw" path="res://src/BrowserGame/Browser/entry.gd" id="6_gg30d"]
+[ext_resource type="Resource" uid="uid://wgpgqsdhomt2" path="res://assets/data/entry/dr_dre.tres" id="7_0vxej"]
+[ext_resource type="Resource" uid="uid://qnq55mkmioq8" path="res://assets/data/entry/dr_franky_vincent.tres" id="8_joe2o"]
+
+[sub_resource type="Resource" id="Resource_ooua1"]
+script = ExtResource("2_bmnu7")
+name = "Doctors"
+entries = Array[ExtResource("6_gg30d")]([ExtResource("7_0vxej"), ExtResource("8_joe2o")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
+
+[sub_resource type="Resource" id="Resource_n4y2n"]
+script = ExtResource("2_bmnu7")
+name = "Health"
+subcategories = Array[ExtResource("2_bmnu7")]([SubResource("Resource_ooua1")])
+metadata/_custom_type_script = "uid://dny0fd0hsjhu6"
 
 [node name="Browser" type="Control" unique_id=599933122]
 layout_mode = 3
@@ -14,12 +30,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_py2cu")
-root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("4_twlh7")])
+root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("4_twlh7"), ExtResource("5_y51eb"), SubResource("Resource_n4y2n")])
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Directory" unique_id=1697266125]
+[node name="Grid" type="GridContainer" parent="Directory" unique_id=297059214]
 layout_mode = 0
 offset_right = 880.0
 offset_bottom = 638.0
-
-[node name="List" type="VBoxContainer" parent="Directory/ScrollContainer" unique_id=1479904394]
-layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 4
+columns = 3
