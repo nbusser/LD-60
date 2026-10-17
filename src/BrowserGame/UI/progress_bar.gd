@@ -1,14 +1,14 @@
 @tool
 extends Control
 
+const MARGIN = 2
+const STEP_WIDTH = 10
+const STEP_SPACING = 2
+
 @export_range(0.0, 1.0) var value = 0.0:
 	set(_value):
 		value = _value
 		queue_redraw()
-
-const MARGIN = 2
-const STEP_WIDTH = 10
-const STEP_SPACING = 2
 
 
 func _draw() -> void:
