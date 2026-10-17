@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
 
-[node name="Browser" type="Node2D" unique_id=564246495]
+[node name="Browser" type="Control" unique_id=324793636]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Directory" type="Control" parent="." unique_id=1582323239]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
