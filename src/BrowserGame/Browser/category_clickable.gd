@@ -1,5 +1,5 @@
 class_name CategoryClickable
-extends Clickable
+extends Control
 
 signal category_clicked(Category)
 
@@ -8,12 +8,14 @@ var category: Category:
 		assert(category == null)
 		category = value
 
+@onready var label: ClickableLabel = $ClickableLabel
+
 
 func _ready() -> void:
 	assert(category != null)
-	text = "[color=blue][url]" + category.name
+	label.set_label_text(category.name)
+	label.meta_clicked.connect(_on_meta_clicked)
 
 
 func _on_meta_clicked(_meta: Variant) -> void:
-	super._on_meta_clicked(_meta)
 	category_clicked.emit(category)

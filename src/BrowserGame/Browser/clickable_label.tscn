@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://btkwjma1arxro"]
 
-[ext_resource type="Script" uid="uid://bgtcf5q1hao31" path="res://src/BrowserGame/Browser/clickable.gd" id="1_56cig"]
+[ext_resource type="Script" uid="uid://bgtcf5q1hao31" path="res://src/BrowserGame/Browser/clickable_label.gd" id="1_lkslu"]
 
-[node name="Clickable" type="RichTextLabel" unique_id=68694191]
+[node name="ClickableLabel" type="RichTextLabel" unique_id=68694191]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,7 +13,7 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("1_56cig")
+script = ExtResource("1_lkslu")
 
 [connection signal="meta_clicked" from="." to="." method="_on_meta_clicked"]
 [connection signal="meta_hover_ended" from="." to="." method="_on_meta_hover_ended"]

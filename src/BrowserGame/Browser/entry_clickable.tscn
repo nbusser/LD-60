@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bmpojdeg73w6v"]
+
+[ext_resource type="Script" uid="uid://bk5olv40n1jqj" path="res://src/BrowserGame/Browser/entry_clickable.gd" id="1_bophl"]
+[ext_resource type="PackedScene" uid="uid://btkwjma1arxro" path="res://src/BrowserGame/Browser/clickable_label.tscn" id="1_d6aiv"]
+
+[node name="EntryClickable" type="HBoxContainer" unique_id=964526914]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bophl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=104986059]
+layout_mode = 2
+
+[node name="ClickableLabel" parent="." unique_id=68694191 instance=ExtResource("1_d6aiv")]
+layout_mode = 2

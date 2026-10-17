@@ -1,9 +1,13 @@
 # Any clickable link
 # Abstract class
 
-class_name Clickable
+class_name ClickableLabel
 
 extends RichTextLabel
+
+
+func set_label_text(value: String):
+	text = "[color=blue][url]" + value
 
 
 func _on_meta_hover_started(_meta: Variant) -> void:

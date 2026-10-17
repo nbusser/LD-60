@@ -12,7 +12,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_py2cu")
-categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7")])
+root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7")])
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Directory" unique_id=1697266125]
 layout_mode = 0
