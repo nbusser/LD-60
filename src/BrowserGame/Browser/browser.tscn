@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://d3mn4hyunnwko"]
 
+[ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
+
 [node name="Browser" type="Node2D" unique_id=564246495]
 
 [node name="Directory" type="Control" parent="." unique_id=1582323239]
@@ -7,6 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_py2cu")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Directory" unique_id=1697266125]
 layout_mode = 0
@@ -25,11 +28,14 @@ layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Directory/ScrollContainer/GridContainer/People/VBoxContainer" unique_id=869746047]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/underline_alpha = 100
 bbcode_enabled = true
-text = "[color=blue][u]People"
+text = "[color=blue][url]People"
 fit_content = true
+scroll_active = false
 autowrap_mode = 0
+shortcut_keys_enabled = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Directory/ScrollContainer/GridContainer/People/VBoxContainer" unique_id=43741923]
 layout_mode = 2
