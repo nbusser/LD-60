@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bvo7qj74bfgbl"]
 
 [ext_resource type="Script" uid="uid://ceraldpkbcd7" path="res://src/BrowserGame/Desktop/desktop.gd" id="1_kw43y"]
+[ext_resource type="PackedScene" uid="uid://8q15f1wcimte" path="res://src/BrowserGame/Icon/icon.tscn" id="2_km2qg"]
+[ext_resource type="Texture2D" uid="uid://cx521lrv2yi5a" path="res://assets/sprites/icons/outbacks.png" id="3_q1rlw"]
 
 [node name="Desktop" type="Control" unique_id=585668165]
 layout_mode = 3
@@ -20,3 +22,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0.5019608, 0.5019608, 1)
+
+[node name="Icons" type="GridContainer" parent="." unique_id=1794291377]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 10.0
+columns = 3
+
+[node name="Outbacks" parent="Icons" unique_id=1105081491 instance=ExtResource("2_km2qg")]
+layout_mode = 2
+texture = ExtResource("3_q1rlw")
+text = "Outbacks"

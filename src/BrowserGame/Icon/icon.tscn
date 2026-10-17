@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://8q15f1wcimte"]
+
+[ext_resource type="Texture2D" uid="uid://51pr2epmlqdm" path="res://assets/sprites/icon.png" id="1_d78k8"]
+[ext_resource type="Script" uid="uid://bisuxvh6j5ufg" path="res://src/BrowserGame/Icon/icon.gd" id="2_ue0gg"]
+
+[node name="Icon" type="Control" unique_id=1105081491]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_ue0gg")
+
+[node name="Texture" type="TextureRect" parent="." unique_id=425160054]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_d78k8")
+
+[node name="Label" type="Label" parent="." unique_id=1473210851]
+layout_mode = 0
+offset_top = 130.0
+offset_right = 128.0
+offset_bottom = 153.0
+text = "Placeholder"
+horizontal_alignment = 1
