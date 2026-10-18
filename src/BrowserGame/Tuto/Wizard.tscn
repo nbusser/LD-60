@@ -1,3 +1,104 @@
-[gd_scene format=3 uid="uid://blmfl35eaifke"]
+[gd_scene format=3 uid="uid://37h87klct204"]
 
-[node name="Wizard" type="Node2D" unique_id=2019064661]
+[ext_resource type="Script" uid="uid://blc7gygiqf28u" path="res://src/BrowserGame/Tuto/wizard.gd" id="1_wizard"]
+[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_icon"]
+
+[node name="Wizard" type="Control" unique_id=1763416333]
+custom_minimum_size = Vector2(700, 480)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wizard")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1573859355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="main frame" type="HBoxContainer" parent="VBoxContainer" unique_id=740670864]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/main frame" unique_id=1680785779]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+color = Color(0, 0.5019608, 0.5019608, 1)
+
+[node name="IconCenter" type="CenterContainer" parent="VBoxContainer/main frame/ColorRect" unique_id=1347262509]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/main frame/ColorRect/IconCenter" unique_id=1628633307]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ContentMargin" type="MarginContainer" parent="VBoxContainer/main frame" unique_id=1345103357]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 12
+
+[node name="content" type="VBoxContainer" parent="VBoxContainer/main frame/ContentMargin" unique_id=868543973]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Text" type="RichTextLabel" parent="VBoxContainer/main frame/ContentMargin/content" unique_id=1852688582]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+
+[node name="Footer" type="Label" parent="VBoxContainer/main frame/ContentMargin/content" unique_id=2079492146]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=181004274]
+layout_mode = 2
+
+[node name="buttons" type="HBoxContainer" parent="VBoxContainer" unique_id=856017925]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer/buttons" unique_id=167279809]
+unique_name_in_owner = true
+layout_mode = 2
+text = "< Back"
+
+[node name="NextButton" type="Button" parent="VBoxContainer/buttons" unique_id=2126867789]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Next >"
+
+[node name="FinishButton" type="Button" parent="VBoxContainer/buttons" unique_id=1910234482]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Finish"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/buttons" unique_id=637224003]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="VBoxContainer/buttons" unique_id=1898656100]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cancel"
