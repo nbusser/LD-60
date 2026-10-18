@@ -10,11 +10,14 @@
 [ext_resource type="Resource" uid="uid://c33pp1bqjjotg" path="res://assets/data/regional.tres" id="8_0vxej"]
 [ext_resource type="Resource" uid="uid://s7ecgysqfpqn" path="res://assets/data/recreation.tres" id="9_0vxej"]
 [ext_resource type="Resource" uid="uid://hpkxj32omhoi" path="res://assets/data/business.tres" id="10_joe2o"]
+[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="11_ipbxj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4y2n"]
 content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooua1"]
 
 [node name="Directory" type="ScrollContainer" unique_id=514740387]
 custom_minimum_size = Vector2(400, 200)
@@ -39,7 +42,44 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="CenterContainer/MarginContainer" unique_id=1554786993]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer" unique_id=337110279]
+layout_mode = 2
+alignment = 1
+
+[node name="WelcomeBanner" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1726568834]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer/WelcomeBanner" unique_id=1851621247]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/MarginContainer/VBoxContainer/WelcomeBanner/HBoxContainer" unique_id=687070937]
+layout_mode = 2
+texture = ExtResource("11_ipbxj")
+
+[node name="Panel" type="Panel" parent="CenterContainer/MarginContainer/VBoxContainer/WelcomeBanner/HBoxContainer" unique_id=2099887822]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ooua1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/MarginContainer/VBoxContainer/WelcomeBanner/HBoxContainer" unique_id=1927197569]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "
+
+[color=black]Youpi? Central Directory.
+Private information. Do not leak.[/color]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Panel" type="Panel" parent="CenterContainer/MarginContainer/VBoxContainer/WelcomeBanner" unique_id=639746729]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ooua1")
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/MarginContainer/VBoxContainer" unique_id=1554786993]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
