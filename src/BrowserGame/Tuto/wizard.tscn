@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_icon"]
 
 [node name="Wizard" type="Control" unique_id=1763416333]
-custom_minimum_size = Vector2(700, 480)
+custom_minimum_size = Vector2(500, 350)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_wizard")
