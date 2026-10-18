@@ -1,5 +1,7 @@
 extends Control
 
+signal category_clicked(Category)
+
 const CATEGORY_CLICKABLE_PRELOAD = preload("res://src/BrowserGame/Browser/category_clickable.tscn")
 const ENTRY_CLICKABLE_PRELOAD = preload("res://src/BrowserGame/Browser/entry_clickable.tscn")
 
@@ -27,6 +29,8 @@ func _clear_directory() -> void:
 func _build_banner(name: String, icon: Texture2D, above: Category) -> void:
 	%CategoryIcon.texture = icon
 	%CategoryDescription.text = "[br][br][color=black]" + name
+	# TODO store link to previous
+	# %BackArrow.meta_clicked.connect(func(_meta): category_clicked.emit(above))
 
 
 func _build_categories(categories: Array[Category]) -> void:
