@@ -20,6 +20,9 @@ func _ready() -> void:
 		on_instantiate_callback.call(content)
 
 	%Content.add_child(content)
+	# Shrink to fit the content (a Control is never smaller than its minimum size)
+	reset_size()
+	minimum_size_changed.connect(reset_size)
 
 
 func _process(_delta: float) -> void:

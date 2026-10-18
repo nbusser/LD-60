@@ -1,8 +1,7 @@
 class_name Desktop
 extends Control
 
-const DEFAULT_WINDOW_SIZE := Vector2(800, 400)
-const ERROR_WINDOW_SIZE := Vector2(400, 200)
+const WINDOW_CENTER := Vector2(600, 450)
 
 @export var programs: Array[Program]
 
@@ -21,16 +20,13 @@ func _window_to_foreground(selected_window: DesktopWindow):
 func _create_window(
 	program: Program,
 	app_scene: PackedScene = program.app_scene,
-	callback: Callable = func(_node: Control): pass,
-	window_size = DEFAULT_WINDOW_SIZE
+	callback: Callable = func(_node: Control): pass
 ) -> DesktopWindow:
 	var desktop_window: DesktopWindow = desktop_window_scene.instantiate()
 	desktop_window.content_scene = app_scene
 	desktop_window.on_instantiate_callback = callback
 	desktop_window.closed.connect(func(): _close_window(program))
 	desktop_window.dragged.connect(_window_to_foreground)
-	desktop_window.position = Vector2(600, 450) - window_size / 2
-	desktop_window.size = window_size
 	_programs_to_window.set(program, desktop_window)
 	return desktop_window
 
@@ -39,8 +35,7 @@ func _create_error_popup(program: Program, error_message: String) -> DesktopWind
 	var desktop_window = _create_window(
 		program,
 		error_popup_scene,
-		func(error_popup: ErrorPopup): error_popup.error_message = error_message,
-		ERROR_WINDOW_SIZE
+		func(error_popup: ErrorPopup): error_popup.error_message = error_message
 	)
 	return desktop_window
 
@@ -56,10 +51,11 @@ func _open_or_show_window(program: Program):
 
 		_programs_to_window.set(program, desktop_window)
 		%Windows.add_child(desktop_window)
+		desktop_window.position = WINDOW_CENTER - desktop_window.size / 2
 	else:
 		_window_to_foreground(desktop_window)
 		# Reset window position
-		desktop_window.position = Vector2(600, 450) - desktop_window.size / 2
+		desktop_window.position = WINDOW_CENTER - desktop_window.size / 2
 
 
 func _close_window(program: Program):

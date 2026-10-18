@@ -8,6 +8,7 @@ content_margin_right = 5.0
 content_margin_bottom = 5.0
 
 [node name="Inbox" type="ScrollContainer" unique_id=1196939579]
+custom_minimum_size = Vector2(800, 400)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
