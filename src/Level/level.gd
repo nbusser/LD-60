@@ -113,7 +113,7 @@ func _end_day() -> void:
 
 	var success := GameState.resolve_protection()
 	await _desktop.pinny.visit(
-		_collection_lines(success), Pinny.Mood.LAUGH if success else Pinny.Mood.ANGRY
+		_collection_lines(success), Pinny.Mood.NEUTRAL if success else Pinny.Mood.LAUGH
 	)
 	Globals.end_scene(Globals.EndSceneStatus.LEVEL_END)
 
