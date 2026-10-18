@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch6b0sqgrn6qx"]
 
 [ext_resource type="SpriteFrames" uid="uid://c6y6ae71tygqm" path="res://assets/animations/pinny.tres" id="1_4al4r"]
+[ext_resource type="Script" uid="uid://cel6nhphulccy" path="res://src/Pinny/pinny.gd" id="1_b2aow"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcxeg"]
 bg_color = Color(1, 1, 0.8, 1)
@@ -116,6 +117,7 @@ _data = {
 }
 
 [node name="Pinny" type="Node2D" unique_id=1783732613]
+script = ExtResource("1_b2aow")
 
 [node name="Body" type="Node2D" parent="." unique_id=393274440]
 

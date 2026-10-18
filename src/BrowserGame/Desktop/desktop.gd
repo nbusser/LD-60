@@ -14,7 +14,7 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
-	%Windows.move_child(selected_window, get_child_count() - 2)
+	%Windows.move_child(selected_window, -1)
 
 
 func _create_window(
@@ -83,6 +83,8 @@ func _ready() -> void:
 					other.is_selected = false
 		)
 		%Icons.add_child(icon)
+
+	%Pinny.appear("Le sang de tes morts, tu m'entends?")
 
 
 func _on_background_color_gui_input(event: InputEvent) -> void:
