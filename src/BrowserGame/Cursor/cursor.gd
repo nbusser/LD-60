@@ -27,10 +27,40 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	Globals.unregister_cursor(self)
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _process(_delta: float) -> void:
 	_update_position()
+	_update_real_cursor()
+
+
+func _update_real_cursor() -> void:
+	var pointer_inside := _is_pointer_inside_desktop()
+	var desired_mode := Input.MOUSE_MODE_HIDDEN if pointer_inside else Input.MOUSE_MODE_VISIBLE
+	if Input.get_mouse_mode() != desired_mode:
+		Input.set_mouse_mode(desired_mode)
+	sprite.visible = pointer_inside
+
+
+func _is_pointer_inside_desktop() -> bool:
+	if not _is_pointer_inside_window():
+		return false
+
+	var container := get_viewport().get_parent() as SubViewportContainer
+	if container == null:
+		return true
+	var visible_rect := container.get_global_transform() * Rect2(Vector2.ZERO, container.size)
+	return visible_rect.has_point(get_tree().root.get_mouse_position())
+
+
+func _is_pointer_inside_window() -> bool:
+	var window := get_window()
+	if window == null or not window.has_focus():
+		return false
+	if window.is_embedded():
+		return true
+	return Rect2i(window.position, window.size).has_point(DisplayServer.mouse_get_position())
 
 
 func _apply_cursor() -> void:
