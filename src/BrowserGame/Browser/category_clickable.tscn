@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://btkwjma1arxro" path="res://src/BrowserGame/Browser/clickable_label.tscn" id="1_81i41"]
 [ext_resource type="Script" uid="uid://drxjpoeg5nbiy" path="res://src/BrowserGame/Browser/category_clickable.gd" id="2_gebul"]
+[ext_resource type="FontFile" uid="uid://cxdln3gnhm3jf" path="res://assets/fonts/times/timB14.fnt" id="3_b14"]
 
 [node name="CategoryClickable" type="VBoxContainer" unique_id=502459233]
 script = ExtResource("2_gebul")
@@ -17,7 +18,7 @@ layout_mode = 2
 
 [node name="Label" parent="CenterContainer2" unique_id=68694191 instance=ExtResource("1_81i41")]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_fonts/normal_font = ExtResource("3_b14")
 
 [node name="CenterContainer3" type="CenterContainer" parent="." unique_id=984081212]
 layout_mode = 2

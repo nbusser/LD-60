@@ -323,6 +323,20 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 21, 21)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf8vj"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("24_vx61q")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 16, 16)
+
 [sub_resource type="StyleBoxTexture" id="24"]
 content_margin_left = 10.0
 content_margin_top = 8.0
@@ -738,6 +752,8 @@ OptionButton/styles/normal = SubResource("25")
 OptionButton/styles/pressed = SubResource("25")
 Panel/styles/panel = SubResource("45")
 PanelContainer/styles/panel = SubResource("99")
+PanelContainerWhite/base_type = &"PanelContainer"
+PanelContainerWhite/styles/panel = SubResource("StyleBoxTexture_nf8vj")
 PopupMenu/colors/font_accelerator_color = Color(0, 0, 0, 1)
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
 PopupMenu/colors/font_disabled_color = Color(0.513726, 0.513726, 0.513726, 1)
@@ -785,6 +801,8 @@ RichTextLabel/fonts/mono_font = ExtResource("1_nf8vj")
 RichTextLabel/fonts/normal_font = ExtResource("1_nf8vj")
 RichTextLabel/styles/focus = SubResource("41")
 RichTextLabel/styles/normal = SubResource("41")
+ScrollContainer/constants/scrollbar_h_separation = 0
+ScrollContainer/constants/scrollbar_v_separation = 0
 SpinBox/icons/updown = ExtResource("31_ow3k3")
 TabBar/colors/drop_mark_color = Color(0, 0, 0, 1)
 TabBar/colors/font_disabled_color = Color(0.34902, 0.34902, 0.34902, 1)

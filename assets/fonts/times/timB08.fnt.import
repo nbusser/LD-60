@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://rglgdog0csj3"
+path="res://.godot/imported/timB08.fnt-53d8c3d3a30f76db7d0e69e7837a1fb4.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/times/timB08.fnt"
+dest_files=["res://.godot/imported/timB08.fnt-53d8c3d3a30f76db7d0e69e7837a1fb4.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

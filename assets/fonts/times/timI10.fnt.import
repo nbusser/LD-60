@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://dhdlj6fvxe52t"
+path="res://.godot/imported/timI10.fnt-0e2caa4feac01be54d772d266bb3769d.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/times/timI10.fnt"
+dest_files=["res://.godot/imported/timI10.fnt-0e2caa4feac01be54d772d266bb3769d.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

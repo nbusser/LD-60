@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://mrt3wpmivoga"
+path="res://.godot/imported/timI08.fnt-fd99878bebf5455a9b497d5b45a91996.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/times/timI08.fnt"
+dest_files=["res://.godot/imported/timI08.fnt-fd99878bebf5455a9b497d5b45a91996.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

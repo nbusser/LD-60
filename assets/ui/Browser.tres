@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://dpjtu32jaq8eh"]
+
+[ext_resource type="FontFile" uid="uid://hg17uwp1uisk" path="res://assets/fonts/times/timR14.fnt" id="1_r14"]
+[ext_resource type="FontFile" uid="uid://cxdln3gnhm3jf" path="res://assets/fonts/times/timB14.fnt" id="2_b14"]
+[ext_resource type="FontFile" uid="uid://bft8o0vo0m1g" path="res://assets/fonts/times/timI14.fnt" id="3_i14"]
+[ext_resource type="FontFile" uid="uid://ij5wfycgai6f" path="res://assets/fonts/times/timBI14.fnt" id="4_bi14"]
+
+[resource]
+default_font = ExtResource("1_r14")
+default_font_size = 14
+RichTextLabel/fonts/bold_font = ExtResource("2_b14")
+RichTextLabel/fonts/bold_italics_font = ExtResource("4_bi14")
+RichTextLabel/fonts/italics_font = ExtResource("3_i14")
+RichTextLabel/fonts/mono_font = ExtResource("1_r14")
+RichTextLabel/fonts/normal_font = ExtResource("1_r14")

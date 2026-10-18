@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://ubm0vjeamrys"
+path="res://.godot/imported/timB24.fnt-7a1c721b30b3c8c2bbe54e28ffc842ff.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/times/timB24.fnt"
+dest_files=["res://.godot/imported/timB24.fnt-7a1c721b30b3c8c2bbe54e28ffc842ff.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
