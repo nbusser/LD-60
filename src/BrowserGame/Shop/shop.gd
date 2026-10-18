@@ -4,7 +4,8 @@ extends ScrollContainer
 
 const SHOP_UPGRADE_PRELOAD = preload("res://src/BrowserGame/Shop/shop_upgrade.tscn")
 
-@export var upgrades : Array[UpgradeData]
+@export var upgrades: Array[UpgradeData]
+
 
 func _ready():
 	for u in upgrades:
