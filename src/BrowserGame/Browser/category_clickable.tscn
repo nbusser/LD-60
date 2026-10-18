@@ -25,6 +25,7 @@ layout_mode = 2
 [node name="Tags" type="HFlowContainer" parent="CenterContainer3" unique_id=275178756]
 layout_mode = 2
 offset_transform_enabled = true
-offset_transform_position = Vector2(0, -16)
+offset_transform_position = Vector2(0, -14)
+offset_transform_visual_only = false
 theme_override_constants/h_separation = 10
 alignment = 1
