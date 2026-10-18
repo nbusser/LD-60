@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://biybxjacp6uri"]
+
+[node name="ImageViewer" type="TextureRect" unique_id=751780230]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5

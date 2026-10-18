@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c18uaabq5n56d"]
+
+[ext_resource type="PackedScene" uid="uid://biybxjacp6uri" path="res://src/BrowserGame/Images/image_viewer.tscn" id="1_kcxyb"]
+[ext_resource type="Texture2D" uid="uid://dahw87n4fmrse" path="res://assets/sprites/images/son.png" id="2_03pme"]
+
+[node name="ImageViewerSon" unique_id=751780230 instance=ExtResource("1_kcxyb")]
+custom_minimum_size = Vector2(300, 400)
+texture = ExtResource("2_03pme")
