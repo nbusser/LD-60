@@ -11,6 +11,7 @@
 [ext_resource type="Resource" uid="uid://ddwcomjogl5eh" path="res://family_viewer.tres" id="8_6uvci"]
 [ext_resource type="PackedScene" uid="uid://bkkag32oibkj4" path="res://src/BrowserGame/Cursor/cursor.tscn" id="8_h03nu"]
 [ext_resource type="PackedScene" uid="uid://ch6b0sqgrn6qx" path="res://src/Pinny/pinny.tscn" id="9_pinny"]
+[ext_resource type="Texture2D" uid="uid://dx3a0hhx2gjg1" path="res://assets/ui/textures/background/Blue Rivets.png" id="10_5c8tb"]
 
 [node name="Desktop" type="Control" unique_id=585668165]
 custom_maximum_size = Vector2(800, 600)
@@ -33,6 +34,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.5019608, 0.5019608, 1)
+
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=317331568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_5c8tb")
+stretch_mode = 1
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1031115493]
 layout_mode = 0

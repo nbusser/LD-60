@@ -16,7 +16,7 @@ var is_selected := false:
 
 
 func _ready():
-	$Label.text = text
+	%Label.text = text
 	button_mask = MOUSE_BUTTON_MASK_LEFT
 
 

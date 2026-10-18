@@ -2,19 +2,42 @@
 
 [ext_resource type="Script" uid="uid://bisuxvh6j5ufg" path="res://src/BrowserGame/Icon/icon.gd" id="2_ue0gg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d78k8"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n4y2n"]
+font_size = 13
+
 [node name="Icon" type="TextureButton" unique_id=1327430444]
-custom_minimum_size = Vector2(64, 64)
-custom_maximum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(92, 64)
+custom_maximum_size = Vector2(92, 64)
 propagate_maximum_size = true
-offset_right = 128.0
-offset_bottom = 128.0
-stretch_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+stretch_mode = 5
 script = ExtResource("2_ue0gg")
 
-[node name="Label" type="Label" parent="." unique_id=1473210851]
-layout_mode = 0
-offset_top = 74.0
-offset_right = 64.0
-offset_bottom = 97.0
-text = "Placeholder"
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=387309465]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 72.0
+offset_bottom = 107.0
+grow_horizontal = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=1312579751]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer" unique_id=1473210851]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(92, -1)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_d78k8")
+text = "Place"
+label_settings = SubResource("LabelSettings_n4y2n")
 horizontal_alignment = 1
+vertical_alignment = 1
