@@ -1,8 +1,6 @@
 class_name Desktop
 extends Control
 
-const WINDOW_CENTER := Vector2(600, 450)
-
 @export var programs: Array[Program]
 
 var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
@@ -41,6 +39,10 @@ func _create_error_popup(program: Program, error_message: String) -> DesktopWind
 	return desktop_window
 
 
+func _center_window(desktop_window: DesktopWindow) -> void:
+	desktop_window.position = ((size - desktop_window.size) / 2).floor()
+
+
 func _open_or_show_window(program: Program):
 	var desktop_window: DesktopWindow = _programs_to_window.get(program)
 	if desktop_window == null or not is_instance_valid(desktop_window):
@@ -52,11 +54,14 @@ func _open_or_show_window(program: Program):
 
 		_programs_to_window.set(program, desktop_window)
 		%Windows.add_child(desktop_window)
-		desktop_window.position = WINDOW_CENTER - desktop_window.size / 2
+		_center_window(desktop_window)
+
+		# center window again once loaded
+		desktop_window.content_loaded.connect(_center_window.bind(desktop_window), CONNECT_ONE_SHOT)
 	else:
 		_window_to_foreground(desktop_window)
 		# Reset window position
-		desktop_window.position = WINDOW_CENTER - desktop_window.size / 2
+		_center_window(desktop_window)
 
 
 func _close_window(program: Program):

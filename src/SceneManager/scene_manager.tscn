@@ -20,16 +20,23 @@ script = ExtResource("1_qc8yu")
 levels = Array[ExtResource("2_38vrh")]([SubResource("Resource_r4gm4")])
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=752066692]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 150.0
+offset_right = -200.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=200585439]
 handle_input_locally = false
 audio_listener_enable_2d = true
 physics_object_picking = true
-size = Vector2i(1200, 900)
+size = Vector2i(800, 600)
 render_target_update_mode = 4
 
 [node name="Musics" type="Node" parent="." unique_id=2046625464]

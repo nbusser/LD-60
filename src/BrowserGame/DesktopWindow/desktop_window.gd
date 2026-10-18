@@ -3,6 +3,7 @@ extends Control
 
 signal closed
 signal dragged
+signal content_loaded
 
 @export var content_scene: PackedScene
 # Arbitrary callback to be called with the content_scene
@@ -30,6 +31,7 @@ func _ready() -> void:
 	# Shrink to fit the content (a Control is never smaller than its minimum size)
 	reset_size()
 	minimum_size_changed.connect(reset_size)
+	content_loaded.emit()
 
 
 func _process(_delta: float) -> void:

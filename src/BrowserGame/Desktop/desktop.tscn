@@ -16,6 +16,7 @@ icon_label = "Zouk"
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"
 
 [node name="Desktop" type="Control" unique_id=585668165]
+custom_maximum_size = Vector2(800, 600)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,7 +51,7 @@ anchors_preset = 0
 
 [node name="Pinny" parent="." unique_id=493795301 instance=ExtResource("9_pinny")]
 unique_name_in_owner = true
-position = Vector2(1264, 820)
+position = Vector2(864, 520)
 
 [node name="Cursor" parent="." unique_id=483185025 instance=ExtResource("8_h03nu")]
 layout_mode = 1
