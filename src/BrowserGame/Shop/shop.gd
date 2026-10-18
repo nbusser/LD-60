@@ -1,7 +1,5 @@
 extends ScrollContainer
 
-# TODO remember bought
-
 const SHOP_UPGRADE_PRELOAD = preload("res://src/BrowserGame/Shop/shop_upgrade.tscn")
 
 @export var upgrades: Array[UpgradeData]
@@ -9,11 +7,17 @@ const SHOP_UPGRADE_PRELOAD = preload("res://src/BrowserGame/Shop/shop_upgrade.ts
 
 func _ready():
 	for u in upgrades:
-		var instance = SHOP_UPGRADE_PRELOAD.instantiate()
-		instance.upgrade_data = u
-		instance.upgrade_clicked.connect(_upgrade_clicked)
-		%Grid.add_child(instance)
+		%Grid.add_child(_create_upgrade_instance(u))
+
+
+func _create_upgrade_instance(u: UpgradeData):
+	var instance = SHOP_UPGRADE_PRELOAD.instantiate()
+	instance.upgrade_data = u
+	instance.upgrade_clicked.connect(_upgrade_clicked)
+	return instance
 
 
 func _upgrade_clicked(u: ShopUpgrade) -> void:
-	print(u.upgrade_data.name + " clicked")
+	u.queue_free()
+	for unlock in u.upgrade_data.unlocks:
+		u.add_sibling(_create_upgrade_instance(unlock))
