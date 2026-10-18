@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://3uuffv5ois2w"]
+
+[ext_resource type="Script" uid="uid://wrfgybrntyx4" path="res://src/BrowserGame/Desktop/task_button.gd" id="1_taskbtn"]
+[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="1_hglli"]
+
+[node name="TaskButton" type="Button" unique_id=1034526515]
+custom_minimum_size = Vector2(120, 0)
+theme_type_variation = &"ToggleButton"
+toggle_mode = true
+script = ExtResource("1_taskbtn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1159824279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=2147164888]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1236486368]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="WindowIcon" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=234731155]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("1_hglli")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="WindowTitle" type="Label" parent="HBoxContainer" unique_id=668291954]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Test"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3

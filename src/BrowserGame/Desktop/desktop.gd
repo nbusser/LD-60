@@ -4,11 +4,13 @@ extends Control
 @export var programs: Array[Program]
 
 var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
+var _window_to_task_button: Dictionary[DesktopWindow, TaskButton] = {}
 
 @onready var icon_scene = preload("res://src/BrowserGame/Icon/icon.tscn")
 @onready
 var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_window.tscn")
 @onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
+@onready var task_button_scene = preload("res://src/BrowserGame/Desktop/TaskButton.tscn")
 @onready var cursor = $Cursor
 @onready var pinny: Pinny = %Pinny
 @onready var _clock_label: Label = %ClockLabel
@@ -17,6 +19,70 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 
 func _window_to_foreground(selected_window: DesktopWindow):
 	%Windows.move_child(selected_window, -1)
+	_update_task_buttons()
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var hovered: Node = get_viewport().gui_get_hovered_control()
+		while hovered != null:
+			var desktop_window := hovered as DesktopWindow
+			if desktop_window != null:
+				_window_to_foreground(desktop_window)
+				return
+			hovered = hovered.get_parent()
+
+
+func _create_task_button(desktop_window: DesktopWindow) -> void:
+	var task_button: TaskButton = task_button_scene.instantiate()
+	task_button.window_title = desktop_window.window_title
+	task_button.window_icon = desktop_window.window_icon
+	task_button.pressed.connect(_on_task_button_pressed.bind(desktop_window))
+	%Tasks.add_child(task_button)
+	_window_to_task_button.set(desktop_window, task_button)
+
+
+func _remove_task_button(desktop_window: DesktopWindow) -> void:
+	var task_button: TaskButton = _window_to_task_button.get(desktop_window)
+	if task_button != null and is_instance_valid(task_button):
+		%Tasks.remove_child(task_button)
+		task_button.queue_free()
+	_window_to_task_button.erase(desktop_window)
+
+
+func _get_active_window() -> DesktopWindow:
+	var active_window: DesktopWindow = null
+	for child in %Windows.get_children():
+		var desktop_window := child as DesktopWindow
+		if (
+			desktop_window != null
+			and desktop_window.visible
+			and not desktop_window.is_queued_for_deletion()
+		):
+			active_window = desktop_window
+	return active_window
+
+
+func _update_task_buttons() -> void:
+	var active_window := _get_active_window()
+	for desktop_window in _window_to_task_button:
+		var task_button: TaskButton = _window_to_task_button.get(desktop_window)
+		if is_instance_valid(task_button):
+			task_button.button_pressed = desktop_window == active_window
+
+
+func _on_task_button_pressed(desktop_window: DesktopWindow) -> void:
+	if not is_instance_valid(desktop_window):
+		return
+
+	if desktop_window == _get_active_window():
+		desktop_window.visible = false
+		_update_task_buttons()
+	else:
+		desktop_window.visible = true
+		_window_to_foreground(desktop_window)
+
+	Sfx.click()
 
 
 func _create_window(
@@ -64,10 +130,14 @@ func _open_or_show_window(program: Program):
 		_programs_to_window.set(program, desktop_window)
 		%Windows.add_child(desktop_window)
 		_center_window(desktop_window)
+		_create_task_button(desktop_window)
+		_update_task_buttons()
 
 		# center window again once loaded
 		desktop_window.content_loaded.connect(_center_window.bind(desktop_window), CONNECT_ONE_SHOT)
 	else:
+		if not _window_to_task_button.has(desktop_window):
+			_create_task_button(desktop_window)
 		desktop_window.visible = true
 		_window_to_foreground(desktop_window)
 		# Reset window position
@@ -75,9 +145,11 @@ func _open_or_show_window(program: Program):
 
 
 func _close_window(program: Program):
-	var desktop_window = _programs_to_window.get(program)
+	var desktop_window: DesktopWindow = _programs_to_window.get(program)
 	if desktop_window != null and is_instance_valid(desktop_window):
+		_remove_task_button(desktop_window)
 		desktop_window.visible = false
+	_update_task_buttons()
 
 
 func _ready() -> void:

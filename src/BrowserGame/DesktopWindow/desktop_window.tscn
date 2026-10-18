@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ca6wie48ortpb" path="res://src/BrowserGame/DesktopWindow/desktop_window.gd" id="1_us0oo"]
 [ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_cwymc"]
-[ext_resource type="Texture2D" uid="uid://coeh06b7hur73" path="res://assets/ui/textures/window/close.png" id="3_close"]
+[ext_resource type="Texture2D" uid="uid://dutkwevgmgqpe" path="res://assets/ui/textures/window/close_normal.png" id="3_cwymc"]
+[ext_resource type="Texture2D" uid="uid://dmi0rwi7854a4" path="res://assets/ui/textures/window/close_pressed.png" id="4_1ad4m"]
 [ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="4_8lffc"]
-[ext_resource type="Texture2D" uid="uid://cair4tcod5qp4" path="res://assets/ui/textures/window/close_hover.png" id="4_closehover"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lffc"]
 bg_color = Color(0, 0, 0.5019608, 1)
@@ -24,11 +24,11 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Bar" type="Control" parent="VBoxContainer" unique_id=857722647]
-custom_minimum_size = Vector2(0, 26)
+custom_minimum_size = Vector2(0, 19)
 layout_mode = 2
 
 [node name="Bar" type="Button" parent="VBoxContainer/Bar" unique_id=937637337]
-custom_minimum_size = Vector2(0, 26)
+custom_minimum_size = Vector2(0, 18)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -53,7 +53,7 @@ layout_mode = 2
 
 [node name="WindowIcon" type="TextureRect" parent="VBoxContainer/Bar/Bar/HBoxContainer/CenterContainer" unique_id=956408431]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(24, 24)
+custom_minimum_size = Vector2(20, 20)
 custom_maximum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("2_cwymc")
@@ -71,14 +71,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -22.0
-offset_top = 3.0
-offset_right = -2.0
-offset_bottom = 23.0
+offset_left = -19.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 19.0
 grow_horizontal = 0
-texture_normal = ExtResource("3_close")
-texture_pressed = ExtResource("4_closehover")
-texture_hover = ExtResource("4_closehover")
+texture_normal = ExtResource("3_cwymc")
+texture_pressed = ExtResource("4_1ad4m")
 
 [node name="Content" type="MarginContainer" parent="VBoxContainer" unique_id=2119874919]
 unique_name_in_owner = true

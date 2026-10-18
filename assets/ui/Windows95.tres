@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://dfhk1nwxalhy5" path="res://assets/fonts/w95fa_13.fnt" id="1_nf8vj"]
 [ext_resource type="Texture2D" uid="uid://vjp084r5dd21" path="res://assets/ui/textures/button/normal.png" id="2_nf8vj"]
-[ext_resource type="Texture2D" uid="uid://0escwkpcginl" path="res://assets/ui/textures/button/pressed.png" id="3_m0i5b"]
+[ext_resource type="Texture2D" uid="uid://dftptmk7j0c5s" path="res://assets/ui/textures/button/button_pressed.png" id="3_2cm55"]
 [ext_resource type="Texture2D" uid="uid://fdt585kici0g" path="res://assets/ui/textures/checkbox/checked.png" id="4_q3knt"]
 [ext_resource type="Texture2D" uid="uid://d2206l6ic38up" path="res://assets/ui/textures/checkbox/checked_disabled.png" id="5_x0ijc"]
 [ext_resource type="Texture2D" uid="uid://b1j8amdaby5gp" path="res://assets/ui/textures/radial_checkbox/checked.png" id="6_8es8t"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bls81p0bqjuwn" path="res://assets/ui/textures/progress_bar/bg.png" id="29_laaja"]
 [ext_resource type="Texture2D" uid="uid://dnhm6kff7amrm" path="res://assets/ui/textures/progress_bar/fg.png" id="30_t71aj"]
 [ext_resource type="Texture2D" uid="uid://c055nepgo3cns" path="res://assets/ui/textures/spinbox/up_down.png" id="31_ow3k3"]
+[ext_resource type="Texture2D" uid="uid://dhp0iekw3n17a" path="res://assets/ui/textures/button/toggle_pressed.png" id="32_807p8"]
 [ext_resource type="Texture2D" uid="uid://b2vmi3tfer7mw" path="res://assets/ui/textures/tree/arrow.png" id="32_rcavr"]
 [ext_resource type="Texture2D" uid="uid://cb0a4st6y3pl3" path="res://assets/ui/textures/tree/arrow_collapsed.png" id="33_cktex"]
 [ext_resource type="Texture2D" uid="uid://dw8mfdyvfgrth" path="res://assets/ui/textures/vscroll/decrement.png" id="34_uoubp"]
@@ -41,8 +42,6 @@
 [ext_resource type="Texture2D" uid="uid://dc1fw2b584hjp" path="res://assets/ui/textures/vslider/grabber.png" id="39_i2glw"]
 [ext_resource type="Texture2D" uid="uid://brk00ey2rfca1" path="res://assets/ui/textures/vslider/tick.png" id="40_jijo8"]
 [ext_resource type="Texture2D" uid="uid://bhko4de8n2s5n" path="res://assets/ui/textures/vslider/slider.png" id="41_bxlk1"]
-[ext_resource type="Texture2D" uid="uid://coeh06b7hur73" path="res://assets/ui/textures/window/close.png" id="42_3rgxo"]
-[ext_resource type="Texture2D" uid="uid://cair4tcod5qp4" path="res://assets/ui/textures/window/close_hover.png" id="43_yva5k"]
 [ext_resource type="Texture2D" uid="uid://dn87p7dbqfvnx" path="res://assets/ui/textures/window/focused.png" id="44_k3863"]
 
 [sub_resource type="StyleBoxTexture" id="7"]
@@ -66,7 +65,7 @@ content_margin_left = 16.0
 content_margin_top = 6.0
 content_margin_right = 16.0
 content_margin_bottom = 6.0
-texture = ExtResource("3_m0i5b")
+texture = ExtResource("3_2cm55")
 texture_margin_left = 3.0
 texture_margin_top = 3.0
 texture_margin_right = 4.0
@@ -405,6 +404,20 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 16, 16)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m0i5b"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+texture = ExtResource("32_807p8")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 16, 16)
+
 [sub_resource type="StyleBoxEmpty" id="96"]
 
 [sub_resource type="StyleBoxTexture" id="100"]
@@ -501,7 +514,7 @@ Button/constants/h_separation = 0
 Button/fonts/font = ExtResource("1_nf8vj")
 Button/styles/disabled = SubResource("7")
 Button/styles/focus = SubResource("26")
-Button/styles/hover = SubResource("9")
+Button/styles/hover = SubResource("7")
 Button/styles/normal = SubResource("7")
 Button/styles/pressed = SubResource("9")
 CheckBox/colors/font_color = Color(0, 0, 0, 1)
@@ -901,6 +914,8 @@ TextEdit/styles/completion = null
 TextEdit/styles/focus = SubResource("13")
 TextEdit/styles/normal = SubResource("13")
 TextEdit/styles/read_only = SubResource("13")
+ToggleButton/base_type = &"Button"
+ToggleButton/styles/pressed = SubResource("StyleBoxTexture_m0i5b")
 ToolButton/colors/font_color = Color(0, 0, 0, 1)
 ToolButton/colors/font_disabled_color = Color(0.513726, 0.513726, 0.513726, 1)
 ToolButton/colors/font_focus_color = Color(0, 0, 0, 1)
@@ -1001,6 +1016,6 @@ WindowDialog/constants/close_v_ofs = 24
 WindowDialog/constants/scaleborder_size = 0
 WindowDialog/constants/title_height = 30
 WindowDialog/fonts/title_font = SubResource("103")
-WindowDialog/icons/close = ExtResource("42_3rgxo")
-WindowDialog/icons/close_highlight = ExtResource("43_yva5k")
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
 WindowDialog/styles/panel = SubResource("11")

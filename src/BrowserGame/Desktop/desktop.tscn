@@ -11,9 +11,6 @@
 [ext_resource type="Resource" uid="uid://ddwcomjogl5eh" path="res://family_viewer.tres" id="8_6uvci"]
 [ext_resource type="PackedScene" uid="uid://bkkag32oibkj4" path="res://src/BrowserGame/Cursor/cursor.tscn" id="8_h03nu"]
 [ext_resource type="PackedScene" uid="uid://ch6b0sqgrn6qx" path="res://src/Pinny/pinny.tscn" id="9_pinny"]
-[ext_resource type="Texture2D" uid="uid://cois33t3fi16v" path="res://assets/sprites/os_off.png" id="10_tjusx"]
-[ext_resource type="Texture2D" uid="uid://h0l80m6roynr" path="res://assets/sprites/os_on.png" id="11_o5ym1"]
-[ext_resource type="Texture2D" uid="uid://jxrxedy2rn0f" path="res://assets/sprites/os_mid.png" id="12_ijfxp"]
 
 [node name="Desktop" type="Control" unique_id=585668165]
 custom_maximum_size = Vector2(800, 600)
@@ -37,62 +34,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.5019608, 0.5019608, 1)
 
-[node name="ColorRect" type="ColorRect" parent="BackgroundColor" unique_id=959858872]
-custom_minimum_size = Vector2(0, 32)
-custom_maximum_size = Vector2(-1, 32)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -32.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.7529412, 0.7529412, 0.7529412, 1)
-
-[node name="TextureButton" type="TextureButton" parent="BackgroundColor" unique_id=36477301]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = -16.0
-offset_top = 568.0
-offset_right = 48.0
-offset_bottom = 632.0
-toggle_mode = true
-texture_normal = ExtResource("10_tjusx")
-texture_pressed = ExtResource("11_o5ym1")
-texture_hover = ExtResource("12_ijfxp")
-ignore_texture_size = true
-
-[node name="TaskbarInfo" type="HBoxContainer" parent="BackgroundColor/ColorRect"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -260.0
-offset_right = -8.0
-grow_horizontal = 0
-grow_vertical = 2
-alignment = 2
-
-[node name="MoneyLabel" type="Label" parent="BackgroundColor/ColorRect/TaskbarInfo"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "$0"
-vertical_alignment = 1
-
-[node name="Separator" type="Label" parent="BackgroundColor/ColorRect/TaskbarInfo"]
-layout_mode = 2
-text = " | "
-vertical_alignment = 1
-
-[node name="ClockLabel" type="Label" parent="BackgroundColor/ColorRect/TaskbarInfo"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(56, 0)
-layout_mode = 2
-text = "08:00"
-vertical_alignment = 1
-
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1031115493]
 layout_mode = 0
 offset_right = 40.0
@@ -114,6 +55,57 @@ columns = 3
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 0
+
+[node name="TaskBar" type="PanelContainer" parent="." unique_id=1569800294]
+custom_minimum_size = Vector2(0, 32)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TaskBar" unique_id=258966392]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="TaskBar/HBoxContainer" unique_id=1192542386]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="Tasks" type="HBoxContainer" parent="TaskBar/HBoxContainer" unique_id=1861810421]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Spacer" type="Control" parent="TaskBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TaskbarInfo" type="HBoxContainer" parent="TaskBar/HBoxContainer"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="MoneyLabel" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$0"
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo"]
+layout_mode = 2
+text = " | "
+vertical_alignment = 1
+
+[node name="ClockLabel" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+text = "08:00"
+vertical_alignment = 1
 
 [node name="Pinny" parent="." unique_id=493795301 instance=ExtResource("9_pinny")]
 unique_name_in_owner = true
