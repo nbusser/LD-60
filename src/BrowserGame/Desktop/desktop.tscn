@@ -80,27 +80,27 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="Spacer" type="Control" parent="TaskBar/HBoxContainer"]
+[node name="Spacer" type="Control" parent="TaskBar/HBoxContainer" unique_id=925405775]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TaskbarInfo" type="HBoxContainer" parent="TaskBar/HBoxContainer"]
+[node name="TaskbarInfo" type="HBoxContainer" parent="TaskBar/HBoxContainer" unique_id=433149146]
 custom_minimum_size = Vector2(260, 0)
 layout_mode = 2
 alignment = 2
 
-[node name="MoneyLabel" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo"]
+[node name="MoneyLabel" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo" unique_id=1049475364]
 unique_name_in_owner = true
 layout_mode = 2
 text = "$0"
 vertical_alignment = 1
 
-[node name="Separator" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo"]
+[node name="Separator" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo" unique_id=1177857470]
 layout_mode = 2
 text = " | "
 vertical_alignment = 1
 
-[node name="ClockLabel" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo"]
+[node name="ClockLabel" type="Label" parent="TaskBar/HBoxContainer/TaskbarInfo" unique_id=418405858]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(56, 0)
 layout_mode = 2
