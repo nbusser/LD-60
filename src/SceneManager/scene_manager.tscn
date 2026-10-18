@@ -151,5 +151,5 @@ bus = &"Music"
 
 [node name="Brouhaha" type="AudioStreamPlayer" parent="Ambience" unique_id=1873451632]
 stream = ExtResource("4_brouhaha")
-volume_db = -10.0
+volume_db = -8.0
 bus = &"Others"
