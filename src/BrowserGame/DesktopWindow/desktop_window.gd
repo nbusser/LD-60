@@ -5,6 +5,18 @@ signal closed
 signal dragged
 signal content_loaded
 
+@export var window_icon: Texture2D:
+	set(value):
+		window_icon = value
+		if is_node_ready():
+			_update_title_bar()
+
+@export var window_title: String = "Window Title":
+	set(value):
+		window_title = value
+		if is_node_ready():
+			_update_title_bar()
+
 @export var content_scene: PackedScene
 # Arbitrary callback to be called with the content_scene
 @export var on_instantiate_callback: Callable
@@ -16,6 +28,7 @@ var _loading := false
 
 
 func _ready() -> void:
+	_update_title_bar()
 	_loading = true
 	var content = content_scene.instantiate()
 	assert(content is Control)
@@ -56,3 +69,8 @@ func _on_bar_button_up() -> void:
 
 func is_loading() -> bool:
 	return _loading
+
+
+func _update_title_bar() -> void:
+	%WindowIcon.texture = window_icon
+	%WindowTitle.text = window_title

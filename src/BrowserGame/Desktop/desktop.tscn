@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvo7qj74bfgbl"]
 
+[ext_resource type="Theme" uid="uid://cu8feejf7otkx" path="res://assets/ui/Windows95.tres" id="1_6uvci"]
 [ext_resource type="Script" uid="uid://ceraldpkbcd7" path="res://src/BrowserGame/Desktop/desktop.gd" id="1_kw43y"]
-[ext_resource type="Theme" uid="uid://b6jj30j8q32fe" path="res://assets/fonts/w95_theme.tres" id="1_u2oub"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="2_u2oub"]
 [ext_resource type="Resource" uid="uid://cmuhyvkuqh3g1" path="res://assets/data/program/youpi.tres" id="4_65cfl"]
 [ext_resource type="Resource" uid="uid://bkcy5mxuvdaq7" path="res://assets/data/program/outbacks.tres" id="5_u2oub"]
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_u2oub")
+theme = ExtResource("1_6uvci")
 script = ExtResource("1_kw43y")
 programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), ExtResource("6_mycvx"), ExtResource("7_5c8tb"), ExtResource("8_6uvci"), ExtResource("7_35n26")])
 

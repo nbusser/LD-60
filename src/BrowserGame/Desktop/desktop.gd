@@ -23,6 +23,8 @@ func _create_window(
 	callback: Callable = func(_node: Control): pass
 ) -> DesktopWindow:
 	var desktop_window: DesktopWindow = desktop_window_scene.instantiate()
+	desktop_window.window_title = program.icon_label
+	desktop_window.window_icon = program.icon_texture
 	desktop_window.content_scene = app_scene
 	desktop_window.on_instantiate_callback = callback
 	desktop_window.closed.connect(

@@ -1,91 +1,101 @@
 [gd_scene format=3 uid="uid://chrr4m8diajy"]
 
 [ext_resource type="Script" uid="uid://ca6wie48ortpb" path="res://src/BrowserGame/DesktopWindow/desktop_window.gd" id="1_us0oo"]
-[ext_resource type="Script" uid="uid://bi3d1dolhhewy" path="res://src/BrowserGame/UI/progress_bar.gd" id="2_cffs2"]
+[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_cwymc"]
+[ext_resource type="Texture2D" uid="uid://coeh06b7hur73" path="res://assets/ui/textures/window/close.png" id="3_close"]
+[ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="4_8lffc"]
+[ext_resource type="Texture2D" uid="uid://cair4tcod5qp4" path="res://assets/ui/textures/window/close_hover.png" id="4_closehover"]
 
-[sub_resource type="Theme" id="Theme_ooua1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lffc"]
+bg_color = Color(0, 0, 0.5019608, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us0oo"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.5019608, 0, 0, 1)
-corner_radius_top_right = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cffs2"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.2509804, 0, 0, 1)
-corner_radius_top_right = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_border"]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0.69467324, 0.6946736, 0.69467336, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_content"]
-bg_color = Color(1, 1, 1, 1)
-
-[node name="DesktopWindow" type="VBoxContainer" unique_id=275882818]
+[node name="DesktopWindow" type="PanelContainer" unique_id=1241156067]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_us0oo")
 
-[node name="Bar" type="Control" parent="." unique_id=857722647]
-custom_minimum_size = Vector2(0, 30)
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=275882818]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Bar" type="Control" parent="VBoxContainer" unique_id=857722647]
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 2
 
-[node name="Bar" type="Button" parent="Bar" unique_id=937637337]
-custom_minimum_size = Vector2(0, 35)
+[node name="Bar" type="Button" parent="VBoxContainer/Bar" unique_id=937637337]
+custom_minimum_size = Vector2(0, 26)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 8.0
 grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8lffc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8lffc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8lffc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8lffc")
 
-[node name="CloseButton" type="Button" parent="Bar" unique_id=156944891]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Bar/Bar" unique_id=1483593457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/Bar/Bar/HBoxContainer" unique_id=385671454]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+
+[node name="WindowIcon" type="TextureRect" parent="VBoxContainer/Bar/Bar/HBoxContainer/CenterContainer" unique_id=956408431]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+custom_maximum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("2_cwymc")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="WindowTitle" type="Label" parent="VBoxContainer/Bar/Bar/HBoxContainer" unique_id=659164715]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+vertical_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="VBoxContainer/Bar" unique_id=156944891]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -39.0
-offset_bottom = 34.0
+offset_left = -22.0
+offset_top = 3.0
+offset_right = -2.0
+offset_bottom = 23.0
 grow_horizontal = 0
-theme = SubResource("Theme_ooua1")
-theme_override_styles/normal = SubResource("StyleBoxFlat_us0oo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cffs2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_us0oo")
-text = "X"
+texture_normal = ExtResource("3_close")
+texture_pressed = ExtResource("4_closehover")
+texture_hover = ExtResource("4_closehover")
 
-[node name="Border" type="PanelContainer" parent="." unique_id=1465632139]
-clip_contents = true
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_border")
-
-[node name="Content" type="PanelContainer" parent="Border" unique_id=364516371]
+[node name="Content" type="MarginContainer" parent="VBoxContainer" unique_id=2119874919]
 unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_content")
 
-[node name="Loading" type="MarginContainer" parent="Border/Content" unique_id=1689753067]
+[node name="Loading" type="MarginContainer" parent="VBoxContainer/Content" unique_id=1689753067]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="CustomProgressBar" type="Control" parent="Border/Content/Loading" unique_id=1447826762]
+[node name="CustomProgressBar" parent="VBoxContainer/Content/Loading" unique_id=694500070 instance=ExtResource("4_8lffc")]
 custom_minimum_size = Vector2(240, 24)
 layout_mode = 2
-script = ExtResource("2_cffs2")
 loading = true
-metadata/_custom_type_script = "uid://bi3d1dolhhewy"
 
-[connection signal="button_down" from="Bar/Bar" to="." method="_on_bar_button_down"]
-[connection signal="button_up" from="Bar/Bar" to="." method="_on_bar_button_up"]
-[connection signal="pressed" from="Bar/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/Bar/Bar" to="." method="_on_bar_button_down"]
+[connection signal="button_up" from="VBoxContainer/Bar/Bar" to="." method="_on_bar_button_up"]
+[connection signal="pressed" from="VBoxContainer/Bar/CloseButton" to="." method="_on_close_button_pressed"]

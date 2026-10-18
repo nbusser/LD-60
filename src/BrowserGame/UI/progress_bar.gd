@@ -2,7 +2,7 @@
 class_name CustomProgressBar
 extends Control
 
-const MARGIN = 2
+const MARGIN = 4
 const STEP_WIDTH = 10
 const STEP_SPACING = 2
 const LOADING_STEP_INTERVAL = 0.1
@@ -23,7 +23,6 @@ var _loading_time := 0.0
 
 
 func _draw() -> void:
-	draw_rect(Rect2(0, 0, size.x, size.y), Color.GRAY)
 	var total_steps = int(ceil((size.x - MARGIN) / (STEP_WIDTH + STEP_SPACING)))
 	if total_steps <= 0:
 		return
