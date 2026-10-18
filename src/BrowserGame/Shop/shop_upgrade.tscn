@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://viymwegsl3d1"]
+
+[ext_resource type="Script" uid="uid://ctnvit31ftmbn" path="res://src/BrowserGame/Shop/shop_upgrade.gd" id="1_p1n5e"]
+
+[node name="ShopUpgrade" type="VBoxContainer" unique_id=1278995560]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p1n5e")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1880399903]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CenterContainer" unique_id=1585433426]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1558937918]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="CenterContainer2" unique_id=623073530]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
+
+[node name="CenterContainer3" type="CenterContainer" parent="." unique_id=1478537155]
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="CenterContainer3" unique_id=1971792801]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
