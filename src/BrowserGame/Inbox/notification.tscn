@@ -28,10 +28,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1254109469]
+[node name="Header" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1254109469]
 layout_mode = 2
-text = "Notif"
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/Header" unique_id=1487896876]
+layout_mode = 2
+text = "QUERY:"
+
+[node name="QueryLabel" type="Label" parent="Panel/VBoxContainer/Header" unique_id=1254109470]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "query"
+
+[node name="TimerLabel" type="Label" parent="Panel/VBoxContainer/Header" unique_id=1254109471]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "20s"
+horizontal_alignment = 2
 
 [node name="ProgressBar" parent="Panel/VBoxContainer" unique_id=1505447566 instance=ExtResource("2_arrhu")]
+unique_name_in_owner = true
 layout_mode = 2
-value = 0.5
+value = 1.0

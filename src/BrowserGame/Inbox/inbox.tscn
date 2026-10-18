@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2nhr3pggkiib"]
 
-[ext_resource type="PackedScene" uid="uid://t5nlomopn206" path="res://src/BrowserGame/Inbox/notification.tscn" id="1_qv2sh"]
+[ext_resource type="Script" uid="uid://c8s6jjdk1yeg5" path="res://src/BrowserGame/Inbox/inbox.gd" id="1_inbox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xlit"]
 content_margin_top = 5.0
@@ -8,7 +8,7 @@ content_margin_right = 5.0
 content_margin_bottom = 5.0
 
 [node name="Inbox" type="ScrollContainer" unique_id=1196939579]
-custom_minimum_size = Vector2(800, 400)
+custom_minimum_size = Vector2(300, 400)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4xlit")
+script = ExtResource("1_inbox")
 
 [node name="ScrollContainer" type="CenterContainer" parent="." unique_id=725973733]
 layout_mode = 2
@@ -28,26 +29,9 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1915016433]
-custom_minimum_size = Vector2(600, 0)
+[node name="Notifications" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1915016433]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
-
-[node name="Notification" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=736615540 instance=ExtResource("1_qv2sh")]
-layout_mode = 2
-
-[node name="Notification2" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=659355563 instance=ExtResource("1_qv2sh")]
-layout_mode = 2
-
-[node name="Notification3" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=122986296 instance=ExtResource("1_qv2sh")]
-layout_mode = 2
-
-[node name="Notification4" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1013554214 instance=ExtResource("1_qv2sh")]
-layout_mode = 2
-
-[node name="Notification5" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1590588635 instance=ExtResource("1_qv2sh")]
-layout_mode = 2
-
-[node name="Notification6" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=36771175 instance=ExtResource("1_qv2sh")]
-layout_mode = 2

@@ -23,4 +23,6 @@ func _ready():
 
 
 func init(level_data_p: LevelData):
+	level_data_p.load_requests()
 	level_state = LevelState.new(level_data_p)
+	GameState.level_state = level_state

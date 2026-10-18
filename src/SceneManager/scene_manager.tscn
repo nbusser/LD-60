@@ -4,10 +4,12 @@
 [ext_resource type="Script" uid="uid://dtbff18d2g0t7" path="res://src/Level/level_data.gd" id="2_38vrh"]
 [ext_resource type="AudioStream" uid="uid://ba7shxyukh22w" path="res://assets/musics/example.ogg" id="3_knii6"]
 [ext_resource type="AudioStream" uid="uid://c8hkt50a1hi0t" path="res://assets/musics/example2.ogg" id="4_bb0s7"]
+[ext_resource type="JSON" path="res://assets/data/levels/level_0.json" id="5_level"]
 
 [sub_resource type="Resource" id="Resource_r4gm4"]
 script = ExtResource("2_38vrh")
 name = "J'aime pu ma mère !"
+requests_json = ExtResource("5_level")
 
 [node name="SceneManager" type="Control" unique_id=340014767]
 layout_mode = 3
