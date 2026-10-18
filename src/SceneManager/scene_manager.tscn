@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bupdnxdyw4e13" path="res://src/SceneManager/scene_manager.gd" id="1_qc8yu"]
 [ext_resource type="Script" uid="uid://dtbff18d2g0t7" path="res://src/Level/level_data.gd" id="2_38vrh"]
-[ext_resource type="AudioStream" uid="uid://ba7shxyukh22w" path="res://assets/musics/example.ogg" id="3_knii6"]
 [ext_resource type="AudioStream" uid="uid://c8hkt50a1hi0t" path="res://assets/musics/example2.ogg" id="4_bb0s7"]
 [ext_resource type="JSON" path="res://assets/data/levels/level_0.json" id="5_level"]
 
@@ -44,7 +43,7 @@ render_target_update_mode = 4
 [node name="Musics" type="Node" parent="." unique_id=2046625464]
 
 [node name="Music1" type="AudioStreamPlayer" parent="Musics" unique_id=389928023]
-stream = ExtResource("3_knii6")
+stream = ExtResource("4_bb0s7")
 bus = &"Music"
 
 [node name="Music2" type="AudioStreamPlayer" parent="Musics" unique_id=238454644]
