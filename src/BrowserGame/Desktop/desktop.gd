@@ -10,6 +10,7 @@ var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
 var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_window.tscn")
 @onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
 @onready var cursor = $Cursor
+@onready var pinny: Pinny = %Pinny
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
@@ -98,7 +99,10 @@ func _ready() -> void:
 		)
 		%Icons.add_child(icon)
 
-	%Pinny.appear("Le sang de tes morts, tu m'entends?")
+	pinny.visit(
+		["Le sang de tes morts, tu m'entends?", "Inch'allah sur le coran de namek"],
+		Pinny.Mood.ANGRY
+	)
 
 
 func _on_background_color_gui_input(event: InputEvent) -> void:
