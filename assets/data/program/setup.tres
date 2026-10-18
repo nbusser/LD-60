@@ -6,6 +6,8 @@
 
 [resource]
 script = ExtResource("3_bmd62")
+id = "setup"
 icon_texture = ExtResource("2_smnxe")
+icon_label = "Setup"
 app_scene = ExtResource("1_yoris")
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"

@@ -1,10 +1,14 @@
 class_name Desktop
 extends Control
 
+const SETUP_PROGRAM_ID := "setup"
+
 @export var programs: Array[Program]
 
 var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
 var _window_to_task_button: Dictionary[DesktopWindow, TaskButton] = {}
+var _program_to_icon: Dictionary[Program, Icon] = {}
+var _setup_program: Program
 
 @onready var icon_scene = preload("res://src/BrowserGame/Icon/icon.tscn")
 @onready
@@ -155,28 +159,62 @@ func _close_window(program: Program):
 func _ready() -> void:
 	for program in programs:
 		_programs_to_window.set(program, null)
+		if program.id == SETUP_PROGRAM_ID:
+			_setup_program = program
 
-		var icon: Icon = icon_scene.instantiate()
-		icon.text = program.icon_label
-		icon.texture_normal = program.icon_texture
-		icon.double_clicked.connect(
-			func():
-				_open_or_show_window(program)
-				Sfx.click()
-		)
-		# On icon selected, un-select all other icons
-		icon.selected.connect(
-			func(selected: Icon):
-				for other in %Icons.get_children():
-					assert(other is Icon)
-					if other == selected:
-						continue
-					other.is_selected = false
-		)
-		%Icons.add_child(icon)
-
+	_refresh_icons()
+	GameState.setup_completed.connect(_on_setup_completed)
 	GameState.money_changed.connect(_on_money_changed)
 	_on_money_changed(GameState.money)
+
+
+func _refresh_icons() -> void:
+	var setup_only := GameState.needs_setup()
+	for program in programs:
+		if program == _setup_program:
+			if setup_only:
+				_create_icon(program)
+			else:
+				_remove_icon(program)
+			continue
+		if not setup_only:
+			_create_icon(program)
+
+
+func _create_icon(program: Program) -> void:
+	if _program_to_icon.has(program):
+		return
+
+	var icon: Icon = icon_scene.instantiate()
+	icon.text = program.icon_label
+	icon.texture_normal = program.icon_texture
+	icon.double_clicked.connect(
+		func():
+			_open_or_show_window(program)
+			Sfx.click()
+	)
+	# On icon selected, un-select all other icons
+	icon.selected.connect(
+		func(selected: Icon):
+			for other in %Icons.get_children():
+				assert(other is Icon)
+				if other == selected:
+					continue
+				other.is_selected = false
+	)
+	%Icons.add_child(icon)
+	_program_to_icon[program] = icon
+
+
+func _remove_icon(program: Program) -> void:
+	var icon: Icon = _program_to_icon.get(program)
+	if icon != null and is_instance_valid(icon):
+		icon.queue_free()
+	_program_to_icon.erase(program)
+
+
+func _on_setup_completed() -> void:
+	_refresh_icons()
 
 
 func set_clock(hour: int, minute: int) -> void:

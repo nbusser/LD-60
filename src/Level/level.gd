@@ -29,6 +29,8 @@ func _ready():
 	GameState.start_day(GameState.current_level_number)
 	_time_left = float(level_state.level_data.timer_duration)
 	_update_clock()
+	while GameState.needs_setup():
+		await GameState.setup_completed
 	await _threaten()
 
 	level_state.all_requests_resolved.connect(_on_all_requests_resolved)

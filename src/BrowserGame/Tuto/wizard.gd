@@ -66,6 +66,7 @@ func _on_next_pressed():
 
 
 func _on_finish_pressed():
+	GameState.complete_setup()
 	_close_window()
 
 

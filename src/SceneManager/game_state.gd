@@ -3,6 +3,7 @@ extends Node
 signal money_changed(value: int)
 signal upgrades_changed
 signal family_changed
+signal setup_completed
 
 const PLAYER_ID: StringName = &"player"
 const FEE_BASE := 20
@@ -27,6 +28,7 @@ var family_death_count := 0
 var threatened_member_id: StringName
 var protection_fee := 0
 var player_dead := false
+var setup_complete := false
 
 var owned_upgrades: Dictionary[String, bool] = {}
 
@@ -47,6 +49,7 @@ func reset() -> void:
 	level_state = null
 	day_index = 0
 	player_dead = false
+	setup_complete = false
 	owned_upgrades.clear()
 	total_money_earned = 0
 	total_fees_paid = 0
@@ -114,6 +117,17 @@ func resolve_protection() -> bool:
 		family_changed.emit()
 
 	return last_day_success
+
+
+func needs_setup() -> bool:
+	return current_level_number == 0 and not setup_complete
+
+
+func complete_setup() -> void:
+	if setup_complete:
+		return
+	setup_complete = true
+	setup_completed.emit()
 
 
 func add_money(amount: int) -> void:
