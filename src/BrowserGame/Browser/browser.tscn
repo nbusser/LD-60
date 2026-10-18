@@ -1,15 +1,6 @@
 [gd_scene format=3 uid="uid://d3mn4hyunnwko"]
 
 [ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
-[ext_resource type="Script" uid="uid://dny0fd0hsjhu6" path="res://src/BrowserGame/Browser/category.gd" id="2_bmnu7"]
-[ext_resource type="Resource" uid="uid://d4bv4uodx7ffw" path="res://assets/data/art.tres" id="3_bmnu7"]
-[ext_resource type="Resource" uid="uid://cb4ymn3mx4ubv" path="res://assets/data/people.tres" id="4_twlh7"]
-[ext_resource type="Resource" uid="uid://cmy78s5qxg3bx" path="res://assets/data/adult.tres" id="5_y51eb"]
-[ext_resource type="Resource" uid="uid://cua3tm8ys0s4c" path="res://assets/data/health.tres" id="6_ne582"]
-[ext_resource type="Resource" uid="uid://b3qjx3hn6chc8" path="res://assets/data/science.tres" id="7_gg30d"]
-[ext_resource type="Resource" uid="uid://c33pp1bqjjotg" path="res://assets/data/regional.tres" id="8_0vxej"]
-[ext_resource type="Resource" uid="uid://s7ecgysqfpqn" path="res://assets/data/recreation.tres" id="9_0vxej"]
-[ext_resource type="Resource" uid="uid://hpkxj32omhoi" path="res://assets/data/business.tres" id="10_joe2o"]
 [ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="11_ipbxj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n4y2n"]
@@ -28,7 +19,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_n4y2n")
 script = ExtResource("1_py2cu")
-root_categories = Array[ExtResource("2_bmnu7")]([ExtResource("3_bmnu7"), ExtResource("9_0vxej"), ExtResource("4_twlh7"), ExtResource("6_ne582"), ExtResource("7_gg30d"), ExtResource("10_joe2o"), ExtResource("8_0vxej"), ExtResource("5_y51eb")])
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=356390566]
 layout_mode = 2

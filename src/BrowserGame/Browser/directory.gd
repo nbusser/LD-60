@@ -4,19 +4,20 @@ signal category_clicked(Category)
 
 const CATEGORY_CLICKABLE_PRELOAD = preload("res://src/BrowserGame/Browser/category_clickable.tscn")
 const ENTRY_CLICKABLE_PRELOAD = preload("res://src/BrowserGame/Browser/entry_clickable.tscn")
-
-@export var root_categories: Array[Category]
+const DATA: JSON = preload("res://assets/data/data.json")
 
 var selected_category: Category:
 	set(category):
 		if category == null:
-			_build_categories(root_categories)
+			_build_categories(_root_categories)
 		else:
 			_build_banner(category.name, category.icon, category)
 			if len(category.subcategories):
 				_build_categories(category.subcategories)
 			else:
 				_build_category_entries(category.entries)
+
+var _root_categories: Array[Category]
 
 @onready var directory = %GridContainer
 
@@ -26,7 +27,7 @@ func _clear_directory() -> void:
 		child.queue_free()
 
 
-func _build_banner(name: String, icon: Texture2D, above: Category) -> void:
+func _build_banner(_name: String, icon: Texture2D, _above: Category) -> void:
 	%CategoryIcon.texture = icon
 	%CategoryDescription.text = "[br][br][color=black]" + name
 	# TODO store link to previous
@@ -54,6 +55,8 @@ func _build_category_entries(entries: Array[Entry]) -> void:
 
 
 func _ready() -> void:
+	for data in DATA.data["categories"]:
+		_root_categories.append(Category.from_json(data))
 	selected_category = null
 
 

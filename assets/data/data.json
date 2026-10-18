@@ -1,0 +1,290 @@
+{
+	"categories": [
+		{
+			"name": "Art",
+			"icon": "res://assets/sprites/category_icons/art_placeholder.png",
+			"subcategories": [
+				"Painting",
+				{
+					"name": "Music",
+					"subcategories": [
+						"Good Singers",
+						"OK Singers",
+						"Lame Singers",
+						"Dead Singers",
+						"Music Without Singers",
+						"Music for Old People",
+						"Boys Band"
+					]
+				},
+				"Weird Art",
+				"The Art of Gardening",
+				"Gastronomy"
+			]
+		},
+		{
+			"name": "Recreation",
+			"icon": "res://assets/sprites/category_icons/recreation_placeholder.png",
+			"subcategories": [
+				"Watching Paint Dry",
+				"Free-fighting",
+				{
+					"name": "Collecting Things",
+					"subcategories": [
+						"Nail Clippings",
+						"Debt",
+						"STDs"
+					]
+				},
+				"Watching TV"
+			]
+		},
+		{
+			"name": "People",
+			"icon": "res://assets/sprites/category_icons/people_placeholder.png",
+			"subcategories": [
+				"Famous Births",
+				"Famous Deaths",
+				"Latest Gossip",
+				{
+					"name": "Becoming Famous",
+					"subcategories": [
+						"Cutting Bridges with Childhood Friends",
+						"Burning Money",
+						"Going to Rehab"
+					]
+				},
+				"Famous for Bad Reasons",
+				"Famous Animals"
+			],
+			"entries": [
+				{
+					"name": "Teuchiland Haute Couture",
+					"link": "http://thc.com",
+					"description": "45 sa meurt pa",
+					"image": "res://assets/sprites/thc.jpg"
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"icon": "res://assets/sprites/category_icons/health_placeholder.png",
+			"subcategories": [
+				{
+					"name": "Doctors",
+					"entries": [
+						{
+							"name": "Dr. Dre",
+							"link": "http://bite_by_dre",
+							"description": "Beat Doctor",
+							"image": "res://assets/sprites/dr-dre.png"
+						},
+						{
+							"name": "Dr. Franky Vincent",
+							"link": "http://dr-franky-vincent.com",
+							"description": "Zouk Therapy",
+							"image": "res://assets/sprites/franky-vincent.png"
+						}
+					]
+				},
+				{
+					"name": "Being Fit & Sexy",
+					"subcategories": [
+						"The Busser Method",
+						"The Mouhat Method"
+					]
+				},
+				{
+					"name": "Diet",
+					"subcategories": [
+						"Eating Vegetables",
+						"Not Eating Rocks",
+						"The Danger of Eating Plastic Bags"
+					]
+				}
+			]
+		},
+		{
+			"name": "Science",
+			"icon": "res://assets/sprites/category_icons/science_placeholder.png",
+			"subcategories": [
+				"Scientology",
+				"Astrology",
+				{
+					"name": "Theology",
+					"subcategories": [
+						"Enlightenment",
+						"Comparative Theology"
+					]
+				},
+				{
+					"name": "Lame Sciences",
+					"subcategories": [
+						"Physics (who cares?)",
+						{
+							"name": "Computer Science (BOOORING)",
+							"subcategories": [
+								"Loops"
+							]
+						},
+						"Chemistry",
+						{
+							"name": "Mathematics",
+							"subcategories": [
+								"Combinatorial Species",
+								"Cycles"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Business &[br]Getting Rich",
+			"icon": "res://assets/sprites/category_icons/business_placeholder.png",
+			"subcategories": [
+				{
+					"name": "Getting Rich Quick",
+					"subcategories": [
+						{
+							"name": "Marrying an Old and Sick Rich Person",
+							"entries": [
+								{
+									"name": "The Richest and Most Sick Singles in your Area",
+									"link": "richandsick.gov",
+									"description": "Until death do you appart",
+									"image": "res://assets/sprites/rich_sick.png"
+								},
+								{
+									"name": "Marrying Sick Billionaires: a Tutorial",
+									"link": "everytutorial.com/marrying-a-billionaire",
+									"description": "Tutorials for everything",
+									"image": "res://assets/sprites/rich_sick_2.png"
+								}
+							]
+						},
+						"Buying a Winning Lottery Ticket",
+						"Finding a Big Bag of Money"
+					]
+				},
+				"Expensive Cars"
+			]
+		},
+		{
+			"name": "Regional",
+			"icon": "res://assets/sprites/category_icons/regional_placeholder.png",
+			"subcategories": [
+				"Antarctica",
+				{
+					"name": "Old World",
+					"subcategories": [
+						"Africa"
+					]
+				},
+				{
+					"name": "New World",
+					"subcategories": [
+						{
+							"name": "Americas",
+							"subcategories": [
+								{
+									"name": "America 1",
+									"subcategories": [
+										"Canada",
+										"Mexico",
+										{
+											"name": "Saint-Pierre-et-Miquelon",
+											"subcategories": [
+												"Saint-Pierre",
+												"Miquelon"
+											]
+										}
+									]
+								},
+								"America 2"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Adult (18+)",
+			"icon": "res://assets/sprites/category_icons/adult_placeholder.png",
+			"subcategories": [
+				{
+					"name": "Taxes",
+					"subcategories": [
+						"Payment",
+						"Fraud"
+					]
+				},
+				{
+					"name": "Making Babies",
+					"subcategories": [
+						"Unmaking Babies",
+						"Midwifery",
+						"Paternity tests",
+						"Maternity tests",
+						{
+							"name": "Orphanages",
+							"subcategories": [
+								"Pickup",
+								"Delivery"
+							]
+						}
+					]
+				},
+				{
+					"name": "Drugs & Illicit Substances",
+					"subcategories": [
+						"Devil's Lettuce ",
+						"Sniffing Glue",
+						"Ayahuasca"
+					]
+				},
+				{
+					"name": "Guns, Hitmen & Gang Life",
+					"subcategories": [
+						{
+							"name": "Being a Good Gang Leader",
+							"subcategories": [
+								"Outreach",
+								"Public Image"
+							]
+						},
+						"Murdering People",
+						"Escaping the Police",
+						"Disorganized Crime"
+					]
+				},
+				{
+					"name": "Retirement",
+					"subcategories": [
+						"Retirement Homes",
+						{
+							"name": "Old People Issues",
+							"subcategories": [
+								"Memory Loss",
+								"Death"
+							]
+						},
+						"Old Tech"
+					]
+				},
+				{
+					"name": "Driving",
+					"subcategories": [
+						{
+							"name": "Driving and drinking",
+							"subcategories": [
+								"Declaring Accident",
+								"Tips and tricks"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

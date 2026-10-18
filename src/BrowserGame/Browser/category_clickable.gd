@@ -12,6 +12,7 @@ var category: Category:
 @onready var label: ClickableLabel = $CenterContainer2/Label
 @onready var tags: HFlowContainer = $CenterContainer3/Tags
 
+
 func _ready() -> void:
 	assert(category != null)
 	if category.icon:
