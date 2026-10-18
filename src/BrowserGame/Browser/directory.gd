@@ -67,16 +67,19 @@ func _ready() -> void:
 
 
 func _category_clicked(category: Category):
+	Sfx.click()
 	_path.append(category)
 	_show(category)
 
 
 func _go_back() -> void:
+	Sfx.click()
 	_path.pop_back()
 	_show(selected_category)
 
 
 func _entry_clicked(entry: Entry):
 	print("Clicked", entry)
+	Sfx.click()
 	_path.clear()
 	_show(null)

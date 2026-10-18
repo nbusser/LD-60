@@ -24,6 +24,7 @@ config/icon="uid://3v5h5fc5re8x"
 
 Globals="*res://src/globals.gd"
 GameState="*res://src/SceneManager/game_state.gd"
+Sfx="*res://src/sfx.gd"
 
 [display]
 

@@ -1,5 +1,4 @@
 {
-	"$schema": "./data.schema.json",
 	"categories": [
 		{
 			"name": "Art",

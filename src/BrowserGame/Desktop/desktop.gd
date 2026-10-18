@@ -24,7 +24,11 @@ func _create_window(
 	var desktop_window: DesktopWindow = desktop_window_scene.instantiate()
 	desktop_window.content_scene = app_scene
 	desktop_window.on_instantiate_callback = callback
-	desktop_window.closed.connect(func(): _close_window(program))
+	desktop_window.closed.connect(
+		func():
+			_close_window(program)
+			Sfx.click()
+	)
 	desktop_window.dragged.connect(_window_to_foreground)
 	_programs_to_window.set(program, desktop_window)
 	return desktop_window
@@ -78,7 +82,11 @@ func _ready() -> void:
 		var icon: Icon = icon_scene.instantiate()
 		icon.text = program.icon_label
 		icon.texture_normal = program.icon_texture
-		icon.double_clicked.connect(func(): _open_or_show_window(program))
+		icon.double_clicked.connect(
+			func():
+				_open_or_show_window(program)
+				Sfx.click()
+		)
 		# On icon selected, un-select all other icons
 		icon.selected.connect(
 			func(selected: Icon):
