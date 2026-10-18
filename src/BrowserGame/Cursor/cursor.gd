@@ -20,8 +20,13 @@ const CURSORS := {
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Globals.register_cursor(self)
 	_apply_cursor()
 	_update_position()
+
+
+func _exit_tree() -> void:
+	Globals.unregister_cursor(self)
 
 
 func _process(_delta: float) -> void:
@@ -36,4 +41,14 @@ func _apply_cursor() -> void:
 
 
 func _update_position() -> void:
-	sprite.position = get_local_mouse_position().round()
+	sprite.position = _clamp_center_to_screen(get_local_mouse_position()).round()
+
+
+func get_global_cursor_position() -> Vector2:
+	return get_global_transform() * sprite.position
+
+
+func _clamp_center_to_screen(pos: Vector2) -> Vector2:
+	if size.x <= 0.0 or size.y <= 0.0:
+		return pos
+	return pos.clamp(Vector2(0, 0), size)

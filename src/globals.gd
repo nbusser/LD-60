@@ -27,6 +27,24 @@ enum EndSceneStatus {
 
 const SAMPLE_GLOBAL_VARIABLE: int = 1
 
+var _cursor: Cursor
+
+
+# Position of the fake cursor in global (canvas) coordinates
+func get_cursor_position() -> Vector2:
+	if _cursor != null and is_instance_valid(_cursor):
+		return _cursor.get_global_cursor_position()
+	return get_viewport().get_mouse_position()
+
+
+func register_cursor(cursor: Cursor) -> void:
+	_cursor = cursor
+
+
+func unregister_cursor(cursor: Cursor) -> void:
+	if _cursor == cursor:
+		_cursor = null
+
 
 func end_scene(status: EndSceneStatus, params: Dictionary = {}) -> void:
 	scene_ended.emit(status, params)

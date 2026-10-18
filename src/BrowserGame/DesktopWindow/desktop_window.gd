@@ -37,7 +37,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if not _dragging:
 		return
-	global_position = get_global_mouse_position() - _drag_offset
+	global_position = Globals.get_cursor_position() - _drag_offset
 
 
 func _on_close_button_pressed() -> void:
@@ -46,7 +46,7 @@ func _on_close_button_pressed() -> void:
 
 func _on_bar_button_down() -> void:
 	_dragging = true
-	_drag_offset = get_global_mouse_position() - global_position
+	_drag_offset = Globals.get_cursor_position() - global_position
 	dragged.emit(self)
 
 
