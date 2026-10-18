@@ -28,13 +28,16 @@ func _window_to_foreground(selected_window: DesktopWindow):
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		var hovered: Node = get_viewport().gui_get_hovered_control()
-		while hovered != null:
-			var desktop_window := hovered as DesktopWindow
+		var hovered := get_viewport().gui_get_hovered_control()
+		var node: Node = hovered
+		while node != null:
+			var desktop_window := node as DesktopWindow
 			if desktop_window != null:
 				_window_to_foreground(desktop_window)
 				return
-			hovered = hovered.get_parent()
+			node = node.get_parent()
+		if not _is_icon(hovered):
+			_unselect_icons()
 
 
 func _create_task_button(desktop_window: DesktopWindow) -> void:
@@ -234,8 +237,20 @@ func _on_money_changed(value: int) -> void:
 
 func _on_background_color_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		for icon in %Icons.get_children():
-			icon.is_selected = false
+		_unselect_icons()
+
+
+func _is_icon(node: Node) -> bool:
+	while node != null:
+		if node is Icon:
+			return true
+		node = node.get_parent()
+	return false
+
+
+func _unselect_icons() -> void:
+	for icon in %Icons.get_children():
+		icon.is_selected = false
 
 
 func _get_windows() -> Array[DesktopWindow]:
