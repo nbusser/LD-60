@@ -10,13 +10,13 @@ class_name Enum extends RefCounted
 ## [codeblock]
 ## # Let's declare an Enum where VariantA will behave like a normal enum,
 ## # and VariantB will have a 'value' field (defaulting to 0)
-## 
+##
 ## # Using a Dictionary of StringNames
 ## static var MyEnum: Enum = Enum.new({
 ##     &"VariantA" : {},
 ##     &"VariantB" : { "value" : 0 }
 ## })
-## 
+##
 ## # Using chained methods
 ## static var MyEnum: Enum = Enum.new()\
 ##     .add(&"VariantA")\
@@ -30,13 +30,13 @@ class_name Enum extends RefCounted
 ## static var AnimalState: Enum = Enum.new()\
 ##     .add(&"Alive", { "is_hungry" : false })\
 ##     .add(&"Dead") # A dead animal can't be hungry
-## 
+##
 ## # There are a couple ways to get an Enum variant:
 ## var cat_state: EnumVar = AnimalState.Alive
 ## cat_state.is_hungry = true
 ## # or
 ## var cat_state: EnumVar = AnimalState.variant(&"Alive", { "is_hungry" : true })
-## 
+##
 ## print(cat_state) # Prints: Alive { "is_hungry" : true }
 ## [/codeblock]
 ## [br]
@@ -46,11 +46,10 @@ class_name Enum extends RefCounted
 ##     Alive{ is_hungry: bool },
 ##     Dead,
 ## }
-## 
+##
 ## let cat_state: AnimalState = AnimalState::Alive{ is_hungry: true };
 ## [/codeblock]
 ## @experimental
-
 
 # Dictionary<StringName, Dictionary>
 # {
@@ -66,9 +65,11 @@ func _init(variants: Dictionary = {}):
 	# This call is deferred to allow for .add() calls
 	call_deferred(&"lock")
 
+
 func lock() -> Enum:
 	_variants.make_read_only()
 	return self
+
 
 ## Adds a variant to this [Enum][br]
 ## Usage:
@@ -83,17 +84,20 @@ func add(type: StringName, value: Dictionary = {}) -> Enum:
 	_variants[type] = value
 	return self
 
+
 ## Gets a variant from this [Enum], with (optional) initial values
 func variant(type: StringName, init_values: Dictionary = {}) -> EnumVar:
 	assert(_variants.has(type))
-	
+
 	var values: Dictionary = _variants[type].duplicate(true)
 	values.merge(init_values, true)
 	return EnumVar.new(self, type, values)
 
+
 ## Gets all the variants in this [Enum]
 func get_variant_list() -> Array[StringName]:
-	return Array(_variants.keys(), TYPE_STRING_NAME, &"", null) # ???
+	return Array(_variants.keys(), TYPE_STRING_NAME, &"", null)  # ???
+
 
 ## Checks whether [param enum_dict] is within this [Enum][br]
 ## Returns a [Result]<[Enum], [Error]>:[br]
@@ -104,21 +108,27 @@ func get_variant_list() -> Array[StringName]:
 ## See [Result], [Error]
 func contains(enum_variant: EnumVar) -> Result:
 	if enum_variant.base_enum != self:
-		return Result.error(ERR_INVALID_PARAMETER)\
-			.err_info('variant', enum_variant.variant)\
-			.err_msg("The variant is from a different enum")
-	
+		return (
+			Result
+			. error(ERR_INVALID_PARAMETER)
+			. err_info("variant", enum_variant.variant)
+			. err_msg("The variant is from a different enum")
+		)
+
 	elif !_variants.has(enum_variant.variant):
-		return Result.error(Error.NotContained)\
-			.err_info('variant', enum_variant.variant)\
-			.err_msg("This enum does not have the specified variant")
-	
-	elif !enum_variant.values.has_all( _variants[enum_variant.variant].keys() ):
-		return Result.error(Error.MissingParameters)\
-			.err_info('expected', _variants[enum_variant.variant].keys())\
-			.err_info('found', enum_variant.values.keys())\
-			.err_msg("The enum dict is missing some paramters")
-	
+		return Result.error(Error.NotContained).err_info("variant", enum_variant.variant).err_msg(
+			"This enum does not have the specified variant"
+		)
+
+	elif !enum_variant.values.has_all(_variants[enum_variant.variant].keys()):
+		return (
+			Result
+			. error(Error.MissingParameters)
+			. err_info("expected", _variants[enum_variant.variant].keys())
+			. err_info("found", enum_variant.values.keys())
+			. err_msg("The enum dict is missing some paramters")
+		)
+
 	return Result.Ok(enum_variant)
 
 
@@ -133,7 +143,8 @@ func _get(property: StringName) -> Variant:
 		return EnumVar.new(self, property, values)
 	return null
 
-func _get_property_list():
-	return _variants.keys()\
-		.map(func(key: StringName):	return { 'name': key, 'type': TYPE_DICTIONARY })
 
+func _get_property_list():
+	return _variants.keys().map(
+		func(key: StringName): return {"name": key, "type": TYPE_DICTIONARY}
+	)
