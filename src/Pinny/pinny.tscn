@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ch6b0sqgrn6qx"]
+
+[ext_resource type="SpriteFrames" uid="uid://c6y6ae71tygqm" path="res://assets/animations/pinny.tres" id="1_4al4r"]
+
+[node name="Pinny" type="Node2D" unique_id=1783732613]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2009143876]
+sprite_frames = ExtResource("1_4al4r")
+animation = &"angry"
+frame = 7
+frame_progress = 0.6605867
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1549203350]
