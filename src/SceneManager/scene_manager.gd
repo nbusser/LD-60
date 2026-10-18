@@ -21,6 +21,7 @@ var current_scene:
 @onready var stats_screen := preload("res://src/StatsScreen/stats_screen.tscn")
 
 @onready var viewport: Viewport = $SubViewportContainer/SubViewport
+@onready var _ambience_player: AudioStreamPlayer = $Ambience/Brouhaha
 
 
 func set_scene(new_scene: Node) -> void:
@@ -36,7 +37,13 @@ func set_scene(new_scene: Node) -> void:
 func _ready() -> void:
 	randomize()
 	Globals.scene_ended.connect(self._on_end_scene)
+	_start_audio()
 	_start_game()
+
+
+func _start_audio() -> void:
+	music_players[0].play()
+	_ambience_player.play()
 
 
 func _process(_delta: float) -> void:
@@ -50,7 +57,6 @@ func _quit_game() -> void:
 
 func _run_main_menu() -> void:
 	var scene: MainMenu = main_menu.instantiate()
-	change_music_track(music_players[0])
 	self.current_scene = scene
 
 
@@ -64,8 +70,6 @@ func _run_level() -> void:
 	var scene: Level = level.instantiate()
 	# Provies its settings to the level
 	scene.init(levels[GameState.current_level_number])
-	# Play level music
-	change_music_track(music_players[GameState.current_level_number % len(music_players)])
 	self.current_scene = scene
 
 

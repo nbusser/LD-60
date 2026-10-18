@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bupdnxdyw4e13" path="res://src/SceneManager/scene_manager.gd" id="1_qc8yu"]
 [ext_resource type="Script" uid="uid://dtbff18d2g0t7" path="res://src/Level/level_data.gd" id="2_38vrh"]
-[ext_resource type="AudioStream" uid="uid://c8hkt50a1hi0t" path="res://assets/musics/example2.ogg" id="4_bb0s7"]
+[ext_resource type="AudioStream" uid="uid://xconukkc8ol3" path="res://assets/musics/triste_loop.ogg" id="4_bb0s7"]
+[ext_resource type="AudioStream" uid="uid://cjs11pd3flfjh" path="res://assets/sounds/brouhaha.ogg" id="4_brouhaha"]
 [ext_resource type="Texture2D" uid="uid://c86ipsiewul" path="res://assets/ui/Chicago95_Desktop.png" id="5_knii6"]
 [ext_resource type="JSON" path="res://assets/data/levels/level_0.json" id="5_level"]
 [ext_resource type="JSON" path="res://assets/data/levels/level_1.json" id="5_level1"]
@@ -144,5 +145,11 @@ stream = ExtResource("4_bb0s7")
 bus = &"Music"
 
 [node name="Music2" type="AudioStreamPlayer" parent="Musics" unique_id=238454644]
-stream = ExtResource("4_bb0s7")
 bus = &"Music"
+
+[node name="Ambience" type="Node" parent="." unique_id=1873451631]
+
+[node name="Brouhaha" type="AudioStreamPlayer" parent="Ambience" unique_id=1873451632]
+stream = ExtResource("4_brouhaha")
+volume_db = -10.0
+bus = &"Others"
