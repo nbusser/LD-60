@@ -5,14 +5,23 @@
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="2_u2oub"]
 [ext_resource type="Resource" uid="uid://cmuhyvkuqh3g1" path="res://assets/data/program/youpi.tres" id="4_65cfl"]
 [ext_resource type="Resource" uid="uid://bkcy5mxuvdaq7" path="res://assets/data/program/outbacks.tres" id="5_u2oub"]
+[ext_resource type="PackedScene" uid="uid://q6n3ky01wxku" path="res://src/BrowserGame/Shop/shop.tscn" id="7_8csdc"]
 [ext_resource type="Texture2D" uid="uid://bfcxwohohoe35" path="res://assets/sprites/franky-vincent.png" id="8_35n26"]
 [ext_resource type="PackedScene" uid="uid://bkkag32oibkj4" path="res://src/BrowserGame/Cursor/cursor.tscn" id="8_h03nu"]
+[ext_resource type="Texture2D" uid="uid://c87ap0mduojw5" path="res://assets/sprites/category_icons/business_placeholder.png" id="8_mycvx"]
 [ext_resource type="PackedScene" uid="uid://ch6b0sqgrn6qx" path="res://src/Pinny/pinny.tscn" id="9_pinny"]
 
 [sub_resource type="Resource" id="Resource_n4y2n"]
 script = ExtResource("2_u2oub")
 icon_texture = ExtResource("8_35n26")
 icon_label = "Zouk"
+metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"
+
+[sub_resource type="Resource" id="Resource_5c8tb"]
+script = ExtResource("2_u2oub")
+icon_texture = ExtResource("8_mycvx")
+icon_label = "Shop"
+app_scene = ExtResource("7_8csdc")
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"
 
 [node name="Desktop" type="Control" unique_id=585668165]
@@ -25,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_u2oub")
 script = ExtResource("1_kw43y")
-programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), SubResource("Resource_n4y2n")])
+programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), SubResource("Resource_n4y2n"), SubResource("Resource_5c8tb")])
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1208212921]
 layout_mode = 1
@@ -42,6 +51,8 @@ layout_mode = 0
 offset_right = 128.0
 offset_bottom = 260.0
 mouse_filter = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
 columns = 3
 
 [node name="Windows" type="Control" parent="." unique_id=316714991]
