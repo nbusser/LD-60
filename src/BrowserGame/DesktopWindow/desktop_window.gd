@@ -11,8 +11,11 @@ signal dragged
 var _dragging := false
 var _drag_offset := Vector2.ZERO
 
+var _loading := false
+
 
 func _ready() -> void:
+	_loading = true
 	var content = content_scene.instantiate()
 	assert(content is Control)
 
@@ -21,6 +24,7 @@ func _ready() -> void:
 
 	await get_tree().create_timer(randf_range(0.2, 1.0)).timeout
 	%Loading.visible = false
+	_loading = false
 
 	%Content.add_child(content)
 	# Shrink to fit the content (a Control is never smaller than its minimum size)
@@ -46,3 +50,7 @@ func _on_bar_button_down() -> void:
 
 func _on_bar_button_up() -> void:
 	_dragging = false
+
+
+func is_loading() -> bool:
+	return _loading

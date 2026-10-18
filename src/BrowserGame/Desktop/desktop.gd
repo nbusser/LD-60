@@ -11,6 +11,7 @@ var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
 @onready
 var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_window.tscn")
 @onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
+@onready var cursor = $Cursor
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
@@ -91,3 +92,43 @@ func _on_background_color_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		for icon in %Icons.get_children():
 			icon.is_selected = false
+
+
+func _get_windows() -> Array[DesktopWindow]:
+	var windows: Array[DesktopWindow] = []
+	for desktop_window in _programs_to_window.values():
+		if desktop_window != null and is_instance_valid(desktop_window):
+			windows.append(desktop_window)
+	return windows
+
+
+func _is_any_window_loading() -> bool:
+	for desktop_window in _get_windows():
+		if desktop_window.is_loading():
+			return true
+	return false
+
+
+func _is_hovering_link() -> bool:
+	var hovered := get_viewport().gui_get_hovered_control()
+	if hovered == null:
+		return false
+	return (
+		hovered.get_cursor_shape(hovered.get_local_mouse_position()) == Control.CURSOR_POINTING_HAND
+	)
+
+
+func _is_hovering_text() -> bool:
+	var hovered := get_viewport().gui_get_hovered_control()
+	return hovered is LineEdit or hovered is TextEdit
+
+
+func _process(_delta: float) -> void:
+	if _is_hovering_link():
+		cursor.cursor_type = Cursor.CursorType.POINTER
+	elif _is_hovering_text():
+		cursor.cursor_type = Cursor.CursorType.TEXT
+	elif _is_any_window_loading():
+		cursor.cursor_type = Cursor.CursorType.BUSY
+	else:
+		cursor.cursor_type = Cursor.CursorType.ARROW

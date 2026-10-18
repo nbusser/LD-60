@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bkkag32oibkj4"]
+
+[ext_resource type="Script" uid="uid://djy6dqikoalvj" path="res://src/BrowserGame/Cursor/cursor.gd" id="2_cursor"]
+[ext_resource type="Texture2D" uid="uid://yfqgt8c7yvwu" path="res://assets/cursors/cursor.png" id="2_t0xua"]
+
+[node name="Cursor" type="Control" unique_id=483185025]
+process_mode = 3
+z_index = 100
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_cursor")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=210901180]
+texture_filter = 1
+texture = ExtResource("2_t0xua")
+centered = false
+offset = Vector2(-16, -16)
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
