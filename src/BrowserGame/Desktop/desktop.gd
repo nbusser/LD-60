@@ -72,10 +72,11 @@ func _get_active_window() -> DesktopWindow:
 
 func _update_task_buttons() -> void:
 	var active_window := _get_active_window()
-	for desktop_window in _window_to_task_button:
+	for desktop_window in _get_windows():
 		var task_button: TaskButton = _window_to_task_button.get(desktop_window)
 		if is_instance_valid(task_button):
 			task_button.button_pressed = desktop_window == active_window
+		desktop_window.set_focused(desktop_window == active_window)
 
 
 func _on_task_button_pressed(desktop_window: DesktopWindow) -> void:

@@ -5,6 +5,8 @@ signal closed
 signal dragged
 signal content_loaded
 
+const UNFOCUSED_TITLE_BAR_ALPHA := 0.6
+
 @export var window_icon: Texture2D:
 	set(value):
 		window_icon = value
@@ -25,6 +27,8 @@ var _dragging := false
 var _drag_offset := Vector2.ZERO
 
 var _loading := false
+
+@onready var _title_bar: Button = $VBoxContainer/Bar/Bar
 
 
 func _ready() -> void:
@@ -92,6 +96,10 @@ func _on_bar_button_up() -> void:
 
 func is_loading() -> bool:
 	return _loading
+
+
+func set_focused(value: bool) -> void:
+	_title_bar.self_modulate.a = 1.0 if value else UNFOCUSED_TITLE_BAR_ALPHA
 
 
 func _update_title_bar() -> void:
