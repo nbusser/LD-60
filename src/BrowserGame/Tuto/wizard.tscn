@@ -14,13 +14,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 30.0
-offset_right = -30.0
-offset_bottom = -30.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 12
 
 [node name="main frame" type="HBoxContainer" parent="VBoxContainer" unique_id=740670864]
 layout_mode = 2
@@ -49,9 +49,9 @@ stretch_mode = 5
 [node name="ContentMargin" type="MarginContainer" parent="VBoxContainer/main frame" unique_id=1345103357]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 24
+theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 12
+theme_override_constants/margin_right = 8
 
 [node name="content" type="VBoxContainer" parent="VBoxContainer/main frame/ContentMargin" unique_id=868543973]
 layout_mode = 2
