@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Program" format=3 uid="uid://sc2ea5wyur7i"]
+
+[ext_resource type="PackedScene" uid="uid://37h87klct204" path="res://src/BrowserGame/Tuto/wizard.tscn" id="1_yoris"]
+[ext_resource type="Texture2D" uid="uid://51pr2epmlqdm" path="res://assets/sprites/icon.png" id="2_smnxe"]
+[ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_bmd62"]
+
+[resource]
+script = ExtResource("3_bmd62")
+icon_texture = ExtResource("2_smnxe")
+app_scene = ExtResource("1_yoris")
+metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"

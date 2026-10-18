@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cmuhyvkuqh3g1" path="res://assets/data/program/youpi.tres" id="4_65cfl"]
 [ext_resource type="Resource" uid="uid://bkcy5mxuvdaq7" path="res://assets/data/program/outbacks.tres" id="5_u2oub"]
 [ext_resource type="PackedScene" uid="uid://q6n3ky01wxku" path="res://src/BrowserGame/Shop/shop.tscn" id="7_8csdc"]
+[ext_resource type="Resource" uid="uid://sc2ea5wyur7i" path="res://assets/data/program/setup.tres" id="7_35n26"]
 [ext_resource type="Texture2D" uid="uid://bfcxwohohoe35" path="res://assets/sprites/franky-vincent.png" id="8_35n26"]
 [ext_resource type="PackedScene" uid="uid://bkkag32oibkj4" path="res://src/BrowserGame/Cursor/cursor.tscn" id="8_h03nu"]
 [ext_resource type="Texture2D" uid="uid://c87ap0mduojw5" path="res://assets/sprites/category_icons/business_placeholder.png" id="8_mycvx"]
@@ -43,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_u2oub")
 script = ExtResource("1_kw43y")
-programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), SubResource("Resource_n4y2n"), SubResource("Resource_5c8tb"), SubResource("Resource_b2aow")])
+programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), SubResource("Resource_n4y2n"), SubResource("Resource_5c8tb"), SubResource("Resource_b2aow"), ExtResource("7_35n26")])
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1208212921]
 layout_mode = 1
