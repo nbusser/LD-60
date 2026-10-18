@@ -97,6 +97,8 @@ func _restore_input_focus() -> void:
 func _submit() -> void:
 	if request == null or _processed or is_timed_out:
 		return
+	if GameState.level_state != null and GameState.level_state.is_day_over:
+		return
 
 	var link := _link_input.text.strip_edges()
 	if link.is_empty():
@@ -122,11 +124,9 @@ func _accept_link(request_link: RequestLink) -> void:
 	_timer_label.text = "Done"
 	var status_color := Color.DARK_GREEN if points > 0 else Color.GRAY
 	_query_label.modulate = status_color
-	_set_status("+%d points" % points, status_color)
+	_set_status("+$%d" % points, status_color)
 
-	if GameState.level_state != null:
-		GameState.level_state.nb_coins += points
-		GameState.nb_coins = GameState.level_state.nb_coins
+	GameState.add_money(points)
 
 	processed.emit(points)
 

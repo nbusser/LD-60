@@ -6,11 +6,21 @@ extends Control
 var level_label: Label = $CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LevelNumber
 @onready
 var coin_label: Label = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/CoinsNumber
+@onready var result_label: Label = $CenterContainer/VBoxContainer/Result
 
 
 func _ready() -> void:
 	level_label.text = str(GameState.current_level_number + 1)
-	coin_label.text = str(GameState.nb_coins)
+	coin_label.text = "$%d" % GameState.money
+	result_label.text = _result_text()
+
+
+func _result_text() -> String:
+	var member := GameState.family_member(GameState.last_day_target_id)
+	var target := member.display_name if member != null else "you"
+	if GameState.last_day_success:
+		return "Protection paid for %s: $%d" % [target, GameState.last_day_fee]
+	return "Pinny took everything. %s is gone." % target
 
 
 func _on_NextLevelButton_pressed() -> void:

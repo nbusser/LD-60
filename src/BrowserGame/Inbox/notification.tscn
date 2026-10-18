@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="2_arrhu"]
 
 [node name="Notification" type="Control" unique_id=736615540]
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 108)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://viymwegsl3d1"]
+[gd_scene load_steps=2 format=3 uid="uid://viymwegsl3d1"]
 
 [ext_resource type="Script" uid="uid://ctnvit31ftmbn" path="res://src/BrowserGame/Shop/shop_upgrade.gd" id="1_p1n5e"]
 
@@ -23,6 +23,7 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=701173770]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Title" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=623073530]
 unique_name_in_owner = true
@@ -37,3 +38,18 @@ custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
+
+[node name="Purchase" type="VBoxContainer" parent="HBoxContainer" unique_id=1284729384]
+layout_mode = 2
+alignment = 1
+
+[node name="PriceLabel" type="Label" parent="HBoxContainer/Purchase" unique_id=1198734561]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$10"
+horizontal_alignment = 2
+
+[node name="BuyButton" type="Button" parent="HBoxContainer/Purchase" unique_id=1739825410]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Buy"

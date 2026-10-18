@@ -16,37 +16,47 @@ content_margin_bottom = 5.0
 
 [sub_resource type="Resource" id="Resource_bmnu7"]
 script = ExtResource("2_a1lay")
+id = "nice_voice"
 name = "Young Man with a Nice Voice"
 description = "He even has a PhD"
+price = 15
 icon = ExtResource("4_nn37r")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
 [sub_resource type="Resource" id="Resource_twlh7"]
 script = ExtResource("2_a1lay")
+id = "friendly_man"
 name = "Old Friendly Man"
 description = "Lots of experience in life"
+price = 15
 icon = ExtResource("5_c1huf")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
 [sub_resource type="Resource" id="Resource_v6nhd"]
 script = ExtResource("2_a1lay")
-name = "Download more RAM"
-description = "Make your money back by reselling this in 2026 this is a very long description to test wrapping"
+id = "copy_paste"
+name = "Copy & Paste"
+description = "Click any URL in the browser to copy it to your clipboard."
+price = 15
 icon = ExtResource("3_u6den")
 unlocks = Array[ExtResource("2_a1lay")]([SubResource("Resource_bmnu7"), SubResource("Resource_twlh7")])
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
 [sub_resource type="Resource" id="Resource_sskbs"]
 script = ExtResource("2_a1lay")
+id = "teuchiland"
 name = "Teuchiland"
 description = "Résolutions 1996"
+price = 30
 icon = ExtResource("6_u6den")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
 [sub_resource type="Resource" id="Resource_n4y2n"]
 script = ExtResource("2_a1lay")
+id = "test"
 name = "Test"
 description = "Test test"
+price = 5
 icon = ExtResource("7_nn37r")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 

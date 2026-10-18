@@ -1,0 +1,93 @@
+{
+	"requests": [
+		{
+			"time": 8.0,
+			"query": "doctor",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "http://dr-franky-vincent.com",
+					"points": 10
+				},
+				{
+					"link": "http://bite_by_dre",
+					"points": 8
+				}
+			]
+		},
+		{
+			"time": 40.0,
+			"query": "get rich",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "richandsick.gov",
+					"points": 10
+				},
+				{
+					"link": "everytutorial.com/marrying-a-billionaire",
+					"points": 9
+				}
+			]
+		},
+		{
+			"time": 75.0,
+			"query": "thc",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "http://thc.com",
+					"points": 12
+				}
+			]
+		},
+		{
+			"time": 115.0,
+			"query": "franky",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "http://dr-franky-vincent.com",
+					"points": 10
+				}
+			]
+		},
+		{
+			"time": 160.0,
+			"query": "billionaire",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "everytutorial.com/marrying-a-billionaire",
+					"points": 10
+				}
+			]
+		},
+		{
+			"time": 205.0,
+			"query": "rich",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "richandsick.gov",
+					"points": 9
+				}
+			]
+		},
+		{
+			"time": 250.0,
+			"query": "doctor again",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "http://dr-franky-vincent.com",
+					"points": 10
+				},
+				{
+					"link": "http://bite_by_dre",
+					"points": 8
+				}
+			]
+		}
+	]
+}

@@ -10,8 +10,8 @@ const _MOOD_ANIMATIONS: Dictionary[Mood, StringName] = {
 }
 
 # Determines how long a msg stays on screen
-@export var seconds_per_character := 0.06
-@export var min_page_duration := 2.0
+@export var seconds_per_character := 0.085
+@export var min_page_duration := 3.5
 
 # If pinny is already on screen
 var is_present := false

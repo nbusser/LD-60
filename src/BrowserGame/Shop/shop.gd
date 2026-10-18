@@ -6,18 +6,26 @@ const SHOP_UPGRADE_PRELOAD = preload("res://src/BrowserGame/Shop/shop_upgrade.ts
 
 
 func _ready():
-	for u in upgrades:
-		%Grid.add_child(_create_upgrade_instance(u))
+	for upgrade in upgrades:
+		_add_upgrade(upgrade)
 
 
-func _create_upgrade_instance(u: UpgradeData):
-	var instance = SHOP_UPGRADE_PRELOAD.instantiate()
-	instance.upgrade_data = u
+func _add_upgrade(upgrade: UpgradeData) -> void:
+	if GameState.is_upgrade_owned(upgrade.id):
+		for unlock in upgrade.unlocks:
+			_add_upgrade(unlock)
+		return
+	%Grid.add_child(_create_upgrade_instance(upgrade))
+
+
+func _create_upgrade_instance(upgrade: UpgradeData) -> ShopUpgrade:
+	var instance: ShopUpgrade = SHOP_UPGRADE_PRELOAD.instantiate()
+	instance.upgrade_data = upgrade
 	instance.upgrade_clicked.connect(_upgrade_clicked)
 	return instance
 
 
-func _upgrade_clicked(u: ShopUpgrade) -> void:
-	u.queue_free()
-	for unlock in u.upgrade_data.unlocks:
-		u.add_sibling(_create_upgrade_instance(unlock))
+func _upgrade_clicked(shop_upgrade: ShopUpgrade) -> void:
+	shop_upgrade.queue_free()
+	for unlock in shop_upgrade.upgrade_data.unlocks:
+		_add_upgrade(unlock)

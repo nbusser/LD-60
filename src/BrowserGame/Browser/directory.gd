@@ -78,8 +78,5 @@ func _go_back() -> void:
 	_show(selected_category)
 
 
-func _entry_clicked(entry: Entry):
-	print("Clicked", entry)
+func _entry_clicked(_entry: Entry):
 	Sfx.click()
-	_path.clear()
-	_show(null)

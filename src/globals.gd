@@ -23,6 +23,8 @@ enum EndSceneStatus {
 	SELECT_LEVEL_BACK,
 	# Credits
 	CREDITS_BACK,
+	# Stats
+	STATS_SCREEN_MENU,
 }
 
 const SAMPLE_GLOBAL_VARIABLE: int = 1

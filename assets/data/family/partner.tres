@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FamilyMemberData" format=3]
+
+[ext_resource type="Script" path="res://src/Family/family_member_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/images/family/partner.png" id="2_portrait"]
+
+[resource]
+script = ExtResource("1_script")
+id = &"partner"
+display_name = "Partner"
+relation = "your partner"
+file_name = "partner.png"
+portrait = ExtResource("2_portrait")

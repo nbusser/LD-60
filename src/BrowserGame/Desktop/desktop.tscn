@@ -63,6 +63,36 @@ texture_pressed = ExtResource("11_o5ym1")
 texture_hover = ExtResource("12_ijfxp")
 ignore_texture_size = true
 
+[node name="TaskbarInfo" type="HBoxContainer" parent="BackgroundColor/ColorRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_right = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 2
+
+[node name="MoneyLabel" type="Label" parent="BackgroundColor/ColorRect/TaskbarInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "$0"
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="BackgroundColor/ColorRect/TaskbarInfo"]
+layout_mode = 2
+text = " | "
+vertical_alignment = 1
+
+[node name="ClockLabel" type="Label" parent="BackgroundColor/ColorRect/TaskbarInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+text = "08:00"
+vertical_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1031115493]
 layout_mode = 0
 offset_right = 40.0

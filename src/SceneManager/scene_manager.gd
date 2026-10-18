@@ -18,6 +18,7 @@ var current_scene:
 @onready var level_selector := preload("res://src/LevelSelector/level_selector.tscn")
 @onready var credits := preload("res://src/Credits/credits.tscn")
 @onready var game_over := preload("res://src/GameOver/game_over.tscn")
+@onready var stats_screen := preload("res://src/StatsScreen/stats_screen.tscn")
 
 @onready var viewport: Viewport = $SubViewportContainer/SubViewport
 
@@ -69,6 +70,7 @@ func _run_level() -> void:
 
 
 func _run_selected_level(level_i: int) -> void:
+	GameState.reset()
 	GameState.current_level_number = level_i
 	_run_level()
 
@@ -79,10 +81,11 @@ func _run_level_selector() -> void:
 	self.current_scene = scene
 
 
-func _on_end_of_level(new_nb_coins: int) -> void:
-	# Update game state depending on level result
-	GameState.nb_coins = new_nb_coins
-	_load_score_screen()
+func _on_end_of_level() -> void:
+	if GameState.current_level_number >= levels.size() - 1 or GameState.player_dead:
+		_load_stats_screen()
+	else:
+		_load_score_screen()
 
 
 func _on_game_over() -> void:
@@ -96,6 +99,11 @@ func _restart_level() -> void:
 
 func _load_score_screen() -> void:
 	var scene: ScoreScreen = score_screen.instantiate()
+	self.current_scene = scene
+
+
+func _load_stats_screen() -> void:
+	var scene: StatsScreen = stats_screen.instantiate()
 	self.current_scene = scene
 
 
@@ -138,8 +146,7 @@ func _on_end_scene(status: Globals.EndSceneStatus, params: Dictionary = {}) -> v
 		Globals.EndSceneStatus.MAIN_MENU_CLICK_QUIT:
 			_quit_game()
 		Globals.EndSceneStatus.LEVEL_END:
-			var new_nb_coins: int = params["new_nb_coins"]
-			_on_end_of_level(new_nb_coins)
+			_on_end_of_level()
 		Globals.EndSceneStatus.LEVEL_GAME_OVER:
 			_on_game_over()
 		Globals.EndSceneStatus.LEVEL_RESTART:
@@ -158,6 +165,8 @@ func _on_end_scene(status: Globals.EndSceneStatus, params: Dictionary = {}) -> v
 		Globals.EndSceneStatus.SELECT_LEVEL_BACK:
 			_run_main_menu()
 		Globals.EndSceneStatus.CREDITS_BACK:
+			_run_main_menu()
+		Globals.EndSceneStatus.STATS_SCREEN_MENU:
 			_run_main_menu()
 		_:
 			assert(false, "No handler for status " + str(status))

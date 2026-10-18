@@ -23,7 +23,8 @@ func _ready() -> void:
 			+ entry.link
 			+ "[/font_size][/font]"
 		),
-		entry.description
+		entry.description,
+		entry.link
 	)
 	description.text = entry.description
 	label.meta_clicked.connect(_on_meta_clicked)

@@ -11,6 +11,8 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 @onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
 @onready var cursor = $Cursor
 @onready var pinny: Pinny = %Pinny
+@onready var _clock_label: Label = %ClockLabel
+@onready var _money_label: Label = %MoneyLabel
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
@@ -66,16 +68,16 @@ func _open_or_show_window(program: Program):
 		# center window again once loaded
 		desktop_window.content_loaded.connect(_center_window.bind(desktop_window), CONNECT_ONE_SHOT)
 	else:
+		desktop_window.visible = true
 		_window_to_foreground(desktop_window)
 		# Reset window position
 		_center_window(desktop_window)
 
 
 func _close_window(program: Program):
-	var desktop_window: DesktopWindow = _programs_to_window.get(program)
+	var desktop_window = _programs_to_window.get(program)
 	if desktop_window != null and is_instance_valid(desktop_window):
-		desktop_window.queue_free()
-	_programs_to_window.set(program, null)
+		desktop_window.visible = false
 
 
 func _ready() -> void:
@@ -101,10 +103,16 @@ func _ready() -> void:
 		)
 		%Icons.add_child(icon)
 
-	pinny.visit(
-		["Le sang de tes morts, tu m'entends?", "Inch'allah sur le coran de namek"],
-		Pinny.Mood.ANGRY
-	)
+	GameState.money_changed.connect(_on_money_changed)
+	_on_money_changed(GameState.money)
+
+
+func set_clock(hour: int, minute: int) -> void:
+	_clock_label.text = "%02d:%02d" % [hour, minute]
+
+
+func _on_money_changed(value: int) -> void:
+	_money_label.text = "$%d" % value
 
 
 func _on_background_color_gui_input(event: InputEvent) -> void:

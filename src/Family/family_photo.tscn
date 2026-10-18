@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/Family/family_photo.gd" id="1_script"]
+
+[node name="FamilyPhoto" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+theme_override_constants/separation = 12
+script = ExtResource("1_script")
+
+[node name="Photo" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+custom_maximum_size = Vector2(80, 80)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="FileName" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "photo.png"
+
+[node name="Status" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "family"

@@ -5,9 +5,13 @@ class_name ClickableLabel
 
 extends RichTextLabel
 
+var _clipboard_text := ""
 
-func set_label_text(title: String, description: String):
-	text = "[color=blue][url]" + title + "[/url][/color][br][color=black]" + description
+
+func set_label_text(title: String, description: String, clipboard_text: String = ""):
+	_clipboard_text = clipboard_text
+	var meta := clipboard_text if not clipboard_text.is_empty() else title
+	text = "[color=blue][url=%s]" % meta + title + "[/url][/color][br][color=black]" + description
 
 
 func _on_meta_hover_started(_meta: Variant) -> void:
@@ -19,5 +23,6 @@ func _on_meta_hover_ended(_meta: Variant) -> void:
 
 
 func _on_meta_clicked(_meta: Variant) -> void:
-	# TODO not remembered
+	if not _clipboard_text.is_empty() and GameState.is_upgrade_owned("copy_paste"):
+		DisplayServer.clipboard_set(_clipboard_text)
 	text = text.replace("=blue", "=purple")
