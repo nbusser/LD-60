@@ -17,6 +17,7 @@
 
 [node name="Desktop" type="Control" unique_id=585668165]
 custom_maximum_size = Vector2(800, 600)
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
