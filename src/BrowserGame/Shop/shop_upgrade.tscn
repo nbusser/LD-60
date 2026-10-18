@@ -10,29 +10,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p1n5e")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1880399903]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=540288854]
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="CenterContainer" unique_id=1585433426]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1880399903]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=1585433426]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 
-[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1558937918]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=701173770]
 layout_mode = 2
 
-[node name="Title" type="RichTextLabel" parent="CenterContainer2" unique_id=623073530]
-unique_name_in_owner = true
-layout_mode = 2
-bbcode_enabled = true
-fit_content = true
-autowrap_mode = 0
-
-[node name="CenterContainer3" type="CenterContainer" parent="." unique_id=1478537155]
-layout_mode = 2
-
-[node name="Description" type="RichTextLabel" parent="CenterContainer3" unique_id=1971792801]
+[node name="Title" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=623073530]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
 autowrap_mode = 0
+
+[node name="Description" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1971792801]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true

@@ -7,11 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://co882g46m7npf" path="res://assets/sprites/dr-dre.png" id="4_nn37r"]
 [ext_resource type="Texture2D" uid="uid://cvd1ghn5a3ynu" path="res://assets/sprites/rich_sick_2.png" id="5_c1huf"]
 [ext_resource type="Texture2D" uid="uid://fgnwyx77xq8p" path="res://assets/sprites/thc.jpg" id="6_u6den"]
+[ext_resource type="Texture2D" uid="uid://bag0q3i8cnhv1" path="res://assets/sprites/icons/error.png" id="7_nn37r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmnu7"]
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
 
 [sub_resource type="Resource" id="Resource_bmnu7"]
 script = ExtResource("2_a1lay")
 name = "Young Man with a Nice Voice"
-description = "He also has a PhD"
+description = "He even has a PhD"
 icon = ExtResource("4_nn37r")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
@@ -25,7 +31,7 @@ metadata/_custom_type_script = "uid://ctts1botj6v2b"
 [sub_resource type="Resource" id="Resource_v6nhd"]
 script = ExtResource("2_a1lay")
 name = "Download more RAM"
-description = "make your money back by reselling this in 2026"
+description = "Make your money back by reselling this in 2026 this is a very long description to test wrapping"
 icon = ExtResource("3_u6den")
 unlocks = Array[ExtResource("2_a1lay")]([SubResource("Resource_bmnu7"), SubResource("Resource_twlh7")])
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
@@ -37,6 +43,13 @@ description = "Résolutions 1996"
 icon = ExtResource("6_u6den")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
+[sub_resource type="Resource" id="Resource_n4y2n"]
+script = ExtResource("2_a1lay")
+name = "Test"
+description = "Test test"
+icon = ExtResource("7_nn37r")
+metadata/_custom_type_script = "uid://ctts1botj6v2b"
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_my65c"]
 
 [node name="Shop" type="ScrollContainer" unique_id=383952159]
@@ -46,8 +59,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bmnu7")
 script = ExtResource("1_my65c")
-upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), SubResource("Resource_sskbs")])
+upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), SubResource("Resource_sskbs"), SubResource("Resource_n4y2n")])
 
 [node name="CenterContainer2" type="CenterContainer" parent="." unique_id=556272120]
 layout_mode = 2
