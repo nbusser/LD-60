@@ -2,6 +2,9 @@
 
 [ext_resource type="SpriteFrames" uid="uid://c6y6ae71tygqm" path="res://assets/animations/pinny.tres" id="1_4al4r"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcxeg"]
+bg_color = Color(1, 1, 0.8, 1)
+
 [node name="Pinny" type="Node2D" unique_id=1783732613]
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2009143876]
@@ -11,3 +14,29 @@ frame = 7
 frame_progress = 0.6605867
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1549203350]
+
+[node name="Message" type="PanelContainer" parent="." unique_id=1975792067]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-16.6, -42.8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcxeg")
+
+[node name="MarginContainer" type="MarginContainer" parent="Message" unique_id=1035469562]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Message/MarginContainer" unique_id=807514628]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Hey you!"
