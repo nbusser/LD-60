@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Program" format=3 uid="uid://ddwcomjogl5eh"]
+
+[ext_resource type="PackedScene" uid="uid://c18uaabq5n56d" path="res://src/BrowserGame/Images/image_viewer_son.tscn" id="1_sjl3w"]
+[ext_resource type="Texture2D" uid="uid://qod35rwerbmb" path="res://assets/sprites/icons/image.png" id="2_koeu8"]
+[ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_0s1nr"]
+
+[resource]
+script = ExtResource("3_0s1nr")
+icon_texture = ExtResource("2_koeu8")
+icon_label = "your_son.png"
+app_scene = ExtResource("1_sjl3w")
+metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"

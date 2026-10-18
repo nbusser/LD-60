@@ -11,7 +11,7 @@ content_margin_bottom = 5.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooua1"]
 
 [node name="Directory" type="ScrollContainer" unique_id=514740387]
-custom_minimum_size = Vector2(800, 400)
+custom_minimum_size = Vector2(600, 400)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

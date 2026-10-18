@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Program" format=3 uid="uid://8kpp8c2gkq5g"]
+
+[ext_resource type="Texture2D" uid="uid://bfcxwohohoe35" path="res://assets/sprites/franky-vincent.png" id="1_7eq3s"]
+[ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="2_alkue"]
+
+[resource]
+script = ExtResource("2_alkue")
+icon_texture = ExtResource("1_7eq3s")
+icon_label = "Zouk"
+metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"
