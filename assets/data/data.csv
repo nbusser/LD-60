@@ -1,4 +1,4 @@
-title;description;url;image;path
+title;description;url;image;path0;path1
 Painting;;;;Art/Painting
 Good Singers;;;;Art/Music/Good Singers
 OK Singers;;;;Art/Music/OK Singers
@@ -75,8 +75,27 @@ Dr. Franky Vincent;Zouk Therapy;dr-franky-vincent.com;res://assets/sprites/frank
 The Richest and Most Sick Singles in your Area;Until death do you appart;richandsick.gov;res://assets/sprites/rich_sick.png;Business &[br]Getting Rich/Getting Rich Quick/Marrying an Old and Sick Rich Person
 Marrying Sick Billionaires: a Tutorial;Tutorials for everything;everytutorial.com/marrying-a-billionaire;res://assets/sprites/rich_sick_2.png;Business &[br]Getting Rich/Getting Rich Quick/Marrying an Old and Sick Rich Person
 Furry petshop;Find your next best furry friend in here!;furry-petshop;;Lifestyle/Animals/
-Ataturk Kebab;Delicious oriental kebab made frin the best meat of Anatolia;ataturk-kebab.tr;;Food/World Cuisine
+Ataturk Kebab;Delicious oriental kebab made from the best meat of Anatolia;ataturk-kebab.tr;;Food/World Cuisine
 Gruik gruik Butchery;Butchery specialized in pork meat.;gruik-gruik-butchery.com;;Food/Shops
 Falaf' Hlel;Delicious falafel restaurant. Guaranteed 100% hlel!;falaf-hlel.lb;;Food/World Cuisine
 Jacques Chirac Fan Club;Official fan club of Jacques Chirac;jacques-chirac.fr;;People/Famous
 Bakery Le Baguette;The best baguette to be found in London;baguette-bakery.com;;Food/Shops
+Legal Mistakes;The law firm that has your back. victories;legal-mistakes.com;;Services/Mariage/
+Morgue showroom; Forum for dedicated Morgue and photography enthousiasts;morgue-showroom.net;;Art/Photography
+Civil Code UK;Latest updates on the law, updated daily;justice.gov.uk;;Regional/UK
+Self-reporting;Are you a criminal? This page is for you;fbi.gov;;Regional/USA
+The Joke Bank;Thousands of jokes for the 21st century dad;thejokebank.org;;Family/Parenting;Services/Money
+The Philosophy of Humour;The Ethics of Laughter: Ridicule, Irony, and Moral Judgment;plato.stanford.edu/entries/humor;;Recreation/Humour
+The Social Life of Laughter;A sociological study: laughter as a social signal;jsr.org/laughter-study;;Recreation/Humour
+
+The Nevada landing site;Evidence the 1969 landing was filmed at the Nevada Test Site.;nevada-moon.com;;Tourism/USA;Regional/USA
+Moon Landing Reenactment Society;Annual reenactment of the 1969 broadcast. Volunteers welcome.;moonlanding-reenactment.org;;Recreation/Acting
+The Moon;Authentic Chinese-American cuisine.;the-moon-restaurant.com;;Science/Space
+
+Grandma's Thanksgiving Recipes;Traditional recipes for social gatherings;grandmas-thanksgiving.com;;Food/Recipes;Family/Parenting
+The American Turkey;A practical guide to raising turkeys at home.;americanturkey.com;;Lifestyle/Animals;
+Thanksgiving Food Safety;Official guidelines for handling and cooking poultry.;fsis.usda.gov/thanksgiving;;Health/Diet;Regional/USA
+
+Argentina Tourism;Official tourism portal: destinations, culture and travel tips.;tourism.argentina.org;;Regional/New World/Americas;Travel/Destinations
+Hitler Sightings Hotline;Report a sighting. Operators are standing by.;hitler-sightings-hotline.org;;Press/People;Services/Helplines
+Adolf Hitler and the Nazis;Battles, timelines and biographies of the Second World War.;ww2db.com;;History/WW2;Regional/Europe
