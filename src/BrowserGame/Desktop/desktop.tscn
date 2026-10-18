@@ -55,13 +55,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.5019608, 0.5019608, 1)
 
-[node name="Icons" type="GridContainer" parent="." unique_id=2076402280]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1031115493]
 layout_mode = 0
-offset_right = 128.0
-offset_bottom = 260.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Icons" type="GridContainer" parent="MarginContainer" unique_id=2076402280]
+unique_name_in_owner = true
+layout_mode = 2
 mouse_filter = 2
-theme_override_constants/h_separation = 50
+theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 50
 columns = 3
 

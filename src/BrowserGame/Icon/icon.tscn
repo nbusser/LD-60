@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bisuxvh6j5ufg" path="res://src/BrowserGame/Icon/icon.gd" id="2_ue0gg"]
 
 [node name="Icon" type="TextureButton" unique_id=1327430444]
-custom_minimum_size = Vector2(128, 128)
-custom_maximum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
 propagate_maximum_size = true
 offset_right = 128.0
 offset_bottom = 128.0
@@ -13,8 +13,8 @@ script = ExtResource("2_ue0gg")
 
 [node name="Label" type="Label" parent="." unique_id=1473210851]
 layout_mode = 0
-offset_top = 130.0
-offset_right = 128.0
-offset_bottom = 153.0
+offset_top = 74.0
+offset_right = 64.0
+offset_bottom = 97.0
 text = "Placeholder"
 horizontal_alignment = 1
