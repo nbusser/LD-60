@@ -1,5 +1,12 @@
 #!/bin/sh
 
+python3 tools/check_request_links.py
+
+if [ $? -ne 0 ]; then
+    echo "Request links are invalid."
+    exit 1
+fi
+
 gdformat --diff .
 
 if [ $? -ne 0 ]; then
