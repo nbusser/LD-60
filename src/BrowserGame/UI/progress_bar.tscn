@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cimnfmsjswo3e"]
 
 [ext_resource type="Script" uid="uid://bi3d1dolhhewy" path="res://src/BrowserGame/UI/progress_bar.gd" id="1_22akx"]
-[ext_resource type="Texture2D" uid="uid://c0bic1o2sbxj1" path="res://assets/ui/textures/window/Chicago95/gtk-3.0/assets/frame_inset.png" id="1_srdev"]
+[ext_resource type="Texture2D" uid="uid://bxtv2gfdbkukh" path="res://assets/ui/textures/panel_container/panel_inset.png" id="1_srdev"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjf3y"]
 content_margin_left = 4.0
