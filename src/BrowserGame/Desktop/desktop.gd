@@ -221,6 +221,13 @@ func set_clock(hour: int, minute: int) -> void:
 	_clock_label.text = "%02d:%02d" % [hour, minute]
 
 
+# Area of the desktop not covered by the task bar, in global coordinates.
+func get_window_area() -> Rect2:
+	var task_bar := $TaskBar as Control
+	var top_left := global_position
+	return Rect2(top_left, Vector2(size.x, task_bar.global_position.y - top_left.y))
+
+
 func _on_money_changed(value: int) -> void:
 	_money_label.text = "$%d" % value
 

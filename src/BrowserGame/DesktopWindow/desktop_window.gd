@@ -53,6 +53,28 @@ func _process(_delta: float) -> void:
 	global_position = Globals.get_cursor_position() - _drag_offset
 
 
+func _clamp_to_desktop() -> void:
+	var desktop := _get_desktop()
+	if desktop == null:
+		return
+
+	# Keep the title bar between the top of the desktop and the task bar.
+	var window_area := desktop.get_window_area()
+	var title_bar_height := ($VBoxContainer/Bar as Control).size.y
+	global_position.y = clampf(
+		global_position.y, window_area.position.y, window_area.end.y - title_bar_height
+	)
+
+
+func _get_desktop() -> Desktop:
+	var node := get_parent()
+	while node != null:
+		if node is Desktop:
+			return node
+		node = node.get_parent()
+	return null
+
+
 func _on_close_button_pressed() -> void:
 	closed.emit()
 
@@ -65,6 +87,7 @@ func _on_bar_button_down() -> void:
 
 func _on_bar_button_up() -> void:
 	_dragging = false
+	_clamp_to_desktop()
 
 
 func is_loading() -> bool:
