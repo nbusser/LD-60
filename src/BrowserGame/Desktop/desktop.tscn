@@ -87,7 +87,7 @@ anchors_preset = 0
 
 [node name="Pinny" parent="." unique_id=493795301 instance=ExtResource("9_pinny")]
 unique_name_in_owner = true
-position = Vector2(864, 520)
+position = Vector2(864, 500)
 
 [node name="Cursor" parent="." unique_id=483185025 instance=ExtResource("8_h03nu")]
 layout_mode = 1
