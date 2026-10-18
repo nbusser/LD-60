@@ -19,6 +19,9 @@ func _ready() -> void:
 	if on_instantiate_callback != null:
 		on_instantiate_callback.call(content)
 
+	await get_tree().create_timer(randf_range(0.2, 1.0)).timeout
+	%Loading.visible = false
+
 	%Content.add_child(content)
 	# Shrink to fit the content (a Control is never smaller than its minimum size)
 	reset_size()

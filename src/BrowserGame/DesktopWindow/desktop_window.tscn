@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chrr4m8diajy"]
 
 [ext_resource type="Script" uid="uid://ca6wie48ortpb" path="res://src/BrowserGame/DesktopWindow/desktop_window.gd" id="1_us0oo"]
+[ext_resource type="Texture2D" uid="uid://eur8ex5tehut" path="res://assets/sprites/icons/hourglass.png" id="2_cffs2"]
 
 [sub_resource type="Theme" id="Theme_ooua1"]
 
@@ -71,6 +72,11 @@ unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_content")
+
+[node name="Loading" type="TextureRect" parent="Border/Content" unique_id=521291636]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_cffs2")
 
 [connection signal="button_down" from="Bar/Bar" to="." method="_on_bar_button_down"]
 [connection signal="button_up" from="Bar/Bar" to="." method="_on_bar_button_up"]
