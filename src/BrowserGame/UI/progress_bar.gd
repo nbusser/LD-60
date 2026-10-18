@@ -39,7 +39,8 @@ func _draw() -> void:
 	for i in steps_to_draw:
 		var step = (first_step + i) % total_steps
 		var pos_x = MARGIN + step * (STEP_WIDTH + STEP_SPACING)
-		draw_rect(Rect2(pos_x, MARGIN, STEP_WIDTH, size.y - MARGIN * 2), Color.NAVY_BLUE)
+		var width = max(0, min(STEP_WIDTH, size.x - MARGIN - pos_x))
+		draw_rect(Rect2(pos_x, MARGIN, width, size.y - MARGIN * 2), Color.NAVY_BLUE)
 
 
 func _process(delta: float) -> void:
