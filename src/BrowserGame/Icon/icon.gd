@@ -9,7 +9,7 @@ signal selected
 var is_selected := false:
 	set(value):
 		if value:
-			modulate = Color.BLUE
+			modulate = Color("#008080")
 			selected.emit(self)
 		else:
 			modulate = Color.WHITE
