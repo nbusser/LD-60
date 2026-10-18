@@ -7,14 +7,16 @@ extends Resource
 @export var entries: Array[Entry]
 
 
-static func from_json(data: Variant) -> Category:
+# See assets/data/data.schema.json
+static func from_json(data: Dictionary) -> Category:
 	var category := Category.new()
-	if data is String:
-		category.name = data
-		return category
 	category.name = data["name"]
-	if data.has("icon"):
+	if data["icon"] != null:
 		category.icon = load(data["icon"])
+	assert(
+		data.has("subcategories") != data.has("entries"),
+		"Category '%s' needs exactly one of 'subcategories' or 'entries'" % category.name
+	)
 	for sub in data.get("subcategories", []):
 		category.subcategories.append(Category.from_json(sub))
 	for entry in data.get("entries", []):

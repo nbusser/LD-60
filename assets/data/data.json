@@ -1,68 +1,171 @@
 {
+	"$schema": "./data.schema.json",
 	"categories": [
 		{
 			"name": "Art",
 			"icon": "res://assets/sprites/category_icons/art_placeholder.png",
 			"subcategories": [
-				"Painting",
+				{
+					"name": "Painting",
+					"icon": null,
+					"entries": []
+				},
 				{
 					"name": "Music",
+					"icon": null,
 					"subcategories": [
-						"Good Singers",
-						"OK Singers",
-						"Lame Singers",
-						"Dead Singers",
-						"Music Without Singers",
-						"Music for Old People",
-						"Boys Band"
+						{
+							"name": "Good Singers",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "OK Singers",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Lame Singers",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Dead Singers",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Music Without Singers",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Music for Old People",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Boys Band",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
-				"Weird Art",
-				"The Art of Gardening",
-				"Gastronomy"
+				{
+					"name": "Weird Art",
+					"icon": null,
+					"entries": []
+				},
+				{
+					"name": "The Art of Gardening",
+					"icon": null,
+					"entries": []
+				},
+				{
+					"name": "Gastronomy",
+					"icon": null,
+					"entries": []
+				}
 			]
 		},
 		{
 			"name": "Recreation",
 			"icon": "res://assets/sprites/category_icons/recreation_placeholder.png",
 			"subcategories": [
-				"Watching Paint Dry",
-				"Free-fighting",
+				{
+					"name": "Watching Paint Dry",
+					"icon": null,
+					"entries": []
+				},
+				{
+					"name": "Free-fighting",
+					"icon": null,
+					"entries": []
+				},
 				{
 					"name": "Collecting Things",
+					"icon": null,
 					"subcategories": [
-						"Nail Clippings",
-						"Debt",
-						"STDs"
+						{
+							"name": "Nail Clippings",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Debt",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "STDs",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
-				"Watching TV"
+				{
+					"name": "Watching TV",
+					"icon": null,
+					"entries": []
+				}
 			]
 		},
 		{
 			"name": "People",
 			"icon": "res://assets/sprites/category_icons/people_placeholder.png",
 			"subcategories": [
-				"Famous Births",
-				"Famous Deaths",
-				"Latest Gossip",
+				{
+					"name": "Famous Births",
+					"icon": null,
+					"entries": []
+				},
+				{
+					"name": "Famous Deaths",
+					"icon": null,
+					"entries": []
+				},
+				{
+					"name": "Latest Gossip",
+					"icon": null,
+					"entries": []
+				},
 				{
 					"name": "Becoming Famous",
+					"icon": null,
 					"subcategories": [
-						"Cutting Bridges with Childhood Friends",
-						"Burning Money",
-						"Going to Rehab"
+						{
+							"name": "Cutting Bridges with Childhood Friends",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Burning Money",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Going to Rehab",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
-				"Famous for Bad Reasons",
-				"Famous Animals"
-			],
-			"entries": [
 				{
-					"name": "Teuchiland Haute Couture",
-					"link": "http://thc.com",
-					"description": "45 sa meurt pa",
-					"image": "res://assets/sprites/thc.jpg"
+					"name": "Famous for Bad Reasons",
+					"icon": null,
+					"entries": [
+						{
+							"name": "Teuchiland Haute Couture",
+							"link": "http://thc.com",
+							"description": "45 sa meurt pa",
+							"image": "res://assets/sprites/thc.jpg"
+						}
+					]
+				},
+				{
+					"name": "Famous Animals",
+					"icon": null,
+					"entries": []
 				}
 			]
 		},
@@ -72,6 +175,7 @@
 			"subcategories": [
 				{
 					"name": "Doctors",
+					"icon": null,
 					"entries": [
 						{
 							"name": "Dr. Dre",
@@ -89,17 +193,39 @@
 				},
 				{
 					"name": "Being Fit & Sexy",
+					"icon": null,
 					"subcategories": [
-						"The Busser Method",
-						"The Mouhat Method"
+						{
+							"name": "The Busser Method",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "The Mouhat Method",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
 				{
 					"name": "Diet",
+					"icon": null,
 					"subcategories": [
-						"Eating Vegetables",
-						"Not Eating Rocks",
-						"The Danger of Eating Plastic Bags"
+						{
+							"name": "Eating Vegetables",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Not Eating Rocks",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "The Danger of Eating Plastic Bags",
+							"icon": null,
+							"entries": []
+						}
 					]
 				}
 			]
@@ -108,31 +234,71 @@
 			"name": "Science",
 			"icon": "res://assets/sprites/category_icons/science_placeholder.png",
 			"subcategories": [
-				"Scientology",
-				"Astrology",
+				{
+					"name": "Scientology",
+					"icon": null,
+					"entries": []
+				},
+				{
+					"name": "Astrology",
+					"icon": null,
+					"entries": []
+				},
 				{
 					"name": "Theology",
+					"icon": null,
 					"subcategories": [
-						"Enlightenment",
-						"Comparative Theology"
+						{
+							"name": "Enlightenment",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Comparative Theology",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
 				{
 					"name": "Lame Sciences",
+					"icon": null,
 					"subcategories": [
-						"Physics (who cares?)",
+						{
+							"name": "Physics (who cares?)",
+							"icon": null,
+							"entries": []
+						},
 						{
 							"name": "Computer Science (BOOORING)",
+							"icon": null,
 							"subcategories": [
-								"Loops"
+								{
+									"name": "Loops",
+									"icon": null,
+									"entries": []
+								}
 							]
 						},
-						"Chemistry",
+						{
+							"name": "Chemistry",
+							"icon": null,
+							"entries": []
+						},
 						{
 							"name": "Mathematics",
+							"icon": null,
 							"subcategories": [
-								"Combinatorial Species",
-								"Cycles"
+								{
+									"name": "Combinatorial Species",
+									"icon": null,
+									"entries": []
+								},
+								{
+									"name": "Cycles",
+									"icon": null,
+									"entries": []
+								}
 							]
 						}
 					]
@@ -145,9 +311,11 @@
 			"subcategories": [
 				{
 					"name": "Getting Rich Quick",
+					"icon": null,
 					"subcategories": [
 						{
 							"name": "Marrying an Old and Sick Rich Person",
+							"icon": null,
 							"entries": [
 								{
 									"name": "The Richest and Most Sick Singles in your Area",
@@ -163,45 +331,90 @@
 								}
 							]
 						},
-						"Buying a Winning Lottery Ticket",
-						"Finding a Big Bag of Money"
+						{
+							"name": "Buying a Winning Lottery Ticket",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Finding a Big Bag of Money",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
-				"Expensive Cars"
+				{
+					"name": "Expensive Cars",
+					"icon": null,
+					"entries": []
+				}
 			]
 		},
 		{
 			"name": "Regional",
 			"icon": "res://assets/sprites/category_icons/regional_placeholder.png",
 			"subcategories": [
-				"Antarctica",
+				{
+					"name": "Antarctica",
+					"icon": null,
+					"entries": []
+				},
 				{
 					"name": "Old World",
+					"icon": null,
 					"subcategories": [
-						"Africa"
+						{
+							"name": "Africa",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
 				{
 					"name": "New World",
+					"icon": null,
 					"subcategories": [
 						{
 							"name": "Americas",
+							"icon": null,
 							"subcategories": [
 								{
 									"name": "America 1",
+									"icon": null,
 									"subcategories": [
-										"Canada",
-										"Mexico",
+										{
+											"name": "Canada",
+											"icon": null,
+											"entries": []
+										},
+										{
+											"name": "Mexico",
+											"icon": null,
+											"entries": []
+										},
 										{
 											"name": "Saint-Pierre-et-Miquelon",
+											"icon": null,
 											"subcategories": [
-												"Saint-Pierre",
-												"Miquelon"
+												{
+													"name": "Saint-Pierre",
+													"icon": null,
+													"entries": []
+												},
+												{
+													"name": "Miquelon",
+													"icon": null,
+													"entries": []
+												}
 											]
 										}
 									]
 								},
-								"America 2"
+								{
+									"name": "America 2",
+									"icon": null,
+									"entries": []
+								}
 							]
 						}
 					]
@@ -214,72 +427,170 @@
 			"subcategories": [
 				{
 					"name": "Taxes",
+					"icon": null,
 					"subcategories": [
-						"Payment",
-						"Fraud"
+						{
+							"name": "Payment",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Fraud",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
 				{
 					"name": "Making Babies",
+					"icon": null,
 					"subcategories": [
-						"Unmaking Babies",
-						"Midwifery",
-						"Paternity tests",
-						"Maternity tests",
+						{
+							"name": "Unmaking Babies",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Midwifery",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Paternity tests",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Maternity tests",
+							"icon": null,
+							"entries": []
+						},
 						{
 							"name": "Orphanages",
+							"icon": null,
 							"subcategories": [
-								"Pickup",
-								"Delivery"
+								{
+									"name": "Pickup",
+									"icon": null,
+									"entries": []
+								},
+								{
+									"name": "Delivery",
+									"icon": null,
+									"entries": []
+								}
 							]
 						}
 					]
 				},
 				{
 					"name": "Drugs & Illicit Substances",
+					"icon": null,
 					"subcategories": [
-						"Devil's Lettuce ",
-						"Sniffing Glue",
-						"Ayahuasca"
+						{
+							"name": "Devil's Lettuce ",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Sniffing Glue",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Ayahuasca",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
 				{
 					"name": "Guns, Hitmen & Gang Life",
+					"icon": null,
 					"subcategories": [
 						{
 							"name": "Being a Good Gang Leader",
+							"icon": null,
 							"subcategories": [
-								"Outreach",
-								"Public Image"
+								{
+									"name": "Outreach",
+									"icon": null,
+									"entries": []
+								},
+								{
+									"name": "Public Image",
+									"icon": null,
+									"entries": []
+								}
 							]
 						},
-						"Murdering People",
-						"Escaping the Police",
-						"Disorganized Crime"
+						{
+							"name": "Murdering People",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Escaping the Police",
+							"icon": null,
+							"entries": []
+						},
+						{
+							"name": "Disorganized Crime",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
 				{
 					"name": "Retirement",
+					"icon": null,
 					"subcategories": [
-						"Retirement Homes",
+						{
+							"name": "Retirement Homes",
+							"icon": null,
+							"entries": []
+						},
 						{
 							"name": "Old People Issues",
+							"icon": null,
 							"subcategories": [
-								"Memory Loss",
-								"Death"
+								{
+									"name": "Memory Loss",
+									"icon": null,
+									"entries": []
+								},
+								{
+									"name": "Death",
+									"icon": null,
+									"entries": []
+								}
 							]
 						},
-						"Old Tech"
+						{
+							"name": "Old Tech",
+							"icon": null,
+							"entries": []
+						}
 					]
 				},
 				{
 					"name": "Driving",
+					"icon": null,
 					"subcategories": [
 						{
 							"name": "Driving and drinking",
+							"icon": null,
 							"subcategories": [
-								"Declaring Accident",
-								"Tips and tricks"
+								{
+									"name": "Declaring Accident",
+									"icon": null,
+									"entries": []
+								},
+								{
+									"name": "Tips and tricks",
+									"icon": null,
+									"entries": []
+								}
 							]
 						}
 					]
