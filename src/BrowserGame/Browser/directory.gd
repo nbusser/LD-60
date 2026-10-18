@@ -10,6 +10,7 @@ var selected_category: Category:
 		if category == null:
 			_build_categories(root_categories)
 		else:
+			_build_banner(category.name, category.icon, category)
 			if len(category.subcategories):
 				_build_categories(category.subcategories)
 			else:
@@ -21,6 +22,11 @@ var selected_category: Category:
 func _clear_directory() -> void:
 	for child in directory.get_children():
 		child.queue_free()
+
+
+func _build_banner(name: String, icon: Texture2D, above: Category) -> void:
+	%CategoryIcon.texture = icon
+	%CategoryDescription.text = "[br][br][color=black]" + name
 
 
 func _build_categories(categories: Array[Category]) -> void:
