@@ -3,7 +3,7 @@
     {
       "time": 1,
       "query": "doctor",
-      "duration": 10,
+      "duration": 20,
       "links": [
         { "link": "http://bite_by_dre", "points": 2 },
         { "link": "http://dr-franky-vincent.com", "points": 1 }
@@ -12,7 +12,7 @@
     {
       "time": 5,
       "query": "get rich",
-      "duration": 10,
+      "duration": 20,
       "links": [
         { "link": "everytutorial.com/marrying-a-billionaire", "points": 2 },
         { "link": "richandsick.gov", "points": 1 }

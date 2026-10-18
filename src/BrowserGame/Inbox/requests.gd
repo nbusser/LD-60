@@ -2,19 +2,32 @@ class_name Requests
 
 const DATA: JSON = preload("res://assets/data/data.json")
 
+static var _directory_entries: Dictionary[String, Entry] = {}
+
 
 static func from_json(json: JSON) -> Array[Request]:
 	var result: Array[Request] = []
 	if json == null or not json.data is Dictionary:
 		return result
 
-	var entries_by_link := _entries_by_link()
+	var entries_by_link := directory_entries()
 	for request_data in json.data.get("requests", []):
 		result.append(_request_from_json(request_data, entries_by_link))
 	return result
 
 
-static func _entries_by_link() -> Dictionary[String, Entry]:
+static func directory_entries() -> Dictionary[String, Entry]:
+	if _directory_entries.is_empty():
+		_directory_entries = _load_directory_entries()
+	return _directory_entries
+
+
+static func find_entry(link: String) -> Entry:
+	var entry: Entry = directory_entries().get(link)
+	return entry
+
+
+static func _load_directory_entries() -> Dictionary[String, Entry]:
 	var entries: Dictionary[String, Entry] = {}
 	for category_data in DATA.data.get("categories", []):
 		_collect_entries(Category.from_json(category_data), entries)

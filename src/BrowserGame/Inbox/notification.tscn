@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="2_arrhu"]
 
 [node name="Notification" type="Control" unique_id=736615540]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
@@ -12,7 +12,6 @@ grow_horizontal = 2
 script = ExtResource("1_e0xgp")
 
 [node name="Panel" type="Panel" parent="." unique_id=1167664385]
-custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,3 +51,23 @@ horizontal_alignment = 2
 unique_name_in_owner = true
 layout_mode = 2
 value = 1.0
+
+[node name="Submit" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1505447567]
+layout_mode = 2
+
+[node name="LinkInput" type="LineEdit" parent="Panel/VBoxContainer/Submit" unique_id=1505447568]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+keep_editing_on_text_submit = true
+placeholder_text = "Paste a link"
+
+[node name="SendButton" type="Button" parent="Panel/VBoxContainer/Submit" unique_id=1505447569]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Send"
+
+[node name="StatusLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1505447570]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Error message"
