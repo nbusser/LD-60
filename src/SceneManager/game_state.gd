@@ -5,6 +5,7 @@ signal upgrades_changed
 signal family_changed
 signal setup_completed
 signal setup_program_revealed
+signal setup_install_started
 
 const PLAYER_ID: StringName = &"player"
 const FEE_BASE := 20
@@ -131,6 +132,10 @@ func complete_setup() -> void:
 		return
 	setup_complete = true
 	setup_completed.emit()
+
+
+func start_setup_install() -> void:
+	setup_install_started.emit()
 
 
 func reveal_setup_program() -> void:

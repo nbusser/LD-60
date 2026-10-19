@@ -100,6 +100,7 @@ func _install() -> void:
 	if window != null:
 		window.set_busy(true)
 	Sfx.play_harddrive()
+	GameState.start_setup_install()
 	for step in INSTALL_STEPS:
 		_loading_label.text = step["message"]
 		var multiplier: float = step.get("multiplier", 1.0)

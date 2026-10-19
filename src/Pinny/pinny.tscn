@@ -150,7 +150,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -87.0
+offset_left = -83.0
 offset_top = -43.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -166,9 +166,11 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="Label" type="Label" parent="Body/Message/MarginContainer" unique_id=807514628]
+custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Hey you!"
+text = "Hey you"
+autowrap_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1549203350]
 libraries/ = SubResource("AnimationLibrary_b2aow")

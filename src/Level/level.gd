@@ -29,8 +29,13 @@ func _ready():
 	GameState.start_day(GameState.current_level_number)
 	_time_left = float(level_state.level_data.timer_duration)
 	_update_clock()
+	if GameState.needs_setup():
+		GameState.setup_install_started.connect(_on_setup_install_started, CONNECT_ONE_SHOT)
 	while GameState.needs_setup():
 		await GameState.setup_completed
+	# wait for Pinny to finish the setup visit
+	while _desktop.pinny.is_present:
+		await get_tree().process_frame
 	await _threaten()
 
 	level_state.all_requests_resolved.connect(_on_all_requests_resolved)
@@ -56,6 +61,20 @@ func _process(delta: float) -> void:
 		_end_day()
 
 
+func _on_setup_install_started() -> void:
+	await (
+		_desktop
+		. pinny
+		. visit(
+			[
+				"Howdy, I'm Pinny. I am your nice desktop assistant.",
+				"Sit back and relax, I'm installing everything you need.",
+				"You'll see, I thought of everything.",
+			]
+		)
+	)
+
+
 func _threaten() -> void:
 	await _desktop.pinny.visit(_threat_lines(), Pinny.Mood.ANGRY)
 
@@ -69,9 +88,13 @@ func _threat_lines() -> Array[String]:
 	match GameState.day_index:
 		0:
 			return [
-				"First day. Nice office. Nice family.",
-				"The fee for %s is $%d. Pay by 20:00." % [relation, fee],
-				"If you don't, I take the money and the photo.",
+				"Oh actually, I know you already but you don't know me. I heard a lot about you from your nice little family.",
+				"Did you hear from them since they left for vacations two days ago? Don't worry, they are safe. I keep them safe... for now.",
+				(
+					"Let's cut to the chase, the fee for %s is $%d. Pay by 20:00. If you don't, you will never see him again, except in photo."
+					% [relation, fee]
+				),
+				"Enjoy your day, and don't overthink it."
 			]
 		1:
 			return [
