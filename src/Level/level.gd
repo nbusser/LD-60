@@ -74,6 +74,8 @@ func init(level_data_p: LevelData):
 
 # MARK: Scenarios
 
+# MARK: Level 0
+
 
 func _run_level_0() -> void:
 	# created before the setup to track what the player does meanwhile
@@ -116,6 +118,9 @@ func _on_setup_install_started() -> void:
 			Pinny.Mood.LAUGH
 		)
 	)
+
+
+# MARK: Level 1
 
 
 func _run_level_1(level_data: LevelData) -> void:
@@ -173,7 +178,7 @@ func _run_level_1(level_data: LevelData) -> void:
 		_pinny
 		. say(
 			[
-				"Do you have the money I kindly asked to you?",
+				"Do you have the money I kindly asked you?",
 			],
 			Pinny.Mood.NEUTRAL
 		)
@@ -183,7 +188,7 @@ func _run_level_1(level_data: LevelData) -> void:
 		level_data,
 		[
 			# paid
-			"Good! You learned fast. You Dad is safe for now.",
+			"Good! You learned fast. Your Dad is safe for now.",
 			"See you tomorrow, don't be late.",
 			"Sleep well pal."
 		],
@@ -203,6 +208,9 @@ func _run_level_1(level_data: LevelData) -> void:
 	))
 
 
+# MARK: Level 2
+
+
 func _run_level_2(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 
@@ -215,7 +223,7 @@ func _run_level_2(level_data: LevelData) -> void:
 				(
 					"Did you dream of your dad? Is he in hell? In heaven?"
 					if not GameState.is_alive(GameState.DAD)
-					else "You dad slept terrible too."
+					else "Your dad slept terribly too."
 				),
 			],
 			Pinny.Mood.LAUGH
@@ -270,6 +278,9 @@ func _run_level_2(level_data: LevelData) -> void:
 	))
 
 
+# MARK: Level 3
+
+
 func _run_level_3(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
@@ -296,13 +307,13 @@ func _run_level_3(level_data: LevelData) -> void:
 		level_data,
 		# paid
 		(
-			(func():
-				var res = [
+			(func() -> Array[String]:
+				var res: Array[String] = [
 					"It seems like you did not miss a single penny.",
 					"Your lineage is partly saved."
 				]
 				if not GameState.is_alive(GameState.DAD) and not GameState.is_alive(GameState.MOM):
-					res.append(
+					res.append_array(
 						[
 							"Finally you started to understand your job...",
 							"It just took enough time to deprive your son from his grandparents..."
@@ -314,7 +325,7 @@ func _run_level_3(level_data: LevelData) -> void:
 		),
 		# unpaid
 		(
-			(func():
+			(func() -> Array[String]:
 				if not GameState.is_alive(GameState.DAD) and not GameState.is_alive(GameState.MOM):
 					return [
 						"I'm so sorry, you are really bad at this job...",
@@ -333,9 +344,12 @@ func _run_level_3(level_data: LevelData) -> void:
 		],
 		[
 			# aftermath
-			"Only your daughter left. Think about her tonight.",
+			"Only the fate of your daughter is yet to come. Think about her tonight.",
 		]
 	)
+
+
+# MARK: Level 4
 
 
 func _run_level_4(level_data: LevelData) -> void:
@@ -345,7 +359,7 @@ func _run_level_4(level_data: LevelData) -> void:
 		. visit(
 			[
 				"'mornin!",
-				"Sorry I feel groggy, I did not have my cofee yet",
+				"Sorry I feel groggy, I did not have my coffee yet",
 				"$%d for your sweet Daughter. Then we talk about you." % [level_data.ransom],
 				"You can spend your money in the shop. Just not on them.",
 			],
@@ -362,32 +376,24 @@ func _run_level_4(level_data: LevelData) -> void:
 		level_data,
 		# paid
 		(
-			(func():
-				var res = []
-				if (
-					GameState.is_alive(GameState.DAD)
-					and GameState.is_alive(GameState.MOM)
-					and GameState.is_alive(GameState.SON)
-				):
+			(func() -> Array[String]:
+				var res: Array[String] = []
+				if GameState.total_death() == 0:
 					(
 						res
 						. append_array(
 							[
 								"I have to admit I am impressed.",
 								"In more than 2 years of career, I rarely saw that.",
-								"You whole family is safe. I should feel it is unfair, but I am happy for you pal.",
+								"Your whole family is safe. I should feel it is unfair, but I am happy for you pal.",
 							]
 						)
 					)
-				if (
-					not GameState.is_alive(GameState.DAD)
-					and not GameState.is_alive(GameState.MOM)
-					and not GameState.is_alive(GameState.SON)
-				):
+				if GameState.total_death() == 3:
 					res.append_array(
 						[
 							"Everyone dead... But your daughter...",
-							"I don't know if she should considered herself lucky or not..."
+							"I don't know if she should consider herself lucky or not..."
 						]
 					)
 				if not GameState.is_alive(GameState.SON):
@@ -400,32 +406,28 @@ func _run_level_4(level_data: LevelData) -> void:
 		),
 		# unpaid
 		(
-			(func():
-				var res = []
-				if (
-					GameState.is_alive(GameState.DAD)
-					and GameState.is_alive(GameState.MOM)
-					and GameState.is_alive(GameState.SON)
-				):
+			(func() -> Array[String]:
+				var res: Array[String] = []
+				if GameState.total_death() == 0:
 					res.append_array(
 						[
 							"Oh pal, you were so close!",
 							"But I'm sorry, you play the game, you earn the prize..."
 						]
 					)
-				if (
-					not GameState.is_alive(GameState.DAD)
-					and not GameState.is_alive(GameState.MOM)
-					and not GameState.is_alive(GameState.SON)
-				):
+				elif GameState.total_death() == 3:
 					res.append_array(
 						[
 							"Everyone dead... But your daughter...",
-							"I don't know if she should considered herself lucky or not..."
+							"I don't know if she should consider herself lucky or not..."
 						]
 					)
-				if not GameState.is_alive(GameState.SON):
-					res.append_array(["So sad that she is single child now..."])
+				elif not GameState.is_alive(GameState.SON):
+					res.append_array(["No more lineage! It's official."])
+				else:
+					res.append_array(
+						["I'm really sorry for your daughter. She did not deserve that."]
+					)
 				return res)
 			. call()
 		),
@@ -440,17 +442,20 @@ func _run_level_4(level_data: LevelData) -> void:
 	))
 
 
+# MARK: Level 5
+
+
 func _run_level_5(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (_pinny.visit(
 		(
-			(func():
-				var res = ["It's already your last day, pal. Aren't you sad?"]
+			(func() -> Array[String]:
+				var res: Array[String] = ["It's already your last day, pal. Aren't you sad?"]
 				if GameState.total_death() == 4:
 					res.append_array(
 						[
-							"My sincere condoleances for your family.",
-							"You must hate me, but I ensure you that my job is not easy.",
+							"My sincere condolences for your family.",
+							"You must hate me, but I assure you that my job is not easy.",
 							"I feel remorse sometimes, and I have the bad role of the story.",
 							"But someone has to do it right?"
 						]
@@ -474,12 +479,14 @@ func _run_level_5(level_data: LevelData) -> void:
 		Pinny.Mood.NEUTRAL
 	))
 
+	await get_tree().create_timer(1.0).timeout
+
 	await (_pinny.visit(
 		[
 			"Oh! I almost forgot!",
 			"Don't miss your offboarding after your workday!",
 			(
-				"I wish you can collect at least $%d, it would be great for your last day"
+				"I hope you can collect at least $%d, it would be great for your last day"
 				% level_data.ransom
 			)
 		],
@@ -490,7 +497,7 @@ func _run_level_5(level_data: LevelData) -> void:
 
 	await _pinny.appear()
 	await _pinny.say(
-		["Finally... Your last day ended.", "It's time for your onboarding!"], Pinny.Mood.LAUGH
+		["Finally... Your last day ended.", "It's time for your offboarding!"], Pinny.Mood.LAUGH
 	)
 	await _pinny.say(["So, did you gather $%d?" % level_data.ransom], Pinny.Mood.LAUGH)
 
@@ -499,7 +506,7 @@ func _run_level_5(level_data: LevelData) -> void:
 	if could_pay:
 		await get_tree().create_timer(4.0).timeout
 		await _pinny.say(
-			["That's great!", "You shown incredible individual performances!"], Pinny.Mood.LAUGH
+			["That's great!", "You've shown incredible individual performances!"], Pinny.Mood.LAUGH
 		)
 		await _pinny.say(["Sadly..."], Pinny.Mood.NEUTRAL)
 		_set_music_muted(true)
@@ -518,13 +525,13 @@ func _run_level_5(level_data: LevelData) -> void:
 
 	_set_music_muted(true)
 	await get_tree().create_timer(10.0).timeout
-	var sentence = []
+	var sentence: Array[String] = []
 	if GameState.total_death() == 0:
 		(
 			sentence
 			. append_array(
 				[
-					"So, you performed well under pressure, but now that Iam nice to you, you just slack off?",
+					"So, you performed well under pressure, but now that I am nice to you, you just slack off?",
 					"Your family will miss you!"
 				]
 			)

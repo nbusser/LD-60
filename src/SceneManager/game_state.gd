@@ -25,7 +25,6 @@ var money := 0:
 var level_state: LevelState
 
 var dead_members: Dictionary[StringName, bool] = {}
-var total_dead: int = 0
 
 var owned_upgrades: Dictionary[String, bool] = {}
 
@@ -39,7 +38,6 @@ func reset() -> void:
 	money = 0
 	level_state = null
 	dead_members.clear()
-	total_dead = 0
 	owned_upgrades.clear()
 	total_money_earned = 0
 	total_fees_paid = 0
