@@ -29,6 +29,9 @@ enum EndSceneStatus {
 
 const SAMPLE_GLOBAL_VARIABLE: int = 1
 
+# In-game clipboard (the system clipboard is never used)
+var clipboard := ""
+
 var _cursor: Cursor
 
 

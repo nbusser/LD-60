@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="FamilyMemberData" format=3]
+[gd_resource type="Resource" script_class="FamilyMemberData" format=3 uid="uid://hh15kp4aq45t"]
 
-[ext_resource type="Script" path="res://src/Family/family_member_data.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://assets/sprites/images/family/father.png" id="2_portrait"]
+[ext_resource type="Texture2D" uid="uid://d4euajsuc1ydl" path="res://assets/sprites/images/father.png" id="1_0315m"]
+[ext_resource type="Script" uid="uid://ct5svq7pavid" path="res://src/Family/family_member_data.gd" id="1_script"]
 
 [resource]
 script = ExtResource("1_script")
@@ -9,4 +9,4 @@ id = &"father"
 display_name = "Father"
 relation = "your father"
 file_name = "father.png"
-portrait = ExtResource("2_portrait")
+portrait = ExtResource("1_0315m")

@@ -24,5 +24,5 @@ func _on_meta_hover_ended(_meta: Variant) -> void:
 
 func _on_meta_clicked(_meta: Variant) -> void:
 	if not _clipboard_text.is_empty() and GameState.is_upgrade_owned("copy_paste"):
-		DisplayServer.clipboard_set(_clipboard_text)
+		Globals.clipboard = _clipboard_text
 	text = text.replace("=blue", "=purple")

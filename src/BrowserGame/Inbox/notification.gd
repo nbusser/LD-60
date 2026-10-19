@@ -165,7 +165,7 @@ func _refresh_paste_lock() -> void:
 
 func _on_paste_pressed() -> void:
 	Sfx.click()
-	var clipboard := DisplayServer.clipboard_get().strip_edges()
+	var clipboard := Globals.clipboard.strip_edges()
 	if clipboard.is_empty() or not _link_input.editable:
 		return
 	_link_input.text = clipboard

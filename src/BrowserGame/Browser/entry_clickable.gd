@@ -47,7 +47,7 @@ func _refresh_copy_lock() -> void:
 
 
 func _on_copy_pressed() -> void:
-	DisplayServer.clipboard_set(entry.link)
+	Globals.clipboard = entry.link
 	Sfx.click()
 	var desktop := Desktop.find_from(self)
 	if desktop != null:
