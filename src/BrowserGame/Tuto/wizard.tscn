@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://37h87klct204"]
 
 [ext_resource type="Script" uid="uid://blc7gygiqf28u" path="res://src/BrowserGame/Tuto/wizard.gd" id="1_wizard"]
-[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_icon"]
+[ext_resource type="AtlasTexture" path="res://assets/sprites/icons/youpi2_frame0.tres" id="2_icon"]
 [ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="3_loading"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n4y2n"]

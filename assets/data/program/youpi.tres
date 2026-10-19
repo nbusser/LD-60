@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Program" format=3 uid="uid://cmuhyvkuqh3g1"]
 
 [ext_resource type="PackedScene" uid="uid://d3mn4hyunnwko" path="res://src/BrowserGame/Browser/browser.tscn" id="1_we6lj"]
-[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_6go6t"]
+[ext_resource type="AtlasTexture" path="res://assets/sprites/icons/youpi2_frame0.tres" id="2_6go6t"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_8yuyu"]
 
 [resource]

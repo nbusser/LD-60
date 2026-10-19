@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chrr4m8diajy"]
 
 [ext_resource type="Script" uid="uid://ca6wie48ortpb" path="res://src/BrowserGame/DesktopWindow/desktop_window.gd" id="1_us0oo"]
-[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_cwymc"]
+[ext_resource type="AtlasTexture" path="res://assets/sprites/icons/youpi2_frame0.tres" id="2_cwymc"]
 [ext_resource type="Texture2D" uid="uid://dutkwevgmgqpe" path="res://assets/ui/textures/window/close_normal.png" id="3_cwymc"]
 [ext_resource type="Texture2D" uid="uid://dmi0rwi7854a4" path="res://assets/ui/textures/window/close_pressed.png" id="4_1ad4m"]
 [ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="4_8lffc"]

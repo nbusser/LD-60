@@ -13,7 +13,7 @@ const DAY_END_HOUR := 20
 const SETUP: Program = preload("res://assets/data/program/setup.tres")
 const FAMILY_PHOTOS: Program = preload("res://assets/data/program/family_viewer.tres")
 const FAMILY_PHOTOS_ID := "family_photos"
-const YOUPI_ICON := preload("res://assets/sprites/icons/youpi.png")
+const YOUPI_ICON := preload("res://assets/sprites/icons/youpi2_frame0.tres")
 
 var level_state: LevelState
 

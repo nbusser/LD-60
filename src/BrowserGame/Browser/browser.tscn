@@ -3,7 +3,86 @@
 [ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
 [ext_resource type="Theme" uid="uid://dpjtu32jaq8eh" path="res://assets/ui/Browser.tres" id="2_theme"]
 [ext_resource type="FontFile" uid="uid://cxdln3gnhm3jf" path="res://assets/fonts/times/timB14.fnt" id="3_b14"]
-[ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="11_ipbxj"]
+[ext_resource type="Texture2D" uid="uid://caobxmpk6hrx0" path="res://assets/sprites/icons/youpi2.png" id="4_twlh7"]
+[ext_resource type="AtlasTexture" path="res://assets/sprites/icons/youpi2_frame0.tres" id="11_ipbxj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y51eb"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(0, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s43yb"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(105, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne582"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(210, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg30d"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(315, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vxej"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(420, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joe2o"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(525, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipbxj"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(630, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u810h"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(735, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g33u"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(840, 0, 105, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7hqv"]
+atlas = ExtResource("4_twlh7")
+region = Rect2(945, 0, 105, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_168kc"]
+animations = [{
+"frames": [{
+"duration": 50.0,
+"texture": SubResource("AtlasTexture_y51eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s43yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne582")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg30d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vxej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joe2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipbxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u810h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g33u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7hqv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ooua1"]
 
@@ -68,8 +147,24 @@ text = "
 fit_content = true
 autowrap_mode = 0
 
+[node name="Logo" type="CenterContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=447507699]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Control" type="Control" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer/Logo" unique_id=1068088864]
+custom_minimum_size = Vector2(105, 76)
+custom_maximum_size = Vector2(105, 76)
+layout_mode = 2
+
+[node name="AnimatedLogoSprite" type="AnimatedSprite2D" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer/Logo/Control" unique_id=1702829824]
+sprite_frames = SubResource("SpriteFrames_168kc")
+autoplay = "default"
+frame_progress = 0.2670902
+centered = false
+
 [node name="CategoryIcon" type="TextureRect" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=687070937]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 texture = ExtResource("11_ipbxj")
 

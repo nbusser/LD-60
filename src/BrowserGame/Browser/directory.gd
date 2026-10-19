@@ -25,6 +25,8 @@ func _clear_directory() -> void:
 func _show(category: Category) -> void:
 	GameState.category_browsed.emit(PackedStringArray(_path.map(func(c: Category): return c.name)))
 	%BackArrow.visible = category != null
+	%Logo.visible = category == null
+	%CategoryIcon.visible = category != null
 	if category == null:
 		%CategoryIcon.texture = _root_icon
 		%CategoryDescription.text = _root_description
