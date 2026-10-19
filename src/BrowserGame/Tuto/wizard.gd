@@ -25,7 +25,14 @@ const FOOTERS: Array[String] = [
 	"Click Finish to close this wizard.",
 ]
 
+const FINISH_MESSAGES: Array[String] = [
+	"Installing Youpi? components...",
+	"Configuring your desktop...",
+	"Applying final touches...",
+]
+
 var _step := 0
+var _busy := false
 
 @onready var _text: RichTextLabel = %Text
 @onready var _footer: Label = %Footer
@@ -33,6 +40,8 @@ var _step := 0
 @onready var _next_button: Button = %NextButton
 @onready var _finish_button: Button = %FinishButton
 @onready var _cancel_button: Button = %CancelButton
+@onready var _loading: Control = %Loading
+@onready var _loading_label: Label = %LoadingLabel
 
 
 func _ready():
@@ -44,6 +53,7 @@ func _ready():
 
 
 func _show_step():
+	_set_buttons_enabled(true)
 	_text.text = STEPS[_step]
 	_text.scroll_to_line(0)
 	_footer.text = FOOTERS[_step]
@@ -60,14 +70,34 @@ func _on_back_pressed():
 
 
 func _on_next_pressed():
-	if _step < STEPS.size() - 1:
-		_step += 1
-		_show_step()
+	if _busy or _step >= STEPS.size() - 1:
+		return
+	if _step == STEPS.size() - 2:
+		await _install()
+	_step += 1
+	_show_step()
 
 
 func _on_finish_pressed():
 	GameState.complete_setup()
 	_close_window()
+
+
+func _install() -> void:
+	_busy = true
+	_loading.visible = true
+	_set_buttons_enabled(false)
+	for message in FINISH_MESSAGES:
+		_loading_label.text = message
+		await get_tree().create_timer(randf_range(0.6, 1.0)).timeout
+	GameState.reveal_setup_programs()
+	_loading.visible = false
+	_busy = false
+
+
+func _set_buttons_enabled(value: bool) -> void:
+	for button in [_back_button, _next_button, _finish_button, _cancel_button]:
+		button.disabled = not value
 
 
 func _close_window():

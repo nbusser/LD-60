@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blc7gygiqf28u" path="res://src/BrowserGame/Tuto/wizard.gd" id="1_wizard"]
 [ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="2_icon"]
+[ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="3_loading"]
 
 [node name="Wizard" type="Control" unique_id=1763416333]
 custom_minimum_size = Vector2(500, 350)
@@ -102,3 +103,32 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Cancel"
+
+[node name="Loading" type="PanelContainer" parent="." unique_id=1763416340]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="Loading" unique_id=1763416341]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Loading/Center" unique_id=1763416342]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LoadingLabel" type="Label" parent="Loading/Center/VBox" unique_id=1763416343]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Loading..."
+horizontal_alignment = 1
+
+[node name="ProgressBar" parent="Loading/Center/VBox" unique_id=1763416344 instance=ExtResource("3_loading")]
+custom_minimum_size = Vector2(280, 24)
+layout_mode = 2
+loading = true

@@ -168,12 +168,13 @@ func _ready() -> void:
 
 	_refresh_icons()
 	GameState.setup_completed.connect(_on_setup_completed)
+	GameState.setup_programs_revealed.connect(_refresh_icons)
 	GameState.money_changed.connect(_on_money_changed)
 	_on_money_changed(GameState.money)
 
 
 func _refresh_icons() -> void:
-	var setup_only := GameState.needs_setup()
+	var setup_only := GameState.needs_setup() and not GameState.setup_programs_visible
 	for program in programs:
 		if program == _setup_program:
 			if setup_only:

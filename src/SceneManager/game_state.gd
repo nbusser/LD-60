@@ -4,6 +4,7 @@ signal money_changed(value: int)
 signal upgrades_changed
 signal family_changed
 signal setup_completed
+signal setup_programs_revealed
 
 const PLAYER_ID: StringName = &"player"
 const FEE_BASE := 20
@@ -29,6 +30,7 @@ var threatened_member_id: StringName
 var protection_fee := 0
 var player_dead := false
 var setup_complete := false
+var setup_programs_visible := false
 
 var owned_upgrades: Dictionary[String, bool] = {}
 
@@ -50,6 +52,7 @@ func reset() -> void:
 	day_index = 0
 	player_dead = false
 	setup_complete = false
+	setup_programs_visible = false
 	owned_upgrades.clear()
 	total_money_earned = 0
 	total_fees_paid = 0
@@ -128,6 +131,13 @@ func complete_setup() -> void:
 		return
 	setup_complete = true
 	setup_completed.emit()
+
+
+func reveal_setup_programs() -> void:
+	if setup_programs_visible:
+		return
+	setup_programs_visible = true
+	setup_programs_revealed.emit()
 
 
 func add_money(amount: int) -> void:
