@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bkkag32oibkj4" path="res://src/BrowserGame/Cursor/cursor.tscn" id="8_h03nu"]
 [ext_resource type="PackedScene" uid="uid://ch6b0sqgrn6qx" path="res://src/Pinny/pinny.tscn" id="9_pinny"]
 [ext_resource type="Texture2D" uid="uid://dx3a0hhx2gjg1" path="res://assets/ui/textures/background/Blue Rivets.png" id="10_5c8tb"]
+[ext_resource type="Script" uid="uid://m1a6djtnvoss9" path="res://src/BrowserGame/Desktop/selection_rect.gd" id="11_sel"]
 
 [node name="Desktop" type="Control" unique_id=585668165]
 custom_maximum_size = Vector2(800, 600)
@@ -61,6 +62,17 @@ layout_mode = 2
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 50
 columns = 3
+
+[node name="SelectionRect" type="Control" parent="." unique_id=738853741]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("11_sel")
 
 [node name="Windows" type="Control" parent="." unique_id=316714991]
 unique_name_in_owner = true

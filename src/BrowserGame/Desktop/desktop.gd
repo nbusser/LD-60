@@ -9,6 +9,8 @@ var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
 var _window_to_task_button: Dictionary[DesktopWindow, TaskButton] = {}
 var _program_to_icon: Dictionary[Program, Icon] = {}
 var _setup_program: Program
+var _is_selecting := false
+var _selection_origin := Vector2.ZERO
 
 @onready var icon_scene = preload("res://src/BrowserGame/Icon/icon.tscn")
 @onready
@@ -19,6 +21,7 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 @onready var pinny: Pinny = %Pinny
 @onready var _clock_label: Label = %ClockLabel
 @onready var _money_label: Label = %MoneyLabel
+@onready var _selection_rect: DesktopSelectionRect = %SelectionRect
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
@@ -27,6 +30,18 @@ func _window_to_foreground(selected_window: DesktopWindow):
 
 
 func _input(event: InputEvent) -> void:
+	if _is_selecting:
+		if event is InputEventMouseMotion:
+			_update_selection_rect()
+			return
+		if (
+			event is InputEventMouseButton
+			and event.button_index == MOUSE_BUTTON_LEFT
+			and not event.pressed
+		):
+			_end_selection()
+			return
+
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var hovered := get_viewport().gui_get_hovered_control()
 		var node: Node = hovered
@@ -240,6 +255,31 @@ func _on_money_changed(value: int) -> void:
 func _on_background_color_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		_unselect_icons()
+		_start_selection()
+
+
+func _start_selection() -> void:
+	_is_selecting = true
+	_selection_origin = _clamp_to_window_area(_selection_rect.get_local_mouse_position())
+	_selection_rect.clear()
+
+
+func _update_selection_rect() -> void:
+	if not _is_selecting:
+		return
+	var current := _clamp_to_window_area(_selection_rect.get_local_mouse_position())
+	_selection_rect.selection_rect = Rect2(_selection_origin, Vector2.ZERO).expand(current)
+
+
+func _end_selection() -> void:
+	_is_selecting = false
+	_selection_rect.clear()
+
+
+func _clamp_to_window_area(point: Vector2) -> Vector2:
+	var task_bar := $TaskBar as Control
+	var area := Rect2(Vector2.ZERO, Vector2(size.x, task_bar.position.y))
+	return point.clamp(area.position, area.position + area.size)
 
 
 func _is_icon(node: Node) -> bool:
