@@ -14,7 +14,14 @@ var _path: Array[Category]
 var _root_icon: Texture2D
 var _root_description: String
 
+var _scroll_offsets: Dictionary[String, Vector2] = {}
+var _restore_generation := 0
+
 @onready var directory = %GridContainer
+@onready var _address_bar: LineEdit = %AddressBar
+@onready var _back_button: Button = %BackButton
+@onready var _home_button: Button = %HomeButton
+@onready var _scroll_container: ScrollContainer = %ScrollContainer
 
 
 func _clear_directory() -> void:
@@ -23,18 +30,54 @@ func _clear_directory() -> void:
 
 
 func _show(category: Category) -> void:
-	GameState.category_browsed.emit(PackedStringArray(_path.map(func(c: Category): return c.name)))
-	%BackArrow.visible = category != null
+	var path := _path_names()
+	GameState.category_browsed.emit(path)
+	_update_location(path)
 	%Logo.visible = category == null
 	%CategoryIcon.visible = category != null
 	if category == null:
 		%CategoryIcon.texture = _root_icon
 		%CategoryDescription.text = _root_description
 		_build_categories(_root_categories)
+	else:
+		%CategoryIcon.texture = category.icon
+		%CategoryDescription.text = "[br][br][color=black]%s[/color]" % category.name
+		_build_category_contents(category)
+	_restore_scroll(_location_for(path))
+
+
+func _path_names() -> PackedStringArray:
+	return PackedStringArray(_path.map(func(c: Category): return c.name))
+
+
+func _location_for(path: PackedStringArray) -> String:
+	var location := "youpi://dir.internal"
+	if not path.is_empty():
+		location += "/" + "/".join(path).replace(" ", "_")
+	return location
+
+
+func _update_location(path: PackedStringArray) -> void:
+	_address_bar.text = _location_for(path)
+	_back_button.disabled = path.is_empty()
+	_home_button.disabled = path.is_empty()
+
+
+func _remember_scroll() -> void:
+	_scroll_offsets[_location_for(_path_names())] = Vector2(
+		_scroll_container.scroll_horizontal, _scroll_container.scroll_vertical
+	)
+
+
+func _restore_scroll(location: String) -> void:
+	_restore_generation += 1
+	var generation := _restore_generation
+	await get_tree().process_frame
+	if generation != _restore_generation or not is_inside_tree():
 		return
-	%CategoryIcon.texture = category.icon
-	%CategoryDescription.text = "[br][br][color=black]%s[/color]" % category.name
-	_build_category_contents(category)
+	var offset: Vector2 = _scroll_offsets.get(location, Vector2.ZERO)
+	_scroll_container.scroll_horizontal = int(offset.x)
+	_scroll_container.scroll_vertical = int(offset.y)
 
 
 # A category can have both subcategories and entries of its own.
@@ -70,20 +113,34 @@ func _ready() -> void:
 		_root_categories.append(Category.from_json(data))
 	_root_icon = %CategoryIcon.texture
 	_root_description = %CategoryDescription.text
-	%BackArrow.meta_clicked.connect(func(_meta): _go_back())
+	_back_button.pressed.connect(_go_back)
+	_home_button.pressed.connect(_go_home)
 	_show(null)
 
 
 func _category_clicked(category: Category):
 	Sfx.click()
+	_remember_scroll()
 	_path.append(category)
 	_show(category)
 
 
 func _go_back() -> void:
+	if _path.is_empty():
+		return
 	Sfx.click()
+	_remember_scroll()
 	_path.pop_back()
 	_show(selected_category)
+
+
+func _go_home() -> void:
+	if _path.is_empty():
+		return
+	Sfx.click()
+	_remember_scroll()
+	_path.clear()
+	_show(null)
 
 
 func _entry_clicked(_entry: Entry):

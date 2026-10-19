@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c154bh4q4necf" path="res://src/BrowserGame/Browser/directory.gd" id="1_py2cu"]
 [ext_resource type="Theme" uid="uid://dpjtu32jaq8eh" path="res://assets/ui/Browser.tres" id="2_theme"]
-[ext_resource type="FontFile" uid="uid://cxdln3gnhm3jf" path="res://assets/fonts/times/timB14.fnt" id="3_b14"]
 [ext_resource type="Texture2D" uid="uid://caobxmpk6hrx0" path="res://assets/sprites/icons/youpi2.png" id="4_twlh7"]
+[ext_resource type="Texture2D" uid="uid://cxskohpbe01lj" path="res://assets/sprites/icons/serenity/16x16/go-back.png" id="5_back"]
+[ext_resource type="Texture2D" uid="uid://bwtok77dw6ehf" path="res://assets/sprites/icons/serenity/16x16/go-home.png" id="6_home"]
 [ext_resource type="Texture2D" uid="uid://8prn56qcfk82" path="res://assets/sprites/icons/youpi2_frame0.tres" id="11_ipbxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y51eb"]
@@ -107,52 +108,107 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"PanelContainerWhite"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect" unique_id=514740387]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect" unique_id=1946378205]
 layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Toolbar" type="PanelContainer" parent="NinePatchRect/VBoxContainer" unique_id=826401973]
+layout_mode = 2
+
+[node name="Row" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/Toolbar" unique_id=1587320461]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="BackButton" type="Button" parent="NinePatchRect/VBoxContainer/Toolbar/Row" unique_id=1205386714]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+focus_mode = 0
+tooltip_text = "Go back"
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+icon = ExtResource("5_back")
+theme_override_constants/h_separation = 6
+text = "Back"
+
+[node name="HomeButton" type="Button" parent="NinePatchRect/VBoxContainer/Toolbar/Row" unique_id=1379462058]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+focus_mode = 0
+tooltip_text = "Go to the central directory"
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+icon = ExtResource("6_home")
+theme_override_constants/h_separation = 6
+text = "Home"
+
+[node name="AddressBar" type="LineEdit" parent="NinePatchRect/VBoxContainer/Toolbar/Row" unique_id=1453082769]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+editable = false
+text = "youpi://dir.internal"
+caret_blink = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/VBoxContainer" unique_id=514740387]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("2_theme")
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/ScrollContainer" unique_id=356390566]
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer" unique_id=356390566]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/ScrollContainer/CenterContainer" unique_id=1788922066]
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer" unique_id=1788922066]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer" unique_id=337110279]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer" unique_id=337110279]
 layout_mode = 2
 alignment = 1
 
-[node name="CategoryBanner" type="VBoxContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1726568834]
+[node name="CategoryBanner" type="VBoxContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1726568834]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner" unique_id=1851621247]
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner" unique_id=1851621247]
 layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="Logo" type="CenterContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=447507699]
+[node name="Logo" type="CenterContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=447507699]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Control" type="Control" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer/Logo" unique_id=1068088864]
+[node name="Control" type="Control" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer/Logo" unique_id=1068088864]
 custom_minimum_size = Vector2(105, 76)
 custom_maximum_size = Vector2(105, 76)
 layout_mode = 2
 
-[node name="AnimatedLogoSprite" type="AnimatedSprite2D" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer/Logo/Control" unique_id=1702829824]
+[node name="AnimatedLogoSprite" type="AnimatedSprite2D" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer/Logo/Control" unique_id=1702829824]
 sprite_frames = SubResource("SpriteFrames_168kc")
 autoplay = "default"
 frame_progress = 0.2670902
 centered = false
 
-[node name="CategoryIcon" type="TextureRect" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=687070937]
+[node name="CategoryIcon" type="TextureRect" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=687070937]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(32, 32)
@@ -161,12 +217,12 @@ texture = ExtResource("11_ipbxj")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Panel" type="Panel" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=2099887822]
+[node name="Panel" type="Panel" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=2099887822]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ooua1")
 
-[node name="CategoryDescription" type="RichTextLabel" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=1927197569]
+[node name="CategoryDescription" type="RichTextLabel" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=1927197569]
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
@@ -177,30 +233,16 @@ fit_content = true
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner" unique_id=639746729]
+[node name="Panel" type="Panel" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner" unique_id=639746729]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_ooua1")
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1554786993]
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1554786993]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
 columns = 3
-
-[node name="BackArrow" type="RichTextLabel" parent="." unique_id=1198588240]
-unique_name_in_owner = true
-layout_mode = 1
-offset_left = 11.0
-offset_top = 2.0
-offset_right = 66.0
-offset_bottom = 52.0
-theme_override_fonts/normal_font = ExtResource("3_b14")
-bbcode_enabled = true
-text = "
-[color=blue][url]<Back"
-fit_content = true
-autowrap_mode = 0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1911337972]
 layout_mode = 1
