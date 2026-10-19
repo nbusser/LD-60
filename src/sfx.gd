@@ -132,4 +132,4 @@ func play_new_request() -> void:
 # Waits for the stream length: the finished signal is not always emitted
 func _play_and_wait(player: AudioStreamPlayer) -> void:
 	player.play()
-	await get_tree().create_timer(player.stream.get_length()).timeout
+	await get_tree().create_timer(player.stream.get_length(), false).timeout

@@ -13,4 +13,4 @@ func _ready() -> void:
 	global_position = (
 		Globals.get_cursor_position() - Vector2(size.x / 2.0, size.y + OFFSET_ABOVE_CURSOR)
 	)
-	get_tree().create_timer(DURATION).timeout.connect(queue_free)
+	get_tree().create_timer(DURATION, false).timeout.connect(queue_free)

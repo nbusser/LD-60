@@ -569,6 +569,7 @@ grow_vertical = 2
 texture = ExtResource("8_4ishk")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=752066692]
+process_mode = 3
 texture_filter = 2
 material = SubResource("ShaderMaterial_crt")
 layout_mode = 1
@@ -585,6 +586,7 @@ scale = Vector2(1.5, 1.5)
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=200585439]
+process_mode = 3
 handle_input_locally = false
 audio_listener_enable_2d = true
 physics_object_picking = true

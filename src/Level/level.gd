@@ -63,7 +63,7 @@ func _ready():
 
 	await _turn_off_screen()
 
-	get_tree().create_timer(0.2)
+	get_tree().create_timer(0.2, false)
 	await $UI/Fadeout.fade()
 
 	Globals.end_scene(Globals.EndSceneStatus.LEVEL_END)
@@ -153,7 +153,7 @@ func _run_level_1(level_data: LevelData) -> void:
 	)
 
 	# Let the player look at the photos before coming back
-	await get_tree().create_timer(8.0).timeout
+	await get_tree().create_timer(8.0, false).timeout
 
 	await (
 		_pinny
@@ -499,7 +499,7 @@ func _run_level_5(level_data: LevelData) -> void:
 		Pinny.Mood.NEUTRAL
 	))
 
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 
 	await (_pinny.visit(
 		[
@@ -524,13 +524,13 @@ func _run_level_5(level_data: LevelData) -> void:
 	var could_pay := _pay_ransom(level_data)
 
 	if could_pay:
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(4.0, false).timeout
 		await _pinny.say(
 			["That's great!", "You've shown incredible individual performances!"], Pinny.Mood.LAUGH
 		)
 		await _pinny.say(["Sadly..."], Pinny.Mood.NEUTRAL)
 		_set_music_muted(true)
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(4.0, false).timeout
 		_set_music_muted(false)
 		await _pinny.say(
 			[
@@ -545,7 +545,7 @@ func _run_level_5(level_data: LevelData) -> void:
 
 	GameState.is_player_dead = true
 	_set_music_muted(true)
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(10.0, false).timeout
 	var sentence: Array[String] = ["..."]
 	if GameState.total_death() == 0:
 		(
@@ -579,7 +579,7 @@ func _run_level_5(level_data: LevelData) -> void:
 	var scene_manager := get_tree().current_scene as SceneManager
 	if scene_manager:
 		scene_manager.play_big_pinny_animation()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	_pinny.hide()
 
 
@@ -599,7 +599,7 @@ func _collect_ransom(
 ) -> void:
 	var could_pay := _pay_ransom(level_data)
 
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false).timeout
 
 	if could_pay:
 		await _pinny.say(paid, Pinny.Mood.NEUTRAL)
@@ -623,25 +623,25 @@ func _pay_ransom(level_data: LevelData) -> bool:
 func _execute_hostage(
 	hostage: FamilyMemberData, reveal: Array[String], aftermath: Array[String]
 ) -> void:
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.7, false).timeout
 
 	_set_music_muted(true)
 
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	await Sfx.play_kill()
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	await Sfx.play_photo()
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 
 	await _pinny.appear()
 	await _pinny.say(reveal, Pinny.Mood.NEUTRAL)
 
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 
 	GameState.kill(hostage)
 	_desktop.show_image(hostage.terminated_file_name(), hostage.portrait_terminated)
 
-	await get_tree().create_timer(2.2).timeout
+	await get_tree().create_timer(2.2, false).timeout
 
 	await _pinny.say(aftermath, Pinny.Mood.ANGRY)
 	await _pinny.leave()
@@ -658,7 +658,7 @@ func _play_day() -> void:
 	await day_finished
 	print("[DEBUG day-end] day_finished received")
 
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	print("[DEBUG day-end] timer done, closing windows")
 
 	# The player closes the popup, then the desktop is cleared for the end of day cutscene
@@ -728,7 +728,7 @@ func _turn_off_screen() -> void:
 	tween.tween_property(_desktop, "scale:x", 0.0, 0.2)
 	Sfx.play_shut_down()
 	await tween.finished
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 
 
 func _update_clock() -> void:

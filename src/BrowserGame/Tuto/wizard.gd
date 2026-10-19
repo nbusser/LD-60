@@ -110,7 +110,7 @@ func _install() -> void:
 		_loading_label.text = step["message"]
 		var multiplier: float = step.get("multiplier", 1.0)
 		var duration := INSTALL_STEP_DURATION * multiplier * randf_range(0.9, 1.1)
-		await get_tree().create_timer(duration).timeout
+		await get_tree().create_timer(duration, false).timeout
 		GameState.setup_step_installed.emit()
 	Sfx.stop_harddrive()
 	_loading.visible = false

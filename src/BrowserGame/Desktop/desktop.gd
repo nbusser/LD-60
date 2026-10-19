@@ -34,6 +34,7 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 @onready var _clock_label: Label = %ClockLabel
 @onready var _money_label: Label = %MoneyLabel
 @onready var _selection_rect: DesktopSelectionRect = %SelectionRect
+@onready var _pause_menu: PauseMenu = %PauseMenu
 
 
 # Desktop containing the given node, if any
@@ -230,6 +231,13 @@ func _update_task_buttons() -> void:
 		if is_instance_valid(task_button):
 			task_button.button_pressed = desktop_window == active_window
 		desktop_window.set_focused(desktop_window == active_window)
+
+
+func _on_pause_button_pressed() -> void:
+	if _pause_menu.visible:
+		return
+	Sfx.click()
+	_pause_menu.open()
 
 
 func _on_task_button_pressed(desktop_window: DesktopWindow) -> void:

@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://wrfgybrntyx4" path="res://src/BrowserGame/Desktop/task_button.gd" id="1_taskbtn"]
 
 [node name="TaskButton" type="Button" unique_id=1034526515]
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(60, 0)
+custom_maximum_size = Vector2(120, -1)
+size_flags_horizontal = 3
 theme_type_variation = &"ToggleButton"
 toggle_mode = true
 button_pressed = true

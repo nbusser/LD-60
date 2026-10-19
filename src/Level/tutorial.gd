@@ -50,7 +50,7 @@ func run() -> void:
 	# The request arrives once the mailbox is open
 	_level_state.start_day()
 
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false).timeout
 	await _pinny.say(["How exciting! You very first request!"], Pinny.Mood.LAUGH)
 	await _pinny.say(
 		[
@@ -68,7 +68,7 @@ func run() -> void:
 		_is_running.bind("youpi"),
 		_desktop.program_opened
 	)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false).timeout
 
 	await _pinny.instruct(
 		["Everything is sorted by category. Click Health, then Doctors."],
@@ -103,9 +103,9 @@ func run() -> void:
 		# _is_running.bind("shop"),
 		# _desktop.program_opened
 		func(): return true,
-		get_tree().create_timer(0.2).timeout
+		get_tree().create_timer(0.2, false).timeout
 	)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false).timeout
 
 	await (
 		_pinny

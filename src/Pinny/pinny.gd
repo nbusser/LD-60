@@ -96,7 +96,7 @@ func _play_animation(animation: StringName) -> void:
 	_animation_player.play(animation, -1, WALK_SPEED)
 	_play_move()
 	var duration := _animation_player.get_animation(animation).length / WALK_SPEED
-	await get_tree().create_timer(duration).timeout
+	await get_tree().create_timer(duration, false).timeout
 
 
 func _play_move() -> void:
@@ -104,7 +104,7 @@ func _play_move() -> void:
 	await _sprite.animation_finished
 	_sprite.play(&"move_loop", WALK_SPEED)
 	Sfx.play_jump()
-	await get_tree().create_timer(_animation_duration(&"move_loop") / WALK_SPEED).timeout
+	await get_tree().create_timer(_animation_duration(&"move_loop") / WALK_SPEED, false).timeout
 	_sprite.play(&"move_out", WALK_SPEED)
 	Sfx.play_jump()
 	await _sprite.animation_finished
@@ -112,21 +112,21 @@ func _play_move() -> void:
 
 func _blink_message(talk_id: int) -> void:
 	_message.visible = true
-	await get_tree().create_timer(MESSAGE_BLINK_INTERVAL).timeout
+	await get_tree().create_timer(MESSAGE_BLINK_INTERVAL, false).timeout
 	for _i in MESSAGE_BLINK_COUNT:
 		if talk_id != _talk_id:
 			return
 		_message.visible = false
-		await get_tree().create_timer(MESSAGE_BLINK_INTERVAL).timeout
+		await get_tree().create_timer(MESSAGE_BLINK_INTERVAL, false).timeout
 		if talk_id != _talk_id:
 			return
 		_message.visible = true
-		await get_tree().create_timer(MESSAGE_BLINK_INTERVAL).timeout
+		await get_tree().create_timer(MESSAGE_BLINK_INTERVAL, false).timeout
 
 
 # Ends on the timer or when the player clicks the message
 func _wait_page(duration: float) -> void:
-	var timer := get_tree().create_timer(duration)
+	var timer := get_tree().create_timer(duration, false)
 	timer.timeout.connect(page_ended.emit)
 	_is_waiting_page = true
 	await page_ended

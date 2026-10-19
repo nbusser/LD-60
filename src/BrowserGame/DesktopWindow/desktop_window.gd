@@ -43,7 +43,7 @@ func _ready() -> void:
 	if on_instantiate_callback != null:
 		on_instantiate_callback.call(content)
 
-	await get_tree().create_timer(randf_range(0.8, 1.5)).timeout
+	await get_tree().create_timer(randf_range(0.8, 1.5), false).timeout
 	%Loading.visible = false
 	_loading = false
 

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbqai3mwspxsp" path="res://src/HUD/fadeout.tscn" id="4_fre1t"]
 
 [node name="Level" type="Node" unique_id=818536958]
+process_mode = 1
 script = ExtResource("1")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1782796214]
