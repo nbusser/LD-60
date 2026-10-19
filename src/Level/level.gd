@@ -370,7 +370,10 @@ func _run_level_4(level_data: LevelData) -> void:
 			[
 				"'mornin!",
 				"Sorry I feel groggy, I did not have my coffee yet",
-				"$%d for your sweet Daughter. Then we talk about you." % [level_data.ransom],
+				(
+					"$%d for your sweet Daughter. Then I'm done taking care of your family."
+					% [level_data.ransom]
+				),
 				"You can spend your money in the shop. Just not on them.",
 			],
 			Pinny.Mood.ANGRY
@@ -645,8 +648,8 @@ func _play_day() -> void:
 
 	# The player closes the popup, then the desktop is cleared for the end of day cutscene
 	_desktop.locked = true
-	await _desktop.show_popup("Youpi", "Your work day is over!", YOUPI_ICON, YOUPI_ICON_16)
 	_desktop.close_all_windows()
+	await _desktop.show_popup("Youpi", "Your work day is over!", YOUPI_ICON, YOUPI_ICON_16)
 
 
 # Polled rather than signaled: requests may all be resolved before _play_day(),
