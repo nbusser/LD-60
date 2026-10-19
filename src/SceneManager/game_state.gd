@@ -85,7 +85,7 @@ func resolve_protection() -> bool:
 
 
 func needs_setup() -> bool:
-	return current_level_number == 0 and not setup_complete
+	return not Globals.skip_setup and current_level_number == 0 and not setup_complete
 
 
 func complete_setup() -> void:

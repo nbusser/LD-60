@@ -29,6 +29,9 @@ enum EndSceneStatus {
 
 const SAMPLE_GLOBAL_VARIABLE: int = 1
 
+# Dev flag: when true, the first-run setup wizard is skipped.
+var skip_setup := false
+
 # In-game clipboard (the system clipboard is never used)
 var clipboard := ""
 
