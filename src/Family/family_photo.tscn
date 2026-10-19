@@ -4,6 +4,7 @@
 
 [node name="FamilyPhoto" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
+mouse_default_cursor_shape = 2
 theme_override_constants/separation = 12
 script = ExtResource("1_script")
 
@@ -12,6 +13,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 custom_maximum_size = Vector2(80, 80)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 expand_mode = 1
 stretch_mode = 5
 

@@ -8,6 +8,7 @@ const SETUP_PROGRAM_ID := "setup"
 var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
 var _window_to_task_button: Dictionary[DesktopWindow, TaskButton] = {}
 var _program_to_icon: Dictionary[Program, Icon] = {}
+var _image_programs: Dictionary[String, Program] = {}
 var _setup_program: Program
 var _is_selecting := false
 var _selection_origin := Vector2.ZERO
@@ -18,6 +19,7 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 @onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
 @onready var task_button_scene = preload("res://src/BrowserGame/Desktop/TaskButton.tscn")
 @onready var cursor_popup_scene = preload("res://src/BrowserGame/Desktop/cursor_popup.tscn")
+@onready var image_viewer_scene = preload("res://src/Family/image_viewer.tscn")
 @onready var cursor = $Cursor
 @onready var pinny: Pinny = %Pinny
 @onready var _clock_label: Label = %ClockLabel
@@ -39,6 +41,19 @@ func show_cursor_popup(text: String) -> void:
 	add_child(popup)
 	# keep the fake cursor drawn on top of the popup
 	move_child(popup, cursor.get_index())
+
+
+# Open a window showing the given image in large
+func show_image(title: String, texture: Texture2D) -> void:
+	var program: Program = _image_programs.get(title)
+	if program == null:
+		program = Program.new()
+		program.icon_label = title
+		program.icon_texture = texture
+		program.app_scene = image_viewer_scene
+		_image_programs[title] = program
+	_open_or_show_window(program, func(viewer: TextureRect): viewer.texture = texture)
+	Sfx.click()
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
@@ -159,13 +174,13 @@ func _center_window(desktop_window: DesktopWindow) -> void:
 	desktop_window.position = ((size - desktop_window.size) / 2).floor()
 
 
-func _open_or_show_window(program: Program):
+func _open_or_show_window(program: Program, callback: Callable = func(_node: Control): pass):
 	_unselect_icons()
 	var desktop_window: DesktopWindow = _programs_to_window.get(program)
 	if desktop_window == null or not is_instance_valid(desktop_window):
 		# Create the window
 		if program.app_scene != null:
-			desktop_window = _create_window(program)
+			desktop_window = _create_window(program, program.app_scene, callback)
 		else:
 			desktop_window = _create_error_popup(program, "Program not found")
 

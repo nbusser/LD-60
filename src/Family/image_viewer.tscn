@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[node name="ImageViewer" type="TextureRect"]
+custom_minimum_size = Vector2(400, 400)
+expand_mode = 1
+stretch_mode = 5

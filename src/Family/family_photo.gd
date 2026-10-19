@@ -17,6 +17,16 @@ func _ready() -> void:
 	_refresh()
 
 
+func _gui_input(event: InputEvent) -> void:
+	if (
+		member != null
+		and event is InputEventMouseButton
+		and event.pressed
+		and event.button_index == MOUSE_BUTTON_LEFT
+	):
+		Desktop.find_from(self).show_image(_file_name.text, member.portrait)
+
+
 func _refresh() -> void:
 	if member == null:
 		return
