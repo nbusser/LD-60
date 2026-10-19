@@ -14,7 +14,7 @@ const DAD: FamilyMemberData = preload("res://assets/data/family/father.tres")
 const MOM: FamilyMemberData = preload("res://assets/data/family/mother.tres")
 const SON: FamilyMemberData = preload("res://assets/data/family/son.tres")
 const DAUGHTER: FamilyMemberData = preload("res://assets/data/family/daughter.tres")
-# Shown in the family photos, each LevelData sets its hostage
+# Shown in the family photos
 const FAMILY: Array[FamilyMemberData] = [DAD, MOM, SON, DAUGHTER]
 
 var current_level_number := 0
@@ -57,11 +57,6 @@ func kill(member: FamilyMemberData) -> void:
 
 func total_death() -> int:
 	return dead_members.size()
-
-
-# Today's hostage, null if Pinny holds nobody
-func hostage() -> FamilyMemberData:
-	return level_state.level_data.hostage if level_state != null else null
 
 
 func add_money(amount: int) -> void:

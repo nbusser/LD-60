@@ -40,6 +40,9 @@ func _ready():
 
 	_update_clock()
 
+	if GameState.current_level_number > 1:
+		_desktop.add_program(FAMILY_PHOTOS)
+
 	get_tree().create_timer(0.3)
 	await $UI/Fadein.fade()
 
@@ -192,6 +195,7 @@ func _run_level_1(level_data: LevelData) -> void:
 
 	await (_collect_ransom(
 		level_data,
+		GameState.DAD,
 		[
 			# paid
 			"Good! You learned fast. Your Dad is safe for now.",
@@ -218,8 +222,6 @@ func _run_level_1(level_data: LevelData) -> void:
 
 
 func _run_level_2(level_data: LevelData) -> void:
-	_desktop.add_program(FAMILY_PHOTOS)
-
 	await _pinny.appear()
 	await (
 		_pinny
@@ -254,6 +256,7 @@ func _run_level_2(level_data: LevelData) -> void:
 
 	await (_collect_ransom(
 		level_data,
+		GameState.MOM,
 		[
 			# paid
 			"Such a hard worker...",
@@ -288,7 +291,6 @@ func _run_level_2(level_data: LevelData) -> void:
 
 
 func _run_level_3(level_data: LevelData) -> void:
-	_desktop.add_program(FAMILY_PHOTOS)
 	await _pinny.appear()
 	await (
 		_pinny
@@ -321,6 +323,7 @@ func _run_level_3(level_data: LevelData) -> void:
 
 	await _collect_ransom(
 		level_data,
+		GameState.SON,
 		# paid
 		(
 			(func() -> Array[String]:
@@ -369,7 +372,6 @@ func _run_level_3(level_data: LevelData) -> void:
 
 
 func _run_level_4(level_data: LevelData) -> void:
-	_desktop.add_program(FAMILY_PHOTOS)
 	await (
 		_pinny
 		. visit(
@@ -393,6 +395,7 @@ func _run_level_4(level_data: LevelData) -> void:
 
 	await (_collect_ransom(
 		level_data,
+		GameState.DAUGHTER,
 		# paid
 		(
 			(func() -> Array[String]:
@@ -465,7 +468,6 @@ func _run_level_4(level_data: LevelData) -> void:
 
 
 func _run_level_5(level_data: LevelData) -> void:
-	_desktop.add_program(FAMILY_PHOTOS)
 	await (_pinny.visit(
 		(
 			(func() -> Array[String]:
@@ -585,6 +587,7 @@ func _run_level_5(level_data: LevelData) -> void:
 # - not paid: Pinny says the unpaid lines, leaves, then executes the hostage
 func _collect_ransom(
 	level_data: LevelData,
+	hostage: FamilyMemberData,
 	paid: Array[String],
 	unpaid: Array[String],
 	reveal: Array[String],
@@ -601,7 +604,7 @@ func _collect_ransom(
 
 	await _pinny.say(unpaid, Pinny.Mood.NEUTRAL)
 	await _pinny.leave()
-	await _execute_hostage(level_data.hostage, reveal, aftermath)
+	await _execute_hostage(hostage, reveal, aftermath)
 
 
 # Returns whether the player had enough money, takes everything they have otherwise
@@ -649,12 +652,15 @@ func _play_day() -> void:
 	level_state.is_clock_running = true
 	level_state.start_day()
 	await day_finished
+	print("[DEBUG day-end] day_finished received")
 
 	await get_tree().create_timer(1.0).timeout
+	print("[DEBUG day-end] timer done, closing windows")
 
 	# The player closes the popup, then the desktop is cleared for the end of day cutscene
 	_desktop.locked = true
 	_desktop.close_all_windows()
+	print("[DEBUG day-end] showing popup")
 	await _desktop.show_popup("Youpi", "Your work day is over!", YOUPI_ICON, YOUPI_ICON_16)
 
 
@@ -692,6 +698,12 @@ func _finish_day() -> void:
 	_running = false
 	level_state.is_clock_running = false
 	_update_clock()
+	print(
+		(
+			"[DEBUG day-end] _finish_day %d/%d"
+			% [level_state.resolved_requests, level_state.total_requests]
+		)
+	)
 	day_finished.emit()
 
 

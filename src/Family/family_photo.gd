@@ -9,7 +9,6 @@ extends HBoxContainer
 
 @onready var _photo: TextureRect = %Photo
 @onready var _file_name: Label = %FileName
-@onready var _status: Label = %Status
 
 
 func _ready() -> void:
@@ -34,12 +33,3 @@ func _refresh() -> void:
 	var alive := GameState.is_alive(member)
 	_photo.texture = member.portrait if alive else member.portrait_terminated
 	_file_name.text = member.file_name if alive else member.terminated_file_name()
-
-	if not alive:
-		_status.text = "TERMINATED"
-		_status.modulate = Color.DARK_RED
-	elif GameState.hostage() == member:
-		_status.text = "HOSTAGE"
-		_status.modulate = Color.DARK_GOLDENROD
-	else:
-		_status.text = ""

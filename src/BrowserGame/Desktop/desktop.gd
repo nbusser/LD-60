@@ -126,6 +126,21 @@ func show_popup(
 	)
 
 	var desktop_window: DesktopWindow = _programs_to_window[program]
+	print(
+		(
+			"[DEBUG day-end] popup window: inside_tree=%s visible=%s pos=%s size=%s"
+			% [
+				desktop_window.is_inside_tree(),
+				desktop_window.is_visible_in_tree(),
+				desktop_window.global_position,
+				desktop_window.size
+			]
+		)
+	)
+	desktop_window.content_loaded.connect(
+		func(): print("[DEBUG day-end] popup loaded at %s" % desktop_window.global_position),
+		CONNECT_ONE_SHOT
+	)
 	await desktop_window.closed
 	_programs_to_window.erase(program)
 	desktop_window.queue_free()

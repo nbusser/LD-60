@@ -27,7 +27,3 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "photo.png"
 
-[node name="Status" type="Label" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "family"
