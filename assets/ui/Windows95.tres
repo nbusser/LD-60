@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://brk00ey2rfca1" path="res://assets/ui/textures/vslider/tick.png" id="40_jijo8"]
 [ext_resource type="Texture2D" uid="uid://bhko4de8n2s5n" path="res://assets/ui/textures/vslider/slider.png" id="41_bxlk1"]
 [ext_resource type="Texture2D" uid="uid://dn87p7dbqfvnx" path="res://assets/ui/textures/window/focused.png" id="44_k3863"]
+[ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="45_bold"]
 
 [sub_resource type="StyleBoxTexture" id="7"]
 content_margin_left = 16.0
@@ -807,8 +808,8 @@ RichTextLabel/font_sizes/bold_italics_font_size = 13
 RichTextLabel/font_sizes/italics_font_size = 13
 RichTextLabel/font_sizes/mono_font_size = 13
 RichTextLabel/font_sizes/normal_font_size = 13
-RichTextLabel/fonts/bold_font = ExtResource("1_nf8vj")
-RichTextLabel/fonts/bold_italics_font = ExtResource("1_nf8vj")
+RichTextLabel/fonts/bold_font = ExtResource("45_bold")
+RichTextLabel/fonts/bold_italics_font = ExtResource("45_bold")
 RichTextLabel/fonts/italics_font = ExtResource("1_nf8vj")
 RichTextLabel/fonts/mono_font = ExtResource("1_nf8vj")
 RichTextLabel/fonts/normal_font = ExtResource("1_nf8vj")
