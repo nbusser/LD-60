@@ -51,6 +51,8 @@ func _ready():
 			await _run_level_3(self.level_state.level_data)
 		4:
 			await _run_level_4(self.level_state.level_data)
+		5:
+			await _run_level_5(self.level_state.level_data)
 		_:
 			assert(false, "No scenario for level %d" % GameState.current_level_number)
 
@@ -176,75 +178,28 @@ func _run_level_1(level_data: LevelData) -> void:
 		)
 	)
 
-	var could_pay: bool = GameState.money >= level_data.ransom
-	GameState.money = max(0, GameState.money - level_data.ransom)
-
-	await get_tree().create_timer(1.5).timeout
-
-	if could_pay:
-		await _pinny.say(
-			[
-				"Good! You learned fast. You Dad is safe for now.",
-				"See you tomorrow, don't be late.",
-				"Sleep well pal."
-			],
-			Pinny.Mood.NEUTRAL
-		)
-		await _pinny.leave()
-		return
-
-	await (
-		_pinny
-		. say(
-			[
-				"Oh... Too bad...",
-				"Don't worry, I know this is your first day. You know I have a heart. Let me bring you back some chocolate. You deserved it.",
-			],
-			Pinny.Mood.NEUTRAL
-		)
-	)
-	await _pinny.leave()
-
-	await get_tree().create_timer(0.7).timeout
-
-	_set_music_muted(true)
-
-	await get_tree().create_timer(0.5).timeout
-	await Sfx.play_kill()
-	await get_tree().create_timer(0.5).timeout
-	await Sfx.play_photo()
-	await get_tree().create_timer(0.5).timeout
-
-	await _pinny.appear()
-	await (
-		_pinny
-		. say(
-			[
-				"Sorry, I changed my mind. No chocolate for you. But I have this instead.",
-			],
-			Pinny.Mood.NEUTRAL
-		)
-	)
-
-	await get_tree().create_timer(0.5).timeout
-
-	GameState.kill(level_data.hostage)
-	_desktop.show_image(
-		level_data.hostage.terminated_file_name(), level_data.hostage.portrait_terminated
-	)
-
-	await get_tree().create_timer(2.2).timeout
-
-	await (
-		_pinny
-		. say(
-			[
-				"Dad is gone... How sad... He would be alive if his son was not SLACKING OFF. See you tomorrow for the next round.",
-			],
-			Pinny.Mood.ANGRY
-		)
-	)
-	await _pinny.leave()
+	await (_collect_ransom(
+		level_data,
+		[
+			# paid
+			"Good! You learned fast. You Dad is safe for now.",
+			"See you tomorrow, don't be late.",
+			"Sleep well pal."
+		],
+		[
+			# unpaid
+			"Oh... Too bad...",
+			"Don't worry, I know this is your first day. You know I have a heart. Let me bring you back some chocolate. You deserved it.",
+		],
+		[
+			# reveal
+			"Sorry, I changed my mind. No chocolate for you. But I have this instead.",
+		],
+		[
+			# aftermath
+			"Dad is gone... How sad... He would be alive if his son was not SLACKING OFF. See you tomorrow for the next round.",
+		]
+	))
 
 
 func _run_level_2(level_data: LevelData) -> void:
@@ -282,85 +237,39 @@ func _run_level_2(level_data: LevelData) -> void:
 	await _pinny.appear()
 	await _pinny.say(["TIMES UP! MONEY TIME!", "Do you have the ransom, son?"], Pinny.Mood.NEUTRAL)
 
-	var could_pay: bool = GameState.money >= level_data.ransom
-	GameState.money = max(0, GameState.money - level_data.ransom)
-
-	await get_tree().create_timer(1.5).timeout
-
-	if could_pay:
-		await _pinny.say(
-			[
-				"Such a hard worker...",
-				(
-					"Daddy would have been proud!"
-					if not GameState.is_alive(GameState.DAD)
-					else "Saving both your parents... That's great!"
-				),
-				"Mommy is safe. Don't skip the alarm tomorrow."
-			],
-			Pinny.Mood.NEUTRAL
-		)
-		await _pinny.leave()
-		return
-
-	await (
-		_pinny
-		. say(
-			[
-				(
-					"AGAIN?"
-					if not GameState.is_alive(GameState.DAD)
-					else "At last you will not be fully orphan."
-				),
-				"What kind of son are you... Letting your Mom die!",
-			],
-			Pinny.Mood.NEUTRAL
-		)
-	)
-	await _pinny.leave()
-
-	await get_tree().create_timer(0.7).timeout
-
-	_set_music_muted(true)
-
-	await get_tree().create_timer(0.5).timeout
-	await Sfx.play_kill()
-	await get_tree().create_timer(0.5).timeout
-	await Sfx.play_photo()
-	await get_tree().create_timer(0.5).timeout
-
-	await _pinny.appear()
-	await (
-		_pinny
-		. say(
-			[
-				"Here she is...",
-			],
-			Pinny.Mood.NEUTRAL
-		)
-	)
-
-	await get_tree().create_timer(0.5).timeout
-
-	GameState.kill(level_data.hostage)
-	_desktop.show_image(
-		level_data.hostage.terminated_file_name(), level_data.hostage.portrait_terminated
-	)
-
-	await get_tree().create_timer(2.2).timeout
-
-	await (
-		_pinny
-		. say(
-			[
-				"Stay tuned, tomorrow, things are starting to get serious...",
-			],
-			Pinny.Mood.ANGRY
-		)
-	)
-	await _pinny.leave()
+	await (_collect_ransom(
+		level_data,
+		[
+			# paid
+			"Such a hard worker...",
+			(
+				"Daddy would have been proud!"
+				if not GameState.is_alive(GameState.DAD)
+				else "Saving both your parents... That's great!"
+			),
+			"Mommy is safe. Don't skip the alarm tomorrow."
+		],
+		[
+			# unpaid
+			(
+				"AGAIN?"
+				if not GameState.is_alive(GameState.DAD)
+				else "At last you will not be fully orphan."
+			),
+			"What kind of son are you... Letting your Mom die!",
+		],
+		[
+			# reveal
+			"Here she is...",
+		],
+		[
+			# aftermath
+			"Stay tuned, tomorrow, things are starting to get serious...",
+		]
+	))
 
 
+# TODO: write the dialogs, these lines are placeholders
 func _run_level_3(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
@@ -377,9 +286,31 @@ func _run_level_3(level_data: LevelData) -> void:
 
 	await _play_day()
 
-	# TODO: write ransom dialog
+	await _pinny.appear()
+	await _pinny.say(["Day's over, pal. Let's see that wallet."], Pinny.Mood.NEUTRAL)
+
+	await (_collect_ransom(
+		level_data,
+		[
+			# paid
+			"Your brother thanks you.",
+		],
+		[
+			# unpaid
+			"Not enough... Your poor brother.",
+		],
+		[
+			# reveal
+			"Say cheese!",
+		],
+		[
+			# aftermath
+			"Only your sister left. Think about her tonight.",
+		]
+	))
 
 
+# TODO: write the dialogs, these lines are placeholders
 func _run_level_4(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
@@ -396,7 +327,119 @@ func _run_level_4(level_data: LevelData) -> void:
 
 	await _play_day()
 
-	# TODO: write ransom dialog
+	await _pinny.appear()
+	await _pinny.say(["Last family member, last payment. Show me."], Pinny.Mood.NEUTRAL)
+
+	await (_collect_ransom(
+		level_data,
+		[
+			# paid
+			"Your sister is safe.",
+			"Tomorrow, it's about you.",
+		],
+		[
+			# unpaid
+			"Oh no... Your little sister...",
+		],
+		[
+			# reveal
+			"The last photo of the album.",
+		],
+		[
+			# aftermath
+			"No family left. Tomorrow, it's about you.",
+		]
+	))
+
+
+# Pinny holds nobody today: the ransom is for the player
+# TODO: write the dialogs and the ending, these lines are placeholders
+func _run_level_5(level_data: LevelData) -> void:
+	_desktop.add_program(FAMILY_PHOTOS)
+	await (
+		_pinny
+		. visit(
+			[
+				"Last day, pal.",
+				"$%d for yourself. Let's see how much you are worth." % [level_data.ransom],
+			],
+			Pinny.Mood.ANGRY
+		)
+	)
+
+	await _play_day()
+
+	await _pinny.appear()
+	await _pinny.say(["So, how much are you worth?"], Pinny.Mood.NEUTRAL)
+
+	if _pay_ransom(level_data):
+		await _pinny.say(["You bought your freedom. Goodbye pal."], Pinny.Mood.NEUTRAL)
+	else:
+		await _pinny.say(["Not enough. You work for me now. Forever."], Pinny.Mood.ANGRY)
+	await _pinny.leave()
+
+
+# MARK: Cutscenes
+
+
+# Takes the money while Pinny is on screen, then plays the outcome:
+# - paid: Pinny says the paid lines and leaves
+# - not paid: Pinny says the unpaid lines, leaves, then executes the hostage
+func _collect_ransom(
+	level_data: LevelData,
+	paid: Array[String],
+	unpaid: Array[String],
+	reveal: Array[String],
+	aftermath: Array[String]
+) -> void:
+	var could_pay := _pay_ransom(level_data)
+
+	await get_tree().create_timer(1.5).timeout
+
+	if could_pay:
+		await _pinny.say(paid, Pinny.Mood.NEUTRAL)
+		await _pinny.leave()
+		return
+
+	await _pinny.say(unpaid, Pinny.Mood.NEUTRAL)
+	await _pinny.leave()
+	await _execute_hostage(level_data.hostage, reveal, aftermath)
+
+
+# Returns whether the player had enough money, takes everything they have otherwise
+func _pay_ransom(level_data: LevelData) -> bool:
+	var could_pay: bool = GameState.money >= level_data.ransom
+	GameState.money = max(0, GameState.money - level_data.ransom)
+	return could_pay
+
+
+# Off screen kill, then Pinny comes back with the photo of the terminated hostage
+# reveal: said before the photo, aftermath: said after it
+func _execute_hostage(
+	hostage: FamilyMemberData, reveal: Array[String], aftermath: Array[String]
+) -> void:
+	await get_tree().create_timer(0.7).timeout
+
+	_set_music_muted(true)
+
+	await get_tree().create_timer(0.5).timeout
+	await Sfx.play_kill()
+	await get_tree().create_timer(0.5).timeout
+	await Sfx.play_photo()
+	await get_tree().create_timer(0.5).timeout
+
+	await _pinny.appear()
+	await _pinny.say(reveal, Pinny.Mood.NEUTRAL)
+
+	await get_tree().create_timer(0.5).timeout
+
+	GameState.kill(hostage)
+	_desktop.show_image(hostage.terminated_file_name(), hostage.portrait_terminated)
+
+	await get_tree().create_timer(2.2).timeout
+
+	await _pinny.say(aftermath, Pinny.Mood.ANGRY)
+	await _pinny.leave()
 
 
 # Helpers
