@@ -1,6 +1,7 @@
 extends ScrollContainer
 
 const SHOP_UPGRADE_PRELOAD = preload("res://src/BrowserGame/Shop/shop_upgrade.tscn")
+const ERROR_ICON = preload("res://assets/sprites/icons/serenity/32x32/msgbox-error.png")
 
 @export var upgrades: Array[UpgradeData]
 
@@ -39,6 +40,16 @@ func _upgrade_clicked(shop_upgrade: ShopUpgrade) -> void:
 	for unlock in shop_upgrade.upgrade_data.unlocks:
 		_add_upgrade(unlock)
 	_update_empty_state.call_deferred()
+	if shop_upgrade.upgrade_data.purchase_error:
+		_show_purchase_error(shop_upgrade.upgrade_data)
+
+
+func _show_purchase_error(upgrade: UpgradeData) -> void:
+	var desktop := Desktop.find_from(self)
+	if desktop == null:
+		return
+	Sfx.play_error()
+	desktop.show_popup(upgrade.name, upgrade.purchase_error, ERROR_ICON)
 
 
 func _update_empty_state() -> void:

@@ -18,6 +18,7 @@ layout_mode = 2
 [node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1657534790]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 0
 texture = ExtResource("1_fnvr3")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1903869554]

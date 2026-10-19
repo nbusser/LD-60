@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="8_bold"]
 [ext_resource type="Resource" uid="uid://caugbnh6mvfi3" path="res://assets/data/upgrade/search.tres" id="9_search"]
 [ext_resource type="Texture2D" uid="uid://dx3a0hhx2gjg1" path="res://assets/ui/textures/background/Blue Rivets.png" id="10_wallpaper"]
+[ext_resource type="Texture2D" path="res://assets/sprites/icons/serenity/32x32/app-piano.png" id="11_music"]
 
 [sub_resource type="Resource" id="Resource_bmnu7"]
 script = ExtResource("2_a1lay")
@@ -47,6 +48,20 @@ price = 5
 icon = ExtResource("10_wallpaper")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
+[sub_resource type="Resource" id="Resource_music"]
+script = ExtResource("2_a1lay")
+id = "extended_music"
+name = "Extended Music"
+description = "The full soundtrack. No more 15 second loop!"
+price = 10
+icon = ExtResource("11_music")
+purchase_error = "Extended Music upgrade could not be installed.
+
+No compatible sound card device found. Please upgrade to a MIDI etquart(R) controller.
+
+Error 0xDEADBEEF. Your purchase was successful."
+metadata/_custom_type_script = "uid://ctts1botj6v2b"
+
 [node name="Shop" type="ScrollContainer" unique_id=383952159]
 custom_minimum_size = Vector2(520, 360)
 anchors_preset = 15
@@ -56,7 +71,7 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 script = ExtResource("1_my65c")
-upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), ExtResource("9_search"), SubResource("Resource_wallpaper")])
+upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), ExtResource("9_search"), SubResource("Resource_wallpaper"), SubResource("Resource_music")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=221064382]
 layout_mode = 2
