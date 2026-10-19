@@ -221,6 +221,18 @@
 					]
 				},
 				{
+					"name": "Fashion",
+					"icon": "res://assets/sprites/icons/categories/app-presenter.png",
+					"entries": [
+						{
+							"name": "Teuchiland Haute Couture",
+							"link": "thc.com",
+							"description": "45 sa meurt pa",
+							"image": "res://assets/sprites/thc.jpg"
+						}
+					]
+				},
+				{
 					"name": "Photography",
 					"icon": "res://assets/sprites/icons/categories/app-screenshot.png",
 					"entries": [
@@ -625,18 +637,6 @@
 							"link": "pigeon-paparazzi.org",
 							"description": "Street birds have finally learned to charge for photographs.",
 							"image": null
-						}
-					]
-				},
-				{
-					"name": "Famous for Bad Reasons",
-					"icon": "res://assets/sprites/icons/categories/msgbox-warning.png",
-					"entries": [
-						{
-							"name": "Teuchiland Haute Couture",
-							"link": "thc.com",
-							"description": "45 sa meurt pa",
-							"image": "res://assets/sprites/thc.jpg"
 						}
 					]
 				},
@@ -1367,6 +1367,108 @@
 									"link": "mozambique-airlines.mz",
 									"description": "Fly safely to Maputo",
 									"image": null
+								},
+								{
+									"name": "London's West African Culture Hall",
+									"link": "west-african-culture-hall.uk",
+									"description": "Discover the amazing culture of the people from West Africa.",
+									"image": null
+								},
+								{
+									"name": "London's East African Culture Hall",
+									"link": "east-african-culture-hall.uk",
+									"description": "Discover the amazing culture of the people from East Africa.",
+									"image": null
+								},
+								{
+									"name": "The Busser method cheatsheet",
+									"link": "busser-fanclub-marrakech.ma/cheatsheet",
+									"description": "Eat only salad. Open your Chakras. Cultivate a positive mindset. Smoke one pack a day. Be naturally sexy.",
+									"image": null
+								}
+							]
+						},
+						{
+							"name": "Asia",
+							"icon": "res://assets/sprites/icons/categories/app-maps.png",
+							"subcategories": [
+								{
+									"name": "Asia Minor",
+									"icon": "res://assets/sprites/icons/categories/app-maps.png",
+									"entries": [
+										{
+											"name": "Ataturk Kebab",
+											"link": "ataturk-kebab.tr",
+											"description": "Delicious oriental kebab fried in the best oil of all of Central Anatolia",
+											"image": null
+										}
+									]
+								},
+								{
+									"name": "Asia Medium",
+									"icon": "res://assets/sprites/icons/categories/app-maps.png",
+									"entries": [
+										{
+											"name": "Falaf' Hlel",
+											"link": "falaf-hlel.lb",
+											"description": "Delicious falafel restaurant. Guaranteed 100% hlel!",
+											"image": null
+										},
+										{
+											"name": "5th. Saudi Butter Sculpting Competition",
+											"link": "butter-sculpt.sa",
+											"description": "NEW speed sculpting even presented by Bashir al-Breizhi",
+											"image": null
+										}
+									]
+								},
+								{
+									"name": "Asia Major",
+									"icon": "res://assets/sprites/icons/categories/app-maps.png",
+									"entries": [
+										{
+											"name": "London's Korean Culture Hall",
+											"link": "korean-culture-hall.uk",
+											"description": "Discover the amazing culture of Korean peninsula.",
+											"image": null
+										},
+										{
+											"name": "Namaste Cafe",
+											"link": "namaste-cafe.com",
+											"description": "Namaste man! Free yourself from Babylon and come buy some matcha in our good-vibes only cafe.",
+											"image": null
+										},
+										{
+											"name": "Hare Krishna Culture Club",
+											"link": "hare-krishna-culture-club.com",
+											"description": "Hare Krishna my friend, free prashadam here.",
+											"image": null
+										},
+										{
+											"name": "Easy Moksha",
+											"link": "easy-moksha.org",
+											"description": "Follow Jain classes and meet the community.",
+											"image": null
+										},
+										{
+											"name": "Dalai Lama Blog",
+											"link": "dalai-lama.cn",
+											"description": "Personal blog of Tenzin Gyatso to read classes about tantric buddhism or his favorite receipes.",
+											"image": null
+										},
+										{
+											"name": "Cambodian national Frying Pan Fetish Society",
+											"link": "united-national-fetish-societies.kh/frying-pans/welcome.html",
+											"description": "Skillet, saucepan, wok... Different colors... Removable handles...",
+											"image": null
+										},
+										{
+											"name": "TVs showdown 1997 - Sony Trinitron KV-27S22 Color TV vs. JVC AV-27850",
+											"link": "frugal-magazine-online.com/tvs/1997/sponsored/KV-27S22-vs-JVC-AV-27850.html",
+											"description": "Smart consumers read Frugal Magazine",
+											"image": null
+										}
+									]
 								}
 							]
 						},
@@ -1383,12 +1485,234 @@
 											"icon": "res://assets/sprites/icons/categories/app-maps.png",
 											"entries": [
 												{
+													"name": "Bakery Le Baguette",
+													"link": "baguette-bakery.gov.uk",
+													"description": "The best baguette to be found in London",
+													"image": null
+												},
+												{
 													"name": "Civil Code UK",
 													"link": "justice.gov.uk",
 													"description": "Latest updates on the law, updated daily",
 													"image": null
+												},
+												{
+													"name": "I'm in love with my car",
+													"link": "tellement-vrai.fr/roger-taylor.html",
+													"description": "Got a feel for my automobile",
+													"image": null
+												},
+												{
+													"name": "Lern Englese",
+													"link": "royal-englesh.it",
+													"description": "Whilrwibe web best Englesh website... Lern spek Englesh better as Quin Elizabeet",
+													"image": null
+												},
+												{
+													"name": "I Fucking Swear",
+													"link": "fucking-fuck.shit.gov.uk",
+													"description": "Practical, swearing focused English course",
+													"image": null
+												},
+												{
+													"name": "How I let the stars guide my life",
+													"link": "margaret-thatcher.skyblog.com",
+													"description": "A personal memoir",
+													"image": null
+												},
+												{
+													"name": "How I started collecting nail clippings",
+													"link": "passages-from-the-life-of-a-philosopher.jp/nails.html",
+													"description": "It all started on a beautiful summer night on a steamer bound to Liverpool",
+													"image": null
+												},
+												{
+													"name": "Lady Diana's live burial",
+													"link": "my-tv-program.com/burials/live/upcoming.html",
+													"description": "Live broadcast with a friendly cast",
+													"image": null
+												},
+												{
+													"name": "Do not waste money in race cars",
+													"link": "invest-in-humanity.fr/moralistic-charity/wells-for-wales.html",
+													"description": "With the money it costs to buy a race car, you could dig four wells in developing countries such as the UK",
+													"image": null
+												},
+												{
+													"name": "Eight recipes for the British",
+													"link": "gourmet.gouv.uk/certified-hood-classics.html",
+													"description": "Variations on Mac&cheese",
+													"image": null
+												},
+												{
+													"name": "Fuck spices",
+													"link": "gourmet.gov.uk/spice-must-flop.html",
+													"description": "A love letter to bland food",
+													"image": null
+												},
+												{
+													"name": "The whisper choir",
+													"link": "whisper-choir.net",
+													"description": "Their Bohemian Rhapsody is best enjoyed with subtitles",
+													"image": null
 												}
 											]
+										}
+									],
+									"entries": [
+										{
+											"name": "Killing all capricons to bring about world peace",
+											"link": "a-modest-proposal.com/master-plan",
+											"description": "Because fuck them that's why",
+											"image": null
+										},
+										{
+											"name": "Collecting debt for fun and profit",
+											"link": "irish-debt-collection-society.com/onboarding.html",
+											"description": "Answering classical beginner questions such as \"what grey tie should I wear on my first day\"",
+											"image": null
+										},
+										{
+											"name": "Monument to the Unknown Bureaucrat about to turn three",
+											"link": "ruv.is/frettir/innlent/embaettismadurinn.html",
+											"description": "Iceland declares a new national holiday",
+											"image": null
+										},
+										{
+											"name": "My secret dish for burials",
+											"link": "foodista.fo/burials-trick.html",
+											"description": "Let's turn these frowns upside down through the magic of traditional black pudding!",
+											"image": null
+										}
+									]
+								},
+								{
+									"name": "Not Islands",
+									"icon": "res://assets/sprites/icons/categories/app-maps.png",
+									"subcategories": [
+										{
+											"name": "France",
+											"icon": "res://assets/sprites/icons/categories/app-maps.png",
+											"subcategories": [
+												{
+													"name": "Islands",
+													"icon": "res://assets/sprites/icons/categories/app-maps.png",
+													"entries": [
+														{
+															"name": "Dr. Franky Vincent",
+															"link": "dr-franky-vincent.com",
+															"description": "Zouk Therapy",
+															"image": "res://assets/sprites/franky-vincent.png"
+														}
+													]
+												}
+											],
+											"entries": [
+												{
+													"name": "Teuchiland Haute Couture",
+													"link": "thc.com",
+													"description": "45 sa meurt pa",
+													"image": "res://assets/sprites/thc.jpg"
+												},
+												{
+													"name": "Jacques Chirac Fan Club",
+													"link": "jacques-chirac-fan-club.fr",
+													"description": "Official fan club of Jacques Chirac",
+													"image": null
+												},
+												{
+													"name": "Facile French - 24H to C1",
+													"link": "facilefrench-francaisfacile.com",
+													"description": "Learn to speak French fast with our renowned intensive beginner course: zero to C1 in 24 hours",
+													"image": null
+												},
+												{
+													"name": "Virgo? Virgone",
+													"link": "astrological-observatory-paris.gouv.fr/publications/virgone.pdf",
+													"description": "A practical guide to avoiding Virgos in your day-to-day life",
+													"image": null
+												},
+												{
+													"name": "Fund collection: restoring the Venus de Milo to its former glory",
+													"link": "louvre.fr/begging/restoring-venus.html",
+													"description": "Please give us money",
+													"image": null
+												},
+												{
+													"name": "Renault Kangoo Business Executive Edition With Heating Cup Holder",
+													"link": "renault.fr/deluxe/executive/kangoo.html",
+													"description": "Only for our most special customers",
+													"image": null
+												},
+												{
+													"name": "A day in the life of a midwife",
+													"link": "onisep.fr/en/jobs/midwife/testimony.html",
+													"description": "Is this job made for me",
+													"image": null
+												},
+												{
+													"name": "Do I need to be an adult to start adopting children",
+													"link": "orphelinat-henri-des.fr/faq.html",
+													"description": "Frequently Asked Questions",
+													"image": null
+												}
+											]
+										}
+									],
+									"entries": [
+										{
+											"name": "English lernen mit Heinrich",
+											"link": "henrych-englich.de",
+											"description": "Englisch ist total geil Brüdi",
+											"image": null
+										},
+										{
+											"name": "Gelataliano oOo Italiano Moderno per Persone Anziane",
+											"link": "gelataliano.it",
+											"description": "Impara espressioni moderne e accattivanti per fare colpo sui tuoi nipoti",
+											"image": null
+										},
+										{
+											"name": "I have a growing dislike of Gemini",
+											"link": "vatican.ca/popes/latest/encyclicals/pereant-gemimi.html",
+											"description": "I will not elaborate",
+											"image": null
+										},
+										{
+											"name": "Cannon Fodder is not what it used to be",
+											"link": "mafia.com/opinions/o-tempora.html",
+											"description": "A respected gang leader's take on the ongoing wimpification of the youth",
+											"image": null
+										},
+										{
+											"name": "Sell your nail clippings for money",
+											"link": "sell-your-byproducts.de/naggelklippungen.html",
+											"description": "There has never been a better time to enter the market than now",
+											"image": null
+										},
+										{
+											"name": "TV watchers beware: turning the screen on may be damaging to your retina",
+											"link": "el-television-aficionados.mx/ingles/invitado/viejo-chocho.html",
+											"description": "A guest post by a concerned opthalmologist",
+											"image": null
+										},
+										{
+											"name": "Even single fathers can nail 95 theses to church doors",
+											"link": "family-today.com/surprising/family-happening.html",
+											"description": "How weird performance art helped me to get my estranged brother out of the streets",
+											"image": null
+										},
+										{
+											"name": "New Lada Super Moderna Cosmik to Include a Steering Wheel",
+											"link": "auto-rumor.ru/lada-super-moderna-cosmik-krassivaia.html",
+											"description": "Where will progress stop?",
+											"image": null
+										},
+										{
+											"name": "The Vienna Boys Choir reunion tour",
+											"link": "vienna-boys-reunion.com",
+											"description": "The sopranos have retired, but the tenors still argue about tempo.",
+											"image": null
 										}
 									]
 								}
@@ -1457,6 +1781,12 @@
 											"icon": "res://assets/sprites/icons/categories/app-maps.png",
 											"entries": [
 												{
+													"name": "Dr. Dre",
+													"link": "beats-by-dre.com",
+													"description": "Beat Doctor",
+													"image": "res://assets/sprites/dr-dre.png"
+												},
+												{
 													"name": "Self-reporting",
 													"link": "fbi.gov",
 													"description": "Are you a criminal? This page is for you",
@@ -1469,9 +1799,93 @@
 													"image": null
 												},
 												{
+													"name": "The Moon",
+													"link": "the-moon-restaurant.com",
+													"description": "Authentic Chinese-American cuisine.",
+													"image": null
+												},
+												{
+													"name": "Grandma's Thanksgiving Recipes",
+													"link": "grandmas-thanksgiving.com",
+													"description": "Traditional recipes for social gatherings",
+													"image": null
+												},
+												{
+													"name": "The American Turkey",
+													"link": "americanturkey.com",
+													"description": "A practical guide to raising turkeys at home.",
+													"image": null
+												},
+												{
 													"name": "Thanksgiving Food Safety",
 													"link": "fsis.usda.gov/thanksgiving",
 													"description": "Official guidelines for handling and cooking poultry.",
+													"image": null
+												},
+												{
+													"name": "Montana Fried Chicken",
+													"link": "montana-fried-chicken.com",
+													"description": "A chicken restaurant chain run by actual live chicken.",
+													"image": null
+												},
+												{
+													"name": "Cryptids Appreciation Society",
+													"link": "cryptozoophilia.org/bigfoot.html",
+													"description": "Fictional animals are worthy of love too",
+													"image": null
+												},
+												{
+													"name": "Cancers are a Cancer on society",
+													"link": "american-cancer-society.com/our-fight-against-cancer.html",
+													"description": "We should get rid of Cancers. Sounds reasonable, right?",
+													"image": null
+												},
+												{
+													"name": "Celebrities Nail Clippings Archive",
+													"link": "celebs-clippings.jp",
+													"description": "NEW: Arnold Schwarzenegger little finger nail clipping. Auctioning starting soon.",
+													"image": null
+												},
+												{
+													"name": "The Modern Knights: fighting people on Walmart parking lots",
+													"link": "walmart.com/modern-chivalry-initiative.html",
+													"description": "Noble and unwavering in victory as in defeat",
+													"image": null
+												},
+												{
+													"name": "Geology BSc. Recommends Eating At Least One Small Rock Per Day",
+													"link": "cnn.com/news/science/geologists-rocks.html",
+													"description": "To the confusion of the general public",
+													"image": null
+												},
+												{
+													"name": "Dodge Sidewinder unveiled at SEMA in Las Vegas",
+													"link": "vroomvroom.no/news/oh-my-god-finally.html",
+													"description": "It looks expensive",
+													"image": null
+												},
+												{
+													"name": "Karaoke night at the DMV",
+													"link": "karaoke-dmv.com",
+													"description": "The waiting room has never been so emotionally available.",
+													"image": null
+												},
+												{
+													"name": "The Lawrence Welk appreciation society",
+													"link": "lawrence-welk-society.org",
+													"description": "Meetings start at 4 p.m. and end when the sherry runs out.",
+													"image": null
+												},
+												{
+													"name": "Mexico: beyond the wall",
+													"link": "mexico-beyond-walls.com",
+													"description": "A travel guide that focuses on the parts without walls",
+													"image": null
+												},
+												{
+													"name": "The audited life",
+													"link": "the-audited-life.com",
+													"description": "A memoir about making eye contact with the IRS",
 													"image": null
 												}
 											]
@@ -1503,6 +1917,12 @@
 													"icon": "res://assets/sprites/icons/categories/app-maps.png",
 													"entries": [
 														{
+															"name": "Water Sculpting Workshop at University of Miquelon",
+															"link": "miquelon.uni.fr/outreach/water-sculpting-workshop.html",
+															"description": "Bring your own Water, this is not Versailles",
+															"image": null
+														},
+														{
 															"name": "Miquelon: the other island",
 															"link": "miquelon-other-island.com",
 															"description": "Everything Saint-Pierre has, but slightly quieter",
@@ -1528,6 +1948,18 @@
 											"name": "Argentina Tourism",
 											"link": "tourism.argentina.org",
 											"description": "Official tourism portal: destinations, culture and travel tips.",
+											"image": null
+										},
+										{
+											"name": "5 tips for looking stunning on mugshots",
+											"link": "the-favela-fashionisto.br/mugshot-tips.html",
+											"description": "Make that policeman blush",
+											"image": null
+										},
+										{
+											"name": "The ayahuasca business trip",
+											"link": "ayahuasca-business-trip.com",
+											"description": "Expense reports from the spirit realm",
 											"image": null
 										}
 									]
@@ -2324,12 +2756,6 @@
 							"name": "The Joke Bank",
 							"link": "thejokebank.org",
 							"description": "Thousands of jokes for the 21st century dad",
-							"image": null
-						},
-						{
-							"name": "Grandma's Thanksgiving Recipes",
-							"link": "grandmas-thanksgiving.com",
-							"description": "Traditional recipes for social gatherings",
 							"image": null
 						}
 					]
