@@ -27,6 +27,7 @@ var _dragging := false
 var _drag_offset := Vector2.ZERO
 
 var _loading := false
+var _busy := false
 
 @onready var _title_bar: Button = $VBoxContainer/Bar/Bar
 
@@ -94,8 +95,12 @@ func _on_bar_button_up() -> void:
 	_clamp_to_desktop()
 
 
-func is_loading() -> bool:
-	return _loading
+func set_busy(value: bool) -> void:
+	_busy = value
+
+
+func is_busy() -> bool:
+	return _loading or _busy
 
 
 func set_focused(value: bool) -> void:

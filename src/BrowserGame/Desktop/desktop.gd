@@ -305,9 +305,9 @@ func _get_windows() -> Array[DesktopWindow]:
 	return windows
 
 
-func _is_any_window_loading() -> bool:
+func _is_any_window_busy() -> bool:
 	for desktop_window in _get_windows():
-		if desktop_window.is_loading():
+		if desktop_window.is_busy():
 			return true
 	return false
 
@@ -327,11 +327,11 @@ func _is_hovering_text() -> bool:
 
 
 func _process(_delta: float) -> void:
-	if _is_hovering_link():
+	if _is_any_window_busy():
+		cursor.cursor_type = Cursor.CursorType.BUSY
+	elif _is_hovering_link():
 		cursor.cursor_type = Cursor.CursorType.POINTER
 	elif _is_hovering_text():
 		cursor.cursor_type = Cursor.CursorType.TEXT
-	elif _is_any_window_loading():
-		cursor.cursor_type = Cursor.CursorType.BUSY
 	else:
 		cursor.cursor_type = Cursor.CursorType.ARROW

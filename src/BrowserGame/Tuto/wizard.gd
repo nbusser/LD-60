@@ -87,12 +87,17 @@ func _install() -> void:
 	_busy = true
 	_loading.visible = true
 	_set_buttons_enabled(false)
+	var window := _get_window()
+	if window != null:
+		window.set_busy(true)
 	for message in FINISH_MESSAGES:
 		_loading_label.text = message
 		await get_tree().create_timer(randf_range(0.6, 1.0)).timeout
 	GameState.reveal_setup_programs()
 	_loading.visible = false
 	_busy = false
+	if window != null:
+		window.set_busy(false)
 
 
 func _set_buttons_enabled(value: bool) -> void:
@@ -100,9 +105,14 @@ func _set_buttons_enabled(value: bool) -> void:
 		button.disabled = not value
 
 
-func _close_window():
+func _get_window() -> DesktopWindow:
 	var node: Node = get_parent()
 	while node != null and not node is DesktopWindow:
 		node = node.get_parent()
-	if node is DesktopWindow:
-		(node as DesktopWindow).closed.emit()
+	return node as DesktopWindow
+
+
+func _close_window():
+	var window := _get_window()
+	if window != null:
+		window.closed.emit()
