@@ -3,6 +3,10 @@ extends Control
 
 signal program_opened(program_id: String)
 
+const IMAGE_WINDOW_ICON_16 := preload(
+	"res://assets/sprites/icons/serenity/16x16/filetype-image.png"
+)
+
 @export var programs: Array[Program]
 # The player can't open programs, e.g. during a cutscene
 var locked := false
@@ -98,6 +102,7 @@ func show_image(title: String, texture: Texture2D) -> void:
 		program = Program.new()
 		program.icon_label = title
 		program.icon_texture = texture
+		program.icon_texture_16 = IMAGE_WINDOW_ICON_16
 		program.app_scene = image_viewer_scene
 		_image_programs[title] = program
 	_open_or_show_window(program, func(viewer: TextureRect): viewer.texture = texture)
@@ -105,10 +110,13 @@ func show_image(title: String, texture: Texture2D) -> void:
 
 
 # Open a popup showing the message, returns once the player closes it
-func show_popup(title: String, message: String, icon: Texture2D) -> void:
+func show_popup(
+	title: String, message: String, icon: Texture2D, window_icon_16: Texture2D = null
+) -> void:
 	var program := Program.new()
 	program.icon_label = title
 	program.icon_texture = icon
+	program.icon_texture_16 = window_icon_16
 	program.app_scene = message_popup_scene
 	_open_or_show_window(
 		program,
@@ -221,7 +229,7 @@ func _create_window(
 ) -> DesktopWindow:
 	var desktop_window: DesktopWindow = desktop_window_scene.instantiate()
 	desktop_window.window_title = program.icon_label
-	desktop_window.window_icon = program.icon_texture
+	desktop_window.window_icon = program.get_window_icon()
 	desktop_window.content_scene = app_scene
 	desktop_window.on_instantiate_callback = callback
 	desktop_window.closed.connect(

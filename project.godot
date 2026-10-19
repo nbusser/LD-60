@@ -19,7 +19,7 @@ config/description="A game by team 👑 Ludum Darons 👑 for Ludum Dare 60"
 run/main_scene="uid://ckntwca1o1jbq"
 config/features=PackedStringArray("4.7")
 run/max_fps=30
-config/icon="uid://3v5h5fc5re8x"
+config/icon="uid://dr7gbrrphvqg4"
 
 [audio]
 

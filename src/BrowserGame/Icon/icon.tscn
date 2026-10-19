@@ -18,6 +18,7 @@ custom_maximum_size = Vector2(92, 64)
 propagate_maximum_size = true
 offset_right = 64.0
 offset_bottom = 64.0
+texture_filter = 1
 stretch_mode = 5
 script = ExtResource("2_ue0gg")
 

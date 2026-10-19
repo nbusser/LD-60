@@ -11,7 +11,10 @@ script = ExtResource("2_gebul")
 layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="CenterContainer" unique_id=1490488240]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CenterContainer2" type="CenterContainer" parent="." unique_id=667359629]
 layout_mode = 2

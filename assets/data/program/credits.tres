@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="Program" format=3 uid="uid://cq4vb4u21cwf0"]
 
 [ext_resource type="PackedScene" uid="uid://dnfqcfjc0h8k8" path="res://src/BrowserGame/Credits/credits_program.tscn" id="1_e3skt"]
-[ext_resource type="Texture2D" uid="uid://dtycgnynrj7jd" path="res://assets/sprites/rich_sick.png" id="2_hl54q"]
+[ext_resource type="Texture2D" uid="uid://cmvsonfwd04hr" path="res://assets/sprites/icons/serenity/32x32/app-welcome.png" id="2_hl54q"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_ip1uj"]
+[ext_resource type="Texture2D" uid="uid://bj8um6mu4shfq" path="res://assets/sprites/icons/serenity/16x16/app-welcome.png" id="4_hl54q16"]
 
 [resource]
 script = ExtResource("3_ip1uj")
 id = "credits"
 icon_texture = ExtResource("2_hl54q")
+icon_texture_16 = ExtResource("4_hl54q16")
 icon_label = "Credits"
 app_scene = ExtResource("1_e3skt")
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"

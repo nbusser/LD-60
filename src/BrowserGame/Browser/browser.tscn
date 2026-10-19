@@ -165,8 +165,11 @@ centered = false
 [node name="CategoryIcon" type="TextureRect" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=687070937]
 unique_name_in_owner = true
 visible = false
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("11_ipbxj")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=2099887822]
 custom_minimum_size = Vector2(20, 0)

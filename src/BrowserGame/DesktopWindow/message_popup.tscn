@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2nyuktkuajyh"]
 
 [ext_resource type="Script" uid="uid://d11c23rnccyqw" path="res://src/BrowserGame/DesktopWindow/message_popup.gd" id="1_1r8gy"]
-[ext_resource type="Texture2D" uid="uid://bag0q3i8cnhv1" path="res://assets/sprites/icons/error.png" id="1_fnvr3"]
+[ext_resource type="Texture2D" uid="uid://ca0n5nd4oxloa" path="res://assets/sprites/icons/serenity/32x32/msgbox-error.png" id="1_fnvr3"]
 
 [node name="MessagePopup" type="MarginContainer" unique_id=104684539]
 offset_right = 288.0

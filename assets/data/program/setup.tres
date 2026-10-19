@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="Program" format=3 uid="uid://sc2ea5wyur7i"]
 
 [ext_resource type="PackedScene" uid="uid://37h87klct204" path="res://src/BrowserGame/Tuto/wizard.tscn" id="1_yoris"]
-[ext_resource type="Texture2D" uid="uid://rfrjpmobcwfn" path="res://assets/sprites/icons/setup.png" id="2_yoris"]
+[ext_resource type="Texture2D" uid="uid://cy41xoapk8jkr" path="res://assets/sprites/icons/serenity/32x32/app-settings.png" id="2_yoris"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_bmd62"]
+[ext_resource type="Texture2D" uid="uid://c6cfdl0kagmhn" path="res://assets/sprites/icons/serenity/16x16/app-settings.png" id="4_yoris16"]
 
 [resource]
 script = ExtResource("3_bmd62")
 id = "setup"
 icon_texture = ExtResource("2_yoris")
+icon_texture_16 = ExtResource("4_yoris16")
 icon_label = "Setup"
 app_scene = ExtResource("1_yoris")
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"

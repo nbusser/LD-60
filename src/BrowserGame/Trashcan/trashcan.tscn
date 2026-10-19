@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck14xakk6i57h"]
 
-[ext_resource type="Texture2D" uid="uid://dtycgnynrj7jd" path="res://assets/sprites/rich_sick.png" id="1_4kd7u"]
+[ext_resource type="Texture2D" uid="uid://cmvsonfwd04hr" path="res://assets/sprites/icons/serenity/32x32/app-welcome.png" id="1_4kd7u"]
 [ext_resource type="Script" uid="uid://6b8ftwiocwd" path="res://src/BrowserGame/Trashcan/trashcan.gd" id="1_cgafc"]
 [ext_resource type="Script" uid="uid://bisuxvh6j5ufg" path="res://src/BrowserGame/Icon/icon.gd" id="1_miedy"]
 
@@ -85,6 +85,7 @@ custom_maximum_size = Vector2(92, 64)
 propagate_maximum_size = true
 layout_mode = 2
 texture_normal = ExtResource("1_4kd7u")
+texture_filter = 1
 stretch_mode = 5
 script = ExtResource("1_miedy")
 text = "Credits"

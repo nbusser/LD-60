@@ -2,7 +2,7 @@
 	"categories": [
 		{
 			"name": "Art",
-			"icon": "res://assets/sprites/category_icons/art_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/app-pixel-paint.png",
 			"subcategories": [
 				{
 					"name": "Painting",
@@ -69,7 +69,7 @@
 		},
 		{
 			"name": "Recreation",
-			"icon": "res://assets/sprites/category_icons/recreation_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/app-gradient.png",
 			"subcategories": [
 				{
 					"name": "Watching Paint Dry",
@@ -111,7 +111,7 @@
 		},
 		{
 			"name": "People",
-			"icon": "res://assets/sprites/category_icons/people_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/app-user-settings.png",
 			"subcategories": [
 				{
 					"name": "Famous Births",
@@ -170,7 +170,7 @@
 		},
 		{
 			"name": "Health",
-			"icon": "res://assets/sprites/category_icons/health_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/app-hearts.png",
 			"subcategories": [
 				{
 					"name": "Doctors",
@@ -231,7 +231,7 @@
 		},
 		{
 			"name": "Science",
-			"icon": "res://assets/sprites/category_icons/science_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/app-starfield.png",
 			"subcategories": [
 				{
 					"name": "Scientology",
@@ -306,7 +306,7 @@
 		},
 		{
 			"name": "Business &[br]Getting Rich",
-			"icon": "res://assets/sprites/category_icons/business_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/app-calculator.png",
 			"subcategories": [
 				{
 					"name": "Getting Rich Quick",
@@ -351,7 +351,7 @@
 		},
 		{
 			"name": "Regional",
-			"icon": "res://assets/sprites/category_icons/regional_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/app-maps.png",
 			"subcategories": [
 				{
 					"name": "Antarctica",
@@ -422,7 +422,7 @@
 		},
 		{
 			"name": "Adult (18+)",
-			"icon": "res://assets/sprites/category_icons/adult_placeholder.png",
+			"icon": "res://assets/sprites/icons/serenity/32x32/filetype-folder-inaccessible.png",
 			"subcategories": [
 				{
 					"name": "Taxes",

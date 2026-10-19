@@ -13,7 +13,8 @@ const DAY_END_HOUR := 20
 const SETUP: Program = preload("res://assets/data/program/setup.tres")
 const FAMILY_PHOTOS: Program = preload("res://assets/data/program/family_viewer.tres")
 const FAMILY_PHOTOS_ID := "family_photos"
-const YOUPI_ICON := preload("res://assets/sprites/icons/youpi2_frame0.tres")
+const YOUPI_ICON := preload("res://assets/sprites/icons/icon-32.png")
+const YOUPI_ICON_16 := preload("res://assets/sprites/icons/icon-16.png")
 
 var level_state: LevelState
 
@@ -627,7 +628,7 @@ func _play_day() -> void:
 
 	# The player closes the popup, then the desktop is cleared for the end of day cutscene
 	_desktop.locked = true
-	await _desktop.show_popup("Youpi", "Your work day is over!", YOUPI_ICON)
+	await _desktop.show_popup("Youpi", "Your work day is over!", YOUPI_ICON, YOUPI_ICON_16)
 	_desktop.close_all_windows()
 
 

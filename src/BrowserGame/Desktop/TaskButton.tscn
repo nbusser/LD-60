@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3uuffv5ois2w"]
 
-[ext_resource type="AtlasTexture" path="res://assets/sprites/icons/youpi2_frame0.tres" id="1_hglli"]
+[ext_resource type="Texture2D" uid="uid://du128irs1nrem" path="res://assets/sprites/icons/icon-16.png" id="1_hglli"]
 [ext_resource type="Script" uid="uid://wrfgybrntyx4" path="res://src/BrowserGame/Desktop/task_button.gd" id="1_taskbtn"]
 
 [node name="TaskButton" type="Button" unique_id=1034526515]

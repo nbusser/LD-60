@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="Program" format=3 uid="uid://ddwcomjogl5eh"]
 
 [ext_resource type="PackedScene" uid="uid://3ae5hnovy0t8" path="res://src/Family/family_photos.tscn" id="1_scene"]
-[ext_resource type="Texture2D" uid="uid://dtv3bv4n2gqvn" path="res://assets/sprites/icons/folder.png" id="2_icon"]
+[ext_resource type="Texture2D" uid="uid://iggflhkmcvlb" path="res://assets/sprites/icons/serenity/32x32/app-image-viewer.png" id="2_icon"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://uteat70fi8ri" path="res://assets/sprites/icons/serenity/16x16/app-image-viewer.png" id="4_icon16"]
 
 [resource]
 script = ExtResource("3_script")
 id = "family_photos"
 icon_texture = ExtResource("2_icon")
+icon_texture_16 = ExtResource("4_icon16")
 icon_label = "Family Photos"
 app_scene = ExtResource("1_scene")
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"
