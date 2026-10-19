@@ -43,8 +43,7 @@ func _ready():
 	if GameState.current_level_number > 1:
 		_desktop.add_program(FAMILY_PHOTOS)
 
-	get_tree().create_timer(0.3)
-	await $UI/Fadein.fade()
+	$UI/Fadein.fade()
 
 	match GameState.current_level_number:
 		0:
