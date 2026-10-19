@@ -463,7 +463,7 @@ def split_requests(
 
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    text = json.dumps(data, indent="\t", ensure_ascii=False) + "\n"
+    text = json.dumps(data, indent="\t", ensure_ascii=False)
     path.write_text(text, encoding="utf-8")
 
 
