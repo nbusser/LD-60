@@ -8,6 +8,6 @@ script = ExtResource("1_script")
 id = "search"
 name = "Youpi? Search"
 description = "Search the Youpi? Central Directory using keywords."
-price = 0
+price = 20
 icon = ExtResource("2_icon")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
