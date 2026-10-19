@@ -2,11 +2,13 @@ extends Node
 
 const CLICK = preload("res://assets/sounds/click.ogg")
 const HARDDRIVE = preload("res://assets/sounds/harddrive.ogg")
+const HARDDRIVE_SHORT = preload("res://assets/sounds/harddrive_short.ogg")
 const MESSAGE = preload("res://assets/sounds/message.ogg")
 const JUMP = preload("res://assets/sounds/jump.ogg")
 
 var _click_player := AudioStreamPlayer.new()
 var _harddrive_player := AudioStreamPlayer.new()
+var _harddrive_short_player := AudioStreamPlayer.new()
 var _message_player := AudioStreamPlayer.new()
 var _jump_player := AudioStreamPlayer.new()
 
@@ -19,6 +21,10 @@ func _ready() -> void:
 	_harddrive_player.stream = HARDDRIVE
 	_harddrive_player.bus = &"SFX"
 	add_child(_harddrive_player)
+
+	_harddrive_short_player.stream = HARDDRIVE_SHORT
+	_harddrive_short_player.bus = &"SFX"
+	add_child(_harddrive_short_player)
 
 	_message_player.stream = MESSAGE
 	_message_player.bus = &"SFX"
@@ -39,6 +45,10 @@ func play_harddrive() -> void:
 
 func stop_harddrive() -> void:
 	_harddrive_player.stop()
+
+
+func play_harddrive_short() -> void:
+	_harddrive_short_player.play()
 
 
 func play_message() -> void:

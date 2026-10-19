@@ -36,6 +36,7 @@ var _busy := false
 func _ready() -> void:
 	_update_title_bar()
 	_loading = true
+	Sfx.play_harddrive_short()
 	var content = content_scene.instantiate()
 	assert(content is Control)
 
