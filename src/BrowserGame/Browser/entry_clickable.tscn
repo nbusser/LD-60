@@ -15,31 +15,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bophl")
 
-[node name="Image" type="TextureRect" parent="." unique_id=104986059]
+[node name="Left" type="VBoxContainer" parent="." unique_id=1873220146]
+layout_mode = 2
+
+[node name="Image" type="TextureRect" parent="Left" unique_id=104986059]
 custom_minimum_size = Vector2(48, 48)
 custom_maximum_size = Vector2(48, 48)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1274852852]
-layout_mode = 2
-
-[node name="NameAndLink" parent="VBoxContainer" unique_id=68694191 instance=ExtResource("1_d6aiv")]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/line_separation = 4
-autowrap_mode = 2
-
-[node name="Description" type="Label" parent="VBoxContainer" unique_id=918700805]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="CopyMargin" type="MarginContainer" parent="." unique_id=1873220145]
+[node name="CopyMargin" type="MarginContainer" parent="Left" unique_id=1873220145]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 13
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 4
 
-[node name="Button" type="Button" parent="CopyMargin" unique_id=1776856226]
+[node name="Button" type="Button" parent="Left/CopyMargin" unique_id=1776856226]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
@@ -55,3 +45,16 @@ theme_override_styles/hover = ExtResource("5_iconnormal")
 theme_override_styles/disabled = ExtResource("5_iconnormal")
 icon = ExtResource("3_55m3a")
 icon_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1274852852]
+layout_mode = 2
+
+[node name="NameAndLink" parent="VBoxContainer" unique_id=68694191 instance=ExtResource("1_d6aiv")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_separation = 4
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="VBoxContainer" unique_id=918700805]
+unique_name_in_owner = true
+layout_mode = 2

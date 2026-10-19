@@ -8,11 +8,11 @@ var entry: Entry:
 		assert(entry == null)
 		entry = value
 
-@onready var image: TextureRect = $Image
+@onready var image: TextureRect = $Left/Image
 @onready var label: ClickableLabel = %NameAndLink
 @onready var description: Label = %Description
 @onready var copy_button: Button = %Button
-@onready var _copy_margin: MarginContainer = $CopyMargin
+@onready var _copy_margin: MarginContainer = $Left/CopyMargin
 
 
 func _ready() -> void:
