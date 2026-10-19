@@ -29,7 +29,7 @@ var _processed := false
 @onready var _link_input: LineEdit = %LinkInput
 @onready var _send_button: Button = %SendButton
 @onready var _status_label: Label = %StatusLabel
-@onready var _paste_button: TextureButton = %Button
+@onready var _paste_button: Button = %Button
 @onready var _lock_icon: TextureRect = %LockIcon
 
 

@@ -11,8 +11,8 @@ var entry: Entry:
 @onready var image: TextureRect = $Image
 @onready var label: ClickableLabel = %NameAndLink
 @onready var description: Label = %Description
-@onready var copy_button: TextureButton = %Button
-@onready var lock_icon: TextureRect = %LockIcon
+@onready var copy_button: Button = %Button
+@onready var _copy_margin: MarginContainer = $CopyMargin
 
 
 func _ready() -> void:
@@ -40,10 +40,7 @@ func _on_meta_clicked(_meta: Variant) -> void:
 
 
 func _refresh_copy_lock() -> void:
-	var unlocked := GameState.is_upgrade_owned("copy_paste")
-	copy_button.disabled = not unlocked
-	copy_button.modulate.a = 1.0 if unlocked else 0.4
-	lock_icon.visible = not unlocked
+	_copy_margin.visible = GameState.is_upgrade_owned("copy_paste")
 
 
 func _on_copy_pressed() -> void:

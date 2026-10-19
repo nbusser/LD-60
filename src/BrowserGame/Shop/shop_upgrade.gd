@@ -8,13 +8,14 @@ var upgrade_data: UpgradeData:
 		assert(upgrade_data == null)
 		upgrade_data = value
 
+@onready var _icon: TextureRect = %Icon
 @onready var _price_label: Label = %PriceLabel
 @onready var _buy_button: Button = %BuyButton
 
 
 func _ready() -> void:
 	assert(upgrade_data != null && upgrade_data.icon != null && upgrade_data.name != null)
-	%Icon.set_texture(upgrade_data.icon)
+	_icon.texture = upgrade_data.icon
 	%Title.text = "[color=blue][url]" + upgrade_data.name
 	if upgrade_data.description:
 		%Description.text = "[color=black]" + upgrade_data.description
