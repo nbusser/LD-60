@@ -47,7 +47,7 @@ requests_json = ExtResource("5_level4")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("6_crt")
 shader_parameter/source_resolution = Vector2(800, 600)
-shader_parameter/brightness = 1.0
+shader_parameter/brightness = 1.10000005225
 shader_parameter/contrast = 1.05
 shader_parameter/saturation = 1.08
 shader_parameter/gamma = 1.0
