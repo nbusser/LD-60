@@ -2,13 +2,9 @@
 	"requests": [
 		{
 			"time": 10.0,
-			"query": "doctor",
+			"query": "stop artery bleeding fast",
 			"duration": 55.0,
 			"links": [
-				{
-					"link": "bite-by-dre.com",
-					"points": 2.0
-				},
 				{
 					"link": "dr-franky-vincent.com",
 					"points": 1.0
@@ -17,35 +13,99 @@
 		},
 		{
 			"time": 60.0,
-			"query": "get rich",
+			"query": "best kebab turkey",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "everytutorial.com/marrying-a-billionaire.html",
-					"points": 2.0
+					"link": "ataturk-kebab.tr",
+					"points": 5.0
 				},
 				{
-					"link": "richandsick.gov",
+					"link": "americanturkey.com",
 					"points": 1.0
 				}
 			]
 		},
 		{
 			"time": 110.0,
-			"query": "best hlel food",
+			"query": "where to find money?",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "furry-petshop.com",
+					"link": "all-the-tutorials.com/finding-money-just-lying-around",
 					"points": 5.0
 				},
 				{
-					"link": "ataturk-kebab.tr",
-					"points": 1.0
+					"link": "ask-a-florist.pk/finders-keepers.html",
+					"points": 2.0
 				},
 				{
-					"link": "falaf-hlel.lb",
+					"link": "mcbrule-attorneys.ie/definitely-theft.html",
 					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 160.0,
+			"query": "lern spek inglese",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "royal-englesh.it",
+					"points": 5.0
+				},
+				{
+					"link": "henrych-englich.de",
+					"points": 3.0
+				},
+				{
+					"link": "fucking-fuck.shit.gov.uk",
+					"points": 2.0
+				},
+				{
+					"link": "language-pals.com",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 210.0,
+			"query": "thanksgiving recipes",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "grandmas-thanksgiving.com",
+					"points": 5.0
+				},
+				{
+					"link": "fsis.usda.gov/thanksgiving",
+					"points": 3.0
+				}
+			]
+		},
+		{
+			"time": 260.0,
+			"query": "best astrological sign",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "cool-guys.sb/top-1-aquarius.html",
+					"points": 5.0
+				}
+			]
+		},
+		{
+			"time": 310.0,
+			"query": "how to have friends",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "sos-friendship.com",
+					"points": 5.0
+				},
+				{
+					"link": "language-pals.com",
+					"points": 3.0
 				}
 			]
 		}

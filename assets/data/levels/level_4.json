@@ -2,60 +2,168 @@
 	"requests": [
 		{
 			"time": 10.0,
-			"query": "life in 2026",
+			"query": "Buying expensive car to make my wife's boyfriend jealous",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "survivalist.net/WW3",
+					"link": "vroomvroom.no/news/oh-my-god-finally.html",
+					"points": 4.0
+				},
+				{
+					"link": "renault.fr/deluxe/executive/kangoo.html",
+					"points": 4.0
+				},
+				{
+					"link": "auto-rumor.ru/lada-super-moderna-cosmik-krassivaia.html",
+					"points": 3.0
+				},
+				{
+					"link": "invest-in-humanity.fr/moralistic-charity/wells-for-wales.html",
 					"points": 2.0
 				},
 				{
-					"link": "movie-addicts.net/1996/feb/idiocracy",
-					"points": 4.0
+					"link": "flat-pedestrians-society.com/top5/cars.html",
+					"points": 1.0
 				}
 			]
 		},
 		{
 			"time": 60.0,
-			"query": "how to feed my chicken?",
+			"query": "I'm bored what's on TV",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "mc-kenzy-ranch.com",
-					"points": 2.0
+					"link": "my-tv-program.com/burials/live/upcoming.html",
+					"points": 5.0
 				},
 				{
-					"link": "fishermen-hub.com",
-					"points": 2.0
-				},
-				{
-					"link": "chicken-world-encyclopedia.org",
+					"link": "el-television-aficionados.mx/ingles/invitado/viejo-chocho.html",
 					"points": 2.0
 				}
 			]
 		},
 		{
 			"time": 110.0,
-			"query": "Mario x Peach",
+			"query": "British food",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "fuel34.com",
+					"link": "gourmet.gouv.uk/certified-hood-classics.html",
+					"points": 5.0
+				},
+				{
+					"link": "gourmet.gov.uk/spice-must-flop.html",
+					"points": 4.0
+				},
+				{
+					"link": "foodista.fo/burials-trick.html",
 					"points": 2.0
+				},
+				{
+					"link": "baguette-bakery.gov.uk",
+					"points": 1.0
 				}
 			]
 		},
 		{
 			"time": 160.0,
-			"query": "Fix mouth smell",
+			"query": "I am a single father looking for role models for my beginning in performance art",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "dr-shukran.com",
-					"points": 1.0
+					"link": "family-today.com/surprising/family-happening.html",
+					"points": 5.0
 				},
 				{
-					"link": "the-toothpaste-emporium.com",
+					"link": "family-today.com/surprising/family-painting.html",
+					"points": 3.0
+				},
+				{
+					"link": "family-today.com/surprising/family-sculpting.html",
+					"points": 3.0
+				},
+				{
+					"link": "family-today.com/surprising/family-gardening.html",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 210.0,
+			"query": "How to go to heaven fast?",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "faith-answers.com/speedrun.html",
+					"points": 5.0
+				},
+				{
+					"link": "faith-answers.com/rudeness.html",
+					"points": 2.0
+				},
+				{
+					"link": "faith-answers.com/the-eleventh-commandment.html",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 260.0,
+			"query": "Is it possible for a fish to drown?",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "ask-a-florist.pk/can-fish-drown.html",
+					"points": 5.0
+				},
+				{
+					"link": "faith-answers.com/drowning-kittens.html",
+					"points": 1.0
+				}
+			]
+		},
+		{
+			"time": 310.0,
+			"query": "I forgot to pay parking ticket I want to self report im a criminal",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "fbi.gov",
+					"points": 5.0
+				},
+				{
+					"link": "justice.gov.uk",
+					"points": 2.0
+				},
+				{
+					"link": "legal-mistakes.com",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 360.0,
+			"query": "I'm so angry I want to punch people, how do that safely and legally",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "all-about-floors.com/free-fighting.html",
+					"points": 5.0
+				},
+				{
+					"link": "the-cowardly-warrior.com/news/daily/mercenaries.html",
+					"points": 3.0
+				},
+				{
+					"link": "walmart.com/modern-chivalry-initiative.html",
+					"points": 3.0
+				},
+				{
+					"link": "comparison.org/street-fight-vs-dogfighting.html",
+					"points": 2.0
+				},
+				{
+					"link": "alpha-man.es/punching-children-tut.html",
 					"points": 1.0
 				}
 			]

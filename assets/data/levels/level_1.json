@@ -2,46 +2,114 @@
 	"requests": [
 		{
 			"time": 10.0,
-			"query": "1995 French elections winner",
+			"query": "top 3 best religions",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "jacques-chirac-fan-club.fr",
-					"points": 1.0
+					"link": "religions.com/official-ranking.html",
+					"points": 5.0
 				},
 				{
-					"link": "baguette-bakery.gov.uk",
-					"points": 3.0
+					"link": "faith-answers.com/organization.html",
+					"points": 2.0
 				}
 			]
 		},
 		{
 			"time": 60.0,
-			"query": "necrophilia fine 1995",
+			"query": "kitchenware fetish",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "legal-mistakes.com",
-					"points": 2.0
+					"link": "united-national-fetish-societies.kh/frying-pans/welcome.html",
+					"points": 5.0
 				},
 				{
-					"link": "morgue-showroom.net",
+					"link": "fuel34.com",
 					"points": 2.0
-				},
-				{
-					"link": "justice.gov.uk",
-					"points": 3.0
 				}
 			]
 		},
 		{
 			"time": 110.0,
-			"query": "best jokes",
+			"query": "should I eat a raw onion before a date",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "onions-producers-assocation.cz/should-i-eat-a-raw-onion-before-x/date.html",
+					"points": 5.0
+				},
+				{
+					"link": "all-the-tutorials.com/eating",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 160.0,
+			"query": "make friends laugh with family friendly jokes",
 			"duration": 55.0,
 			"links": [
 				{
 					"link": "thejokebank.org",
+					"points": 5.0
+				},
+				{
+					"link": "jsr.org/laughter-study",
+					"points": 2.0
+				},
+				{
+					"link": "plato.stanford.edu/entries/humor",
+					"points": 1.0
+				}
+			]
+		},
+		{
+			"time": 210.0,
+			"query": "fix bad mouth smell",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "dr-shukran.com",
+					"points": 4.0
+				},
+				{
+					"link": "the-toothpaste-emporium.com",
+					"points": 4.0
+				},
+				{
+					"link": "sweet-tooth-toothpaste-buy.de",
 					"points": 3.0
+				}
+			]
+		},
+		{
+			"time": 260.0,
+			"query": "helping woman give birth on a flying plane cannot land",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "birth.org/situations/plane/oh-shit.html",
+					"points": 5.0
+				},
+				{
+					"link": "birth.org/situations/plane/landed.html",
+					"points": 2.0
+				},
+				{
+					"link": "all-the-tutorials.com/cesarian",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 310.0,
+			"query": "upcoming events in Saudi Arabia",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "butter-sculpt.sa",
+					"points": 5.0
 				}
 			]
 		}

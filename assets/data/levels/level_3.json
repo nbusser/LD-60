@@ -2,81 +2,149 @@
 	"requests": [
 		{
 			"time": 10.0,
-			"query": "learning swahili",
+			"query": "ecological hobby",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "mozambique-airlines.mz",
-					"points": 1.0
+					"link": "science.org/science2/mudwatching_final_final.pdf",
+					"points": 5.0
 				},
 				{
-					"link": "language-pals.com",
-					"points": 2.0
-				},
-				{
-					"link": "east-african-culture-hall.uk",
+					"link": "family-today.com/surprising/family-gardening.html",
 					"points": 2.0
 				}
 			]
 		},
 		{
 			"time": 60.0,
-			"query": "become a cult leader",
+			"query": "how is life in 2026",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "korean-culture-hall.uk",
-					"points": 1.0
+					"link": "movie-addicts.net/1996/feb/idiocracy",
+					"points": 4.0
 				},
 				{
-					"link": "sos-friendship.com",
+					"link": "survivalist.net/WW3",
 					"points": 3.0
 				},
 				{
-					"link": "namaste-cafe.com",
-					"points": 3.0
-				},
-				{
-					"link": "hare-krishna-culture-club.com",
+					"link": "utopia-foundation.org",
 					"points": 3.0
 				}
 			]
 		},
 		{
 			"time": 110.0,
-			"query": "attaining enlightenment",
+			"query": "become sexy and fit like Kevin Costner best method",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "dharma-center-lookup.org",
-					"points": 1.0
-				},
-				{
-					"link": "easy-moksha.org",
-					"points": 1.0
-				},
-				{
-					"link": "my-prostate.com",
+					"link": "science.com/busser-method/101.html",
 					"points": 5.0
 				},
 				{
-					"link": "dalai-lama.cn",
+					"link": "busser-fanclub-marrakech.ma/cheatsheet",
+					"points": 4.0
+				},
+				{
+					"link": "busser-busser-busser.fr/start.html",
 					"points": 3.0
+				},
+				{
+					"link": "mouhat-lose-weight-official-copyrighted.fr",
+					"points": 3.0
+				},
+				{
+					"link": "the-busser-method.com/advanced",
+					"points": 2.0
+				},
+				{
+					"link": "mouhat-lose-weight-official-copyrighted.fr/about",
+					"points": 2.0
 				}
 			]
 		},
 		{
 			"time": 160.0,
+			"query": "Hitler sightings",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "hitler-sightings-hotline.org",
+					"points": 5.0
+				},
+				{
+					"link": "tourism.argentina.org",
+					"points": 3.0
+				}
+			]
+		},
+		{
+			"time": 210.0,
+			"query": "retirement home singer invite",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "dr-franky-vincent.com",
+					"points": 3.0
+				},
+				{
+					"link": "bite-by-dre.com",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 260.0,
 			"query": "rplac brokn lttr kyboard",
 			"duration": 55.0,
 			"links": [
 				{
 					"link": "eevblog.com/forum",
-					"points": 3.0
+					"points": 4.0
 				},
 				{
 					"link": "computer-store-nerds.com",
-					"points": 2.0
+					"points": 3.0
+				},
+				{
+					"link": "keyboards-fans.net",
+					"points": 1.0
+				}
+			]
+		},
+		{
+			"time": 310.0,
+			"query": "Beatles",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "passages-from-the-life-of-a-philosopher.jp/nails.html",
+					"points": 1.0
+				},
+				{
+					"link": "tellement-vrai.fr/roger-taylor.html",
+					"points": 1.0
+				}
+			]
+		},
+		{
+			"time": 360.0,
+			"query": "How many rocks should I eat per day",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "cnn.com/news/science/geologists-rocks.html",
+					"points": 5.0
+				},
+				{
+					"link": "stoned.com/tips/health.html",
+					"points": 3.0
+				},
+				{
+					"link": "who.int/tips/do-not-eat-rocks-cannot-believe-i-have-to-say-it.html",
+					"points": 3.0
 				}
 			]
 		}
