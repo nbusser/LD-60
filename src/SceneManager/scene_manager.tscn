@@ -12,6 +12,7 @@
 [ext_resource type="JSON" path="res://assets/data/levels/level_4.json" id="5_level4"]
 [ext_resource type="Shader" uid="uid://b1fr340pmvdl7" path="res://src/SceneManager/crt_screen.gdshader" id="6_crt"]
 [ext_resource type="Shader" uid="uid://djr6tb0gxab2a" path="res://src/SceneManager/posterize.gdshader" id="7_post"]
+[ext_resource type="Texture2D" uid="uid://3j2in050s526" path="res://assets/backgrounds/bg.png" id="8_4ishk"]
 
 [sub_resource type="Resource" id="Resource_r4gm4"]
 script = ExtResource("2_38vrh")
@@ -50,7 +51,7 @@ shader_parameter/brightness = 1.0
 shader_parameter/contrast = 1.05
 shader_parameter/saturation = 1.08
 shader_parameter/gamma = 1.0
-shader_parameter/curvature = 0.0150000007125
+shader_parameter/curvature = 0.02000000095
 shader_parameter/corner_soften = 0.010000000475
 shader_parameter/vignette = 0.22
 shader_parameter/scanline_strength = 0.150000007125
@@ -94,6 +95,15 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=888840669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_4ishk")
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=752066692]
 texture_filter = 2
 material = SubResource("ShaderMaterial_crt")
@@ -101,13 +111,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 330.0
-offset_top = 60.000004
-offset_right = -790.0
-offset_bottom = -420.0
+offset_left = 370.0
+offset_top = 64.0
+offset_right = -750.0
+offset_bottom = -416.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.6, 1.6)
+scale = Vector2(1.5, 1.5)
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=200585439]
