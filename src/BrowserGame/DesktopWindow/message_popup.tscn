@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c2nyuktkuajyh"]
 
-[ext_resource type="Script" uid="uid://d11c23rnccyqw" path="res://src/BrowserGame/DesktopWindow/error_popup.gd" id="1_1r8gy"]
+[ext_resource type="Script" uid="uid://d11c23rnccyqw" path="res://src/BrowserGame/DesktopWindow/message_popup.gd" id="1_1r8gy"]
 [ext_resource type="Texture2D" uid="uid://bag0q3i8cnhv1" path="res://assets/sprites/icons/error.png" id="1_fnvr3"]
 
-[node name="ErrorPopup" type="MarginContainer" unique_id=104684539]
+[node name="MessagePopup" type="MarginContainer" unique_id=104684539]
 offset_right = 288.0
 offset_bottom = 148.0
 theme_override_constants/margin_left = 10
@@ -15,7 +15,8 @@ script = ExtResource("1_1r8gy")
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1275065818]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1657534790]
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1657534790]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("1_fnvr3")
 

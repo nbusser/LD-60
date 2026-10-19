@@ -13,6 +13,7 @@ const DAY_END_HOUR := 20
 const SETUP: Program = preload("res://assets/data/program/setup.tres")
 const FAMILY_PHOTOS: Program = preload("res://assets/data/program/family_viewer.tres")
 const FAMILY_PHOTOS_ID := "family_photos"
+const YOUPI_ICON := preload("res://assets/sprites/icons/youpi.png")
 
 var level_state: LevelState
 
@@ -151,9 +152,6 @@ func _run_level_1(level_data: LevelData) -> void:
 	await _pinny.leave()
 
 	await _play_day()
-
-	# TODO quand la journee se termine: ouvrir une popup qui dit que la journee se finit.
-	# Quand on la ferme ca ferme toutes les fenetres, et on empeche l'user d'ouvrir lui meme d'autres fenetres puis on commence la cutscene de fin de niveau
 
 	await _pinny.appear()
 	await _pinny.say(
@@ -304,6 +302,13 @@ func _play_day() -> void:
 	level_state.is_clock_running = true
 	level_state.start_day()
 	await day_finished
+
+	await get_tree().create_timer(1.0).timeout
+
+	# The player closes the popup, then the desktop is cleared for the end of day cutscene
+	_desktop.locked = true
+	await _desktop.show_popup("Youpi", "Your work day is over!", YOUPI_ICON)
+	_desktop.close_all_windows()
 
 
 # Polled rather than signaled: requests may all be resolved before _play_day(),

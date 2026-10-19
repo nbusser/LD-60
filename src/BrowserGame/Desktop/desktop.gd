@@ -4,6 +4,8 @@ extends Control
 signal program_opened(program_id: String)
 
 @export var programs: Array[Program]
+# The player can't open programs, e.g. during a cutscene
+var locked := false
 
 var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
 var _window_to_task_button: Dictionary[DesktopWindow, TaskButton] = {}
@@ -16,7 +18,7 @@ var _selection_base: Array[Icon] = []
 @onready var icon_scene = preload("res://src/BrowserGame/Icon/icon.tscn")
 @onready
 var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_window.tscn")
-@onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
+@onready var message_popup_scene = preload("res://src/BrowserGame/DesktopWindow/message_popup.tscn")
 @onready var task_button_scene = preload("res://src/BrowserGame/Desktop/TaskButton.tscn")
 @onready var cursor_popup_scene = preload("res://src/BrowserGame/Desktop/cursor_popup.tscn")
 @onready var image_viewer_scene = preload("res://src/Family/image_viewer.tscn")
@@ -100,6 +102,31 @@ func show_image(title: String, texture: Texture2D) -> void:
 		_image_programs[title] = program
 	_open_or_show_window(program, func(viewer: TextureRect): viewer.texture = texture)
 	Sfx.click()
+
+
+# Open a popup showing the message, returns once the player closes it
+func show_popup(title: String, message: String, icon: Texture2D) -> void:
+	var program := Program.new()
+	program.icon_label = title
+	program.icon_texture = icon
+	program.app_scene = message_popup_scene
+	_open_or_show_window(
+		program,
+		func(popup: MessagePopup):
+			popup.message = message
+			popup.icon = icon
+	)
+	Sfx.click()
+
+	var desktop_window: DesktopWindow = _programs_to_window[program]
+	await desktop_window.closed
+	_programs_to_window.erase(program)
+	desktop_window.queue_free()
+
+
+func close_all_windows() -> void:
+	for program in _programs_to_window.keys():
+		_close_window(program)
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
@@ -210,8 +237,8 @@ func _create_window(
 func _create_error_popup(program: Program, error_message: String) -> DesktopWindow:
 	var desktop_window = _create_window(
 		program,
-		error_popup_scene,
-		func(error_popup: ErrorPopup): error_popup.error_message = error_message
+		message_popup_scene,
+		func(error_popup: MessagePopup): error_popup.message = error_message
 	)
 	return desktop_window
 
@@ -286,7 +313,7 @@ func _create_icon(program: Program) -> void:
 	icon.double_clicked.connect(
 		func():
 			# programs can't be opened while the setup is installing
-			if _is_any_window_busy():
+			if locked or _is_any_window_busy():
 				return
 			_open_or_show_window(program)
 			Sfx.click()
