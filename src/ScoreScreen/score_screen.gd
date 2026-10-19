@@ -46,7 +46,7 @@ func _final_text() -> String:
 			4:
 				return "You and your whole family did not survive Youpi and Pinny."
 			_:
-				return "You sacrificed yourself to saved who you could save. You will be remembered."
+				return "You sacrificed yourself to save who you could save. You will be remembered."
 
 	match GameState.total_death():
 		0:

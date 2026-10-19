@@ -24,16 +24,21 @@ func run() -> void:
 		_pinny
 		. say(
 			[
-				"Let me onboard you for this first day.",
+				"Let me onboard you on your first day.",
 				"Your position in Youpi is SEARCH ENGINEER. A very prestigious job! Lucky you!",
-				"You contract is only one week, Monday to Saturday. If you are performing well, we might propose to extend you."
+				"Your contract is only one week long, Monday to Saturday. If you perform well, we might propose to extend it."
 			],
 			Pinny.Mood.LAUGH
 		)
 	)
-	await _pinny.say(
-		["Your job is to manually reply to our CUSTOMERS queries' EMAIL with appropriate RESULTS."],
-		Pinny.Mood.NEUTRAL
+	await (
+		_pinny
+		. say(
+			[
+				"Your job is to manually reply to our CUSTOMERS' queries by EMAIL with appropriate RESULTS."
+			],
+			Pinny.Mood.NEUTRAL
+		)
 	)
 
 	await (
@@ -51,14 +56,14 @@ func run() -> void:
 	_level_state.start_day()
 
 	await get_tree().create_timer(1.5, false).timeout
-	await _pinny.say(["How exciting! You very first request!"], Pinny.Mood.LAUGH)
+	await _pinny.say(["How exciting! Your very first request!"], Pinny.Mood.LAUGH)
 	await _pinny.say(
 		[
 			"It seems like someone is looking for a doctor.",
 			"Find them a good link, and Youpi will pay you for it."
 		]
 	)
-	await _pinny.say(["Wrong result, no money, pal! I'm not running a charity"], Pinny.Mood.LAUGH)
+	await _pinny.say(["Wrong result, no money, pal! I'm not running a charity."], Pinny.Mood.LAUGH)
 
 	await _pinny.instruct(
 		['Open "Youpi?", our in-house database.'],
@@ -75,7 +80,7 @@ func run() -> void:
 
 	await _pinny.instruct(
 		[
-			"Now, the tedious work starts: copy that LINK, then click Send. Better links pay more. You can do it buddy! I believe in you!",
+			"Now, the tedious work starts: copy that LINK, then click Send. Better links pay more. You can do it, buddy! I believe in you!",
 		],
 		func(): return _level_state.resolved_requests > 0,
 		_level_state.request_resolved
@@ -86,15 +91,15 @@ func run() -> void:
 		_pinny
 		. say(
 			[
-				"This customer was exceptionally patient, but most customer will demand you to answer within a limited time, so, no time to slack off pal.",
-				"At Youpi, we value individual performance. With your hardly-earned money, you can buy some tools from us that we reserve for our most cherished employees.",
+				"This customer was exceptionally patient, but most customers will demand that you answer within a limited time. So no time to slack off, pal.",
+				"At Youpi, we value individual performance. With your hard-earned money, you can buy some tools from us that we reserve for our most cherished employees.",
 			],
 			Pinny.Mood.NEUTRAL
 		)
 	)
 
 	await _pinny.instruct(
-		["Open the Shop application pal."],
+		["Open the Shop application, pal."],
 		# I don't know why but the shop is not properly detected
 		# TODO: debug it
 		# _is_running.bind("shop"),
@@ -117,7 +122,7 @@ func run() -> void:
 		_pinny
 		. say(
 			[
-				"That's all pal! Have a nice first day.",
+				"That's all, pal! Have a nice first day.",
 			],
 			Pinny.Mood.LAUGH
 		)

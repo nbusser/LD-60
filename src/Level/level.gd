@@ -97,7 +97,7 @@ func _run_level_0() -> void:
 	await tutorial.run()
 	await _play_day()
 
-	await (_pinny.visit(["Good job on your first day pal! Get some rest."], Pinny.Mood.LAUGH))
+	await (_pinny.visit(["Good job on your first day, pal! Get some rest."], Pinny.Mood.LAUGH))
 
 
 # Only the Setup icon is on the desktop, each install step reveals a program
@@ -121,7 +121,7 @@ func _on_setup_install_started() -> void:
 		. say(
 			[
 				"Howdy friend! I am Pinny, your friendly desktop assistant.",
-				"Welcome to Youpi! Sit back and relax, I'm installing everything you need.",
+				"Welcome to Youpi! Sit back and relax. I'm installing everything you need.",
 			],
 			Pinny.Mood.LAUGH
 		)
@@ -137,7 +137,7 @@ func _run_level_1(level_data: LevelData) -> void:
 		_pinny
 		. say(
 			[
-				"Good morning pal! Great work yesterday.",
+				"Good morning, pal! Great work yesterday.",
 				"I left you a little gift on your desktop.",
 			],
 			Pinny.Mood.LAUGH
@@ -160,7 +160,7 @@ func _run_level_1(level_data: LevelData) -> void:
 		. say(
 			[
 				"Lovely family, isn't it? I heard a lot about you from them.",
-				"Did you hear from them since they left for vacations two days ago? Don't worry, they are safe. I keep them safe... for now.",
+				"Have you heard from them since they left for vacation two days ago? Don't worry, they are safe. I keep them safe... for now.",
 				(
 					"Let's cut to the chase. I need money to buy cigarettes. The fee for your Dad is $%d. Pay by the end of your work day."
 					% [level_data.ransom]
@@ -186,7 +186,7 @@ func _run_level_1(level_data: LevelData) -> void:
 		_pinny
 		. say(
 			[
-				"Do you have the money I kindly asked you?",
+				"Do you have the money I kindly asked you for?",
 			],
 			Pinny.Mood.NEUTRAL
 		)
@@ -198,13 +198,13 @@ func _run_level_1(level_data: LevelData) -> void:
 		[
 			# paid
 			"Good! You learned fast. Your Dad is safe for now.",
-			"See you tomorrow, don't be late.",
-			"Sleep well friend."
+			"See you tomorrow. Don't be late.",
+			"Sleep well, friend."
 		],
 		[
 			# unpaid
 			"Oh... Too bad...",
-			"Don't worry, I know this is your first day. You know I have a heart. Let me bring you back some chocolate. You deserved it.",
+			"Don't worry, I know this is your first day. You know I have a heart. Let me bring you back some chocolate. You deserve it.",
 		],
 		[
 			# reveal
@@ -212,7 +212,7 @@ func _run_level_1(level_data: LevelData) -> void:
 		],
 		[
 			# aftermath
-			"Dad is gone... How sad... He would be alive if his son was not SLACKING OFF. See you tomorrow for the next round.",
+			"Dad is gone... How sad... He would be alive if his son had not been SLACKING OFF. See you tomorrow for the next round.",
 		]
 	))
 
@@ -251,7 +251,7 @@ func _run_level_2(level_data: LevelData) -> void:
 	await _play_day()
 
 	await _pinny.appear()
-	await _pinny.say(["TIMES UP! MONEY TIME!", "Do you have the ransom, son?"], Pinny.Mood.NEUTRAL)
+	await _pinny.say(["TIME'S UP! MONEY TIME!", "Do you have the ransom, son?"], Pinny.Mood.NEUTRAL)
 
 	await (_collect_ransom(
 		level_data,
@@ -271,9 +271,9 @@ func _run_level_2(level_data: LevelData) -> void:
 			(
 				"AGAIN?"
 				if not GameState.is_alive(GameState.DAD)
-				else "At last you will not be fully orphan."
+				else "At least you won't be completely orphaned."
 			),
-			"What kind of son are you... Letting your Mom die!",
+			"What kind of son are you... letting your Mom die!",
 		],
 		[
 			# reveal
@@ -281,7 +281,7 @@ func _run_level_2(level_data: LevelData) -> void:
 		],
 		[
 			# aftermath
-			"Stay tuned, tomorrow, things are starting to get serious...",
+			"Stay tuned. Tomorrow, things are going to get serious...",
 		]
 	))
 
@@ -296,7 +296,7 @@ func _run_level_3(level_data: LevelData) -> void:
 		. say(
 			[
 				"Halfway through the week. You look tired.",
-				"$%d for your Son. Same rules." % [level_data.ransom],
+				"$%d for your son. Same rules." % [level_data.ransom],
 				"The directory remembers everything. So do I.",
 			],
 			Pinny.Mood.ANGRY
@@ -315,9 +315,14 @@ func _run_level_3(level_data: LevelData) -> void:
 
 	await _play_day()
 
-	await _pinny.say(
-		["Ding ding! Day's over, pal. Let's see that wallet. I hope for you it is heavy enough."],
-		Pinny.Mood.NEUTRAL
+	await (
+		_pinny
+		. say(
+			[
+				"Ding ding! Day's over, pal. Let's see that wallet. I hope for your sake it is heavy enough."
+			],
+			Pinny.Mood.NEUTRAL
+		)
 	)
 
 	await _collect_ransom(
@@ -334,7 +339,7 @@ func _run_level_3(level_data: LevelData) -> void:
 					res.append_array(
 						[
 							"Finally you started to understand your job...",
-							"It just took enough time to deprive your son from his grandparents..."
+							"It took you long enough to deprive your son of his grandparents..."
 						]
 					)
 				res.append_array(["Stay focused."])
@@ -346,7 +351,7 @@ func _run_level_3(level_data: LevelData) -> void:
 			(func() -> Array[String]:
 				if not GameState.is_alive(GameState.DAD) and not GameState.is_alive(GameState.MOM):
 					return [
-						"I'm so sorry, you are really bad at this job...",
+						"I'm so sorry, but you are really bad at this job...",
 						"You could not keep a single one yet."
 					]
 				if GameState.is_alive(GameState.DAD) and GameState.is_alive(GameState.MOM):
@@ -362,7 +367,7 @@ func _run_level_3(level_data: LevelData) -> void:
 		],
 		[
 			# aftermath
-			"Only the fate of your daughter is yet to come. Think about her tonight.",
+			"Only your daughter's fate is yet to come. Think about her tonight.",
 		]
 	)
 
@@ -376,9 +381,9 @@ func _run_level_4(level_data: LevelData) -> void:
 		. visit(
 			[
 				"'mornin!",
-				"Sorry I feel groggy, I did not have my coffee yet",
+				"Sorry, I feel groggy. I haven't had my coffee yet.",
 				(
-					"$%d for your sweet Daughter. Then I'm done taking care of your family."
+					"$%d for your sweet daughter. Then I'm done taking care of your family."
 					% [level_data.ransom]
 				),
 				"You can spend your money in the shop. Just not on them.",
@@ -405,20 +410,20 @@ func _run_level_4(level_data: LevelData) -> void:
 						. append_array(
 							[
 								"I have to admit I am impressed.",
-								"In more than 2 years of career, I rarely saw that.",
-								"Your whole family is safe. I should feel it is unfair, but I am happy for you pal.",
+								"In more than two years of my career, I have rarely seen that.",
+								"Your whole family is safe. I should feel it is unfair, but I am happy for you, pal.",
 							]
 						)
 					)
 				if GameState.total_death() == 3:
 					res.append_array(
 						[
-							"Everyone dead... But your daughter...",
+							"Everyone's dead... But your daughter...",
 							"I don't know if she should consider herself lucky or not..."
 						]
 					)
 				if not GameState.is_alive(GameState.SON):
-					res.append_array(["So sad that she is single child now..."])
+					res.append_array(["So sad that she is an only child now..."])
 				res.append_array(
 					["Anyway! Tomorrow is your last day. Make sure to come for your offboarding."]
 				)
@@ -432,14 +437,14 @@ func _run_level_4(level_data: LevelData) -> void:
 				if GameState.total_death() == 0:
 					res.append_array(
 						[
-							"Oh pal, you were so close!",
-							"But I'm sorry, you play the game, you earn the prize..."
+							"Oh, pal, you were so close!",
+							"But I'm sorry, you play the game, you pay the price..."
 						]
 					)
 				elif GameState.total_death() == 3:
 					res.append_array(
 						[
-							"Everyone dead... But your daughter...",
+							"Everyone's dead... But your daughter...",
 							"I don't know if she should consider herself lucky or not..."
 						]
 					)
@@ -472,13 +477,16 @@ func _run_level_5(level_data: LevelData) -> void:
 			(func() -> Array[String]:
 				var res: Array[String] = ["It's already your last day, pal. Aren't you sad?"]
 				if GameState.total_death() == 4:
-					res.append_array(
-						[
-							"My sincere condolences for your family.",
-							"You must hate me, but I assure you that my job is not easy.",
-							"I feel remorse sometimes, and I have the bad role of the story.",
-							"But someone has to do it right?"
-						]
+					(
+						res
+						. append_array(
+							[
+								"My sincere condolences for your family.",
+								"You must hate me, but I assure you that my job is not easy.",
+								"I feel remorse sometimes, and I have the role of the bad guy in this story.",
+								"But someone has to do it right?"
+							]
+						)
 					)
 				elif GameState.total_death() == 0:
 					(
@@ -490,8 +498,13 @@ func _run_level_5(level_data: LevelData) -> void:
 						)
 					)
 				else:
-					res.append_array(
-						["At least you will meet your family again... I mean what remains of it..."]
+					(
+						res
+						. append_array(
+							[
+								"At least you will meet your family again... I mean, what remains of it..."
+							]
+						)
 					)
 				return res)
 			. call()
@@ -506,7 +519,7 @@ func _run_level_5(level_data: LevelData) -> void:
 			"Oh! I almost forgot!",
 			"Don't miss your offboarding after your workday!",
 			(
-				"I hope you can collect at least $%d, it would be great for your last day"
+				"I hope you can collect at least $%d. It would be great for your last day"
 				% level_data.ransom
 			)
 		],
@@ -517,9 +530,9 @@ func _run_level_5(level_data: LevelData) -> void:
 
 	await _pinny.appear()
 	await _pinny.say(
-		["Finally... Your last day ended.", "It's time for your offboarding!"], Pinny.Mood.LAUGH
+		["Finally... Your last day is over.", "It's time for your offboarding!"], Pinny.Mood.LAUGH
 	)
-	await _pinny.say(["So, did you gather $%d?" % level_data.ransom], Pinny.Mood.LAUGH)
+	await _pinny.say(["So, did you collect $%d?" % level_data.ransom], Pinny.Mood.LAUGH)
 
 	var could_pay := _pay_ransom(level_data)
 
@@ -558,17 +571,17 @@ func _run_level_5(level_data: LevelData) -> void:
 			)
 		)
 	elif GameState.is_alive(GameState.SON) and not GameState.is_alive(GameState.DAUGHTER):
-		sentence.append_array(["You made your son orphan!"])
+		sentence.append_array(["You made your son an orphan!"])
 	elif not GameState.is_alive(GameState.SON) and GameState.is_alive(GameState.DAUGHTER):
-		sentence.append_array(["You made your daughter orphan!"])
+		sentence.append_array(["You made your daughter an orphan!"])
 	elif GameState.is_alive(GameState.SON) and GameState.is_alive(GameState.DAUGHTER):
-		sentence.append_array(["You made your children orphan!"])
+		sentence.append_array(["You made your children orphans!"])
 	elif GameState.total_death() == 4:
 		sentence.append_array(
 			[
 				"You are a waste. You bring no value to the company.",
 				"I tried to push you upwards with healthy pressure, but you keep slacking off.",
-				"Time to join your whole family pal..."
+				"Time to join your whole family, pal..."
 			]
 		)
 	else:
