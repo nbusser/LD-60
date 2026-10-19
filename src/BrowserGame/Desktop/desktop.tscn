@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bkkag32oibkj4" path="res://src/BrowserGame/Cursor/cursor.tscn" id="8_h03nu"]
 [ext_resource type="PackedScene" uid="uid://ch6b0sqgrn6qx" path="res://src/Pinny/pinny.tscn" id="9_pinny"]
 [ext_resource type="Texture2D" uid="uid://dx3a0hhx2gjg1" path="res://assets/ui/textures/background/Blue Rivets.png" id="10_5c8tb"]
+[ext_resource type="Resource" uid="uid://duc1gqjidv58n" path="res://trashcan.tres" id="10_o5ym1"]
+[ext_resource type="Resource" uid="uid://cq4vb4u21cwf0" path="res://credits.tres" id="11_ijfxp"]
 [ext_resource type="Script" uid="uid://bf2kld2v626jy" path="res://src/BrowserGame/Desktop/selection_rect.gd" id="11_sel"]
 
 [node name="Desktop" type="Control" unique_id=585668165]
@@ -25,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6uvci")
 script = ExtResource("1_kw43y")
-programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), ExtResource("6_mycvx"), ExtResource("7_5c8tb"), ExtResource("8_6uvci"), ExtResource("7_35n26")])
+programs = Array[ExtResource("2_u2oub")]([ExtResource("4_65cfl"), ExtResource("5_u2oub"), ExtResource("6_mycvx"), ExtResource("7_5c8tb"), ExtResource("8_6uvci"), ExtResource("7_35n26"), ExtResource("10_o5ym1"), ExtResource("11_ijfxp")])
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1208212921]
 layout_mode = 1
