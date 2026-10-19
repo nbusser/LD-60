@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Program" format=3 uid="uid://ddwcomjogl5eh"]
 
-[ext_resource type="PackedScene" path="res://src/Family/family_photos.tscn" id="1_scene"]
+[ext_resource type="PackedScene" uid="uid://3ae5hnovy0t8" path="res://src/Family/family_photos.tscn" id="1_scene"]
 [ext_resource type="Texture2D" uid="uid://dtv3bv4n2gqvn" path="res://assets/sprites/icons/folder.png" id="2_icon"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_script"]
 
