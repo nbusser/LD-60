@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://3uuffv5ois2w"]
 
-[ext_resource type="Script" uid="uid://wrfgybrntyx4" path="res://src/BrowserGame/Desktop/task_button.gd" id="1_taskbtn"]
 [ext_resource type="Texture2D" uid="uid://3v5h5fc5re8x" path="res://assets/sprites/icons/youpi.png" id="1_hglli"]
+[ext_resource type="Script" uid="uid://wrfgybrntyx4" path="res://src/BrowserGame/Desktop/task_button.gd" id="1_taskbtn"]
 
 [node name="TaskButton" type="Button" unique_id=1034526515]
 custom_minimum_size = Vector2(120, 0)
 theme_type_variation = &"ToggleButton"
 toggle_mode = true
+button_pressed = true
 script = ExtResource("1_taskbtn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1159824279]
