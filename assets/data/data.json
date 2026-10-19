@@ -78,7 +78,14 @@
 				{
 					"name": "Weird Art",
 					"icon": "res://assets/sprites/icons/categories/app-gradient.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "Even single fathers can nail 95 theses to church doors",
+							"link": "family-today.com/surprising/family-happening.html",
+							"description": "How weird performance art helped me to get my estranged brother out of the streets",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "The Art of Gardening",
@@ -95,7 +102,32 @@
 				{
 					"name": "Gastronomy",
 					"icon": "res://assets/sprites/icons/categories/app-widget-gallery.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "My secret dish for burials",
+							"link": "foodista.fo/burials-trick.html",
+							"description": "Let's turn these frowns upside down through the magic of traditional black pudding!",
+							"image": null
+						},
+						{
+							"name": "Eight recipes for the British",
+							"link": "gourmet.gouv.uk/certified-hood-classics.html",
+							"description": "Variations on Mac&cheese",
+							"image": null
+						},
+						{
+							"name": "Fuck spices",
+							"link": "gourmet.gov.uk/spice-must-flop.html",
+							"description": "A love letter to bland food",
+							"image": null
+						},
+						{
+							"name": "Should I eat one raw onion before a date",
+							"link": "onions-producers-assocation.cz/should-i-eat-a-raw-onion-before-x/date.html",
+							"description": "Yes, it is important for the morale.",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "Photography",
@@ -1155,22 +1187,80 @@
 						{
 							"name": "Unmaking Babies",
 							"icon": "res://assets/sprites/icons/categories/msgbox-error.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Putting the baby back in: conditions",
+									"link": "putting-the-baby-back-in.fi",
+									"description": "It is recommended to let the baby out at least once every six month until its 18th birthday.",
+									"image": null
+								},
+								{
+									"name": "Abortion past the 168th month",
+									"link": "law.org/abortion-deadline/168-months.html",
+									"description": "This is actually illegal in most countries.",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Midwifery",
 							"icon": "res://assets/sprites/icons/categories/app-hearts.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "The gift of life",
+									"link": "poetry-by-midwives.com",
+									"description": "A website dedicated to birth-related poetry written by certified midwives",
+									"image": null
+								},
+								{
+									"name": "Giving birth in a landed plane",
+									"link": "birth.org/situations/plane/landed.html",
+									"description": "It really isn't that bad",
+									"image": null
+								},
+								{
+									"name": "A day in the life of a midwife",
+									"link": "onisep.fr/en/jobs/midwife/testimony.html",
+									"description": "Is this job made for me",
+									"image": null
+								},
+								{
+									"name": "Giving birth in a flying plane",
+									"link": "birth.org/situations/plane/oh-shit.html",
+									"description": "Mind the turbulences, ideally land the plane first",
+									"image": null
+								},
+								{
+									"name": "Performing a Cesarian with no prior training",
+									"link": "all-the-tutorials.com/cesarian",
+									"description": "The secret is that you should believe in yourself",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Paternity tests",
 							"icon": "res://assets/sprites/icons/categories/app-eyes.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "That baby sure looks like the mailman",
+									"link": "suspicion.org/mailman.html",
+									"description": "A field guide to paternity tests",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Maternity tests",
 							"icon": "res://assets/sprites/icons/categories/app-eyes.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "That baby sure looks like the mailwoman",
+									"link": "suspicion.org/mailwoman.html",
+									"description": "A field guide to maternity tests",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Orphanages",
@@ -1179,12 +1269,32 @@
 								{
 									"name": "Pickup",
 									"icon": "res://assets/sprites/icons/categories/home-directory-open.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "Do I need to be an adult to start adopting children",
+											"link": "orphelinat-henri-des.fr/faq.html",
+											"description": "Frequently Asked Questions",
+											"image": null
+										}
+									]
 								},
 								{
 									"name": "Delivery",
 									"icon": "res://assets/sprites/icons/categories/downloads.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "Giving up a child for adoption: should I feel guilty?",
+											"link": "ask-a-florist.pk/abandoning-your-child.html",
+											"description": "No it's ok",
+											"image": null
+										},
+										{
+											"name": "Dark Oaks Orphanage",
+											"link": "dark-oaks.com/dropoff.html",
+											"description": "Instructions for baby delivery: try coming on a dark and stormy night",
+											"image": null
+										}
+									]
 								}
 							]
 						},
