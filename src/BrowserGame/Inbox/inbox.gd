@@ -64,6 +64,7 @@ func _show_request(request: Request) -> void:
 	_pending += 1
 	_accelerated = false
 	_notifications.add_child(notif)
+	Sfx.play_new_request()
 	await get_tree().process_frame
 
 

@@ -131,6 +131,7 @@ func _submit() -> void:
 		return
 
 	_set_status("Invalid link", Color.DARK_RED)
+	Sfx.play_error()
 
 
 func _accept_link(request_link: RequestLink) -> void:
@@ -144,6 +145,11 @@ func _accept_link(request_link: RequestLink) -> void:
 	_set_status("+$%d" % points, status_color)
 
 	GameState.add_money(points)
+
+	if points > 0:
+		Sfx.play_correct()
+	else:
+		Sfx.play_wrong()
 
 	processed.emit(points)
 
