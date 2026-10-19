@@ -1108,6 +1108,30 @@
 					]
 				},
 				{
+					"name": "Travel",
+					"icon": "res://assets/sprites/icons/categories/app-maps.png",
+					"subcategories": [
+						{
+							"name": "Destinations",
+							"icon": "res://assets/sprites/icons/categories/app-maps.png",
+							"entries": [
+								{
+									"name": "Argentina Tourism",
+									"link": "tourism.argentina.org",
+									"description": "Official tourism portal: destinations, culture and travel tips.",
+									"image": null
+								},
+								{
+									"name": "Mozambique Airlines",
+									"link": "mozambique-airlines.mz",
+									"description": "Fly safely to Maputo",
+									"image": null
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "Europe",
 					"icon": "res://assets/sprites/icons/categories/app-maps.png",
 					"entries": [
@@ -1659,30 +1683,6 @@
 							"name": "Grandma's Thanksgiving Recipes",
 							"link": "grandmas-thanksgiving.com",
 							"description": "Traditional recipes for social gatherings",
-							"image": null
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Travel",
-			"icon": "res://assets/sprites/icons/categories/app-maps.png",
-			"subcategories": [
-				{
-					"name": "Destinations",
-					"icon": "res://assets/sprites/icons/categories/app-maps.png",
-					"entries": [
-						{
-							"name": "Argentina Tourism",
-							"link": "tourism.argentina.org",
-							"description": "Official tourism portal: destinations, culture and travel tips.",
-							"image": null
-						},
-						{
-							"name": "Mozambique Airlines",
-							"link": "mozambique-airlines.mz",
-							"description": "Fly safely to Maputo",
 							"image": null
 						}
 					]

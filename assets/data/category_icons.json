@@ -143,13 +143,13 @@
 	"Services/Helplines": "app-mail.png",
 	"Services/Mariage": "certificate.png",
 	"Services/Money": "app-calculator.png",
-	"Travel": "app-maps.png",
-	"Travel/Destinations": "app-maps.png",
 	"Health/Diet/Food Safety": "msgbox-warning.png",
 	"Science/Theology/Heaven": "app-starfield.png",
 	"Science/Lame Sciences/Biology": "app-mandelbrot.png",
 	"Adult (18+)/Making Babies/Anatomy": "app-hearts.png",
 	"Hobbies/Electronics": "app-hex-editor.png",
 	"Science/Theology/Sects": "app-starfield.png",
-	"Lifestyle/Education/Reading": "app-text-editor.png"
+	"Lifestyle/Education/Reading": "app-text-editor.png",
+	"Regional/Travel": "app-maps.png",
+	"Regional/Travel/Destinations": "app-maps.png"
 }
