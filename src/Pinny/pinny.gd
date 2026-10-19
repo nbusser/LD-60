@@ -13,6 +13,8 @@ const _MOOD_ANIMATIONS: Dictionary[Mood, StringName] = {
 
 const MESSAGE_BLINK_COUNT := 2
 const MESSAGE_BLINK_INTERVAL := 0.08
+# Clicks within this window after a page appears are ignored
+const MIN_PAGE_VISIBLE_MSEC := 200
 # Speeds up the walk in and out of the screen
 const WALK_SPEED := 1.35
 
@@ -28,6 +30,8 @@ var is_present := false
 var _talk_id := 0
 # True while a page waits for its timer or a click to go to the next one
 var _is_waiting_page := false
+# When the current page was shown, so quick clicks cannot skip it
+var _page_shown_msec := 0
 
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _sprite: AnimatedSprite2D = $Body/Sprite2D
@@ -62,6 +66,7 @@ func say(pages: Array[String], mood: Mood = Mood.NEUTRAL, hold := false) -> void
 	for i in pages.size():
 		var page := pages[i]
 		_label.text = page
+		_page_shown_msec = Time.get_ticks_msec()
 		Sfx.play_message()
 		_blink_message(talk_id)
 		if hold and i == pages.size() - 1:
@@ -141,6 +146,8 @@ func _on_message_gui_input(event: InputEvent) -> void:
 	if not mouse_event or not mouse_event.pressed or mouse_event.button_index != MOUSE_BUTTON_LEFT:
 		return
 	if not _is_waiting_page:
+		return
+	if Time.get_ticks_msec() - _page_shown_msec < MIN_PAGE_VISIBLE_MSEC:
 		return
 	Sfx.click()
 	page_ended.emit()
