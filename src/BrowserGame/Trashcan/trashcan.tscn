@@ -1,5 +1,19 @@
 [gd_scene format=3 uid="uid://ck14xakk6i57h"]
 
+[ext_resource type="Texture2D" uid="uid://dtycgnynrj7jd" path="res://assets/sprites/rich_sick.png" id="1_4kd7u"]
+[ext_resource type="Script" uid="uid://6b8ftwiocwd" path="res://src/BrowserGame/Trashcan/trashcan.gd" id="1_cgafc"]
+[ext_resource type="Script" uid="uid://bisuxvh6j5ufg" path="res://src/BrowserGame/Icon/icon.gd" id="1_miedy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d78k8"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0.5019608, 0.5019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n4y2n"]
+font_size = 13
+
 [node name="Trashcan" type="ScrollContainer" unique_id=581972974]
 custom_minimum_size = Vector2(400, 300)
 anchors_preset = 15
@@ -7,22 +21,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cgafc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=208711007]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=536749399]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=536749399]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Container" type="Control" parent="VBoxContainer" unique_id=1563925075]
+[node name="Container" type="Control" parent="ColorRect/VBoxContainer" unique_id=1563925075]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Container" unique_id=872379284]
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/VBoxContainer/Container" unique_id=872379284]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 10
@@ -32,32 +49,65 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 color = Color(0.7764706, 0.7764706, 0.7764706, 1)
 
-[node name="TaskButton" type="Button" parent="VBoxContainer/Container/ColorRect2" unique_id=1603849879]
+[node name="RestoreButton" type="Button" parent="ColorRect/VBoxContainer/Container/ColorRect2" unique_id=1603849879]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 18.0
 offset_top = 13.0
 offset_right = 150.0
 offset_bottom = 37.0
 size_flags_vertical = 0
+toggle_mode = true
 text = "Restore All to Desktop"
 
-[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1555037056]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer2" unique_id=2051249532]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/Container" unique_id=2051249532]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 124.0
+offset_bottom = 152.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2/MarginContainer" unique_id=641303696]
-layout_mode = 2
-alignment = 1
-
-[node name="Grid" type="GridContainer" parent="CenterContainer2/MarginContainer/VBoxContainer" unique_id=1512376170]
+[node name="Grid" type="GridContainer" parent="ColorRect/VBoxContainer/Container/MarginContainer" unique_id=1512376170]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.7058824)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_constants/v_separation = 20
+
+[node name="Icon" type="TextureButton" parent="ColorRect/VBoxContainer/Container/MarginContainer/Grid" unique_id=1327430444]
+custom_minimum_size = Vector2(92, 64)
+custom_maximum_size = Vector2(92, 64)
+propagate_maximum_size = true
+layout_mode = 2
+texture_normal = ExtResource("1_4kd7u")
+stretch_mode = 5
+script = ExtResource("1_miedy")
+text = "Credits"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/Container/MarginContainer/Grid/Icon" unique_id=387309465]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 72.0
+offset_bottom = 107.0
+grow_horizontal = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/VBoxContainer/Container/MarginContainer/Grid/Icon/VBoxContainer" unique_id=1312579751]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/Container/MarginContainer/Grid/Icon/VBoxContainer/CenterContainer" unique_id=1473210851]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(92, -1)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_d78k8")
+text = "Credits"
+label_settings = SubResource("LabelSettings_n4y2n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="toggled" from="ColorRect/VBoxContainer/Container/ColorRect2/RestoreButton" to="ColorRect/VBoxContainer/Container/MarginContainer/Grid/Icon" method="_on_restore_button_toggled"]

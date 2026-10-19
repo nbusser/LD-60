@@ -17,8 +17,8 @@ var _dead: Dictionary[StringName, bool] = {}
 
 
 func _init() -> void:
-	for member in MEMBERS:
-		_targets.append(member.id)
+	for m in MEMBERS:
+		_targets.append(m.id)
 	_targets.shuffle()
 	_targets.append(PLAYER_ID)
 

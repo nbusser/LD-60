@@ -4,14 +4,17 @@ const STEPS: Array[String] = [
 	"""[b]Welcome to the Youpi? Setup Wizard[/b]
 
 This wizard will help you learn how to work with your new computer.
-It is recommended that you close all other applications before
-continuing.""",
+It is recommended that you close all other applications before continuing.""",
 	"""[b]Getting Started[/b]
 
 Please read the following information carefully.
 
-- TUTO ICI
-- Our friendly assistant Pinny is there to help you.""",
+This is an electronic device meant for office use:
+- Keep away from fire sources
+- Store in a cool and dry place
+- Do NOT let children without a degree in electronics access unsupervised
+
+Our friendly assistant Pinny is there to help you.""",
 	"""[b]Completing the Youpi? Setup Wizard[/b]
 
 You have successfully completed the Youpi? Setup Wizard.
