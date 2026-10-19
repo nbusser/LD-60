@@ -10,14 +10,14 @@ var coin_label: Label = $CenterContainer/VBoxContainer/CenterContainer2/HBoxCont
 
 
 func _ready() -> void:
-	# level 0 is the tutorial
-	level_label.text = str(GameState.current_level_number)
+	# level 0 is Day 1
+	level_label.text = str(GameState.current_level_number + 1)
 	coin_label.text = "$%d" % GameState.money
 	result_label.text = _result_text()
 
 
 func _result_text() -> String:
-	if GameState.current_level_number == 1:
+	if GameState.current_level_number == 0:
 		return "Pinny is proud of you."
 	var target := GameState.threatened_name()
 	if GameState.last_day_success:

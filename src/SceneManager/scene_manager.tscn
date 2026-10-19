@@ -10,16 +10,10 @@
 [ext_resource type="JSON" path="res://assets/data/levels/level_2.json" id="5_level2"]
 [ext_resource type="JSON" path="res://assets/data/levels/level_3.json" id="5_level3"]
 [ext_resource type="JSON" path="res://assets/data/levels/level_4.json" id="5_level4"]
-[ext_resource type="JSON" path="res://assets/data/levels/tutorial.json" id="5_tutorial"]
 [ext_resource type="JSON" path="res://assets/data/levels/tutorial_day.json" id="5_tutorial_day"]
 [ext_resource type="Shader" uid="uid://b1fr340pmvdl7" path="res://src/SceneManager/crt_screen.gdshader" id="6_crt"]
 [ext_resource type="Shader" uid="uid://djr6tb0gxab2a" path="res://src/SceneManager/posterize.gdshader" id="7_post"]
 [ext_resource type="Texture2D" uid="uid://3j2in050s526" path="res://assets/backgrounds/bg.png" id="8_4ishk"]
-
-[sub_resource type="Resource" id="Resource_tutorial"]
-script = ExtResource("2_38vrh")
-name = "Tutorial: Meet Pinny"
-requests_json = ExtResource("5_tutorial")
 
 [sub_resource type="Resource" id="Resource_tutorial_day"]
 script = ExtResource("2_38vrh")
@@ -96,7 +90,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qc8yu")
-levels = Array[ExtResource("2_38vrh")]([SubResource("Resource_tutorial"), SubResource("Resource_tutorial_day"), SubResource("Resource_r4gm4"), SubResource("Resource_day2"), SubResource("Resource_day3"), SubResource("Resource_day4"), SubResource("Resource_day5")])
+levels = Array[ExtResource("2_38vrh")]([SubResource("Resource_tutorial_day"), SubResource("Resource_r4gm4"), SubResource("Resource_day2"), SubResource("Resource_day3"), SubResource("Resource_day4"), SubResource("Resource_day5")])
 
 [node name="Backdrop" type="ColorRect" parent="." unique_id=352300368]
 layout_mode = 1

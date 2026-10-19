@@ -53,8 +53,6 @@ func _ready():
 			await _run_level_4()
 		5:
 			await _run_level_5()
-		6:
-			await _run_level_6()
 		_:
 			assert(false, "No scenario for level %d" % GameState.current_level_number)
 
@@ -70,7 +68,6 @@ func init(level_data_p: LevelData):
 # MARK: Scenarios
 
 
-# Tutorial: setup, then Pinny shows how to answer a request
 func _run_level_0() -> void:
 	# created before the setup to track what the player does meanwhile
 	var tutorial := Tutorial.new(_desktop, level_state)
@@ -79,9 +76,11 @@ func _run_level_0() -> void:
 	if not Globals.skip_setup:
 		await _run_setup()
 
+	# The tutorial starts the day once the mailbox is open, the clock runs after it
 	await tutorial.run()
-	level_state.is_day_over = true
-	await $UI/Fadeout.fade()
+	await _play_day(false)
+
+	await (_pinny.visit(["Good job on your first day pal! Get some rest."], Pinny.Mood.LAUGH))
 
 
 # Only the Setup icon is on the desktop, each install step reveals a program
@@ -112,23 +111,16 @@ func _on_setup_install_started() -> void:
 	)
 
 
-# Day 1: a quiet day, Pinny is still nice
 func _run_level_1() -> void:
-	await _play_day()
-
-	await (_pinny.visit(["Good job on your first day pal! Get some rest."], Pinny.Mood.LAUGH))
-
-
-# Day 2: Pinny gives the family photos, then reveals the kidnapping
-func _run_level_2() -> void:
 	GameState.start_day(0)
 	var fee := GameState.protection_fee
 	var relation := GameState.threatened_member().relation
 
 	_desktop.add_program(FAMILY_PHOTOS)
+	await _pinny.appear()
 	await (
 		_pinny
-		. visit(
+		. say(
 			[
 				"Good morning pal! Great work yesterday.",
 				"I left you a little gift on your desktop. Go on, open it!",
@@ -145,7 +137,7 @@ func _run_level_2() -> void:
 
 	await (
 		_pinny
-		. visit(
+		. say(
 			[
 				"Lovely family, isn't it? I heard a lot about you from them.",
 				"Did you hear from them since they left for vacations two days ago? Don't worry, they are safe. I keep them safe... for now.",
@@ -158,13 +150,13 @@ func _run_level_2() -> void:
 			Pinny.Mood.ANGRY
 		)
 	)
+	await _pinny.leave()
 
 	await _play_day()
 	await _collect_fee()
 
 
-# Day 3
-func _run_level_3() -> void:
+func _run_level_2() -> void:
 	GameState.start_day(1)
 	var fee := GameState.protection_fee
 	var relation := GameState.threatened_member().relation
@@ -186,8 +178,7 @@ func _run_level_3() -> void:
 	await _collect_fee()
 
 
-# Day 4
-func _run_level_4() -> void:
+func _run_level_3() -> void:
 	GameState.start_day(2)
 	var fee := GameState.protection_fee
 	var relation := GameState.threatened_member().relation
@@ -209,8 +200,7 @@ func _run_level_4() -> void:
 	await _collect_fee()
 
 
-# Day 5
-func _run_level_5() -> void:
+func _run_level_4() -> void:
 	GameState.start_day(3)
 	var fee := GameState.protection_fee
 	var relation := GameState.threatened_member().relation
@@ -233,7 +223,7 @@ func _run_level_5() -> void:
 
 
 # Day 6: the player is the target
-func _run_level_6() -> void:
+func _run_level_5() -> void:
 	GameState.start_day(4)
 	var fee := GameState.protection_fee
 
@@ -258,11 +248,13 @@ func _run_level_6() -> void:
 
 
 # Runs the clock and sends the requests until the end of the day
-func _play_day() -> void:
+func _play_day(fade_in := true) -> void:
 	level_state.all_requests_resolved.connect(_finish_day)
 	_running = true
+	level_state.is_clock_running = true
 	level_state.start_day()
-	$UI/Fadein.fade()
+	if fade_in:
+		$UI/Fadein.fade()
 	await day_finished
 
 
@@ -282,6 +274,7 @@ func _finish_day() -> void:
 
 	level_state.is_day_over = true
 	_running = false
+	level_state.is_clock_running = false
 	_update_clock()
 	day_finished.emit()
 

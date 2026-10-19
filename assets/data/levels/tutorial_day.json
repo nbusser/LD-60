@@ -1,17 +1,17 @@
 {
 	"requests": [
 		{
-			"time": 5.0,
+			"time": 0.0,
 			"query": "doctor",
-			"duration": 90.0,
+			"duration": 0.0,
 			"links": [
 				{
 					"link": "http://dr-franky-vincent.com",
-					"points": 8
+					"points": 8.0
 				},
 				{
 					"link": "http://bite_by_dre",
-					"points": 5
+					"points": 5.0
 				}
 			]
 		},
@@ -22,11 +22,11 @@
 			"links": [
 				{
 					"link": "richandsick.gov",
-					"points": 8
+					"points": 8.0
 				},
 				{
 					"link": "everytutorial.com/marrying-a-billionaire",
-					"points": 6
+					"points": 6.0
 				}
 			]
 		},
@@ -37,7 +37,7 @@
 			"links": [
 				{
 					"link": "http://thc.com",
-					"points": 8
+					"points": 8.0
 				}
 			]
 		}

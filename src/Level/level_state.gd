@@ -11,6 +11,8 @@ var level_data: LevelData
 var resolved_requests := 0
 var total_requests := 0
 var is_day_over := false
+# The clock runs, requests are sent according to their time
+var is_clock_running := false
 
 var _started := false
 

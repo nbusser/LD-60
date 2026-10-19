@@ -86,10 +86,7 @@ func _run_level_selector() -> void:
 
 
 func _on_end_of_level() -> void:
-	# Nothing to score after the tutorial, go straight to the first day
-	if GameState.current_level_number == 0:
-		_run_next_level()
-	elif GameState.current_level_number >= levels.size() - 1 or GameState.family.is_player_dead():
+	if GameState.current_level_number >= levels.size() - 1 or GameState.family.is_player_dead():
 		_load_stats_screen()
 	else:
 		_load_score_screen()
