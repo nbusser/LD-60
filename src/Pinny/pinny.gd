@@ -22,8 +22,8 @@ var _talk_id := 0
 
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _sprite: AnimatedSprite2D = $Body/Sprite2D
-@onready var _message: Control = $Body/Message
-@onready var _label: Label = $Body/Message/MarginContainer/Label
+@onready var _message: Control = $Body/MessageArea/Message
+@onready var _label: Label = $Body/MessageArea/Message/MarginContainer/Label
 
 
 func visit(pages: Array[String], mood: Mood = Mood.NEUTRAL) -> void:

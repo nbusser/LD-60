@@ -23,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Body/Message:visible")
+tracks/1/path = NodePath("Body/MessageArea/Message:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -143,29 +143,28 @@ script = ExtResource("1_b2aow")
 sprite_frames = ExtResource("1_4al4r")
 animation = &"move_in"
 
-[node name="Message" type="PanelContainer" parent="Body" unique_id=1975792067]
+[node name="MessageArea" type="MarginContainer" parent="Body"]
+offset_left = -417.0
+offset_top = -343.0
+offset_right = -17.0
+offset_bottom = -43.0
+mouse_filter = 2
+
+[node name="Message" type="PanelContainer" parent="Body/MessageArea" unique_id=1975792067]
 visible = false
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -83.0
-offset_top = -43.0
-grow_horizontal = 0
-grow_vertical = 0
-offset_transform_enabled = true
-offset_transform_position = Vector2(-17, -43)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_jcxeg")
 
-[node name="MarginContainer" type="MarginContainer" parent="Body/Message" unique_id=1035469562]
+[node name="MarginContainer" type="MarginContainer" parent="Body/MessageArea/Message" unique_id=1035469562]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="Body/Message/MarginContainer" unique_id=807514628]
+[node name="Label" type="Label" parent="Body/MessageArea/Message/MarginContainer" unique_id=807514628]
 custom_maximum_size = Vector2(250, -1)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
