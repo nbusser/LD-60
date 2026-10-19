@@ -33,7 +33,7 @@ func _show(category: Category) -> void:
 		_build_categories(_root_categories)
 		return
 	%CategoryIcon.texture = category.icon
-	%CategoryDescription.text = "[br][br][color=black]" + category.name
+	%CategoryDescription.text = "[br][br][color=black]%s[/color]" % category.name
 	_build_category_contents(category)
 
 

@@ -11,7 +11,16 @@ var _clipboard_text := ""
 func set_label_text(title: String, description: String, clipboard_text: String = ""):
 	_clipboard_text = clipboard_text
 	var meta := clipboard_text if not clipboard_text.is_empty() else title
-	text = "[color=blue][url=%s]" % meta + title + "[/url][/color][br][color=black]" + description
+	# Quote the URL metadata: unquoted apostrophes (e.g. "Devil's Lettuce")
+	# break the BBCode parser and make the closing color tag render as text.
+	var quoted_meta := meta.replace('"', '\\"')
+	text = (
+		'[color=blue][url="%s"]' % quoted_meta
+		+ title
+		+ "[/url][/color][br][color=black]"
+		+ description
+		+ "[/color]"
+	)
 
 
 func _on_meta_hover_started(_meta: Variant) -> void:

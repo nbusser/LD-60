@@ -24,7 +24,7 @@ func _ready() -> void:
 		c_label.bbcode_enabled = true
 		c_label.fit_content = true
 		c_label.autowrap_mode = TextServer.AUTOWRAP_OFF
-		c_label.text = "[color=blue][url]" + c.name
+		c_label.text = "[color=blue][url]%s[/url][/color]" % c.name
 		c_label.meta_clicked.connect(func(_meta): category_clicked.emit(c))
 		tags.add_child(c_label)
 
