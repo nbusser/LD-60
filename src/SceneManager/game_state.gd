@@ -11,10 +11,10 @@ const PLAYER_ID: StringName = &"player"
 const FEE_BASE := 20
 const FEE_STEP := 15
 const FAMILY_MEMBERS: Array[FamilyMemberData] = [
+	preload("res://assets/data/family/father.tres"),
+	preload("res://assets/data/family/mother.tres"),
 	preload("res://assets/data/family/son.tres"),
 	preload("res://assets/data/family/daughter.tres"),
-	preload("res://assets/data/family/mother.tres"),
-	preload("res://assets/data/family/father.tres"),
 ]
 
 var current_level_number := 0

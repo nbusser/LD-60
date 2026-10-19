@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="FamilyMemberData" format=3 uid="uid://vxxsdavjaiak"]
 
-[ext_resource type="Texture2D" uid="uid://mhupic6cuyg" path="res://assets/sprites/images/daughter.png" id="1_033p7"]
+[ext_resource type="Texture2D" uid="uid://mhupic6cuyg" path="res://assets/sprites/family/daughter.png" id="1_033p7"]
 [ext_resource type="Script" uid="uid://ct5svq7pavid" path="res://src/Family/family_member_data.gd" id="1_script"]
 
 [resource]

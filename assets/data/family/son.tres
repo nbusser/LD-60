@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FamilyMemberData" format=3 uid="uid://da614r7tgti2a"]
 
 [ext_resource type="Script" uid="uid://ct5svq7pavid" path="res://src/Family/family_member_data.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://dahw87n4fmrse" path="res://assets/sprites/images/son.png" id="1_yrywl"]
+[ext_resource type="Texture2D" uid="uid://dahw87n4fmrse" path="res://assets/sprites/family/son.png" id="1_yrywl"]
 
 [resource]
 script = ExtResource("1_script")

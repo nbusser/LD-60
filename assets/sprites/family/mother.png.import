@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://div3yo0i0s5a7"
-path="res://.godot/imported/son.png-06b718ac658799eff27f9b385e1ef06b.ctex"
+uid="uid://deduatusu4p7n"
+path="res://.godot/imported/mother.png-8b2c7a740d89d6cb5d0ffa8e437183d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/images/family/son.png"
-dest_files=["res://.godot/imported/son.png-06b718ac658799eff27f9b385e1ef06b.ctex"]
+source_file="res://assets/sprites/family/mother.png"
+dest_files=["res://.godot/imported/mother.png-8b2c7a740d89d6cb5d0ffa8e437183d3.ctex"]
 
 [params]
 

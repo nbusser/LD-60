@@ -92,7 +92,7 @@ func _threat_lines() -> Array[String]:
 				"Oh actually, I know you already but you don't know me. I heard a lot about you from your nice little family.",
 				"Did you hear from them since they left for vacations two days ago? Don't worry, they are safe. I keep them safe... for now.",
 				(
-					"Let's cut to the chase, the fee for %s is $%d. Pay by 20:00. If you don't, you will never see her again, except in photo."
+					"Let's cut to the chase, the fee for %s is $%d. Pay by 20:00. If you don't, you will never see him again, except in photo."
 					% [relation, fee]
 				),
 				"Enjoy your day, and don't overthink it."
