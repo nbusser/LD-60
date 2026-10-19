@@ -7,15 +7,15 @@
 			"links": [
 				{
 					"link": "mozambique-airlines.mz",
-					"points": 1
+					"points": 1.0
 				},
 				{
 					"link": "language-pals.com",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "east-african-culture-hall.uk",
-					"points": 2
+					"points": 2.0
 				}
 			]
 		},
@@ -26,19 +26,19 @@
 			"links": [
 				{
 					"link": "korean-culture-hall.uk",
-					"points": 1
+					"points": 1.0
 				},
 				{
 					"link": "sos-friendship.com",
-					"points": 3
+					"points": 3.0
 				},
 				{
 					"link": "namaste-cafe.com",
-					"points": 3
+					"points": 3.0
 				},
 				{
 					"link": "hare-krishna-culture-club.com",
-					"points": 3
+					"points": 3.0
 				}
 			]
 		},
@@ -49,19 +49,19 @@
 			"links": [
 				{
 					"link": "dharma-center-lookup.org",
-					"points": 1
+					"points": 1.0
 				},
 				{
 					"link": "easy-moksha.org",
-					"points": 1
+					"points": 1.0
 				},
 				{
 					"link": "my-prostate.com",
-					"points": 5
+					"points": 5.0
 				},
 				{
 					"link": "dalai-lama.cn",
-					"points": 3
+					"points": 3.0
 				}
 			]
 		},
@@ -72,11 +72,11 @@
 			"links": [
 				{
 					"link": "eevblog.com/forum",
-					"points": 3
+					"points": 3.0
 				},
 				{
 					"link": "computer-store-nerds.com",
-					"points": 2
+					"points": 2.0
 				}
 			]
 		}

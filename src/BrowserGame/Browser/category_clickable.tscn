@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cxdln3gnhm3jf" path="res://assets/fonts/times/timB14.fnt" id="3_b14"]
 
 [node name="CategoryClickable" type="VBoxContainer" unique_id=502459233]
+custom_maximum_size = Vector2(200, -1)
 script = ExtResource("2_gebul")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=685637812]
@@ -22,6 +23,7 @@ layout_mode = 2
 [node name="Label" parent="CenterContainer2" unique_id=68694191 instance=ExtResource("1_81i41")]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_b14")
+autowrap_mode = 2
 
 [node name="CenterContainer3" type="CenterContainer" parent="." unique_id=984081212]
 layout_mode = 2

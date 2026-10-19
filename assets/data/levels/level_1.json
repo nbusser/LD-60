@@ -7,11 +7,11 @@
 			"links": [
 				{
 					"link": "jacques-chirac-fan-club.fr",
-					"points": 1
+					"points": 1.0
 				},
 				{
 					"link": "baguette-bakery.gov.uk",
-					"points": 3
+					"points": 3.0
 				}
 			]
 		},
@@ -22,15 +22,15 @@
 			"links": [
 				{
 					"link": "legal-mistakes.com",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "morgue-showroom.net",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "justice.gov.uk",
-					"points": 3
+					"points": 3.0
 				}
 			]
 		},
@@ -41,7 +41,7 @@
 			"links": [
 				{
 					"link": "thejokebank.org",
-					"points": 3
+					"points": 3.0
 				}
 			]
 		}

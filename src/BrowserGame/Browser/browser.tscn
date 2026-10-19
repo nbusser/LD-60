@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dpjtu32jaq8eh" path="res://assets/ui/Browser.tres" id="2_theme"]
 [ext_resource type="FontFile" uid="uid://cxdln3gnhm3jf" path="res://assets/fonts/times/timB14.fnt" id="3_b14"]
 [ext_resource type="Texture2D" uid="uid://caobxmpk6hrx0" path="res://assets/sprites/icons/youpi2.png" id="4_twlh7"]
-[ext_resource type="AtlasTexture" path="res://assets/sprites/icons/youpi2_frame0.tres" id="11_ipbxj"]
+[ext_resource type="Texture2D" uid="uid://8prn56qcfk82" path="res://assets/sprites/icons/youpi2_frame0.tres" id="11_ipbxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y51eb"]
 atlas = ExtResource("4_twlh7")
@@ -196,8 +196,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ooua1")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
 columns = 4
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1911337972]

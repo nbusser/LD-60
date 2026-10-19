@@ -7,11 +7,11 @@
 			"links": [
 				{
 					"link": "survivalist.net/WW3",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "movie-addicts.net/1996/feb/idiocracy",
-					"points": 4
+					"points": 4.0
 				}
 			]
 		},
@@ -22,15 +22,15 @@
 			"links": [
 				{
 					"link": "mc-kenzy-ranch.com",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "fishermen-hub.com",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "chicken-world-encyclopedia.org",
-					"points": 2
+					"points": 2.0
 				}
 			]
 		},
@@ -41,7 +41,7 @@
 			"links": [
 				{
 					"link": "fuel34.com",
-					"points": 2
+					"points": 2.0
 				}
 			]
 		},
@@ -52,11 +52,11 @@
 			"links": [
 				{
 					"link": "dr-shukran.com",
-					"points": 1
+					"points": 1.0
 				},
 				{
 					"link": "the-toothpaste-emporium.com",
-					"points": 1
+					"points": 1.0
 				}
 			]
 		}

@@ -7,11 +7,11 @@
 			"links": [
 				{
 					"link": "bite-by-dre.com",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "dr-franky-vincent.com",
-					"points": 1
+					"points": 1.0
 				}
 			]
 		},
@@ -22,11 +22,11 @@
 			"links": [
 				{
 					"link": "everytutorial.com/marrying-a-billionaire.html",
-					"points": 2
+					"points": 2.0
 				},
 				{
 					"link": "richandsick.gov",
-					"points": 1
+					"points": 1.0
 				}
 			]
 		},
@@ -37,15 +37,15 @@
 			"links": [
 				{
 					"link": "furry-petshop.com",
-					"points": 5
+					"points": 5.0
 				},
 				{
 					"link": "ataturk-kebab.tr",
-					"points": 1
+					"points": 1.0
 				},
 				{
 					"link": "falaf-hlel.lb",
-					"points": 2
+					"points": 2.0
 				}
 			]
 		}

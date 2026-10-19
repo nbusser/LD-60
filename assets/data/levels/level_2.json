@@ -7,11 +7,11 @@
 			"links": [
 				{
 					"link": "nevada-moon.com",
-					"points": 3
+					"points": 3.0
 				},
 				{
 					"link": "moonlanding-reenactment.org",
-					"points": 1
+					"points": 1.0
 				}
 			]
 		},
@@ -22,11 +22,11 @@
 			"links": [
 				{
 					"link": "grandmas-thanksgiving.com",
-					"points": 3
+					"points": 3.0
 				},
 				{
 					"link": "fsis.usda.gov/thanksgiving",
-					"points": 1
+					"points": 1.0
 				}
 			]
 		},
@@ -37,11 +37,11 @@
 			"links": [
 				{
 					"link": "tourism.argentina.org",
-					"points": 3
+					"points": 3.0
 				},
 				{
 					"link": "hitler-sightings-hotline.org",
-					"points": 2
+					"points": 2.0
 				}
 			]
 		}

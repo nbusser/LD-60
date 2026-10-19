@@ -28,7 +28,7 @@ func _ready() -> void:
 		entry.description,
 		entry.link
 	)
-	description.text = entry.description
+	#description.text = entry.description
 	label.meta_clicked.connect(_on_meta_clicked)
 	copy_button.pressed.connect(_on_copy_pressed)
 	GameState.upgrades_changed.connect(_refresh_copy_lock)

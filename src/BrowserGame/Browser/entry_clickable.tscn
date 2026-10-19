@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://bk5olv40n1jqj" path="res://src/BrowserGame/Browser/entry_clickable.gd" id="1_bophl"]
 [ext_resource type="PackedScene" uid="uid://btkwjma1arxro" path="res://src/BrowserGame/Browser/clickable_label.tscn" id="1_d6aiv"]
 [ext_resource type="Texture2D" uid="uid://dfh06tw5soqe8" path="res://assets/sprites/icons/serenity/16x16/edit-copy.png" id="3_55m3a"]
-[ext_resource type="StyleBoxTexture" path="res://assets/ui/textures/button/icon_button_normal.tres" id="5_iconnormal"]
-[ext_resource type="StyleBoxTexture" path="res://assets/ui/textures/button/icon_button_pressed.tres" id="6_iconpressed"]
+[ext_resource type="StyleBox" path="res://assets/ui/textures/button/icon_button_normal.tres" id="5_iconnormal"]
+[ext_resource type="StyleBox" path="res://assets/ui/textures/button/icon_button_pressed.tres" id="6_iconpressed"]
 
 [node name="EntryClickable" type="HBoxContainer" unique_id=964526914]
+custom_maximum_size = Vector2(200, -1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,6 +27,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/line_separation = 4
+autowrap_mode = 2
 
 [node name="Description" type="Label" parent="VBoxContainer" unique_id=918700805]
 unique_name_in_owner = true
@@ -43,14 +45,14 @@ custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 tooltip_text = "Copy link"
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = ExtResource("5_iconnormal")
-theme_override_styles/hover = ExtResource("5_iconnormal")
 theme_override_styles/pressed = ExtResource("6_iconpressed")
+theme_override_styles/hover = ExtResource("5_iconnormal")
 theme_override_styles/disabled = ExtResource("5_iconnormal")
 icon = ExtResource("3_55m3a")
 icon_alignment = 1
