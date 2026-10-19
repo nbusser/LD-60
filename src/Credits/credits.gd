@@ -5,9 +5,8 @@ extends Control
 const CREDITS_PROGRAM: Program = preload("res://assets/data/program/credits.tres")
 
 @onready var _windows: Control = $Windows
-@onready var _desktop_window_scene := preload(
-	"res://src/BrowserGame/DesktopWindow/desktop_window.tscn"
-)
+@onready
+var _desktop_window_scene := preload("res://src/BrowserGame/DesktopWindow/desktop_window.tscn")
 
 
 func _ready() -> void:

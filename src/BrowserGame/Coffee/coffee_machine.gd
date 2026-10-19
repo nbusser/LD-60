@@ -45,5 +45,7 @@ func _refresh() -> void:
 	elif drunk:
 		_label.text = "The coffee wore off.\nCome back tomorrow."
 	else:
-		_label.text = "Fresh coffee, on the house.\nOne per day, lasts %d seconds." % COFFEE_DURATION
+		_label.text = (
+			"Fresh coffee, on the house.\nOne per day, lasts %d seconds." % COFFEE_DURATION
+		)
 	_order_button.disabled = _brewing or drunk
