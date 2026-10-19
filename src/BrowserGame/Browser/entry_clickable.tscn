@@ -26,8 +26,8 @@ stretch_mode = 5
 
 [node name="CopyMargin" type="MarginContainer" parent="Left" unique_id=1873220145]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 0
+size_flags_horizontal = 4
 theme_override_constants/margin_top = 4
 
 [node name="Button" type="Button" parent="Left/CopyMargin" unique_id=1776856226]
@@ -54,7 +54,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/line_separation = 4
-autowrap_mode = 1
+autowrap_mode = 2
 
 [node name="Description" type="Label" parent="VBoxContainer" unique_id=918700805]
 unique_name_in_owner = true
