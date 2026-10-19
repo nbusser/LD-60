@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://d2nhr3pggkiib"]
 
 [ext_resource type="Script" uid="uid://c8s6jjdk1yeg5" path="res://src/BrowserGame/Inbox/inbox.gd" id="1_inbox"]
+[ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="2_bold"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xlit"]
 content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
 
-[node name="Inbox" type="ScrollContainer" unique_id=1196939579]
+[node name="Inbox" type="VBoxContainer" unique_id=1196939579]
 custom_minimum_size = Vector2(300, 400)
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,21 +16,43 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_4xlit")
+size_flags_vertical = 3
+theme_override_constants/separation = 0
 script = ExtResource("1_inbox")
 
-[node name="ScrollContainer" type="CenterContainer" parent="." unique_id=725973733]
+[node name="Header" type="MarginContainer" parent="." unique_id=1196939580]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 4
+
+[node name="HeaderLabel" type="Label" parent="Header" unique_id=1196939581]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bold")
+text = "No active queries"
+
+[node name="HeaderSeparator" type="HSeparator" parent="." unique_id=1196939582]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1196939583]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4xlit")
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer" unique_id=725973733]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1561020846]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/CenterContainer" unique_id=1561020846]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Notifications" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=1915016433]
+[node name="Notifications" type="VBoxContainer" parent="ScrollContainer/CenterContainer/MarginContainer" unique_id=1915016433]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(260, 0)
 layout_mode = 2

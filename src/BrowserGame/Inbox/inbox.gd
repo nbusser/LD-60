@@ -1,5 +1,5 @@
 class_name Inbox
-extends ScrollContainer
+extends VBoxContainer
 
 const NOTIFICATION_SCENE = preload("res://src/BrowserGame/Inbox/notification.tscn")
 
@@ -16,9 +16,11 @@ var _pending := 0
 var _accelerated := false
 
 @onready var _notifications: VBoxContainer = %Notifications
+@onready var _header_label: Label = %HeaderLabel
 
 
 func _ready() -> void:
+	_update_header()
 	if GameState.level_state == null:
 		return
 	if GameState.level_state.has_started():
@@ -64,15 +66,27 @@ func _show_request(request: Request) -> void:
 	_pending += 1
 	_accelerated = false
 	_notifications.add_child(notif)
+	_update_header()
 	Sfx.play_new_request()
 	await get_tree().process_frame
 
 
 func _on_notification_processed(_points: int) -> void:
 	_pending -= 1
+	_update_header()
 	GameState.level_state.resolve_request(true)
 
 
 func _on_notification_timed_out() -> void:
 	_pending -= 1
+	_update_header()
 	GameState.level_state.resolve_request(false)
+
+
+func _update_header() -> void:
+	if _pending == 0:
+		_header_label.text = "No active queries"
+	elif _pending == 1:
+		_header_label.text = "1 active query"
+	else:
+		_header_label.text = "%d active queries" % _pending
