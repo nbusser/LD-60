@@ -23,6 +23,7 @@ var current_scene:
 
 @onready var viewport: Viewport = $SubViewportContainer/SubViewport
 @onready var _ambience_player: AudioStreamPlayer = $Ambience/Brouhaha
+@onready var _animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func set_scene(new_scene: Node) -> void:
@@ -135,6 +136,10 @@ func change_music_track(new_audio_player: AudioStreamPlayer) -> void:
 		current_audio_player = new_audio_player
 
 
+func play_big_pinny_animation() -> void:
+	_animation_player.play(&"big_pinny")
+
+
 # State machine handling the state of the whole game
 # Everytime a scene ends, it calls this function which will load the next
 # step of the game
@@ -173,3 +178,15 @@ func _on_end_scene(status: Globals.EndSceneStatus, params: Dictionary = {}) -> v
 			_run_main_menu()
 		_:
 			assert(false, "No handler for status " + str(status))
+
+
+func _play_message() -> void:
+	Sfx.play_message()
+
+
+func _play_jump() -> void:
+	Sfx.play_jump()
+
+
+func _play_kill() -> void:
+	Sfx.play_kill()
