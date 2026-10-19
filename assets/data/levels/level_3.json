@@ -7,11 +7,11 @@
 			"links": [
 				{
 					"link": "science.com/busser-method/101.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "busser-fanclub-marrakech.ma/cheatsheet",
-					"points": 4.0
+					"points": 5.0
 				},
 				{
 					"link": "busser-busser-busser.fr/start.html",
@@ -23,11 +23,11 @@
 				},
 				{
 					"link": "the-busser-method.com/advanced",
-					"points": 2.0
+					"points": 3.0
 				},
 				{
 					"link": "mouhat-lose-weight-official-copyrighted.fr/about",
-					"points": 2.0
+					"points": 3.0
 				}
 			]
 		},
@@ -38,10 +38,14 @@
 			"links": [
 				{
 					"link": "hitler-sightings-hotline.org",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "tourism.argentina.org",
+					"points": 3.0
+				},
+				{
+					"link": "rumor-mill-quarterly.com",
 					"points": 3.0
 				}
 			]
@@ -56,8 +60,24 @@
 					"points": 3.0
 				},
 				{
-					"link": "bite-by-dre.com",
-					"points": 2.0
+					"link": "beats-by-dre.com",
+					"points": 3.0
+				},
+				{
+					"link": "vienna-boys-reunion.com",
+					"points": 5.0
+				},
+				{
+					"link": "lawrence-welk-society.org",
+					"points": 5.0
+				},
+				{
+					"link": "grandma-dance-list.com",
+					"points": 3.0
+				},
+				{
+					"link": "retirement-home-manual.net",
+					"points": 3.0
 				}
 			]
 		},
@@ -68,7 +88,7 @@
 			"links": [
 				{
 					"link": "eevblog.com/forum",
-					"points": 4.0
+					"points": 5.0
 				},
 				{
 					"link": "computer-store-nerds.com",
@@ -77,6 +97,10 @@
 				{
 					"link": "keyboards-fans.net",
 					"points": 1.0
+				},
+				{
+					"link": "glue-beginners-guide.com",
+					"points": 3.0
 				}
 			]
 		},
@@ -92,6 +116,22 @@
 				{
 					"link": "tellement-vrai.fr/roger-taylor.html",
 					"points": 1.0
+				},
+				{
+					"link": "posthumous-duets.com",
+					"points": 5.0
+				},
+				{
+					"link": "teen-idol-guide.com",
+					"points": 3.0
+				},
+				{
+					"link": "afterlife-open-mic.org",
+					"points": 3.0
+				},
+				{
+					"link": "whisper-choir.net",
+					"points": 1.0
 				}
 			]
 		},
@@ -102,7 +142,7 @@
 			"links": [
 				{
 					"link": "cnn.com/news/science/geologists-rocks.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "stoned.com/tips/health.html",
@@ -121,11 +161,11 @@
 			"links": [
 				{
 					"link": "vroomvroom.no/news/oh-my-god-finally.html",
-					"points": 4.0
+					"points": 5.0
 				},
 				{
 					"link": "renault.fr/deluxe/executive/kangoo.html",
-					"points": 4.0
+					"points": 5.0
 				},
 				{
 					"link": "auto-rumor.ru/lada-super-moderna-cosmik-krassivaia.html",
@@ -133,11 +173,15 @@
 				},
 				{
 					"link": "invest-in-humanity.fr/moralistic-charity/wells-for-wales.html",
-					"points": 2.0
+					"points": 3.0
 				},
 				{
 					"link": "flat-pedestrians-society.com/top5/cars.html",
 					"points": 1.0
+				},
+				{
+					"link": "cash-bonfire.org",
+					"points": 3.0
 				}
 			]
 		}

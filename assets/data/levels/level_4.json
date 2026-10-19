@@ -7,11 +7,11 @@
 			"links": [
 				{
 					"link": "my-tv-program.com/burials/live/upcoming.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "el-television-aficionados.mx/ingles/invitado/viejo-chocho.html",
-					"points": 2.0
+					"points": 3.0
 				}
 			]
 		},
@@ -22,15 +22,15 @@
 			"links": [
 				{
 					"link": "gourmet.gouv.uk/certified-hood-classics.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "gourmet.gov.uk/spice-must-flop.html",
-					"points": 4.0
+					"points": 5.0
 				},
 				{
 					"link": "foodista.fo/burials-trick.html",
-					"points": 2.0
+					"points": 3.0
 				},
 				{
 					"link": "baguette-bakery.gov.uk",
@@ -45,7 +45,7 @@
 			"links": [
 				{
 					"link": "family-today.com/surprising/family-happening.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "family-today.com/surprising/family-painting.html",
@@ -57,7 +57,7 @@
 				},
 				{
 					"link": "family-today.com/surprising/family-gardening.html",
-					"points": 2.0
+					"points": 3.0
 				}
 			]
 		},
@@ -68,15 +68,23 @@
 			"links": [
 				{
 					"link": "faith-answers.com/speedrun.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "faith-answers.com/rudeness.html",
-					"points": 2.0
+					"points": 3.0
 				},
 				{
 					"link": "faith-answers.com/the-eleventh-commandment.html",
-					"points": 2.0
+					"points": 3.0
+				},
+				{
+					"link": "death-practical-guide.com",
+					"points": 3.0
+				},
+				{
+					"link": "afterlife-packing.net",
+					"points": 3.0
 				}
 			]
 		},
@@ -87,7 +95,7 @@
 			"links": [
 				{
 					"link": "ask-a-florist.pk/can-fish-drown.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "faith-answers.com/drowning-kittens.html",
@@ -102,15 +110,19 @@
 			"links": [
 				{
 					"link": "fbi.gov",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "justice.gov.uk",
-					"points": 2.0
+					"points": 3.0
 				},
 				{
 					"link": "legal-mistakes.com",
-					"points": 2.0
+					"points": 3.0
+				},
+				{
+					"link": "payment-plans-forever.net",
+					"points": 3.0
 				}
 			]
 		},
@@ -121,7 +133,7 @@
 			"links": [
 				{
 					"link": "all-about-floors.com/free-fighting.html",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "the-cowardly-warrior.com/news/daily/mercenaries.html",
@@ -133,7 +145,7 @@
 				},
 				{
 					"link": "comparison.org/street-fight-vs-dogfighting.html",
-					"points": 2.0
+					"points": 3.0
 				},
 				{
 					"link": "alpha-man.es/punching-children-tut.html",

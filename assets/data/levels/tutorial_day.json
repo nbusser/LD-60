@@ -6,12 +6,16 @@
 			"duration": 0.0,
 			"links": [
 				{
-					"link": "dr-franky-vincent.com",
-					"points": 5.0
+					"link": "clarinetto-tips.com/bleeding-profusely.html",
+					"points": 8.0
 				},
 				{
-					"link": "bite-by-dre.com",
-					"points": 5.0
+					"link": "dr-franky-vincent.com",
+					"points": 1.0
+				},
+				{
+					"link": "beats-by-dre.com",
+					"points": 1.0
 				}
 			]
 		},
@@ -22,7 +26,7 @@
 			"links": [
 				{
 					"link": "ataturk-kebab.tr",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "americanturkey.com",
@@ -37,7 +41,7 @@
 			"links": [
 				{
 					"link": "grandmas-thanksgiving.com",
-					"points": 5.0
+					"points": 8.0
 				},
 				{
 					"link": "fsis.usda.gov/thanksgiving",

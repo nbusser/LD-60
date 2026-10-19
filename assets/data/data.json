@@ -832,9 +832,15 @@
 					"entries": [
 						{
 							"name": "Dr. Dre",
-							"link": "bite-by-dre.com",
+							"link": "beats-by-dre.com",
 							"description": "Beat Doctor",
 							"image": "res://assets/sprites/dr-dre.png"
+						},
+						{
+							"name": "Dr. Pedro Clarinetto's expert tips for a fast and efficient coagulation",
+							"link": "clarinetto-tips.com/bleeding-profusely.html",
+							"description": "Expert tips for stopping aretral bleeding",
+							"image": null
 						},
 						{
 							"name": "Dr. Franky Vincent",
@@ -1239,7 +1245,7 @@
 								{
 									"name": "The winning ticket: a buyer's guide",
 									"link": "winning-ticket-guide.org",
-									"description": "Step one: buy a ticket. Step two: have unrealistic expectations.",
+									"description": "Step one: buy a winning ticket.",
 									"image": null
 								}
 							]
