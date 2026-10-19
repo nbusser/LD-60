@@ -2,32 +2,6 @@
 	"requests": [
 		{
 			"time": 10.0,
-			"query": "stop artery bleeding fast",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "dr-franky-vincent.com",
-					"points": 1.0
-				}
-			]
-		},
-		{
-			"time": 60.0,
-			"query": "best kebab turkey",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "ataturk-kebab.tr",
-					"points": 5.0
-				},
-				{
-					"link": "americanturkey.com",
-					"points": 1.0
-				}
-			]
-		},
-		{
-			"time": 110.0,
 			"query": "where to find money?",
 			"duration": 55.0,
 			"links": [
@@ -46,7 +20,7 @@
 			]
 		},
 		{
-			"time": 160.0,
+			"time": 60.0,
 			"query": "lern spek inglese",
 			"duration": 55.0,
 			"links": [
@@ -69,22 +43,7 @@
 			]
 		},
 		{
-			"time": 210.0,
-			"query": "thanksgiving recipes",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "grandmas-thanksgiving.com",
-					"points": 5.0
-				},
-				{
-					"link": "fsis.usda.gov/thanksgiving",
-					"points": 3.0
-				}
-			]
-		},
-		{
-			"time": 260.0,
+			"time": 110.0,
 			"query": "best astrological sign",
 			"duration": 55.0,
 			"links": [
@@ -95,7 +54,7 @@
 			]
 		},
 		{
-			"time": 310.0,
+			"time": 160.0,
 			"query": "how to have friends",
 			"duration": 55.0,
 			"links": [
@@ -106,6 +65,51 @@
 				{
 					"link": "language-pals.com",
 					"points": 3.0
+				}
+			]
+		},
+		{
+			"time": 210.0,
+			"query": "top 3 best religions",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "religions.com/official-ranking.html",
+					"points": 5.0
+				},
+				{
+					"link": "faith-answers.com/organization.html",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 260.0,
+			"query": "kitchenware fetish",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "united-national-fetish-societies.kh/frying-pans/welcome.html",
+					"points": 5.0
+				},
+				{
+					"link": "fuel34.com",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 310.0,
+			"query": "should I eat a raw onion before a date",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "onions-producers-assocation.cz/should-i-eat-a-raw-onion-before-x/date.html",
+					"points": 5.0
+				},
+				{
+					"link": "all-the-tutorials.com/eating",
+					"points": 2.0
 				}
 			]
 		}

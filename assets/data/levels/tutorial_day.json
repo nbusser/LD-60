@@ -2,12 +2,12 @@
 	"requests": [
 		{
 			"time": 0.0,
-			"query": "doctor",
+			"query": "stop artery bleeding fast",
 			"duration": 0.0,
 			"links": [
 				{
 					"link": "dr-franky-vincent.com",
-					"points": 8.0
+					"points": 5.0
 				},
 				{
 					"link": "bite-by-dre.com",
@@ -16,28 +16,32 @@
 			]
 		},
 		{
-			"time": 60.0,
-			"query": "get rich",
-			"duration": 90.0,
+			"time": 120.0,
+			"query": "best kebab turkey",
+			"duration": 55.0,
 			"links": [
 				{
-					"link": "richandsick.gov",
-					"points": 8.0
+					"link": "ataturk-kebab.tr",
+					"points": 5.0
 				},
 				{
-					"link": "everytutorial.com/marrying-a-billionaire.html",
-					"points": 6.0
+					"link": "americanturkey.com",
+					"points": 1.0
 				}
 			]
 		},
 		{
-			"time": 120.0,
-			"query": "thc",
-			"duration": 90.0,
+			"time": 90.0,
+			"query": "thanksgiving recipes",
+			"duration": 55.0,
 			"links": [
 				{
-					"link": "thc.com",
-					"points": 8.0
+					"link": "grandmas-thanksgiving.com",
+					"points": 5.0
+				},
+				{
+					"link": "fsis.usda.gov/thanksgiving",
+					"points": 3.0
 				}
 			]
 		}

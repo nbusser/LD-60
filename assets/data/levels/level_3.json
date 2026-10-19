@@ -2,40 +2,6 @@
 	"requests": [
 		{
 			"time": 10.0,
-			"query": "ecological hobby",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "science.org/science2/mudwatching_final_final.pdf",
-					"points": 5.0
-				},
-				{
-					"link": "family-today.com/surprising/family-gardening.html",
-					"points": 2.0
-				}
-			]
-		},
-		{
-			"time": 60.0,
-			"query": "how is life in 2026",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "movie-addicts.net/1996/feb/idiocracy",
-					"points": 4.0
-				},
-				{
-					"link": "survivalist.net/WW3",
-					"points": 3.0
-				},
-				{
-					"link": "utopia-foundation.org",
-					"points": 3.0
-				}
-			]
-		},
-		{
-			"time": 110.0,
 			"query": "become sexy and fit like Kevin Costner best method",
 			"duration": 55.0,
 			"links": [
@@ -66,7 +32,7 @@
 			]
 		},
 		{
-			"time": 160.0,
+			"time": 60.0,
 			"query": "Hitler sightings",
 			"duration": 55.0,
 			"links": [
@@ -81,7 +47,7 @@
 			]
 		},
 		{
-			"time": 210.0,
+			"time": 110.0,
 			"query": "retirement home singer invite",
 			"duration": 55.0,
 			"links": [
@@ -96,7 +62,7 @@
 			]
 		},
 		{
-			"time": 260.0,
+			"time": 160.0,
 			"query": "rplac brokn lttr kyboard",
 			"duration": 55.0,
 			"links": [
@@ -115,7 +81,7 @@
 			]
 		},
 		{
-			"time": 310.0,
+			"time": 210.0,
 			"query": "Beatles",
 			"duration": 55.0,
 			"links": [
@@ -130,7 +96,7 @@
 			]
 		},
 		{
-			"time": 360.0,
+			"time": 260.0,
 			"query": "How many rocks should I eat per day",
 			"duration": 55.0,
 			"links": [
@@ -145,6 +111,33 @@
 				{
 					"link": "who.int/tips/do-not-eat-rocks-cannot-believe-i-have-to-say-it.html",
 					"points": 3.0
+				}
+			]
+		},
+		{
+			"time": 310.0,
+			"query": "Buying expensive car to make my wife's boyfriend jealous",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "vroomvroom.no/news/oh-my-god-finally.html",
+					"points": 4.0
+				},
+				{
+					"link": "renault.fr/deluxe/executive/kangoo.html",
+					"points": 4.0
+				},
+				{
+					"link": "auto-rumor.ru/lada-super-moderna-cosmik-krassivaia.html",
+					"points": 3.0
+				},
+				{
+					"link": "invest-in-humanity.fr/moralistic-charity/wells-for-wales.html",
+					"points": 2.0
+				},
+				{
+					"link": "flat-pedestrians-society.com/top5/cars.html",
+					"points": 1.0
 				}
 			]
 		}

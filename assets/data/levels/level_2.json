@@ -2,59 +2,6 @@
 	"requests": [
 		{
 			"time": 10.0,
-			"query": "performing a cesarian section in a plane beginner",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "all-the-tutorials.com/cesarian",
-					"points": 5.0
-				},
-				{
-					"link": "birth.org/situations/plane/oh-shit.html",
-					"points": 3.0
-				},
-				{
-					"link": "birth.org/situations/plane/landed.html",
-					"points": 3.0
-				}
-			]
-		},
-		{
-			"time": 60.0,
-			"query": "learning swahili",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "language-pals.com",
-					"points": 4.0
-				},
-				{
-					"link": "east-african-culture-hall.uk",
-					"points": 4.0
-				},
-				{
-					"link": "mozambique-airlines.mz",
-					"points": 1.0
-				}
-			]
-		},
-		{
-			"time": 110.0,
-			"query": "marry sick billionaire guide",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "everytutorial.com/marrying-a-billionaire.html",
-					"points": 5.0
-				},
-				{
-					"link": "richandsick.gov",
-					"points": 4.0
-				}
-			]
-		},
-		{
-			"time": 160.0,
 			"query": "achieving enlightenment",
 			"duration": 55.0,
 			"links": [
@@ -77,7 +24,7 @@
 			]
 		},
 		{
-			"time": 210.0,
+			"time": 60.0,
 			"query": "Should I eat plastic bags?",
 			"duration": 55.0,
 			"links": [
@@ -92,7 +39,7 @@
 			]
 		},
 		{
-			"time": 260.0,
+			"time": 110.0,
 			"query": "buy large fishes",
 			"duration": 55.0,
 			"links": [
@@ -107,7 +54,7 @@
 			]
 		},
 		{
-			"time": 310.0,
+			"time": 160.0,
 			"query": "grandma funeral dinner recipe",
 			"duration": 55.0,
 			"links": [
@@ -126,7 +73,7 @@
 			]
 		},
 		{
-			"time": 360.0,
+			"time": 210.0,
 			"query": "moon landing 1969 shooting location",
 			"duration": 55.0,
 			"links": [
@@ -137,6 +84,40 @@
 				{
 					"link": "moonlanding-reenactment.org",
 					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 260.0,
+			"query": "ecological hobby",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "science.org/science2/mudwatching_final_final.pdf",
+					"points": 5.0
+				},
+				{
+					"link": "family-today.com/surprising/family-gardening.html",
+					"points": 2.0
+				}
+			]
+		},
+		{
+			"time": 310.0,
+			"query": "how is life in 2026",
+			"duration": 55.0,
+			"links": [
+				{
+					"link": "movie-addicts.net/1996/feb/idiocracy",
+					"points": 4.0
+				},
+				{
+					"link": "survivalist.net/WW3",
+					"points": 3.0
+				},
+				{
+					"link": "utopia-foundation.org",
+					"points": 3.0
 				}
 			]
 		}
