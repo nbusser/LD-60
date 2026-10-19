@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bu4jtdiphyhtc"]
 
 [ext_resource type="Script" uid="uid://gwhglqs53hv7" path="res://src/ScoreScreen/score_screen.gd" id="1_vfk7o"]
+[ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="2_rvo5p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n4y2n"]
+font = ExtResource("2_rvo5p")
+font_size = 13
+font_color = Color(0, 0, 0, 1)
 
 [node name="ScoreScreen" type="Control" unique_id=512005996]
 layout_mode = 3
@@ -27,18 +33,18 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1778920465]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "Day "
+label_settings = SubResource("LabelSettings_n4y2n")
 
 [node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1671376088]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "/"
+label_settings = SubResource("LabelSettings_n4y2n")
 
 [node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=331589538]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = " complete"
+label_settings = SubResource("LabelSettings_n4y2n")
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer" unique_id=341817654]
 layout_mode = 2
@@ -48,22 +54,19 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2" unique_id=2024845484]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "Money left: "
 
 [node name="CoinsNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2" unique_id=1714051742]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 
 [node name="Result" type="Label" parent="CenterContainer/VBoxContainer" unique_id=206120066]
-layout_mode = 2
 custom_minimum_size = Vector2(700, 0)
-theme_override_font_sizes/font_size = 22
+layout_mode = 2
 text = "Pinny is proud of you."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="PhotosSpacer" type="Control" parent="CenterContainer/VBoxContainer"]
+[node name="PhotosSpacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=621840048]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 mouse_filter = 2
@@ -112,7 +115,6 @@ layout_mode = 2
 
 [node name="NextLevelButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer3" unique_id=1381557439]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 size_flags_horizontal = 0
 text = "Next day"
 

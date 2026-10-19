@@ -74,7 +74,7 @@ func run() -> void:
 
 	await _pinny.instruct(
 		["Everything is sorted by category. Click Health, then Doctors."],
-		func(): return _browsed_path == DOCTORS_PATH,
+		_is_browsing_doctors,
 		GameState.category_browsed
 	)
 
@@ -136,3 +136,10 @@ func _is_running(program_id: String) -> bool:
 
 func _on_category_browsed(path: PackedStringArray) -> void:
 	_browsed_path = path
+
+
+# Accept any route that ends on the Doctors category. The directory emits the
+# full path now, but this also keeps the tutorial working if the player reaches
+# Doctors through a shortcut (for example the link shown on the Health tile).
+func _is_browsing_doctors() -> bool:
+	return not _browsed_path.is_empty() and _browsed_path[-1] == DOCTORS_PATH[-1]

@@ -1,7 +1,10 @@
 class_name CategoryClickable
 extends Control
 
-signal category_clicked(Category)
+# Path relative to the category shown by this tile, from that category down to
+# the clicked one. For example clicking the "Doctors" link under the Health
+# tile emits [Health, Doctors], while clicking the tile itself emits [Health].
+signal category_clicked(path: Array[Category])
 
 var category: Category:
 	set(value):
@@ -25,9 +28,11 @@ func _ready() -> void:
 		c_label.fit_content = true
 		c_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 		c_label.text = "[color=blue][url]%s[/url][/color]" % c.name
-		c_label.meta_clicked.connect(func(_meta): category_clicked.emit(c))
+		var subcategory_path: Array[Category] = [category, c]
+		c_label.meta_clicked.connect(func(_meta): category_clicked.emit(subcategory_path))
 		tags.add_child(c_label)
 
 
 func _on_meta_clicked(_meta: Variant) -> void:
-	category_clicked.emit(category)
+	var category_path: Array[Category] = [category]
+	category_clicked.emit(category_path)

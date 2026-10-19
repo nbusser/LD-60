@@ -9,8 +9,11 @@ var selected_category: Category:
 		return _path.back() if _path else null
 
 var _root_categories: Array[Category]
-# Categories from the root down to the selected one, used by the back button.
+# Categories from the root down to the selected one (the current location).
 var _path: Array[Category]
+# Previously visited locations, most recent last. Back restores these instead of
+# walking up to the parent category.
+var _history: Array[Array] = []
 var _root_icon: Texture2D
 var _root_description: String
 
@@ -59,8 +62,14 @@ func _location_for(path: PackedStringArray) -> String:
 
 func _update_location(path: PackedStringArray) -> void:
 	_address_bar.text = _location_for(path)
-	_back_button.disabled = path.is_empty()
+	_back_button.disabled = _history.is_empty()
 	_home_button.disabled = path.is_empty()
+
+
+func _push_history() -> void:
+	var snapshot: Array[Category] = []
+	snapshot.assign(_path)
+	_history.append(snapshot)
 
 
 func _remember_scroll() -> void:
@@ -118,19 +127,21 @@ func _ready() -> void:
 	_show(null)
 
 
-func _category_clicked(category: Category):
+func _category_clicked(relative_path: Array[Category]) -> void:
 	Sfx.click()
 	_remember_scroll()
-	_path.append(category)
-	_show(category)
+	_push_history()
+	_path.append_array(relative_path)
+	_show(selected_category)
 
 
 func _go_back() -> void:
-	if _path.is_empty():
+	if _history.is_empty():
 		return
 	Sfx.click()
 	_remember_scroll()
-	_path.pop_back()
+	var previous_path: Array = _history.pop_back()
+	_path.assign(previous_path)
 	_show(selected_category)
 
 
@@ -139,6 +150,7 @@ func _go_home() -> void:
 		return
 	Sfx.click()
 	_remember_scroll()
+	_push_history()
 	_path.clear()
 	_show(null)
 
