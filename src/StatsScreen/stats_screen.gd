@@ -10,7 +10,7 @@ const FAMILY_PHOTO_PRELOAD := preload("res://src/Family/family_photo.tscn")
 
 
 func _ready() -> void:
-	for member in GameState.FAMILY_MEMBERS:
+	for member in Family.MEMBERS:
 		var photo: FamilyPhoto = FAMILY_PHOTO_PRELOAD.instantiate()
 		photo.member = member
 		_entries.add_child(photo)
@@ -27,10 +27,10 @@ func _ready() -> void:
 
 
 func _ending_text() -> String:
-	if GameState.player_dead:
+	if GameState.family.is_player_dead():
 		return "You did not survive the fifth day.\nThe house is quiet, and nobody is coming back."
 
-	match GameState.family_death_count:
+	match GameState.family.dead_member_count():
 		0:
 			return "You paid every fee. Your family is safe.\nPinny leaves. For now."
 		1:

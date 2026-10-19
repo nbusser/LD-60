@@ -82,10 +82,14 @@ func _threaten() -> void:
 
 func _threat_lines() -> Array[String]:
 	var fee := GameState.protection_fee
-	var member := GameState.threatened_member()
-	var relation := member.relation if member != null else "your family"
-	var name := member.display_name if member != null else "them"
+	if GameState.is_player_threatened():
+		return [
+			"Last day. No more family photos.",
+			"$%d for your own life." % fee,
+			"You paid for them. Now pay for yourself.",
+		]
 
+	var relation := GameState.threatened_member().relation
 	match GameState.day_index:
 		0:
 			return [
@@ -115,12 +119,7 @@ func _threat_lines() -> Array[String]:
 				"$%d for %s. Then we talk about you." % [fee, relation],
 				"You can spend your money in the shop. Just not on them.",
 			]
-		_:
-			return [
-				"Last day. No more family photos.",
-				"$%d for your own life." % fee,
-				"You paid for %s. Now pay for yourself." % name,
-			]
+	return []
 
 
 func _on_all_requests_resolved() -> void:
@@ -143,16 +142,16 @@ func _end_day() -> void:
 
 
 func _collection_lines(success: bool) -> Array[String]:
-	var fee := GameState.last_day_fee
-	var member := GameState.family_member(GameState.last_day_target_id)
-	var target := member.display_name if member != null else "you"
+	var fee := GameState.protection_fee
+	var target := GameState.threatened_name()
+	var player := GameState.is_player_threatened()
 
 	if success:
-		if GameState.last_day_target_id == GameState.PLAYER_ID:
+		if player:
 			return ["You paid. I will see you tomorrow.", "$%d, right on time." % fee]
 		return ["$%d. %s lives." % [fee, target], "Pleasure doing business."]
 
-	if GameState.last_day_target_id == GameState.PLAYER_ID:
+	if player:
 		return ["You are short. You know what happens now."]
 	return ["You are short. I take everything.", "%s is gone." % target]
 

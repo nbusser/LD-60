@@ -31,7 +31,7 @@ func _refresh() -> void:
 	if member == null:
 		return
 
-	var alive := GameState.is_family_alive(member.id)
+	var alive := GameState.family.is_alive(member.id)
 	_photo.texture = member.portrait if alive else member.portrait_terminated
 	_file_name.text = member.file_name if alive else _terminated_name(member.file_name)
 

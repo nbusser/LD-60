@@ -16,10 +16,9 @@ func _ready() -> void:
 
 
 func _result_text() -> String:
-	var member := GameState.family_member(GameState.last_day_target_id)
-	var target := member.display_name if member != null else "you"
+	var target := GameState.threatened_name()
 	if GameState.last_day_success:
-		return "Protection paid for %s: $%d" % [target, GameState.last_day_fee]
+		return "Protection paid for %s: $%d" % [target, GameState.protection_fee]
 	return "Pinny took everything. %s is gone." % target
 
 
