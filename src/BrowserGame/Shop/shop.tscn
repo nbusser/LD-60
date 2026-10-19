@@ -7,12 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://co882g46m7npf" path="res://assets/sprites/dr-dre.png" id="4_nn37r"]
 [ext_resource type="Texture2D" uid="uid://cvd1ghn5a3ynu" path="res://assets/sprites/rich_sick_2.png" id="5_c1huf"]
 [ext_resource type="Texture2D" uid="uid://fgnwyx77xq8p" path="res://assets/sprites/thc.jpg" id="6_u6den"]
-[ext_resource type="Texture2D" uid="uid://ca0n5nd4oxloa" path="res://assets/sprites/icons/serenity/32x32/msgbox-error.png" id="7_nn37r"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmnu7"]
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
+[ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="8_bold"]
 
 [sub_resource type="Resource" id="Resource_bmnu7"]
 script = ExtResource("2_a1lay")
@@ -51,81 +46,96 @@ price = 30
 icon = ExtResource("6_u6den")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
-[sub_resource type="Resource" id="Resource_n4y2n"]
-script = ExtResource("2_a1lay")
-id = "test"
-name = "Test"
-description = "Test test"
-price = 5
-icon = ExtResource("7_nn37r")
-metadata/_custom_type_script = "uid://ctts1botj6v2b"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_my65c"]
-
 [node name="Shop" type="ScrollContainer" unique_id=383952159]
-custom_minimum_size = Vector2(400, 300)
+custom_minimum_size = Vector2(520, 360)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_bmnu7")
+horizontal_scroll_mode = 0
 script = ExtResource("1_my65c")
-upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), SubResource("Resource_sskbs"), SubResource("Resource_n4y2n")])
+upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), SubResource("Resource_sskbs")])
 
-[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=556272120]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=221064382]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer2" unique_id=1029503540]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=850575060]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer2/MarginContainer" unique_id=1058576616]
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=290886860]
 layout_mode = 2
-alignment = 1
+theme_override_constants/separation = 10
 
-[node name="CategoryBanner" type="VBoxContainer" parent="CenterContainer2/MarginContainer/VBoxContainer" unique_id=1447104436]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer2/MarginContainer/VBoxContainer/CategoryBanner" unique_id=1317343275]
-layout_mode = 2
-size_flags_vertical = 4
-alignment = 1
-
-[node name="CategoryIcon" type="TextureRect" parent="CenterContainer2/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=1126190879]
+[node name="CategoryIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/Header" unique_id=1404742380]
+texture_filter = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("1_gqej8")
-texture_filter = 1
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Panel" type="Panel" parent="CenterContainer2/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=240534891]
-custom_minimum_size = Vector2(20, 0)
+[node name="TitleBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Header" unique_id=968208133]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_my65c")
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
 
-[node name="CategoryDescription" type="RichTextLabel" parent="CenterContainer2/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=1055214169]
+[node name="Wordmark" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Header/TitleBox" unique_id=1194782871]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 24
+theme_override_fonts/normal_font = ExtResource("8_bold")
 bbcode_enabled = true
-text = "
-
-[color=black]PinnyMart[/color]"
+text = "PinnyMart"
 fit_content = true
+scroll_active = false
 autowrap_mode = 0
 
-[node name="Panel" type="Panel" parent="CenterContainer2/MarginContainer/VBoxContainer/CategoryBanner" unique_id=223969803]
-custom_minimum_size = Vector2(0, 20)
+[node name="Tagline" type="Label" parent="MarginContainer/VBoxContainer/Header/TitleBox" unique_id=38760655]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_my65c")
+text = "Tools for the best employees."
 
-[node name="Grid" type="GridContainer" parent="CenterContainer2/MarginContainer/VBoxContainer" unique_id=751076556]
+[node name="BalanceLabel" type="Label" parent="MarginContainer/VBoxContainer/Header" unique_id=1647879276]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/v_separation = 20
+theme_override_fonts/font = ExtResource("8_bold")
+text = "You have $0"
+horizontal_alignment = 2
+
+[node name="Rule" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1934524645]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Shadow" type="ColorRect" parent="MarginContainer/VBoxContainer/Rule" unique_id=504209111]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Highlight" type="ColorRect" parent="MarginContainer/VBoxContainer/Rule" unique_id=593522912]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=332402034]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 8
+
+[node name="EmptyState" type="Label" parent="MarginContainer/VBoxContainer" unique_id=759009190]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("8_bold")
+text = "Sold out.
+Come back later."
+horizontal_alignment = 1
+vertical_alignment = 1

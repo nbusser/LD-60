@@ -1,59 +1,89 @@
-[gd_scene load_steps=2 format=3 uid="uid://viymwegsl3d1"]
+[gd_scene load_steps=4 format=3 uid="uid://viymwegsl3d1"]
 
 [ext_resource type="Script" uid="uid://ctnvit31ftmbn" path="res://src/BrowserGame/Shop/shop_upgrade.gd" id="1_p1n5e"]
+[ext_resource type="Texture2D" path="res://assets/ui/textures/panel_container/panel_inset.png" id="2_inset"]
 
-[node name="ShopUpgrade" type="VBoxContainer" unique_id=1278995560]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inset"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+texture = ExtResource("2_inset")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="ShopUpgrade" type="PanelContainer" unique_id=1278995560]
+size_flags_horizontal = 3
 script = ExtResource("1_p1n5e")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=540288854]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=540288854]
 layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1880399903]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=701173770]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="Icon" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=1585433426]
+[node name="IconFrame" type="PanelContainer" parent="MarginContainer/HBoxContainer" unique_id=1880399903]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_inset")
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer/IconFrame" unique_id=1585433426]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 64)
-custom_maximum_size = Vector2(64, 64)
 layout_mode = 2
 texture_filter = 1
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=701173770]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=701173771]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 2
 
-[node name="Title" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=623073530]
+[node name="Title" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=623073530]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
+scroll_active = false
 autowrap_mode = 0
 
-[node name="Description" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=1971792801]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1971792801]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 20)
+custom_minimum_size = Vector2(280, 20)
 layout_mode = 2
 bbcode_enabled = true
 fit_content = true
+scroll_active = false
+autowrap_mode = 3
 
-[node name="Purchase" type="VBoxContainer" parent="HBoxContainer" unique_id=1284729384]
+[node name="Purchase" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1284729384]
+custom_minimum_size = Vector2(88, 0)
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 4
 alignment = 1
 
-[node name="PriceLabel" type="Label" parent="HBoxContainer/Purchase" unique_id=1198734561]
+[node name="PriceLabel" type="Label" parent="MarginContainer/HBoxContainer/Purchase" unique_id=1198734561]
 unique_name_in_owner = true
 layout_mode = 2
 text = "$10"
 horizontal_alignment = 2
 
-[node name="BuyButton" type="Button" parent="HBoxContainer/Purchase" unique_id=1739825410]
+[node name="BuyButton" type="Button" parent="MarginContainer/HBoxContainer/Purchase" unique_id=1739825410]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(88, 0)
 layout_mode = 2
 text = "Buy"

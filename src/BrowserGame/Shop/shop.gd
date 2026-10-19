@@ -4,10 +4,19 @@ const SHOP_UPGRADE_PRELOAD = preload("res://src/BrowserGame/Shop/shop_upgrade.ts
 
 @export var upgrades: Array[UpgradeData]
 
+@onready var _balance_label: Label = %BalanceLabel
+
 
 func _ready():
+	GameState.money_changed.connect(_on_money_changed)
+	_on_money_changed(GameState.money)
 	for upgrade in upgrades:
 		_add_upgrade(upgrade)
+	_update_empty_state()
+
+
+func _on_money_changed(value: int) -> void:
+	_balance_label.text = "You have $%d" % value
 
 
 func _add_upgrade(upgrade: UpgradeData) -> void:
@@ -29,3 +38,8 @@ func _upgrade_clicked(shop_upgrade: ShopUpgrade) -> void:
 	shop_upgrade.queue_free()
 	for unlock in shop_upgrade.upgrade_data.unlocks:
 		_add_upgrade(unlock)
+	_update_empty_state.call_deferred()
+
+
+func _update_empty_state() -> void:
+	%EmptyState.visible = %Grid.get_child_count() == 0
