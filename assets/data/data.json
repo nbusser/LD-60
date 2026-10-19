@@ -1369,6 +1369,38 @@
 									"image": null
 								}
 							]
+						},
+						{
+							"name": "Europe",
+							"icon": "res://assets/sprites/icons/categories/app-maps.png",
+							"subcategories": [
+								{
+									"name": "Islands",
+									"icon": "res://assets/sprites/icons/categories/app-maps.png",
+									"subcategories": [
+										{
+											"name": "UK",
+											"icon": "res://assets/sprites/icons/categories/app-maps.png",
+											"entries": [
+												{
+													"name": "Civil Code UK",
+													"link": "justice.gov.uk",
+													"description": "Latest updates on the law, updated daily",
+													"image": null
+												}
+											]
+										}
+									]
+								}
+							],
+							"entries": [
+								{
+									"name": "Adolf Hitler and the Nazis",
+									"link": "ww2db.com",
+									"description": "Battles, timelines and biographies of the Second World War.",
+									"image": null
+								}
+							]
 						}
 					]
 				},
@@ -1416,6 +1448,30 @@
 													"name": "Taco cartography",
 													"link": "taco-cartography.org",
 													"description": "Mapping the world one filling at a time",
+													"image": null
+												}
+											]
+										},
+										{
+											"name": "USA",
+											"icon": "res://assets/sprites/icons/categories/app-maps.png",
+											"entries": [
+												{
+													"name": "Self-reporting",
+													"link": "fbi.gov",
+													"description": "Are you a criminal? This page is for you",
+													"image": null
+												},
+												{
+													"name": "The Nevada landing site",
+													"link": "nevada-moon.com",
+													"description": "Evidence the 1969 landing was filmed at the Nevada Test Site.",
+													"image": null
+												},
+												{
+													"name": "Thanksgiving Food Safety",
+													"link": "fsis.usda.gov/thanksgiving",
+													"description": "Official guidelines for handling and cooking poultry.",
 													"image": null
 												}
 											]
@@ -1477,54 +1533,6 @@
 									]
 								}
 							]
-						}
-					]
-				},
-				{
-					"name": "UK",
-					"icon": "res://assets/sprites/icons/categories/app-maps.png",
-					"entries": [
-						{
-							"name": "Civil Code UK",
-							"link": "justice.gov.uk",
-							"description": "Latest updates on the law, updated daily",
-							"image": null
-						}
-					]
-				},
-				{
-					"name": "USA",
-					"icon": "res://assets/sprites/icons/categories/app-maps.png",
-					"entries": [
-						{
-							"name": "Self-reporting",
-							"link": "fbi.gov",
-							"description": "Are you a criminal? This page is for you",
-							"image": null
-						},
-						{
-							"name": "The Nevada landing site",
-							"link": "nevada-moon.com",
-							"description": "Evidence the 1969 landing was filmed at the Nevada Test Site.",
-							"image": null
-						},
-						{
-							"name": "Thanksgiving Food Safety",
-							"link": "fsis.usda.gov/thanksgiving",
-							"description": "Official guidelines for handling and cooking poultry.",
-							"image": null
-						}
-					]
-				},
-				{
-					"name": "Europe",
-					"icon": "res://assets/sprites/icons/categories/app-maps.png",
-					"entries": [
-						{
-							"name": "Adolf Hitler and the Nazis",
-							"link": "ww2db.com",
-							"description": "Battles, timelines and biographies of the Second World War.",
-							"image": null
 						}
 					]
 				}
