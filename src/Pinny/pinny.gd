@@ -49,6 +49,7 @@ func say(pages: Array[String], mood: Mood = Mood.NEUTRAL) -> void:
 	_message.visible = true
 	for page: String in pages:
 		_label.text = page
+		Sfx.play_message()
 		await get_tree().create_timer(_page_duration(page)).timeout
 		# A new say() has been called. Skip other pages
 		if talk_id != _talk_id:
@@ -73,8 +74,10 @@ func _play_move() -> void:
 	_sprite.play(&"move_in")
 	await _sprite.animation_finished
 	_sprite.play(&"move_loop")
+	Sfx.play_jump()
 	await get_tree().create_timer(_animation_duration(&"move_loop")).timeout
 	_sprite.play(&"move_out")
+	Sfx.play_jump()
 	await _sprite.animation_finished
 
 
