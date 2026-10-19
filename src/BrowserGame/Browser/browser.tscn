@@ -137,16 +137,6 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
-[node name="BackArrow" type="RichTextLabel" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=1198588240]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_b14")
-bbcode_enabled = true
-text = "
-[color=blue][url]Back"
-fit_content = true
-autowrap_mode = 0
-
 [node name="Logo" type="CenterContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner/HBoxContainer" unique_id=447507699]
 unique_name_in_owner = true
 layout_mode = 2
@@ -197,6 +187,20 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
 columns = 3
+
+[node name="BackArrow" type="RichTextLabel" parent="." unique_id=1198588240]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 11.0
+offset_top = 2.0
+offset_right = 66.0
+offset_bottom = 52.0
+theme_override_fonts/normal_font = ExtResource("3_b14")
+bbcode_enabled = true
+text = "
+[color=blue][url]<Back"
+fit_content = true
+autowrap_mode = 0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1911337972]
 layout_mode = 1
