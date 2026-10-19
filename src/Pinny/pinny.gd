@@ -13,8 +13,8 @@ const MESSAGE_BLINK_COUNT := 2
 const MESSAGE_BLINK_INTERVAL := 0.08
 
 # Determines how long a msg stays on screen
-@export var seconds_per_character := 0.001
-@export var min_page_duration := 0.5
+@export var seconds_per_character := 0.085
+@export var min_page_duration := 3.5
 
 # If pinny is already on screen
 var is_present := false
@@ -64,6 +64,13 @@ func say(pages: Array[String], mood: Mood = Mood.NEUTRAL, hold := false) -> void
 			return
 	_message.visible = false
 	_sprite.play(_MOOD_ANIMATIONS[Mood.NEUTRAL])
+
+
+# Keeps the instruction on screen until it is done
+func instruct(pages: Array[String], is_done: Callable, changed: Signal) -> void:
+	say(pages, Mood.NEUTRAL, true)
+	while not is_done.call():
+		await changed
 
 
 func leave() -> void:

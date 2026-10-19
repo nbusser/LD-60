@@ -40,6 +40,7 @@ func _ready():
 	_time_left = float(level_state.level_data.timer_duration)
 	_update_clock()
 
+	$UI/Fadein.fade()
 	match GameState.current_level_number:
 		0:
 			await _run_level_0()
@@ -78,7 +79,7 @@ func _run_level_0() -> void:
 
 	# The tutorial starts the day once the mailbox is open, the clock runs after it
 	await tutorial.run()
-	await _play_day(false)
+	await _play_day()
 
 	await (_pinny.visit(["Good job on your first day pal! Get some rest."], Pinny.Mood.LAUGH))
 
@@ -116,23 +117,27 @@ func _run_level_1() -> void:
 	var fee := GameState.protection_fee
 	var relation := GameState.threatened_member().relation
 
-	_desktop.add_program(FAMILY_PHOTOS)
 	await _pinny.appear()
 	await (
 		_pinny
 		. say(
 			[
 				"Good morning pal! Great work yesterday.",
-				"I left you a little gift on your desktop. Go on, open it!",
+				"I left you a little gift on your desktop.",
 			],
 			Pinny.Mood.LAUGH
 		)
 	)
 
+	# The gift shows up once Pinny mentions it
+	_desktop.add_program(FAMILY_PHOTOS)
+	await _pinny.instruct(
+		["Go on pal, open it!"],
+		_desktop.is_program_running.bind(FAMILY_PHOTOS_ID),
+		_desktop.program_opened
+	)
+
 	# Let the player look at the photos before coming back
-	var deadline := Time.get_ticks_msec() + 15000
-	while not _desktop.is_program_running(FAMILY_PHOTOS_ID) and Time.get_ticks_msec() < deadline:
-		await get_tree().process_frame
 	await get_tree().create_timer(4.0).timeout
 
 	await (
@@ -248,13 +253,11 @@ func _run_level_5() -> void:
 
 
 # Runs the clock and sends the requests until the end of the day
-func _play_day(fade_in := true) -> void:
+func _play_day() -> void:
 	level_state.all_requests_resolved.connect(_finish_day)
 	_running = true
 	level_state.is_clock_running = true
 	level_state.start_day()
-	if fade_in:
-		$UI/Fadein.fade()
 	await day_finished
 
 

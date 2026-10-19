@@ -4,4 +4,5 @@ extends ScrollContainer
 
 
 func _on_restore_button_toggled(_toggled_on: bool) -> void:
-	restore_button.disabled
+	#restore_button.disabled
+	pass

@@ -32,12 +32,15 @@ func run() -> void:
 		Pinny.Mood.NEUTRAL
 	)
 
-	await _instruct(
-		[
-			'First, check your email inbox by opening "Outbacks"',
-		],
-		_is_running.bind("outbacks"),
-		_desktop.program_opened
+	await (
+		_pinny
+		. instruct(
+			[
+				'First, check your email inbox by opening "Outbacks"',
+			],
+			_is_running.bind("outbacks"),
+			_desktop.program_opened
+		)
 	)
 
 	# The request arrives once the mailbox is open
@@ -56,20 +59,20 @@ func run() -> void:
 		Pinny.Mood.LAUGH
 	)
 
-	await _instruct(
+	await _pinny.instruct(
 		['Open "Youpi?", our in-house database.'],
 		_is_running.bind("youpi"),
 		_desktop.program_opened
 	)
 	await get_tree().create_timer(1.5).timeout
 
-	await _instruct(
+	await _pinny.instruct(
 		["Everything is sorted by category. Click Health, then Doctors."],
 		func(): return _browsed_path == DOCTORS_PATH,
 		GameState.category_browsed
 	)
 
-	await _instruct(
+	await _pinny.instruct(
 		[
 			"Now, the tedious work starts: copy the LINK manually. Then click Send. Better links pay more. You can do it pal! I believe in you!",
 		],
@@ -89,7 +92,7 @@ func run() -> void:
 		)
 	)
 
-	await _instruct(
+	await _pinny.instruct(
 		["Open the Shop application pal."],
 		# I don't know why but the shop is not properly detected
 		# TODO: debug it
@@ -119,13 +122,6 @@ func run() -> void:
 		)
 	)
 	await _pinny.leave()
-
-
-# Pinny explains what to do and keeps the instruction on screen until it is done
-func _instruct(pages: Array[String], is_done: Callable, changed: Signal) -> void:
-	_pinny.say(pages, Pinny.Mood.NEUTRAL, true)
-	while not is_done.call():
-		await changed
 
 
 func _is_running(program_id: String) -> bool:
