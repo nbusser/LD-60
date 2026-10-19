@@ -4,6 +4,7 @@ extends Control
 
 # Settings of all levels. To be configured from the editor
 @export var levels: Array[LevelData]
+@export var debug_only_start_level: int = 0
 
 var current_audio_player: AudioStreamPlayer
 
@@ -62,6 +63,7 @@ func _run_main_menu() -> void:
 
 func _start_game() -> void:
 	GameState.reset()
+	GameState.current_level_number = debug_only_start_level
 	_run_level()
 
 
