@@ -23,12 +23,13 @@
 script = ExtResource("2_38vrh")
 name = "Day 1: A new job"
 requests_json = ExtResource("5_tutorial_day")
-ransom = 100
+ransom = 0
 
 [sub_resource type="Resource" id="Resource_r4gm4"]
 script = ExtResource("2_38vrh")
 name = "Day 2: A little gift"
 requests_json = ExtResource("5_level")
+ransom = 100
 hostage = ExtResource("9_father")
 
 [sub_resource type="Resource" id="Resource_day2"]

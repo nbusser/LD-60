@@ -7,6 +7,7 @@ const MESSAGE = preload("res://assets/sounds/message.ogg")
 const JUMP = preload("res://assets/sounds/jump.ogg")
 const KILL = preload("res://assets/sounds/kill.ogg")
 const PHOTO = preload("res://assets/sounds/photo0.ogg")
+const SHUT_DOWN = preload("res://assets/sounds/shut_down.ogg")
 
 var _click_player := AudioStreamPlayer.new()
 var _harddrive_player := AudioStreamPlayer.new()
@@ -15,6 +16,7 @@ var _message_player := AudioStreamPlayer.new()
 var _jump_player := AudioStreamPlayer.new()
 var _kill_player := AudioStreamPlayer.new()
 var _photo_player := AudioStreamPlayer.new()
+var _shut_down_player := AudioStreamPlayer.new()
 
 
 func _ready() -> void:
@@ -45,6 +47,10 @@ func _ready() -> void:
 	_photo_player.stream = PHOTO
 	_photo_player.bus = &"SFX"
 	add_child(_photo_player)
+
+	_shut_down_player.stream = SHUT_DOWN
+	_shut_down_player.bus = &"SFX"
+	add_child(_shut_down_player)
 
 
 func click() -> void:
@@ -79,3 +85,8 @@ func play_kill() -> void:
 func play_photo() -> void:
 	_photo_player.play()
 	await _photo_player.finished
+
+
+func play_shut_down() -> void:
+	_shut_down_player.play()
+	await _shut_down_player.finished

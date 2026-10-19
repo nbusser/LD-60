@@ -152,8 +152,6 @@ func _run_level_1(level_data: LevelData) -> void:
 
 	await _play_day()
 
-	# EN laissant la derniere mission timeout, _play_day() est reste bloque!
-
 	# TODO quand la journee se termine: ouvrir une popup qui dit que la journee se finit.
 	# Quand on la ferme ca ferme toutes les fenetres, et on empeche l'user d'ouvrir lui meme d'autres fenetres puis on commence la cutscene de fin de niveau
 
@@ -345,6 +343,7 @@ func _turn_off_screen() -> void:
 	tween.tween_property(_desktop, "modulate", Color(4.0, 4.0, 4.0), 0.12)
 	tween.parallel().tween_property(_desktop, "scale:y", 0.004, 0.15)
 	tween.tween_property(_desktop, "scale:x", 0.0, 0.2)
+	Sfx.play_shut_down()
 	await tween.finished
 	await get_tree().create_timer(0.5).timeout
 
