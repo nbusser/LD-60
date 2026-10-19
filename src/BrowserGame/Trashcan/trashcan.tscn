@@ -110,4 +110,4 @@ label_settings = SubResource("LabelSettings_n4y2n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="toggled" from="ColorRect/VBoxContainer/Container/ColorRect2/RestoreButton" to="ColorRect/VBoxContainer/Container/MarginContainer/Grid/Icon" method="_on_restore_button_toggled"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/Container/ColorRect2/RestoreButton" to="." method="_on_restore_button_toggled"]

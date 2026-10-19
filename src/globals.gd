@@ -1,6 +1,8 @@
 extends Node
 
 signal scene_ended(status: EndSceneStatus, params: Dictionary)
+signal credits_restored
+
 # Status sent along with signal end_scene()
 enum EndSceneStatus {
 	# Main meu

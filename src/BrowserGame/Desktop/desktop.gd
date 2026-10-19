@@ -20,6 +20,7 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 @onready var task_button_scene = preload("res://src/BrowserGame/Desktop/TaskButton.tscn")
 @onready var cursor_popup_scene = preload("res://src/BrowserGame/Desktop/cursor_popup.tscn")
 @onready var image_viewer_scene = preload("res://src/Family/image_viewer.tscn")
+@onready var credits_program: Program = preload("res://credits.tres")
 @onready var cursor = $Cursor
 @onready var pinny: Pinny = %Pinny
 @onready var _clock_label: Label = %ClockLabel
@@ -64,6 +65,10 @@ func remove_program(program: Program) -> void:
 	_programs_to_window.erase(program)
 	programs = programs.duplicate()
 	programs.erase(program)
+
+
+func _spawn_credits() -> void:
+	add_program(credits_program)
 
 
 # Hide every icon, they come back one by one with reveal_next_icon()
@@ -268,6 +273,7 @@ func _ready() -> void:
 
 	GameState.money_changed.connect(_on_money_changed)
 	_on_money_changed(GameState.money)
+	Globals.credits_restored.connect(_spawn_credits)
 
 
 func _create_icon(program: Program) -> void:
