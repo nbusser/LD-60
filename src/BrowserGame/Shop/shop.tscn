@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://u1ebridwc4c4" path="res://src/BrowserGame/Shop/shop.gd" id="1_my65c"]
 [ext_resource type="Script" uid="uid://ctts1botj6v2b" path="res://src/BrowserGame/Shop/upgrade_data.gd" id="2_a1lay"]
 [ext_resource type="Texture2D" uid="uid://dfh06tw5soqe8" path="res://assets/sprites/icons/serenity/16x16/edit-copy.png" id="3_nn37r"]
-[ext_resource type="Texture2D" path="res://assets/sprites/icons/cafe_latte_32x32.png" id="4_coffee"]
-[ext_resource type="Texture2D" path="res://assets/sprites/icons/serenity/16x16/history.png" id="5_reset"]
+[ext_resource type="Texture2D" uid="uid://c7gtak8jryf2r" path="res://assets/sprites/icons/cafe_latte_32x32.png" id="4_coffee"]
+[ext_resource type="Texture2D" uid="uid://dcx47moo7ik4c" path="res://assets/sprites/icons/serenity/16x16/history.png" id="5_reset"]
 [ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="8_bold"]
 [ext_resource type="Resource" uid="uid://caugbnh6mvfi3" path="res://assets/data/upgrade/search.tres" id="9_search"]
 [ext_resource type="Texture2D" uid="uid://dx3a0hhx2gjg1" path="res://assets/ui/textures/background/Blue Rivets.png" id="10_wallpaper"]
-[ext_resource type="Texture2D" path="res://assets/sprites/icons/serenity/32x32/app-piano.png" id="11_music"]
+[ext_resource type="Texture2D" uid="uid://h32r2ksu2sbv" path="res://assets/sprites/icons/serenity/32x32/app-piano.png" id="11_music"]
 
 [sub_resource type="Resource" id="Resource_bmnu7"]
 script = ExtResource("2_a1lay")
@@ -25,7 +25,6 @@ script = ExtResource("2_a1lay")
 id = "timer_reset"
 name = "Nostalgia"
 description = "Resets a request timer once a day."
-price = 10
 icon = ExtResource("5_reset")
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
 
@@ -34,7 +33,7 @@ script = ExtResource("2_a1lay")
 id = "copy_paste"
 name = "Copy & Paste"
 description = "Click any URL in the browser to copy it to your clipboard."
-price = 0
+price = 5
 icon = ExtResource("3_nn37r")
 unlocks = Array[ExtResource("2_a1lay")]([SubResource("Resource_bmnu7"), SubResource("Resource_twlh7")])
 metadata/_custom_type_script = "uid://ctts1botj6v2b"
@@ -53,7 +52,6 @@ script = ExtResource("2_a1lay")
 id = "extended_music"
 name = "Extended Music"
 description = "The full soundtrack. No more 15 second loop!"
-price = 10
 icon = ExtResource("11_music")
 purchase_error = "Extended Music upgrade could not be installed.
 
