@@ -1011,7 +1011,14 @@
 						{
 							"name": "Africa",
 							"icon": "res://assets/sprites/icons/categories/app-maps.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Mozambique Airlines",
+									"link": "mozambique-airlines.mz",
+									"description": "Fly safely to Maputo",
+									"image": null
+								}
+							]
 						}
 					]
 				},
@@ -1104,30 +1111,6 @@
 							"link": "fsis.usda.gov/thanksgiving",
 							"description": "Official guidelines for handling and cooking poultry.",
 							"image": null
-						}
-					]
-				},
-				{
-					"name": "Travel",
-					"icon": "res://assets/sprites/icons/categories/app-maps.png",
-					"subcategories": [
-						{
-							"name": "Destinations",
-							"icon": "res://assets/sprites/icons/categories/app-maps.png",
-							"entries": [
-								{
-									"name": "Argentina Tourism",
-									"link": "tourism.argentina.org",
-									"description": "Official tourism portal: destinations, culture and travel tips.",
-									"image": null
-								},
-								{
-									"name": "Mozambique Airlines",
-									"link": "mozambique-airlines.mz",
-									"description": "Fly safely to Maputo",
-									"image": null
-								}
-							]
 						}
 					]
 				},
