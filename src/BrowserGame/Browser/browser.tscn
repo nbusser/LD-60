@@ -194,9 +194,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_ooua1")
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1554786993]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(400, 300)
+custom_minimum_size = Vector2(600, 300)
 layout_mode = 2
-columns = 4
+columns = 3
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1911337972]
 layout_mode = 1

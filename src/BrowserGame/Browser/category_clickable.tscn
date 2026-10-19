@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cxdln3gnhm3jf" path="res://assets/fonts/times/timB14.fnt" id="3_b14"]
 
 [node name="CategoryClickable" type="VBoxContainer" unique_id=502459233]
+custom_minimum_size = Vector2(200, 0)
 custom_maximum_size = Vector2(200, -1)
 script = ExtResource("2_gebul")
 
