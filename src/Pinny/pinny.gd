@@ -11,9 +11,11 @@ const _MOOD_ANIMATIONS: Dictionary[Mood, StringName] = {
 
 const MESSAGE_BLINK_COUNT := 2
 const MESSAGE_BLINK_INTERVAL := 0.08
+# Speeds up the walk in and out of the screen
+const WALK_SPEED := 1.15
 
 # Determines how long a msg stays on screen
-@export var seconds_per_character := 0.085
+@export var seconds_per_character := 0.06
 @export var min_page_duration := 3.5
 
 # If pinny is already on screen
@@ -83,18 +85,19 @@ func leave() -> void:
 
 # Waits for the animation length: animation_finished may not be emitted
 func _play_animation(animation: StringName) -> void:
-	_animation_player.play(animation)
+	_animation_player.play(animation, -1, WALK_SPEED)
 	_play_move()
-	await get_tree().create_timer(_animation_player.get_animation(animation).length).timeout
+	var duration := _animation_player.get_animation(animation).length / WALK_SPEED
+	await get_tree().create_timer(duration).timeout
 
 
 func _play_move() -> void:
-	_sprite.play(&"move_in")
+	_sprite.play(&"move_in", WALK_SPEED)
 	await _sprite.animation_finished
-	_sprite.play(&"move_loop")
+	_sprite.play(&"move_loop", WALK_SPEED)
 	Sfx.play_jump()
-	await get_tree().create_timer(_animation_duration(&"move_loop")).timeout
-	_sprite.play(&"move_out")
+	await get_tree().create_timer(_animation_duration(&"move_loop") / WALK_SPEED).timeout
+	_sprite.play(&"move_out", WALK_SPEED)
 	Sfx.play_jump()
 	await _sprite.animation_finished
 

@@ -24,6 +24,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Credits"
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
@@ -35,6 +36,7 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "A game by Ludum Darons team"
 
 [node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
@@ -42,6 +44,7 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer3"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 28
 text = "Matthieu Baty
 Antoine Brûlé
 Nicolas Busser
@@ -59,6 +62,7 @@ layout_mode = 2
 [node name="Back" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer4"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 28
 text = "Back"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer4/Back" to="." method="_on_Back_pressed"]
