@@ -11,7 +11,7 @@ const DAY_START_HOUR := 8
 const DAY_END_HOUR := 20
 
 const SETUP: Program = preload("res://assets/data/program/setup.tres")
-const FAMILY_PHOTOS: Program = preload("res://family_viewer.tres")
+const FAMILY_PHOTOS: Program = preload("res://assets/data/program/family_viewer.tres")
 const FAMILY_PHOTOS_ID := "family_photos"
 
 var level_state: LevelState
