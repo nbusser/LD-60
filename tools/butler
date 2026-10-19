@@ -1,67 +1,98 @@
 #!/usr/bin/env dotslash
 
+// https://github.com/itchio/butler/releases/tag/v15.32.0
 {
   "name": "butler",
   "platforms": {
     "macos-x86_64": {
-      "size": 9539178,
-      "hash": "sha256",
-      "digest": "94c176f408e8a785f72da4daa35c15212b033b4c29c742bac5420e3e3aa9face",
+      "size": 10872535,
+      "hash": "blake3",
+      "digest": "8f4e4b5eaca9f3ec5e18d1d301af2e748b5e38b572b159b519574949e83fb912",
       "format": "zip",
-      "path": "butler",
       "providers": [
         {
-          "url": "https://broth.itch.zone/butler/darwin-amd64/15.24.0/archive/default"
+          "url": "https://github.com/itchio/butler/releases/download/v15.32.0/butler-darwin-amd64.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "itchio/butler",
+          "tag": "v15.32.0",
+          "name": "butler-darwin-amd64.zip"
         }
-      ]
+      ],
+      "path": "darwin-amd64/butler"
     },
     "macos-aarch64": {
-      "size": 9539178,
-      "hash": "sha256",
-      "digest": "94c176f408e8a785f72da4daa35c15212b033b4c29c742bac5420e3e3aa9face",
+      "size": 9875925,
+      "hash": "blake3",
+      "digest": "13218aacc5d365ab18af144bebb95b11abdab5c81d7ff85d88548b9d0223f803",
       "format": "zip",
-      "path": "butler",
       "providers": [
         {
-          "url": "https://broth.itch.zone/butler/darwin-amd64/15.24.0/archive/default"
+          "url": "https://github.com/itchio/butler/releases/download/v15.32.0/butler-darwin-arm64.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "itchio/butler",
+          "tag": "v15.32.0",
+          "name": "butler-darwin-arm64.zip"
         }
-      ]
+      ],
+      "path": "darwin-arm64/butler"
     },
     "linux-x86_64": {
-      "size": 9213596,
-      "hash": "sha256",
-      "digest": "bee1d708b5ed3dc7efcda3b5416ad5ca87a04d7e5fb6ebada510f3ba0cba3b69",
+      "size": 10599491,
+      "hash": "blake3",
+      "digest": "0b460c89ba1cd6ca5d9caa533d920ed47a496746daae9e42c68a2587a07f8dbb",
       "format": "zip",
-      "path": "butler",
       "providers": [
         {
-          "url": "https://broth.itch.zone/butler/linux-amd64/15.24.0/archive/default"
+          "url": "https://github.com/itchio/butler/releases/download/v15.32.0/butler-linux-amd64.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "itchio/butler",
+          "tag": "v15.32.0",
+          "name": "butler-linux-amd64.zip"
         }
-      ]
+      ],
+      "path": "linux-amd64/butler"
     },
     "linux-aarch64": {
-      "size": 9213596,
-      "hash": "sha256",
-      "digest": "bee1d708b5ed3dc7efcda3b5416ad5ca87a04d7e5fb6ebada510f3ba0cba3b69",
+      "size": 9722328,
+      "hash": "blake3",
+      "digest": "9b07af5a335d61da1e24171403a6c5fc7b0a348be446c2ec6c364057c4d051ac",
       "format": "zip",
-      "path": "butler",
       "providers": [
         {
-          "url": "https://broth.itch.zone/butler/linux-amd64/15.24.0/archive/default"
+          "url": "https://github.com/itchio/butler/releases/download/v15.32.0/butler-linux-arm64.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "itchio/butler",
+          "tag": "v15.32.0",
+          "name": "butler-linux-arm64.zip"
         }
-      ]
+      ],
+      "path": "linux-arm64/butler"
     },
     "windows-x86_64": {
-      "size": 9461459,
-      "hash": "sha256",
-      "digest": "03ddb047b62bf40319897ef539853d2f08ea2636002eed0e245c4a5668268240",
+      "size": 10682772,
+      "hash": "blake3",
+      "digest": "0de195e930b102958590e264ec542743503860bb867cf937cb3a05a7738bd45b",
       "format": "zip",
-      "path": "butler",
       "providers": [
         {
-          "url": "https://broth.itch.zone/butler/windows-amd64/15.24.0/archive/default"
+          "url": "https://github.com/itchio/butler/releases/download/v15.32.0/butler-windows-amd64.zip"
+        },
+        {
+          "type": "github-release",
+          "repo": "itchio/butler",
+          "tag": "v15.32.0",
+          "name": "butler-windows-amd64.zip"
         }
-      ]
+      ],
+      "path": "windows-amd64/butler.exe"
     }
   }
 }
