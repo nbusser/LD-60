@@ -41,37 +41,128 @@
 						{
 							"name": "Good Singers",
 							"icon": "res://assets/sprites/icons/categories/app-sound-player.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "The Vienna Boys Choir reunion tour",
+									"link": "vienna-boys-reunion.com",
+									"description": "The sopranos have retired, but the tenors still argue about tempo.",
+									"image": null
+								},
+								{
+									"name": "Singing in tune: a practical guide",
+									"link": "sing-in-tune.net",
+									"description": "Includes a chapter on lip-syncing and a chapter on giving up",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "OK Singers",
 							"icon": "res://assets/sprites/icons/categories/app-sound-player.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "The adequate vocalist",
+									"link": "adequate-vocalist.org",
+									"description": "A newsletter for people who can hold a note but not a room",
+									"image": null
+								},
+								{
+									"name": "Karaoke night at the DMV",
+									"link": "karaoke-dmv.com",
+									"description": "The waiting room has never been so emotionally available.",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Lame Singers",
 							"icon": "res://assets/sprites/icons/categories/app-sound-player.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "My uncle's birthday speech",
+									"link": "uncle-birthday-speech.com",
+									"description": "Forty-five minutes of gratitude and a slideshow of his medical history",
+									"image": null
+								},
+								{
+									"name": "The whisper choir",
+									"link": "whisper-choir.net",
+									"description": "Their Bohemian Rhapsody is best enjoyed with subtitles",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Dead Singers",
 							"icon": "res://assets/sprites/icons/categories/app-sound-player.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Posthumous duets: a legal guide",
+									"link": "posthumous-duets.com",
+									"description": "Twelve unreleased tracks and one very confused medium",
+									"image": null
+								},
+								{
+									"name": "The afterlife open mic",
+									"link": "afterlife-open-mic.org",
+									"description": "Sign-up starts at 6 p.m., eternity starts whenever the host remembers.",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Music Without Singers",
 							"icon": "res://assets/sprites/icons/categories/filetype-music.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "The art of the instrumental",
+									"link": "instrumental-art.net",
+									"description": "For listeners who find vowels confrontational",
+									"image": null
+								},
+								{
+									"name": "Whistling for beginners",
+									"link": "whistling-beginners.com",
+									"description": "A complete orchestra in your mouth and none of the job security",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Music for Old People",
 							"icon": "res://assets/sprites/icons/categories/app-analog-clock.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "The Lawrence Welk appreciation society",
+									"link": "lawrence-welk-society.org",
+									"description": "Meetings start at 4 p.m. and end when the sherry runs out.",
+									"image": null
+								},
+								{
+									"name": "Songs your grandmother will dance to",
+									"link": "grandma-dance-list.com",
+									"description": "A wedding playlist made entirely of requests shouted at the DJ",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Boys Band",
 							"icon": "res://assets/sprites/icons/categories/app-user-settings.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "So you want to be a teen idol",
+									"link": "teen-idol-guide.com",
+									"description": "A guide to synchronized hair flips and contractual despair",
+									"image": null
+								},
+								{
+									"name": "Choreography for five left feet",
+									"link": "five-left-feet.net",
+									"description": "The audition was open to everyone, which was the first mistake.",
+									"image": null
+								}
+							]
 						}
 					]
 				},
@@ -408,17 +499,56 @@
 				{
 					"name": "Famous Births",
 					"icon": "res://assets/sprites/icons/categories/app-welcome.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "Hospital waiting room gossip",
+							"link": "waiting-room-gossip.com",
+							"description": "Sources inside the maternity ward vending machine",
+							"image": null
+						},
+						{
+							"name": "The star-studded crib mobile",
+							"link": "crib-mobile-stars.org",
+							"description": "Every nursery needs a tiny paparazzi.",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "Famous Deaths",
 					"icon": "res://assets/sprites/icons/categories/shutdown.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "Obituary writing for beginners",
+							"link": "obituary-beginners.com",
+							"description": "Start with the good parts and omit the restraining order.",
+							"image": null
+						},
+						{
+							"name": "The celebrity tombstone tour",
+							"link": "tombstone-tour.net",
+							"description": "Bring comfortable shoes and a respectful camera.",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "Latest Gossip",
 					"icon": "res://assets/sprites/icons/categories/app-mail.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "Blind items for the blind",
+							"link": "blind-items.org",
+							"description": "We can't tell you who it is, and neither can your optometrist.",
+							"image": null
+						},
+						{
+							"name": "The rumor mill quarterly",
+							"link": "rumor-mill-quarterly.com",
+							"description": "All the news that nobody has confirmed",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "Becoming Famous",
@@ -427,24 +557,76 @@
 						{
 							"name": "Cutting Bridges with Childhood Friends",
 							"icon": "res://assets/sprites/icons/categories/filetype-symlink.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "How to lose a friend in 10 days",
+									"link": "lose-a-friend.com",
+									"description": "A step-by-step retreat from everyone who knew you before the fame",
+									"image": null
+								},
+								{
+									"name": "Blocked: a memoir",
+									"link": "blocked-memoir.net",
+									"description": "The story of a group chat that no longer includes you",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Burning Money",
 							"icon": "res://assets/sprites/icons/categories/app-calculator.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Fire safety for the wealthy",
+									"link": "wealthy-fire-safety.com",
+									"description": "Keep your cash pile at least three feet from the curtains.",
+									"image": null
+								},
+								{
+									"name": "Cash bonfire etiquette",
+									"link": "cash-bonfire.org",
+									"description": "Which bills to burn first and which to leave for the tax auditor",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Going to Rehab",
 							"icon": "res://assets/sprites/icons/categories/app-hearts.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Spa or clinic?",
+									"link": "spa-or-clinic.com",
+									"description": "A helpful quiz for people who just need a nap and a lawyer",
+									"image": null
+								},
+								{
+									"name": "The celebrity rehab gift shop",
+									"link": "rehab-gift-shop.net",
+									"description": "Souvenirs for the friend who checked in for the weekend",
+									"image": null
+								}
+							]
 						}
 					]
 				},
 				{
 					"name": "Famous Animals",
 					"icon": "res://assets/sprites/icons/categories/app-catdog.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "Red carpet for retrievers",
+							"link": "retriever-red-carpet.com",
+							"description": "The only awards show where every nominee is a good boy",
+							"image": null
+						},
+						{
+							"name": "Paparazzi and pigeons",
+							"link": "pigeon-paparazzi.org",
+							"description": "Street birds have finally learned to charge for photographs.",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "Famous for Bad Reasons",
@@ -689,7 +871,20 @@
 				{
 					"name": "Scientology",
 					"icon": "res://assets/sprites/icons/categories/app-starfield.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "Auditing your thetan",
+							"link": "audit-your-thetan.com",
+							"description": "Ask your invisible roommate for references and prepare for silence.",
+							"image": null
+						},
+						{
+							"name": "The volcano clearance sale",
+							"link": "volcano-clearance.net",
+							"description": "Everything must go, including the thetans.",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "Astrology",
@@ -794,12 +989,38 @@
 						{
 							"name": "Enlightenment",
 							"icon": "res://assets/sprites/icons/categories/app-eyes.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "How to become enlightened in 30 days",
+									"link": "enlightened-30-days.com",
+									"description": "Includes a money-back guarantee and a meditation app you will never open",
+									"image": null
+								},
+								{
+									"name": "The enlightenment return policy",
+									"link": "enlightenment-returns.org",
+									"description": "If you are not satisfied with nirvana, please retain your receipt.",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Comparative Theology",
 							"icon": "res://assets/sprites/icons/categories/app-help.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Which heaven has the best snacks?",
+									"link": "heaven-snacks.com",
+									"description": "A peer-reviewed ranking of the afterlife's vending options",
+									"image": null
+								},
+								{
+									"name": "Comparative hells: a consumer guide",
+									"link": "comparative-hells.net",
+									"description": "Temperature, ambience and eternal torment, compared",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Sects",
@@ -870,7 +1091,20 @@
 						{
 							"name": "Physics (who cares?)",
 							"icon": "res://assets/sprites/icons/categories/app-space-analyzer.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Gravity: an oral history",
+									"link": "gravity-still-free.com",
+									"description": "Interviews with people who have fallen and cannot get up",
+									"image": null
+								},
+								{
+									"name": "Quantum mechanics for people who don't care",
+									"link": "quantum-meh.org",
+									"description": "Both explanations are correct and neither is helpful.",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Computer Science (BOOORING)",
@@ -879,14 +1113,40 @@
 								{
 									"name": "Loops",
 									"icon": "res://assets/sprites/icons/categories/app-gameoflife.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "Infinite loops for beginners",
+											"link": "infinite-loops.net",
+											"description": "Learn to repeat yourself, learn to repeat yourself.",
+											"image": null
+										},
+										{
+											"name": "While true: a love story",
+											"link": "while-true-romance.com",
+											"description": "The romance that never reaches a break statement",
+											"image": null
+										}
+									]
 								}
 							]
 						},
 						{
 							"name": "Chemistry",
 							"icon": "res://assets/sprites/icons/categories/app-mandelbrot.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Chemistry for people who failed chemistry",
+									"link": "chemistry-bonding.com",
+									"description": "A second chance at the periodic table, with no labs",
+									"image": null
+								},
+								{
+									"name": "The periodic table of bad dates",
+									"link": "periodic-bad-dates.org",
+									"description": "Element 118: the one who never calls back",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Mathematics",
@@ -895,12 +1155,38 @@
 								{
 									"name": "Combinatorial Species",
 									"icon": "res://assets/sprites/icons/categories/app-gameoflife.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "Counting sheep combinatorially",
+											"link": "counting-sheep-math.com",
+											"description": "There are more ways to fall asleep than you think.",
+											"image": null
+										},
+										{
+											"name": "Species: a field guide to counting",
+											"link": "species-counting.net",
+											"description": "Bring a notebook and a tolerance for factorials.",
+											"image": null
+										}
+									]
 								},
 								{
 									"name": "Cycles",
 									"icon": "res://assets/sprites/icons/categories/app-gameoflife.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "The cycle cycle",
+											"link": "life-is-a-cycle.com",
+											"description": "A quarterly review of cycles, reviewed quarterly",
+											"image": null
+										},
+										{
+											"name": "Cycles: a retrospective",
+											"link": "cycles-reboot.net",
+											"description": "We look back at the cycles that brought us here.",
+											"image": null
+										}
+									]
 								}
 							]
 						},
@@ -943,7 +1229,20 @@
 						{
 							"name": "Buying a Winning Lottery Ticket",
 							"icon": "res://assets/sprites/icons/categories/certificate.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Lottery strategy for losers",
+									"link": "lottery-for-losers.com",
+									"description": "Pick the numbers that have never won before. They are due.",
+									"image": null
+								},
+								{
+									"name": "The winning ticket: a buyer's guide",
+									"link": "winning-ticket-guide.org",
+									"description": "Step one: buy a ticket. Step two: have unrealistic expectations.",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Finding a Big Bag of Money",
@@ -1034,7 +1333,20 @@
 				{
 					"name": "Antarctica",
 					"icon": "res://assets/sprites/icons/categories/app-weather.png",
-					"entries": []
+					"entries": [
+						{
+							"name": "Penguin real estate listings",
+							"link": "penguin-realestate.net",
+							"description": "Waterfront igloos with excellent insulation and noisy neighbors",
+							"image": null
+						},
+						{
+							"name": "How to dress for the South Pole",
+							"link": "south-pole-fashion.com",
+							"description": "Layers, layers and one more layer for luck",
+							"image": null
+						}
+					]
 				},
 				{
 					"name": "Old World",
@@ -1069,12 +1381,38 @@
 										{
 											"name": "Canada",
 											"icon": "res://assets/sprites/icons/categories/app-maps.png",
-											"entries": []
+											"entries": [
+												{
+													"name": "Canada: sorry, eh?",
+													"link": "canada-sorry-eh.com",
+													"description": "A national apology for apologizing so much",
+													"image": null
+												},
+												{
+													"name": "Maple syrup futures",
+													"link": "maple-syrup-futures.net",
+													"description": "The sticky business of breakfast commodities",
+													"image": null
+												}
+											]
 										},
 										{
 											"name": "Mexico",
 											"icon": "res://assets/sprites/icons/categories/app-maps.png",
-											"entries": []
+											"entries": [
+												{
+													"name": "Mexico: beyond the wall",
+													"link": "mexico-beyond-walls.com",
+													"description": "A travel guide that focuses on the parts without walls",
+													"image": null
+												},
+												{
+													"name": "Taco cartography",
+													"link": "taco-cartography.org",
+													"description": "Mapping the world one filling at a time",
+													"image": null
+												}
+											]
 										},
 										{
 											"name": "Saint-Pierre-et-Miquelon",
@@ -1083,12 +1421,38 @@
 												{
 													"name": "Saint-Pierre",
 													"icon": "res://assets/sprites/icons/categories/app-maps.png",
-													"entries": []
+													"entries": [
+														{
+															"name": "Saint-Pierre: the island that time forgot",
+															"link": "saint-pierre-forgot.com",
+															"description": "A charming destination with no rush and no WiFi",
+															"image": null
+														},
+														{
+															"name": "Ferry schedules to nowhere",
+															"link": "ferry-to-nowhere.net",
+															"description": "Service is infrequent, but the view is lovely.",
+															"image": null
+														}
+													]
 												},
 												{
 													"name": "Miquelon",
 													"icon": "res://assets/sprites/icons/categories/app-maps.png",
-													"entries": []
+													"entries": [
+														{
+															"name": "Miquelon: the other island",
+															"link": "miquelon-other-island.com",
+															"description": "Everything Saint-Pierre has, but slightly quieter",
+															"image": null
+														},
+														{
+															"name": "Miquelon on a budget",
+															"link": "miquelon-budget.org",
+															"description": "There is no budget. There is only Miquelon.",
+															"image": null
+														}
+													]
 												}
 											]
 										}
@@ -1171,12 +1535,38 @@
 						{
 							"name": "Payment",
 							"icon": "res://assets/sprites/icons/categories/app-calculator.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "How to pay taxes with a smile",
+									"link": "taxes-with-a-smile.com",
+									"description": "A guide to hiding your tears behind a receipt",
+									"image": null
+								},
+								{
+									"name": "Payment plans for people who owe everything",
+									"link": "payment-plans-forever.net",
+									"description": "Choose between monthly installments and eternal dread",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Fraud",
 							"icon": "res://assets/sprites/icons/categories/msgbox-warning.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Receipts: a creative writing workshop",
+									"link": "receipts-workshop.org",
+									"description": "Learn to invent expenses that are almost believable.",
+									"image": null
+								},
+								{
+									"name": "The audited life",
+									"link": "the-audited-life.com",
+									"description": "A memoir about making eye contact with the IRS",
+									"image": null
+								}
+							]
 						}
 					]
 				},
@@ -1349,17 +1739,56 @@
 						{
 							"name": "Devil's Lettuce",
 							"icon": "res://assets/sprites/icons/categories/app-gradient.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Growing lettuce indoors",
+									"link": "indoor-lettuce.com",
+									"description": "A completely legal guide to leafy greens",
+									"image": null
+								},
+								{
+									"name": "The Devil's Lettuce cookbook",
+									"link": "devils-lettuce-cookbook.net",
+									"description": "Recipes that are definitely about salad",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Sniffing Glue",
 							"icon": "res://assets/sprites/icons/categories/msgbox-warning.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "The glue enthusiast's handbook",
+									"link": "glue-beginners-guide.com",
+									"description": "Stick with the classics, then branch out into epoxy.",
+									"image": null
+								},
+								{
+									"name": "Aromatic adhesives of the world",
+									"link": "aromatic-adhesives.org",
+									"description": "A scratch-and-sniff tour of office supplies",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Ayahuasca",
 							"icon": "res://assets/sprites/icons/categories/app-gradient.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "The ayahuasca business trip",
+									"link": "ayahuasca-business-trip.com",
+									"description": "Expense reports from the spirit realm",
+									"image": null
+								},
+								{
+									"name": "Shamanic customer service",
+									"link": "shamanic-support.net",
+									"description": "Please hold while we consult the ancestors.",
+									"image": null
+								}
+							]
 						}
 					]
 				},
@@ -1428,25 +1857,58 @@
 											"link": "plato.stanford.edu/entries/concrete-philosophy/is-murder-ethical.hmlt",
 											"description": "Should we avoid bloodshed when we can?",
 											"image": null
+										},
+										{
+											"name": "Murder mystery parties for introverts",
+											"link": "introvert-murder-mystery.com",
+											"description": "Someone dies, but nobody has to make small talk.",
+											"image": null
+										},
+										{
+											"name": "How to get away with a bad review",
+											"link": "bad-review-escape.org",
+											"description": "A public relations guide for unpopular assassins",
+											"image": null
 										}
 									]
 								}
 							]
 						},
 						{
-							"name": "Murdering People",
-							"icon": "res://assets/sprites/icons/categories/msgbox-error.png",
-							"entries": []
-						},
-						{
 							"name": "Escaping the Police",
 							"icon": "res://assets/sprites/icons/categories/app-run.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Police chase: a runner's guide",
+									"link": "police-chase-running.com",
+									"description": "Cardio, corners and comfortable shoes",
+									"image": null
+								},
+								{
+									"name": "How to hide in plain sight",
+									"link": "hide-in-plain-sight.net",
+									"description": "Stand very still near a lamppost and hope for the best.",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Disorganized Crime",
 							"icon": "res://assets/sprites/icons/categories/app-crash-reporter.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Crime without a plan",
+									"link": "crime-without-plan.com",
+									"description": "A chaotic approach to a career in lawbreaking",
+									"image": null
+								},
+								{
+									"name": "The unstructured heist",
+									"link": "unstructured-heist.org",
+									"description": "Everyone brings a mask, nobody brings a blueprint.",
+									"image": null
+								}
+							]
 						}
 					]
 				},
@@ -1457,7 +1919,20 @@
 						{
 							"name": "Retirement Homes",
 							"icon": "res://assets/sprites/icons/categories/home.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "Bingo strategy for the golden years",
+									"link": "bingo-golden-years.com",
+									"description": "Advanced daubing techniques for the competitive retiree",
+									"image": null
+								},
+								{
+									"name": "Retirement home: a user's manual",
+									"link": "retirement-home-manual.net",
+									"description": "How to complain about the food and still make friends",
+									"image": null
+								}
+							]
 						},
 						{
 							"name": "Old People Issues",
@@ -1466,19 +1941,58 @@
 								{
 									"name": "Memory Loss",
 									"icon": "res://assets/sprites/icons/categories/app-eyes.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "I forget what this article is about",
+											"link": "forget-this-article.com",
+											"description": "A helpful reminder that you were reading something",
+											"image": null
+										},
+										{
+											"name": "Memory loss: a beginner's guide",
+											"link": "memory-loss-guide.org",
+											"description": "By the end of this page you will have forgotten the beginning.",
+											"image": null
+										}
+									]
 								},
 								{
 									"name": "Death",
 									"icon": "res://assets/sprites/icons/categories/shutdown.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "Death: a practical guide",
+											"link": "death-practical-guide.com",
+											"description": "What to bring, whom to notify and how to dress",
+											"image": null
+										},
+										{
+											"name": "The afterlife: what to pack",
+											"link": "afterlife-packing.net",
+											"description": "Sunscreen is optional, unresolved issues are not.",
+											"image": null
+										}
+									]
 								}
 							]
 						},
 						{
 							"name": "Old Tech",
 							"icon": "res://assets/sprites/icons/categories/hard-disk.png",
-							"entries": []
+							"entries": [
+								{
+									"name": "VCR repair for the nostalgic",
+									"link": "vcr-repair-nostalgia.com",
+									"description": "Rewind your life to a simpler time.",
+									"image": null
+								},
+								{
+									"name": "The floppy disk appreciation society",
+									"link": "floppy-disk-society.org",
+									"description": "1.44 megabytes of pure romance",
+									"image": null
+								}
+							]
 						}
 					]
 				},
@@ -1493,12 +2007,38 @@
 								{
 									"name": "Declaring Accident",
 									"icon": "res://assets/sprites/icons/categories/msgbox-warning.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "How to declare an accident without admitting fault",
+											"link": "declare-accident.com",
+											"description": "A form-filling guide for the eternally blameless",
+											"image": null
+										},
+										{
+											"name": "Accident forms for beginners",
+											"link": "accident-forms.net",
+											"description": "Draw a little car. Draw a bigger car. Sign here.",
+											"image": null
+										}
+									]
 								},
 								{
 									"name": "Tips and tricks",
 									"icon": "res://assets/sprites/icons/categories/app-help.png",
-									"entries": []
+									"entries": [
+										{
+											"name": "Tips and tricks for getting a designated driver",
+											"link": "designated-driver-tips.com",
+											"description": "A phone tree for people who should not be driving",
+											"image": null
+										},
+										{
+											"name": "The hitchhiker's guide to the bus schedule",
+											"link": "bus-schedule-guide.org",
+											"description": "Because the number 42 bus is always late",
+											"image": null
+										}
+									]
 								}
 							]
 						}

@@ -279,6 +279,29 @@ def build_directory(
 
     check_case_duplicates(root, "")
 
+    # Warn when the same leaf category name appears under different parents.
+    leaf_names: dict[str, list[str]] = defaultdict(list)
+    display_names: dict[str, str] = {}
+
+    def collect_leaf_names(node: CategoryNode, path: str) -> None:
+        full_path = f"{path}/{node.name}" if path else node.name
+        if not node.children:
+            folded_name = node.name.casefold()
+            leaf_names[folded_name].append(full_path)
+            display_names.setdefault(folded_name, node.name)
+        for child in node.children.values():
+            collect_leaf_names(child, full_path)
+
+    for child in root.children.values():
+        collect_leaf_names(child, "")
+
+    for folded_name, paths in sorted(leaf_names.items()):
+        if len(paths) > 1:
+            warnings.append(
+                f"Duplicate leaf category name {display_names[folded_name]!r}: "
+                f"{', '.join(paths)}"
+            )
+
     categories = [
         category_to_json(child, [child.name], icons, errors)
         for child in root.children.values()
@@ -426,7 +449,7 @@ def split_requests(
                     "links": [
                         {
                             "link": link,
-                            "points": int(round(score * points_scale)),
+                            "points": float(round(score * points_scale)),
                         }
                         for link, score in links
                     ],
