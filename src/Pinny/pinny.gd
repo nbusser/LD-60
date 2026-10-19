@@ -9,6 +9,9 @@ const _MOOD_ANIMATIONS: Dictionary[Mood, StringName] = {
 	Mood.LAUGH: &"laugh",
 }
 
+const MESSAGE_BLINK_COUNT := 2
+const MESSAGE_BLINK_INTERVAL := 0.08
+
 # Determines how long a msg stays on screen
 @export var seconds_per_character := 0.085
 @export var min_page_duration := 3.5
@@ -50,6 +53,7 @@ func say(pages: Array[String], mood: Mood = Mood.NEUTRAL) -> void:
 	for page: String in pages:
 		_label.text = page
 		Sfx.play_message()
+		_blink_message(talk_id)
 		await get_tree().create_timer(_page_duration(page)).timeout
 		# A new say() has been called. Skip other pages
 		if talk_id != _talk_id:
@@ -79,6 +83,20 @@ func _play_move() -> void:
 	_sprite.play(&"move_out")
 	Sfx.play_jump()
 	await _sprite.animation_finished
+
+
+func _blink_message(talk_id: int) -> void:
+	_message.visible = true
+	await get_tree().create_timer(MESSAGE_BLINK_INTERVAL).timeout
+	for _i in MESSAGE_BLINK_COUNT:
+		if talk_id != _talk_id:
+			return
+		_message.visible = false
+		await get_tree().create_timer(MESSAGE_BLINK_INTERVAL).timeout
+		if talk_id != _talk_id:
+			return
+		_message.visible = true
+		await get_tree().create_timer(MESSAGE_BLINK_INTERVAL).timeout
 
 
 func _animation_duration(animation: StringName) -> float:
