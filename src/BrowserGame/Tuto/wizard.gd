@@ -25,13 +25,15 @@ const FOOTERS: Array[String] = [
 	"Click Finish to close this wizard.",
 ]
 
-const FINISH_MESSAGES: Array[String] = [
-	"Installing Youpi? components...",
-	"Copying system files...",
-	"Configuring your desktop...",
-	"Setting up your programs...",
-	"Applying final touches...",
-	"Finishing installation...",
+const INSTALL_STEP_DURATION := 2.5
+
+const INSTALL_STEPS: Array[Dictionary] = [
+	{"message": "Installing Youpi? components..."},
+	{"message": "Copying system files...", "multiplier": 3.0},
+	{"message": "Configuring your desktop..."},
+	{"message": "Setting up your programs..."},
+	{"message": "Applying final touches..."},
+	{"message": "Finishing installation..."},
 ]
 
 var _step := 0
@@ -97,10 +99,14 @@ func _install() -> void:
 	var window := _get_window()
 	if window != null:
 		window.set_busy(true)
-	for message in FINISH_MESSAGES:
-		_loading_label.text = message
-		await get_tree().create_timer(randf_range(0.7, 1.0)).timeout
+	Sfx.play_harddrive()
+	for step in INSTALL_STEPS:
+		_loading_label.text = step["message"]
+		var multiplier: float = step.get("multiplier", 1.0)
+		var duration := INSTALL_STEP_DURATION * multiplier * randf_range(0.9, 1.1)
+		await get_tree().create_timer(duration).timeout
 		GameState.reveal_setup_program()
+	Sfx.stop_harddrive()
 	_loading.visible = false
 	_busy = false
 	if window != null:
