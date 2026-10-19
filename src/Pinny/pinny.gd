@@ -1,6 +1,8 @@
 class_name Pinny
 extends Node2D
 
+signal page_ended
+
 enum Mood { NEUTRAL, ANGRY, LAUGH }
 
 const _MOOD_ANIMATIONS: Dictionary[Mood, StringName] = {
@@ -12,7 +14,7 @@ const _MOOD_ANIMATIONS: Dictionary[Mood, StringName] = {
 const MESSAGE_BLINK_COUNT := 2
 const MESSAGE_BLINK_INTERVAL := 0.08
 # Speeds up the walk in and out of the screen
-const WALK_SPEED := 1.15
+const WALK_SPEED := 1.35
 
 # Determines how long a msg stays on screen
 @export var seconds_per_character := 0.06
@@ -24,11 +26,17 @@ var is_present := false
 # Increments on every say()
 # Allows to properly skip all pages if two say() are called closely
 var _talk_id := 0
+# True while a page waits for its timer or a click to go to the next one
+var _is_waiting_page := false
 
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
 @onready var _sprite: AnimatedSprite2D = $Body/Sprite2D
 @onready var _message: Control = $Body/MessageArea/Message
 @onready var _label: Label = $Body/MessageArea/Message/MarginContainer/Label
+
+
+func _ready() -> void:
+	_message.gui_input.connect(_on_message_gui_input)
 
 
 func visit(pages: Array[String], mood: Mood = Mood.NEUTRAL) -> void:
@@ -58,7 +66,7 @@ func say(pages: Array[String], mood: Mood = Mood.NEUTRAL, hold := false) -> void
 		_blink_message(talk_id)
 		if hold and i == pages.size() - 1:
 			return
-		await get_tree().create_timer(_page_duration(page)).timeout
+		await _wait_page(_page_duration(page))
 		# A new say() has been called. Skip other pages
 		if talk_id != _talk_id:
 			return
@@ -114,6 +122,28 @@ func _blink_message(talk_id: int) -> void:
 			return
 		_message.visible = true
 		await get_tree().create_timer(MESSAGE_BLINK_INTERVAL).timeout
+
+
+# Ends on the timer or when the player clicks the message
+func _wait_page(duration: float) -> void:
+	var timer := get_tree().create_timer(duration)
+	timer.timeout.connect(page_ended.emit)
+	_is_waiting_page = true
+	await page_ended
+	_is_waiting_page = false
+	# A skipped page timer must not end the next page
+	if timer.timeout.is_connected(page_ended.emit):
+		timer.timeout.disconnect(page_ended.emit)
+
+
+func _on_message_gui_input(event: InputEvent) -> void:
+	var mouse_event := event as InputEventMouseButton
+	if not mouse_event or not mouse_event.pressed or mouse_event.button_index != MOUSE_BUTTON_LEFT:
+		return
+	if not _is_waiting_page:
+		return
+	Sfx.click()
+	page_ended.emit()
 
 
 func _animation_duration(animation: StringName) -> float:
