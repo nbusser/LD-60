@@ -116,15 +116,14 @@ func _run_next_level() -> void:
 
 	if GameState.current_level_number >= levels.size():
 		# No more levels, end of the game
-		_run_credits(false)
+		_run_credits()
 	else:
 		# Load next level
 		_run_level()
 
 
-func _run_credits(can_go_back: bool) -> void:
+func _run_credits() -> void:
 	var scene: Credits = credits.instantiate()
-	scene.set_back(can_go_back)
 	self.current_scene = scene
 
 
@@ -150,7 +149,7 @@ func _on_end_scene(status: Globals.EndSceneStatus, params: Dictionary = {}) -> v
 		Globals.EndSceneStatus.MAIN_MENU_CLICK_SELECT_LEVEL:
 			_run_level_selector()
 		Globals.EndSceneStatus.MAIN_MENU_CLICK_CREDITS:
-			_run_credits(true)
+			_run_credits()
 		Globals.EndSceneStatus.MAIN_MENU_CLICK_QUIT:
 			_quit_game()
 		Globals.EndSceneStatus.LEVEL_END:
@@ -173,7 +172,7 @@ func _on_end_scene(status: Globals.EndSceneStatus, params: Dictionary = {}) -> v
 		Globals.EndSceneStatus.SELECT_LEVEL_BACK:
 			_run_main_menu()
 		Globals.EndSceneStatus.CREDITS_BACK:
-			_run_main_menu()
+			_quit_game()
 		Globals.EndSceneStatus.STATS_SCREEN_MENU:
 			_run_main_menu()
 		_:

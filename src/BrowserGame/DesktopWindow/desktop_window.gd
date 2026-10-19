@@ -40,7 +40,7 @@ func _ready() -> void:
 	var content = content_scene.instantiate()
 	assert(content is Control)
 
-	if on_instantiate_callback != null:
+	if on_instantiate_callback.is_valid():
 		on_instantiate_callback.call(content)
 
 	await get_tree().create_timer(randf_range(0.8, 1.5), false).timeout

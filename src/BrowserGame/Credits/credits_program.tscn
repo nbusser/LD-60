@@ -39,7 +39,7 @@ size_flags_vertical = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/CenterContainer2" unique_id=2056393960]
 layout_mode = 2
 bbcode_enabled = true
-text = "[color=black]A game by team 👑 Ludum Darons 👑
+text = "[color=black]A game by team Ludum Darons
 
 Matthieu Baty - Dev, writing
 
@@ -47,7 +47,7 @@ Antoine Brûlé - Dev, UI
 
 Nicolas Busser - Dev, writing
 
-Louis Mouhat - Dev, music, 3D"
+Louis Mouhat - Dev, writing, music, 3D"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
