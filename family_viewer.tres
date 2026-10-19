@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("3_script")
+id = "family_photos"
 icon_texture = ExtResource("2_icon")
 icon_label = "Family Photos"
 app_scene = ExtResource("1_scene")

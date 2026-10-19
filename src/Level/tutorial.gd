@@ -22,7 +22,7 @@ func run() -> void:
 	await _pinny.appear()
 	await _pinny.say(
 		[
-			"I'm back! Let me onboard you for this first day.",
+			"Let me onboard you for this first day.",
 			"Your position in Youpi is SEARCH ENGINEER. A very prestigious job! Lucky you!"
 		],
 		Pinny.Mood.LAUGH
@@ -43,7 +43,7 @@ func run() -> void:
 	# The request arrives once the mailbox is open
 	_level_state.start_day()
 
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	await _pinny.say(["How exciting! You very first request!"], Pinny.Mood.LAUGH)
 	await _pinny.say(
 		[
@@ -61,7 +61,7 @@ func run() -> void:
 		_is_running.bind("youpi"),
 		_desktop.program_opened
 	)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 
 	await _instruct(
 		["Everything is sorted by category. Click Health, then Doctors."],
@@ -71,8 +71,7 @@ func run() -> void:
 
 	await _instruct(
 		[
-			"Now, the tedious work starts: copy the LINK manually. Then click Send. Better links pay more.",
-			"You can do it pal! I believe in you!",
+			"Now, the tedious work starts: copy the LINK manually. Then click Send. Better links pay more. You can do it pal! I believe in you!",
 		],
 		func(): return _level_state.resolved_requests > 0,
 		_level_state.request_resolved
@@ -83,21 +82,23 @@ func run() -> void:
 		_pinny
 		. say(
 			[
-				"This customer was exceptionally patient, but must customer will demand you to answer within a limited time, so, no time to slack off pal."
+				"This customer was exceptionally patient, but most customer will demand you to answer within a limited time, so, no time to slack off pal.",
+				"In Youpi, we value individual performances. With you hardly-earned money, you can buy some tools from us that we reserve for our best employees.",
 			],
 			Pinny.Mood.NEUTRAL
 		)
 	)
 
 	await _instruct(
-		[
-			"In Youpi, we value individual performances. With you hardly-earned money, you can buy some tools from us that we reserve for our best employees.",
-			"Open the Shop application pal."
-		],
-		_is_running.bind("shop"),
-		_desktop.program_opened
+		["Open the Shop application pal."],
+		# I don't know why but the shop is not properly detected
+		# TODO: debug it
+		# _is_running.bind("shop"),
+		# _desktop.program_opened
+		func(): return true,
+		get_tree().create_timer(0.2).timeout
 	)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 
 	await (
 		_pinny
@@ -122,8 +123,6 @@ func run() -> void:
 
 # Pinny explains what to do and keeps the instruction on screen until it is done
 func _instruct(pages: Array[String], is_done: Callable, changed: Signal) -> void:
-	if is_done.call():
-		return
 	_pinny.say(pages, Pinny.Mood.NEUTRAL, true)
 	while not is_done.call():
 		await changed

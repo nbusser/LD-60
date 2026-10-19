@@ -3,15 +3,12 @@ extends Control
 
 signal program_opened(program_id: String)
 
-const SETUP_PROGRAM_ID := "setup"
-
 @export var programs: Array[Program]
 
 var _programs_to_window: Dictionary[Program, DesktopWindow] = {}
 var _window_to_task_button: Dictionary[DesktopWindow, TaskButton] = {}
 var _program_to_icon: Dictionary[Program, Icon] = {}
 var _image_programs: Dictionary[String, Program] = {}
-var _setup_program: Program
 var _is_selecting := false
 var _selection_origin := Vector2.ZERO
 var _selection_base: Array[Icon] = []
@@ -44,6 +41,47 @@ func show_cursor_popup(text: String) -> void:
 	add_child(popup)
 	# keep the fake cursor drawn on top of the popup
 	move_child(popup, cursor.get_index())
+
+
+# Add a program that is not on the desktop by default (e.g. a gift from Pinny)
+func add_program(program: Program) -> void:
+	if programs.has(program):
+		return
+	# don't modify the exported array, it may be shared with other desktops
+	programs = programs.duplicate()
+	programs.append(program)
+	_programs_to_window.set(program, null)
+	_create_icon(program)
+
+
+# Remove a program from the desktop, closing its window
+func remove_program(program: Program) -> void:
+	var desktop_window: DesktopWindow = _programs_to_window.get(program)
+	if desktop_window != null and is_instance_valid(desktop_window):
+		_remove_task_button(desktop_window)
+		desktop_window.queue_free()
+	_remove_icon(program)
+	_programs_to_window.erase(program)
+	programs = programs.duplicate()
+	programs.erase(program)
+
+
+# Hide every icon, they come back one by one with reveal_next_icon()
+func hide_icons() -> void:
+	for icon in %Icons.get_children():
+		icon.visible = false
+
+
+func show_icons() -> void:
+	for icon in %Icons.get_children():
+		icon.visible = true
+
+
+func reveal_next_icon() -> void:
+	for icon in %Icons.get_children():
+		if not icon.visible:
+			icon.visible = true
+			return
 
 
 # Open a window showing the given image in large
@@ -226,39 +264,10 @@ func _close_window(program: Program):
 func _ready() -> void:
 	for program in programs:
 		_programs_to_window.set(program, null)
-		if program.id == SETUP_PROGRAM_ID:
-			_setup_program = program
+		_create_icon(program)
 
-	_refresh_icons()
-	GameState.setup_completed.connect(_on_setup_completed)
-	GameState.setup_program_revealed.connect(_refresh_icons)
 	GameState.money_changed.connect(_on_money_changed)
 	_on_money_changed(GameState.money)
-
-
-func _refresh_icons() -> void:
-	var setup_done := not GameState.needs_setup()
-	var reveal_count := GameState.revealed_setup_program_count
-
-	if _setup_program != null:
-		if setup_done:
-			_remove_icon(_setup_program)
-		else:
-			_create_icon(_setup_program)
-
-	var reveal_index := 0
-	for program in programs:
-		if program == _setup_program:
-			continue
-		if setup_done or reveal_index < reveal_count:
-			_create_icon(program)
-		reveal_index += 1
-
-	# keep the Setup icon last while installing
-	if not setup_done and _setup_program != null:
-		var setup_icon: Icon = _program_to_icon.get(_setup_program)
-		if setup_icon != null:
-			%Icons.move_child(setup_icon, -1)
 
 
 func _create_icon(program: Program) -> void:
@@ -271,7 +280,7 @@ func _create_icon(program: Program) -> void:
 	icon.double_clicked.connect(
 		func():
 			# programs can't be opened while the setup is installing
-			if program != _setup_program and _is_any_window_busy():
+			if _is_any_window_busy():
 				return
 			_open_or_show_window(program)
 			Sfx.click()
@@ -288,10 +297,6 @@ func _remove_icon(program: Program) -> void:
 		%Icons.remove_child(icon)
 		icon.queue_free()
 	_program_to_icon.erase(program)
-
-
-func _on_setup_completed() -> void:
-	_refresh_icons()
 
 
 func set_clock(hour: int, minute: int) -> void:

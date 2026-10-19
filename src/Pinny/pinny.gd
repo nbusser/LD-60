@@ -13,8 +13,8 @@ const MESSAGE_BLINK_COUNT := 2
 const MESSAGE_BLINK_INTERVAL := 0.08
 
 # Determines how long a msg stays on screen
-@export var seconds_per_character := 0.085
-@export var min_page_duration := 3.5
+@export var seconds_per_character := 0.001
+@export var min_page_duration := 1
 
 # If pinny is already on screen
 var is_present := false

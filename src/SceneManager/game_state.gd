@@ -3,9 +3,10 @@ extends Node
 signal money_changed(value: int)
 signal upgrades_changed
 signal family_changed
-signal setup_completed
-signal setup_program_revealed
+# Emitted by the setup wizard
 signal setup_install_started
+signal setup_step_installed
+signal setup_completed
 # Names of the categories shown in the Youpi? directory, from the root
 signal category_browsed(path: PackedStringArray)
 
@@ -20,13 +21,9 @@ var money := 0:
 var level_state: LevelState
 
 var family := Family.new()
-var day_index := 0
 var threatened_member_id: StringName
 var protection_fee := 0
 var last_day_success := false
-
-var setup_complete := false
-var revealed_setup_program_count := 0
 
 var owned_upgrades: Dictionary[String, bool] = {}
 
@@ -40,12 +37,9 @@ func reset() -> void:
 	money = 0
 	level_state = null
 	family = Family.new()
-	day_index = 0
 	threatened_member_id = &""
 	protection_fee = 0
 	last_day_success = false
-	setup_complete = false
-	revealed_setup_program_count = 0
 	owned_upgrades.clear()
 	total_money_earned = 0
 	total_fees_paid = 0
@@ -55,7 +49,6 @@ func reset() -> void:
 
 
 func start_day(day: int) -> void:
-	day_index = day
 	threatened_member_id = family.target_for_day(day)
 	protection_fee = FEE_BASE + FEE_STEP * day
 	family_changed.emit()
@@ -84,26 +77,6 @@ func resolve_protection() -> bool:
 		family.kill(threatened_member_id)
 		family_changed.emit()
 	return last_day_success
-
-
-func needs_setup() -> bool:
-	return not Globals.skip_setup and current_level_number == 0 and not setup_complete
-
-
-func complete_setup() -> void:
-	if setup_complete:
-		return
-	setup_complete = true
-	setup_completed.emit()
-
-
-func start_setup_install() -> void:
-	setup_install_started.emit()
-
-
-func reveal_setup_program() -> void:
-	revealed_setup_program_count += 1
-	setup_program_revealed.emit()
 
 
 func add_money(amount: int) -> void:

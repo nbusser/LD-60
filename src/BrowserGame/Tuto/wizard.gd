@@ -90,8 +90,8 @@ func _on_next_pressed():
 
 
 func _on_finish_pressed():
-	GameState.complete_setup()
 	_close_window()
+	GameState.setup_completed.emit()
 
 
 func _install() -> void:
@@ -102,13 +102,13 @@ func _install() -> void:
 	if window != null:
 		window.set_busy(true)
 	Sfx.play_harddrive()
-	GameState.start_setup_install()
+	GameState.setup_install_started.emit()
 	for step in INSTALL_STEPS:
 		_loading_label.text = step["message"]
 		var multiplier: float = step.get("multiplier", 1.0)
 		var duration := INSTALL_STEP_DURATION * multiplier * randf_range(0.9, 1.1)
 		await get_tree().create_timer(duration).timeout
-		GameState.reveal_setup_program()
+		GameState.setup_step_installed.emit()
 	Sfx.stop_harddrive()
 	_loading.visible = false
 	_busy = false
