@@ -26,6 +26,8 @@ var _processed := false
 @onready var _link_input: LineEdit = %LinkInput
 @onready var _send_button: Button = %SendButton
 @onready var _status_label: Label = %StatusLabel
+@onready var _paste_button: TextureButton = %Button
+@onready var _lock_icon: TextureRect = %LockIcon
 
 
 func _ready() -> void:
@@ -35,6 +37,9 @@ func _ready() -> void:
 	_send_button.pressed.connect(_submit)
 	_link_input.text_submitted.connect(_on_link_submitted)
 	_link_input.text_changed.connect(_update_send_button)
+	_paste_button.pressed.connect(_on_paste_pressed)
+	GameState.upgrades_changed.connect(_refresh_paste_lock)
+	_refresh_paste_lock()
 
 
 func _process(delta: float) -> void:
@@ -148,6 +153,18 @@ func _update_send_button(_text: String = "") -> void:
 		or is_timed_out
 		or _link_input.text.strip_edges().is_empty()
 	)
+
+
+func _refresh_paste_lock() -> void:
+	var unlocked := GameState.is_upgrade_owned("copy_paste")
+	_paste_button.disabled = not unlocked
+	_paste_button.modulate.a = 1.0 if unlocked else 0.4
+	_lock_icon.visible = not unlocked
+
+
+func _on_paste_pressed() -> void:
+	# TODO: paste clipboard into the link input
+	pass
 
 
 func _blink(count: int = BLINK_COUNT) -> void:
