@@ -36,6 +36,8 @@ func _show(category: Category) -> void:
 	var path := _path_names()
 	GameState.category_browsed.emit(path)
 	_update_location(path)
+	# Leaf categories only hold entries, so two columns fit the entries better.
+	directory.columns = 2 if category != null and category.subcategories.is_empty() else 3
 	%Logo.visible = category == null
 	%CategoryIcon.visible = category != null
 	if category == null:
@@ -110,9 +112,13 @@ func _add_categories(categories: Array[Category]) -> void:
 
 
 func _add_entries(entries: Array[Entry]) -> void:
+	# Clickables fill their grid cell, so fewer columns means wider entries.
+	var column_width: float = directory.custom_minimum_size.x / directory.columns
 	for entry in entries:
 		var entry_clickable: EntryClickable = ENTRY_CLICKABLE_PRELOAD.instantiate()
 		entry_clickable.entry = entry
+		entry_clickable.custom_minimum_size.x = column_width
+		entry_clickable.custom_maximum_size.x = column_width
 		entry_clickable.entry_clicked.connect(_entry_clicked)
 		directory.add_child(entry_clickable)
 

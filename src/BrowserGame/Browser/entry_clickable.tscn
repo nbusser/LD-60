@@ -19,9 +19,10 @@ script = ExtResource("1_bophl")
 layout_mode = 2
 
 [node name="Image" type="TextureRect" parent="Left" unique_id=104986059]
-custom_minimum_size = Vector2(48, 48)
-custom_maximum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(24, 48)
+custom_maximum_size = Vector2(24, 48)
 layout_mode = 2
+stretch_mode = 5
 
 [node name="CopyMargin" type="MarginContainer" parent="Left" unique_id=1873220145]
 layout_mode = 2
