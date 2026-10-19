@@ -1391,7 +1391,7 @@
 		},
 		{
 			"name": "Lifestyle",
-			"icon": "res://assets/sprites/icons/categories/app-user-settings.png",
+			"icon": "res://assets/sprites/icons/categories/app-analog-clock.png",
 			"subcategories": [
 				{
 					"name": "Animals",
@@ -1529,7 +1529,7 @@
 		},
 		{
 			"name": "Food",
-			"icon": "res://assets/sprites/icons/categories/app-widget-gallery.png",
+			"icon": "res://assets/sprites/icons/categories/app-snake.png",
 			"subcategories": [
 				{
 					"name": "World Cuisine",
