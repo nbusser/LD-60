@@ -4,8 +4,11 @@ extends Control
 
 const LAST_RANSOM_LEVEL := 5
 
+@onready var day_label: Label = $CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/Label
 @onready
 var level_label: Label = $CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/LevelNumber
+@onready
+var complete_label: Label = $CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/Label3
 @onready
 var coin_label: Label = $CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2/CoinsNumber
 @onready var result_label: Label = $CenterContainer/VBoxContainer/Result
@@ -14,13 +17,18 @@ var coin_label: Label = $CenterContainer/VBoxContainer/CenterContainer2/HBoxCont
 
 
 func _ready() -> void:
-	level_label.text = str(GameState.current_level_number + 1)
 	coin_label.text = "$%d" % GameState.money
 
-	# Day 1 is the tutorial, Pinny holds nobody yet
+	# The first level is the tutorial, Pinny holds nobody yet
 	if GameState.current_level_number == 0:
+		day_label.text = "Introduction day"
+		level_label.hide()
+		complete_label.hide()
 		_entries.hide()
 		return
+
+	# The introduction does not count as a day, so number them from 0
+	level_label.text = str(GameState.current_level_number)
 
 	# Day 5 is the last ransom, its result depends on the whole family
 	if GameState.current_level_number == LAST_RANSOM_LEVEL:
