@@ -10,7 +10,7 @@ var coin_label: Label = $CenterContainer/VBoxContainer/CenterContainer2/HBoxCont
 
 
 func _ready() -> void:
-	level_label.text = str(GameState.current_level_number + 1)
+	level_label.text = str(GameState.level_state.level_data.day_index + 1)
 	coin_label.text = "$%d" % GameState.money
 	result_label.text = _result_text()
 

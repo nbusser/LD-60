@@ -45,15 +45,19 @@ func appear() -> void:
 	_sprite.play(_MOOD_ANIMATIONS[Mood.NEUTRAL])
 
 
-func say(pages: Array[String], mood: Mood = Mood.NEUTRAL) -> void:
+# With hold, the last page stays on screen until the next say() or leave()
+func say(pages: Array[String], mood: Mood = Mood.NEUTRAL, hold := false) -> void:
 	_talk_id += 1
 	var talk_id := _talk_id
 	_sprite.play(_MOOD_ANIMATIONS[mood])
 	_message.visible = true
-	for page: String in pages:
+	for i in pages.size():
+		var page := pages[i]
 		_label.text = page
 		Sfx.play_message()
 		_blink_message(talk_id)
+		if hold and i == pages.size() - 1:
+			return
 		await get_tree().create_timer(_page_duration(page)).timeout
 		# A new say() has been called. Skip other pages
 		if talk_id != _talk_id:

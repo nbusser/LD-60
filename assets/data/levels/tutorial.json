@@ -1,0 +1,19 @@
+{
+	"requests": [
+		{
+			"time": 0.0,
+			"query": "doctor",
+			"duration": 0.0,
+			"links": [
+				{
+					"link": "http://dr-franky-vincent.com",
+					"points": 8
+				},
+				{
+					"link": "http://bite_by_dre",
+					"points": 5
+				}
+			]
+		}
+	]
+}

@@ -26,16 +26,22 @@ func _ready():
 	add_child(map)
 	_desktop = map as Desktop
 
-	GameState.start_day(GameState.current_level_number)
+	var tutorial: Tutorial = null
+	if level_state.level_data.is_tutorial:
+		tutorial = Tutorial.new(_desktop, level_state)
+		add_child(tutorial)
+	else:
+		GameState.start_day(level_state.level_data.day_index)
 	_time_left = float(level_state.level_data.timer_duration)
 	_update_clock()
-	if GameState.needs_setup():
-		GameState.setup_install_started.connect(_on_setup_install_started, CONNECT_ONE_SHOT)
-	while GameState.needs_setup():
-		await GameState.setup_completed
-	# wait for Pinny to finish the setup visit
-	while _desktop.pinny.is_present:
-		await get_tree().process_frame
+
+	await _run_setup()
+
+	if tutorial != null:
+		await tutorial.run()
+		await _end_tutorial()
+		return
+
 	await _threaten()
 
 	level_state.all_requests_resolved.connect(_on_all_requests_resolved)
@@ -61,6 +67,22 @@ func _process(delta: float) -> void:
 		_end_day()
 
 
+func _run_setup() -> void:
+	if GameState.needs_setup():
+		GameState.setup_install_started.connect(_on_setup_install_started, CONNECT_ONE_SHOT)
+	while GameState.needs_setup():
+		await GameState.setup_completed
+	# wait for Pinny to finish the setup visit
+	while _desktop.pinny.is_present:
+		await get_tree().process_frame
+
+
+func _end_tutorial() -> void:
+	level_state.is_day_over = true
+	await $UI/Fadeout.fade()
+	Globals.end_scene(Globals.EndSceneStatus.LEVEL_END)
+
+
 func _on_setup_install_started() -> void:
 	await (
 		_desktop
@@ -68,8 +90,8 @@ func _on_setup_install_started() -> void:
 		. visit(
 			[
 				"Howdy, I'm Pinny. I am your nice desktop assistant.",
-				"Sit back and relax, I'm installing everything you need.",
-				"You'll see, I thought of everything.",
+				"Welcome to Youpi! Sit back and relax, I'm installing everything you need.",
+				"I'm gonna grab a cofee. I will come back for your proper onboarding.",
 			],
 			Pinny.Mood.LAUGH
 		)
@@ -93,7 +115,7 @@ func _threat_lines() -> Array[String]:
 	match GameState.day_index:
 		0:
 			return [
-				"Oh actually, I know you already but you don't know me. I heard a lot about you from your nice little family.",
+				"Oh, one more thing. I know you better than you think. I heard a lot about you from your nice little family.",
 				"Did you hear from them since they left for vacations two days ago? Don't worry, they are safe. I keep them safe... for now.",
 				(
 					"Let's cut to the chase, the fee for %s is $%d. Pay by 20:00. If you don't, you will never see him again, except in photo."

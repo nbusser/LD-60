@@ -3,6 +3,7 @@ class_name LevelState
 extends Resource
 
 signal day_started
+signal request_resolved(answered: bool)
 signal all_requests_resolved
 
 var level_data: LevelData
@@ -38,5 +39,6 @@ func resolve_request(answered: bool) -> void:
 	resolved_requests += 1
 	if answered:
 		GameState.total_requests_answered += 1
+	request_resolved.emit(answered)
 	if resolved_requests >= total_requests:
 		all_requests_resolved.emit()

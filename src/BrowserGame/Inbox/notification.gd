@@ -44,6 +44,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if not _has_time_limit():
+		return
 	_time_left = maxf(_time_left - delta, 0.0)
 	_update_timer()
 	if _time_left <= 0.0:
@@ -69,12 +71,21 @@ func _start_timer() -> void:
 func _update_timer() -> void:
 	if is_timed_out or _processed:
 		return
-	if request == null or request.duration <= 0.0:
+	if request == null:
 		_progress_bar.value = 0.0
+		_timer_label.text = ""
+		return
+	if not _has_time_limit():
+		_progress_bar.value = 1.0
 		_timer_label.text = ""
 		return
 	_progress_bar.value = _time_left / request.duration
 	_timer_label.text = "%ds" % ceili(_time_left)
+
+
+# Requests without a duration never time out (e.g. in the tutorial)
+func _has_time_limit() -> bool:
+	return request != null and request.duration > 0.0
 
 
 func _mark_timed_out() -> void:

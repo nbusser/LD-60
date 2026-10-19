@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("3_nkuej")
+id = "shop"
 icon_texture = ExtResource("2_6vukf")
 icon_label = "Shop"
 app_scene = ExtResource("1_ujaol")

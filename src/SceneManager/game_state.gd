@@ -6,6 +6,8 @@ signal family_changed
 signal setup_completed
 signal setup_program_revealed
 signal setup_install_started
+# Names of the categories shown in the Youpi? directory, from the root
+signal category_browsed(path: PackedStringArray)
 
 const FEE_BASE := 20
 const FEE_STEP := 15

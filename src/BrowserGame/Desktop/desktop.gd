@@ -1,6 +1,8 @@
 class_name Desktop
 extends Control
 
+signal program_opened(program_id: String)
+
 const SETUP_PROGRAM_ID := "setup"
 
 @export var programs: Array[Program]
@@ -200,6 +202,17 @@ func _open_or_show_window(program: Program, callback: Callable = func(_node: Con
 		_window_to_foreground(desktop_window)
 		# Reset window position
 		_center_window(desktop_window)
+
+	program_opened.emit(program.id)
+
+
+# A program is running while its window is open, even if minimized
+func is_program_running(program_id: String) -> bool:
+	for program in programs:
+		if program.id == program_id:
+			var desktop_window: DesktopWindow = _programs_to_window.get(program)
+			return _window_to_task_button.has(desktop_window)
+	return false
 
 
 func _close_window(program: Program):
