@@ -58,6 +58,11 @@ func _ready():
 	Globals.end_scene(Globals.EndSceneStatus.LEVEL_END)
 
 
+func _exit_tree() -> void:
+	# The music bus is shared with the next scenes
+	_set_music_muted(false)
+
+
 func init(level_data_p: LevelData):
 	level_data_p.load_requests()
 	level_state = LevelState.new(level_data_p)
@@ -185,74 +190,175 @@ func _run_level_1(level_data: LevelData) -> void:
 			],
 			Pinny.Mood.NEUTRAL
 		)
-	else:
-		await (
-			_pinny
-			. say(
-				[
-					"Oh... Too bad...",
-					"Don't worry, I know this is your first day. You know I have a heart. Let me bring you back some chocolate. You deserved it.",
-				],
-				Pinny.Mood.NEUTRAL
-			)
-		)
 		await _pinny.leave()
+		return
 
-		await get_tree().create_timer(1.3).timeout
-		await Sfx.play_kill()
-		await get_tree().create_timer(0.5).timeout
-		await Sfx.play_photo()
-		await get_tree().create_timer(0.5).timeout
-
-		await _pinny.appear()
-		await (
-			_pinny
-			. say(
-				[
-					"Sorry, I changed my mind. No chocolate for you. But I have this instead.",
-				],
-				Pinny.Mood.NEUTRAL
-			)
+	await (
+		_pinny
+		. say(
+			[
+				"Oh... Too bad...",
+				"Don't worry, I know this is your first day. You know I have a heart. Let me bring you back some chocolate. You deserved it.",
+			],
+			Pinny.Mood.NEUTRAL
 		)
+	)
+	await _pinny.leave()
 
-		await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.7).timeout
 
-		GameState.kill(level_data.hostage)
-		_desktop.show_image(
-			level_data.hostage.terminated_file_name(), level_data.hostage.portrait_terminated
+	_set_music_muted(true)
+
+	await get_tree().create_timer(0.5).timeout
+	await Sfx.play_kill()
+	await get_tree().create_timer(0.5).timeout
+	await Sfx.play_photo()
+	await get_tree().create_timer(0.5).timeout
+
+	await _pinny.appear()
+	await (
+		_pinny
+		. say(
+			[
+				"Sorry, I changed my mind. No chocolate for you. But I have this instead.",
+			],
+			Pinny.Mood.NEUTRAL
 		)
+	)
 
-		await get_tree().create_timer(2.2).timeout
+	await get_tree().create_timer(0.5).timeout
 
-		await (
-			_pinny
-			. say(
-				[
-					"Dad is gone... How sad... He would be alive if his son was not SLACKING OFF. See you tomorrow for the next round.",
-				],
-				Pinny.Mood.ANGRY
-			)
+	GameState.kill(level_data.hostage)
+	_desktop.show_image(
+		level_data.hostage.terminated_file_name(), level_data.hostage.portrait_terminated
+	)
+
+	await get_tree().create_timer(2.2).timeout
+
+	await (
+		_pinny
+		. say(
+			[
+				"Dad is gone... How sad... He would be alive if his son was not SLACKING OFF. See you tomorrow for the next round.",
+			],
+			Pinny.Mood.ANGRY
 		)
-
+	)
 	await _pinny.leave()
 
 
 func _run_level_2(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
+
+	await _pinny.appear()
 	await (
 		_pinny
-		. visit(
+		. say(
 			[
-				"Today I want $%d for Mommy." % [level_data.ransom],
-				"Don't get sentimental. It's just business.",
+				"Howdy pal. Did you sleep well?",
+				(
+					"Did you dream of your dad? Is he in hell? In heaven?"
+					if not GameState.is_alive(GameState.DAD)
+					else "You dad slept terrible too."
+				),
+			],
+			Pinny.Mood.LAUGH
+		)
+	)
+	await (_pinny.say(
+		[
+			(
+				"Today I want $%d for Mommy. Don't get sentimental. It's just business."
+				% [level_data.ransom]
+			),
+			"Have a wonderful day."
+		],
+		Pinny.Mood.ANGRY
+	))
+	await _pinny.leave()
+
+	await _play_day()
+
+	await _pinny.appear()
+	await _pinny.say(["TIMES UP! MONEY TIME!", "Do you have the ransom, son?"], Pinny.Mood.NEUTRAL)
+
+	var could_pay: bool = GameState.money >= level_data.ransom
+	GameState.money = max(0, GameState.money - level_data.ransom)
+
+	await get_tree().create_timer(1.5).timeout
+
+	if could_pay:
+		await _pinny.say(
+			[
+				"Such a hard worker...",
+				(
+					"Daddy would have been proud!"
+					if not GameState.is_alive(GameState.DAD)
+					else "Saving both your parents... That's great!"
+				),
+				"Mommy is safe. Don't skip the alarm tomorrow."
+			],
+			Pinny.Mood.NEUTRAL
+		)
+		await _pinny.leave()
+		return
+
+	await (
+		_pinny
+		. say(
+			[
+				(
+					"AGAIN?"
+					if not GameState.is_alive(GameState.DAD)
+					else "At last you will not be fully orphan."
+				),
+				"What kind of son are you... Letting your Mom die!",
+			],
+			Pinny.Mood.NEUTRAL
+		)
+	)
+	await _pinny.leave()
+
+	await get_tree().create_timer(0.7).timeout
+
+	_set_music_muted(true)
+
+	await get_tree().create_timer(0.5).timeout
+	await Sfx.play_kill()
+	await get_tree().create_timer(0.5).timeout
+	await Sfx.play_photo()
+	await get_tree().create_timer(0.5).timeout
+
+	await _pinny.appear()
+	await (
+		_pinny
+		. say(
+			[
+				"Here she is...",
+			],
+			Pinny.Mood.NEUTRAL
+		)
+	)
+
+	await get_tree().create_timer(0.5).timeout
+
+	GameState.kill(level_data.hostage)
+	_desktop.show_image(
+		level_data.hostage.terminated_file_name(), level_data.hostage.portrait_terminated
+	)
+
+	await get_tree().create_timer(2.2).timeout
+
+	await (
+		_pinny
+		. say(
+			[
+				"Stay tuned, tomorrow, things are starting to get serious...",
 			],
 			Pinny.Mood.ANGRY
 		)
 	)
-
-	await _play_day()
-
-	# TODO: write ransom dialog
+	await _pinny.leave()
 
 
 func _run_level_3(level_data: LevelData) -> void:
@@ -364,3 +470,7 @@ func _update_clock() -> void:
 	var total_minutes := DAY_START_HOUR * 60 + int(round(progress * day_minutes))
 	total_minutes = clampi(total_minutes, DAY_START_HOUR * 60, DAY_END_HOUR * 60)
 	_desktop.set_clock(total_minutes / 60, total_minutes % 60)
+
+
+func _set_music_muted(muted: bool) -> void:
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), muted)

@@ -10,13 +10,12 @@ signal setup_completed
 # Names of the categories shown in the Youpi? directory, from the root
 signal category_browsed(path: PackedStringArray)
 
+const DAD: FamilyMemberData = preload("res://assets/data/family/father.tres")
+const MOM: FamilyMemberData = preload("res://assets/data/family/mother.tres")
+const SON: FamilyMemberData = preload("res://assets/data/family/son.tres")
+const DAUGHTER: FamilyMemberData = preload("res://assets/data/family/daughter.tres")
 # Shown in the family photos, each LevelData sets its hostage
-const FAMILY: Array[FamilyMemberData] = [
-	preload("res://assets/data/family/father.tres"),
-	preload("res://assets/data/family/mother.tres"),
-	preload("res://assets/data/family/son.tres"),
-	preload("res://assets/data/family/daughter.tres"),
-]
+const FAMILY: Array[FamilyMemberData] = [DAD, MOM, SON, DAUGHTER]
 
 var current_level_number := 0
 var money := 0:
