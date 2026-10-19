@@ -4,6 +4,9 @@ extends Control
 signal timed_out
 signal processed(points: int)
 
+# Polled by the level as a fallback to the signals to end the day
+const GROUP := &"notifications"
+
 const BLINK_COUNT := 2
 const TIMEOUT_BLINK_COUNT := 3
 const BLINK_INTERVAL := 0.08
@@ -31,6 +34,7 @@ var _processed := false
 
 
 func _ready() -> void:
+	add_to_group(GROUP)
 	_refresh()
 	_start_timer()
 	_blink()
@@ -50,6 +54,11 @@ func _process(delta: float) -> void:
 	_update_timer()
 	if _time_left <= 0.0:
 		_mark_timed_out()
+
+
+# Answered or timed out
+func is_resolved() -> bool:
+	return _processed or is_timed_out
 
 
 func _refresh() -> void:

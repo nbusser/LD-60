@@ -661,6 +661,21 @@ func _process(_delta: float) -> void:
 	_update_clock()
 	if level_state.resolved_requests >= level_state.total_requests:
 		_finish_day()
+		return
+
+	# Fallback in case a resolution was not counted: look at the notifications themselves
+	var resolved_notifications := 0
+	for notif in get_tree().get_nodes_in_group(Notification.GROUP):
+		if notif.is_resolved():
+			resolved_notifications += 1
+	if resolved_notifications >= level_state.total_requests:
+		push_warning(
+			(
+				"Day ended by fallback: %d/%d requests counted"
+				% [level_state.resolved_requests, level_state.total_requests]
+			)
+		)
+		_finish_day()
 
 
 func _finish_day() -> void:
