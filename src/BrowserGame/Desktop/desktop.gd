@@ -17,11 +17,28 @@ var _selection_origin := Vector2.ZERO
 var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_window.tscn")
 @onready var error_popup_scene = preload("res://src/BrowserGame/DesktopWindow/error_popup.tscn")
 @onready var task_button_scene = preload("res://src/BrowserGame/Desktop/TaskButton.tscn")
+@onready var cursor_popup_scene = preload("res://src/BrowserGame/Desktop/cursor_popup.tscn")
 @onready var cursor = $Cursor
 @onready var pinny: Pinny = %Pinny
 @onready var _clock_label: Label = %ClockLabel
 @onready var _money_label: Label = %MoneyLabel
 @onready var _selection_rect: DesktopSelectionRect = %SelectionRect
+
+
+# Desktop containing the given node, if any
+static func find_from(node: Node) -> Desktop:
+	while node != null and not node is Desktop:
+		node = node.get_parent()
+	return node as Desktop
+
+
+# Show a short message above the cursor (e.g. "Copied")
+func show_cursor_popup(text: String) -> void:
+	var popup: CursorPopup = cursor_popup_scene.instantiate()
+	popup.text = text
+	add_child(popup)
+	# keep the fake cursor drawn on top of the popup
+	move_child(popup, cursor.get_index())
 
 
 func _window_to_foreground(selected_window: DesktopWindow):

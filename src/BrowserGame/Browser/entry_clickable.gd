@@ -47,5 +47,8 @@ func _refresh_copy_lock() -> void:
 
 
 func _on_copy_pressed() -> void:
-	# TODO: copy entry.link to clipboard
-	pass
+	DisplayServer.clipboard_set(entry.link)
+	Sfx.click()
+	var desktop := Desktop.find_from(self)
+	if desktop != null:
+		desktop.show_cursor_popup("Copied")

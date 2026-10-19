@@ -34,6 +34,7 @@ func _ready() -> void:
 	_refresh()
 	_start_timer()
 	_blink()
+	_send_button.pressed.connect(Sfx.click)
 	_send_button.pressed.connect(_submit)
 	_link_input.text_submitted.connect(_on_link_submitted)
 	_link_input.text_changed.connect(_update_send_button)
@@ -163,8 +164,14 @@ func _refresh_paste_lock() -> void:
 
 
 func _on_paste_pressed() -> void:
-	# TODO: paste clipboard into the link input
-	pass
+	Sfx.click()
+	var clipboard := DisplayServer.clipboard_get().strip_edges()
+	if clipboard.is_empty() or not _link_input.editable:
+		return
+	_link_input.text = clipboard
+	_link_input.caret_column = clipboard.length()
+	# setting text from code doesn't emit text_changed
+	_update_send_button()
 
 
 func _blink(count: int = BLINK_COUNT) -> void:

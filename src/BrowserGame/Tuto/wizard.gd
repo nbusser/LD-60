@@ -51,6 +51,8 @@ var _busy := false
 
 
 func _ready():
+	for button in [_back_button, _next_button, _finish_button, _cancel_button]:
+		button.pressed.connect(Sfx.click)
 	_back_button.pressed.connect(_on_back_pressed)
 	_next_button.pressed.connect(_on_next_pressed)
 	_finish_button.pressed.connect(_on_finish_pressed)
