@@ -538,7 +538,7 @@ func _run_level_5(level_data: LevelData) -> void:
 
 	_set_music_muted(true)
 	await get_tree().create_timer(10.0).timeout
-	var sentence: Array[String] = []
+	var sentence: Array[String] = ["..."]
 	if GameState.total_death() == 0:
 		(
 			sentence
@@ -550,11 +550,11 @@ func _run_level_5(level_data: LevelData) -> void:
 			)
 		)
 	elif GameState.is_alive(GameState.SON) and not GameState.is_alive(GameState.DAUGHTER):
-		sentence.append_array(["...", "You made your son orphan!"])
+		sentence.append_array(["You made your son orphan!"])
 	elif not GameState.is_alive(GameState.SON) and GameState.is_alive(GameState.DAUGHTER):
-		sentence.append_array(["...", "You made your daughter orphan!"])
+		sentence.append_array(["You made your daughter orphan!"])
 	elif GameState.is_alive(GameState.SON) and GameState.is_alive(GameState.DAUGHTER):
-		sentence.append_array(["...", "You made your children orphan!"])
+		sentence.append_array(["You made your children orphan!"])
 	elif GameState.total_death() == 4:
 		sentence.append_array(
 			[

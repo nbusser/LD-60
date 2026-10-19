@@ -124,7 +124,6 @@ func show_popup(
 			popup.message = message
 			popup.icon = icon
 	)
-	Sfx.click()
 
 	var desktop_window: DesktopWindow = _programs_to_window[program]
 	await desktop_window.closed
