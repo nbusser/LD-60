@@ -301,12 +301,14 @@ func _run_level_3(level_data: LevelData) -> void:
 					"Your lineage is partly saved."
 				]
 				if not GameState.is_alive(GameState.DAD) and not GameState.is_alive(GameState.MOM):
-					res = (
-						res
-						+ ["Finally you started to understand your job..."]
-						+ ["It just took enough time to deprive your son from his grandparents..."]
+					res.append(
+						[
+							"Finally you started to understand your job...",
+							"It just took enough time to deprive your son from his grandparents..."
+						]
 					)
-				return res + ["Stay focused."])
+				res.append_array(["Stay focused."])
+				return res)
 			. call()
 		),
 		# unpaid
@@ -341,7 +343,8 @@ func _run_level_4(level_data: LevelData) -> void:
 		_pinny
 		. visit(
 			[
-				"One more photo after this one.",
+				"'mornin!",
+				"Sorry I feel groggy, I did not have my cofee yet",
 				"$%d for your sweet Daughter. Then we talk about you." % [level_data.ransom],
 				"You can spend your money in the shop. Just not on them.",
 			],
@@ -358,20 +361,89 @@ func _run_level_4(level_data: LevelData) -> void:
 		level_data,
 		[
 			# paid
-			"Your sister is safe.",
-			"Tomorrow, it's about you.",
+			(
+				(func():
+					var res = []
+					if (
+						GameState.is_alive(GameState.DAD)
+						and GameState.is_alive(GameState.MOM)
+						and GameState.is_alive(GameState.SON)
+					):
+						(
+							res
+							. append_array(
+								[
+									"I have to admit I am impressed.",
+									"In more than 2 years of career, I rarely saw that.",
+									"You whole family is safe. I should feel it is unfair, but I am happy for you pal.",
+								]
+							)
+						)
+					if (
+						not GameState.is_alive(GameState.DAD)
+						and not GameState.is_alive(GameState.MOM)
+						and not GameState.is_alive(GameState.SON)
+					):
+						res.append_array(
+							[
+								"Everyone dead... But your daughter...",
+								"I don't know if she should considered herself lucky or not..."
+							]
+						)
+					if not GameState.is_alive(GameState.SON):
+						res.append_array(["So sad that she is single child now..."])
+					(
+						res
+						. append_array(
+							[
+								"Anyway! Tomorrow is your last day. Make sure to come for your offboarding."
+							]
+						)
+					)
+					return res)
+				. call()
+			)
 		],
 		[
 			# unpaid
-			"Oh no... Your little sister...",
+			(
+				(func():
+					var res = []
+					if (
+						GameState.is_alive(GameState.DAD)
+						and GameState.is_alive(GameState.MOM)
+						and GameState.is_alive(GameState.SON)
+					):
+						res.append_array(
+							[
+								"Oh pal, you were so close!",
+								"But I'm sorry, you play the game, you earn the prize..."
+							]
+						)
+					if (
+						not GameState.is_alive(GameState.DAD)
+						and not GameState.is_alive(GameState.MOM)
+						and not GameState.is_alive(GameState.SON)
+					):
+						res.append_array(
+							[
+								"Everyone dead... But your daughter...",
+								"I don't know if she should considered herself lucky or not..."
+							]
+						)
+					if not GameState.is_alive(GameState.SON):
+						res.append_array(["So sad that she is single child now..."])
+					return res)
+				. call()
+			)
 		],
 		[
 			# reveal
-			"The last photo of the album.",
+			"The last picture. Keep it somewhere safe.",
 		],
 		[
 			# aftermath
-			"No family left. Tomorrow, it's about you.",
+			"Anyway! Tomorrow is your last day. Make sure to come for your offboarding.",
 		]
 	))
 
