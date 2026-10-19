@@ -185,22 +185,34 @@ func _ready() -> void:
 
 	_refresh_icons()
 	GameState.setup_completed.connect(_on_setup_completed)
-	GameState.setup_programs_revealed.connect(_refresh_icons)
+	GameState.setup_program_revealed.connect(_refresh_icons)
 	GameState.money_changed.connect(_on_money_changed)
 	_on_money_changed(GameState.money)
 
 
 func _refresh_icons() -> void:
-	var setup_only := GameState.needs_setup() and not GameState.setup_programs_visible
+	var setup_done := not GameState.needs_setup()
+	var reveal_count := GameState.revealed_setup_program_count
+
+	if _setup_program != null:
+		if setup_done:
+			_remove_icon(_setup_program)
+		else:
+			_create_icon(_setup_program)
+
+	var reveal_index := 0
 	for program in programs:
 		if program == _setup_program:
-			if setup_only:
-				_create_icon(program)
-			else:
-				_remove_icon(program)
 			continue
-		if not setup_only:
+		if setup_done or reveal_index < reveal_count:
 			_create_icon(program)
+		reveal_index += 1
+
+	# keep the Setup icon last while installing
+	if not setup_done and _setup_program != null:
+		var setup_icon: Icon = _program_to_icon.get(_setup_program)
+		if setup_icon != null:
+			%Icons.move_child(setup_icon, -1)
 
 
 func _create_icon(program: Program) -> void:
@@ -231,6 +243,7 @@ func _create_icon(program: Program) -> void:
 func _remove_icon(program: Program) -> void:
 	var icon: Icon = _program_to_icon.get(program)
 	if icon != null and is_instance_valid(icon):
+		%Icons.remove_child(icon)
 		icon.queue_free()
 	_program_to_icon.erase(program)
 

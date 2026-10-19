@@ -97,6 +97,7 @@ layout_mode = 2
 text = "Finish"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/buttons" unique_id=637224003]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="CancelButton" type="Button" parent="VBoxContainer/buttons" unique_id=1898656100]

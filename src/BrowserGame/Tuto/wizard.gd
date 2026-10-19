@@ -27,8 +27,11 @@ const FOOTERS: Array[String] = [
 
 const FINISH_MESSAGES: Array[String] = [
 	"Installing Youpi? components...",
+	"Copying system files...",
 	"Configuring your desktop...",
+	"Setting up your programs...",
 	"Applying final touches...",
+	"Finishing installation...",
 ]
 
 var _step := 0
@@ -40,6 +43,7 @@ var _busy := false
 @onready var _next_button: Button = %NextButton
 @onready var _finish_button: Button = %FinishButton
 @onready var _cancel_button: Button = %CancelButton
+@onready var _cancel_separator: Control = %VSeparator
 @onready var _loading: Control = %Loading
 @onready var _loading_label: Label = %LoadingLabel
 
@@ -58,7 +62,10 @@ func _show_step():
 	_text.scroll_to_line(0)
 	_footer.text = FOOTERS[_step]
 	var is_last := _step == STEPS.size() - 1
+	_back_button.visible = not is_last
 	_back_button.disabled = _step == 0
+	_cancel_button.visible = not is_last
+	_cancel_separator.visible = not is_last
 	_next_button.visible = not is_last
 	_finish_button.visible = is_last
 
@@ -92,8 +99,8 @@ func _install() -> void:
 		window.set_busy(true)
 	for message in FINISH_MESSAGES:
 		_loading_label.text = message
-		await get_tree().create_timer(randf_range(0.6, 1.0)).timeout
-	GameState.reveal_setup_programs()
+		await get_tree().create_timer(randf_range(0.7, 1.0)).timeout
+		GameState.reveal_setup_program()
 	_loading.visible = false
 	_busy = false
 	if window != null:
