@@ -123,33 +123,33 @@ theme_override_constants/separation = 4
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-focus_mode = 0
 tooltip_text = "Go back"
-theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+focus_mode = 0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
-icon = ExtResource("5_back")
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 6
 text = "Back"
+icon = ExtResource("5_back")
 
 [node name="HomeButton" type="Button" parent="NinePatchRect/VBoxContainer/Toolbar/Row" unique_id=1379462058]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-focus_mode = 0
 tooltip_text = "Go to the central directory"
-theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+focus_mode = 0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
-icon = ExtResource("6_home")
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 6
 text = "Home"
+icon = ExtResource("6_home")
 
 [node name="AddressBar" type="LineEdit" parent="NinePatchRect/VBoxContainer/Toolbar/Row" unique_id=1453082769]
 unique_name_in_owner = true
@@ -157,9 +157,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
-editable = false
 text = "youpi://dir.internal"
-caret_blink = false
+editable = false
 
 [node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/VBoxContainer" unique_id=514740387]
 unique_name_in_owner = true
@@ -233,10 +232,16 @@ fit_content = true
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer/CategoryBanner" unique_id=639746729]
-custom_minimum_size = Vector2(0, 20)
+[node name="Control" type="Control" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=86389640]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ooua1")
+
+[node name="HSeparator" type="HSeparator" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=611142577]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=119308392]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect/VBoxContainer/ScrollContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1554786993]
 unique_name_in_owner = true
