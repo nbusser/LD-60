@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu4jtdiphyhtc"]
+[gd_scene format=3 uid="uid://bu4jtdiphyhtc"]
 
 [ext_resource type="Script" uid="uid://gwhglqs53hv7" path="res://src/ScoreScreen/score_screen.gd" id="1_vfk7o"]
 
-[node name="ScoreScreen" type="Control"]
+[node name="ScoreScreen" type="Control" unique_id=512005996]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,65 +11,106 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vfk7o")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1476036262]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=763378691]
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer" unique_id=1692935885]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer" unique_id=2076911842]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1778920465]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Day "
 
-[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1671376088]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "/"
 
-[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=331589538]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = " complete"
 
-[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer" unique_id=341817654]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer2" unique_id=898580499]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2"]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2" unique_id=2024845484]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Money left: "
 
-[node name="CoinsNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2"]
+[node name="CoinsNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2" unique_id=1714051742]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 
-[node name="Result" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Result" type="Label" parent="CenterContainer/VBoxContainer" unique_id=206120066]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 text = "Pinny is proud of you."
 horizontal_alignment = 1
 
-[node name="Entries" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="PhotosSpacer" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Entries" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1879962023]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 theme_override_constants/separation = 10
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+[node name="Dad" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=454973177]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Mom" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=24926829]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Son" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=1595651933]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Daughter" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=1024880355]
+custom_minimum_size = Vector2(320, 320)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=1438366119]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/VBoxContainer" unique_id=1869276803]
 layout_mode = 2
 
-[node name="NextLevelButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer3"]
+[node name="NextLevelButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer3" unique_id=1381557439]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 size_flags_horizontal = 0
 text = "Next day"
 
