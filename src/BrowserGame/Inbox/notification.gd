@@ -33,6 +33,7 @@ var _processed := false
 @onready var _paste_button: Button = %Button
 @onready var _lock_icon: TextureRect = %LockIcon
 @onready var _dismiss_button: TextureButton = %DismissButton
+@onready var _reset_button: Button = %ResetButton
 
 
 func _ready() -> void:
@@ -48,12 +49,18 @@ func _ready() -> void:
 	_dismiss_button.pressed.connect(_on_dismiss_pressed)
 	GameState.upgrades_changed.connect(_refresh_paste_lock)
 	_refresh_paste_lock()
+	_reset_button.pressed.connect(_on_reset_pressed)
+	GameState.upgrades_changed.connect(_refresh_reset_button)
+	if GameState.level_state != null:
+		GameState.level_state.timer_reset_used.connect(_refresh_reset_button)
+	_refresh_reset_button()
 
 
 func _process(delta: float) -> void:
 	if not _has_time_limit():
 		return
-	_time_left = maxf(_time_left - delta, 0.0)
+	var time_scale := GameState.level_state.get_time_scale() if GameState.level_state else 1.0
+	_time_left = maxf(_time_left - delta * time_scale, 0.0)
 	_update_timer()
 	if _time_left <= 0.0:
 		_mark_timed_out()
@@ -110,6 +117,7 @@ func _mark_timed_out() -> void:
 	_timer_label.modulate = Color.DARK_RED
 	_query_label.modulate = Color.GRAY
 	_set_editable(false)
+	_refresh_reset_button()
 	_blink(TIMEOUT_BLINK_COUNT)
 	_show_dismiss_button()
 	timed_out.emit()
@@ -152,6 +160,7 @@ func _accept_link(request_link: RequestLink) -> void:
 	var points := request_link.points if request_link != null else 0
 	_processed = true
 	_set_editable(false)
+	_refresh_reset_button()
 	_progress_bar.value = 1.0
 	_timer_label.text = "Done"
 	var status_color := Color.DARK_GREEN if points > 0 else Color.GRAY
@@ -203,6 +212,26 @@ func _refresh_paste_lock() -> void:
 	_paste_button.disabled = not unlocked
 	_paste_button.modulate.a = 1.0 if unlocked else 0.4
 	_lock_icon.visible = not unlocked
+
+
+# Shown once the upgrade is owned, usable on a single running request per day
+func _refresh_reset_button() -> void:
+	_reset_button.visible = GameState.is_upgrade_owned("timer_reset")
+	var used := GameState.level_state != null and GameState.level_state.is_timer_reset_used
+	_reset_button.disabled = used or is_resolved() or not _has_time_limit()
+	_reset_button.modulate.a = 0.4 if _reset_button.disabled else 1.0
+	_reset_button.tooltip_text = "Already used today" if used else "Reset timer (once a day)"
+
+
+func _on_reset_pressed() -> void:
+	if _reset_button.disabled:
+		return
+	Sfx.click()
+	_time_left = request.duration
+	_update_timer()
+	_blink()
+	if GameState.level_state != null:
+		GameState.level_state.use_timer_reset()
 
 
 func _on_paste_pressed() -> void:

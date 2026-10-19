@@ -12,6 +12,7 @@ const CORRECT = preload("res://assets/sounds/correct.ogg")
 const WRONG = preload("res://assets/sounds/wrong.ogg")
 const ERROR = preload("res://assets/sounds/error.ogg")
 const NEW_REQUEST = preload("res://assets/sounds/new_request.ogg")
+const SLURP = preload("res://assets/sounds/drink.ogg")
 
 var _click_player := AudioStreamPlayer.new()
 var _harddrive_player := AudioStreamPlayer.new()
@@ -25,6 +26,7 @@ var _correct_player := AudioStreamPlayer.new()
 var _wrong_player := AudioStreamPlayer.new()
 var _error_player := AudioStreamPlayer.new()
 var _new_request_player := AudioStreamPlayer.new()
+var _slurp_player := AudioStreamPlayer.new()
 
 
 func _ready() -> void:
@@ -75,6 +77,10 @@ func _ready() -> void:
 	_new_request_player.stream = NEW_REQUEST
 	_new_request_player.bus = &"SFX"
 	add_child(_new_request_player)
+
+	_slurp_player.stream = SLURP
+	_slurp_player.bus = &"SFX"
+	add_child(_slurp_player)
 
 
 func click() -> void:
@@ -127,6 +133,10 @@ func play_error() -> void:
 
 func play_new_request() -> void:
 	_new_request_player.play()
+
+
+func play_slurp() -> void:
+	await _play_and_wait(_slurp_player)
 
 
 # Waits for the stream length: the finished signal is not always emitted

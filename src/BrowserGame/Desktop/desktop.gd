@@ -7,6 +7,7 @@ const IMAGE_WINDOW_ICON_16 := preload(
 	"res://assets/sprites/icons/serenity/16x16/filetype-image.png"
 )
 const SEARCH_PROGRAM_PATH := "res://assets/data/program/search.tres"
+const COFFEE_MACHINE_PROGRAM_PATH := "res://assets/data/program/coffee_machine.tres"
 
 @export var programs: Array[Program]
 # The player can't open programs, e.g. during a cutscene
@@ -20,6 +21,7 @@ var _is_selecting := false
 var _selection_origin := Vector2.ZERO
 var _selection_base: Array[Icon] = []
 var _search_program: Program
+var _coffee_machine_program: Program
 
 @onready var icon_scene = preload("res://src/BrowserGame/Icon/icon.tscn")
 @onready
@@ -81,11 +83,16 @@ func _spawn_credits() -> void:
 
 
 func _on_upgrades_changed() -> void:
-	if not GameState.is_upgrade_owned("search"):
-		return
-	if _search_program == null:
-		_search_program = load(SEARCH_PROGRAM_PATH)
-	add_program(_search_program)
+	# Plain teal until the wallpaper is bought
+	%BackgroundImage.visible = GameState.is_upgrade_owned("wallpaper")
+	if GameState.is_upgrade_owned("search"):
+		if _search_program == null:
+			_search_program = load(SEARCH_PROGRAM_PATH)
+		add_program(_search_program)
+	if GameState.is_upgrade_owned("coffee_machine"):
+		if _coffee_machine_program == null:
+			_coffee_machine_program = load(COFFEE_MACHINE_PROGRAM_PATH)
+		add_program(_coffee_machine_program)
 
 
 # Hide every icon, they come back one by one with reveal_next_icon()
