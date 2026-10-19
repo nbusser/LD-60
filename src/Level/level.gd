@@ -120,7 +120,7 @@ func _on_setup_install_started() -> void:
 		_pinny
 		. say(
 			[
-				"Howdy, I'm Pinny. I am your nice desktop assistant.",
+				"Howdy friend! I am Pinny, your friendly desktop assistant.",
 				"Welcome to Youpi! Sit back and relax, I'm installing everything you need.",
 			],
 			Pinny.Mood.LAUGH
@@ -147,7 +147,7 @@ func _run_level_1(level_data: LevelData) -> void:
 	# The gift shows up once Pinny mentions it
 	_desktop.add_program(FAMILY_PHOTOS)
 	await _pinny.instruct(
-		["Go on pal, open it!"],
+		["Go on friend, open it!"],
 		_desktop.is_program_running.bind(FAMILY_PHOTOS_ID),
 		_desktop.program_opened
 	)
@@ -162,7 +162,7 @@ func _run_level_1(level_data: LevelData) -> void:
 				"Lovely family, isn't it? I heard a lot about you from them.",
 				"Did you hear from them since they left for vacations two days ago? Don't worry, they are safe. I keep them safe... for now.",
 				(
-					"Let's cut to the chase, the fee for your Dad is $%d. Pay by the end of your work day. If you don't, you will never see him again, except in photo."
+					"Let's cut to the chase. I need money to buy cigarettes. The fee for your Dad is $%d. Pay by the end of your work day."
 					% [level_data.ransom]
 				),
 				"Enjoy your day, and don't overthink it."
@@ -199,7 +199,7 @@ func _run_level_1(level_data: LevelData) -> void:
 			# paid
 			"Good! You learned fast. Your Dad is safe for now.",
 			"See you tomorrow, don't be late.",
-			"Sleep well pal."
+			"Sleep well friend."
 		],
 		[
 			# unpaid
@@ -226,7 +226,7 @@ func _run_level_2(level_data: LevelData) -> void:
 		_pinny
 		. say(
 			[
-				"Howdy pal. Did you sleep well?",
+				"Good morning to you, my favorite employee. Did you sleep well?",
 				(
 					"Did you dream of your dad? Is he in hell? In heaven?"
 					if not GameState.is_alive(GameState.DAD)
@@ -262,7 +262,7 @@ func _run_level_2(level_data: LevelData) -> void:
 			(
 				"Daddy would have been proud!"
 				if not GameState.is_alive(GameState.DAD)
-				else "Saving both your parents... That's great!"
+				else "Saving both your parents... Look at you, busy bee!"
 			),
 			"Mommy is safe. Don't skip the alarm tomorrow."
 		],

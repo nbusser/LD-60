@@ -58,10 +58,7 @@ func run() -> void:
 			"Find them a good link, and Youpi will pay you for it."
 		]
 	)
-	await _pinny.say(
-		["Wrong result, no money, pal! We are not commies; we are not doing charity"],
-		Pinny.Mood.LAUGH
-	)
+	await _pinny.say(["Wrong result, no money, pal! I'm not running a charity"], Pinny.Mood.LAUGH)
 
 	await _pinny.instruct(
 		['Open "Youpi?", our in-house database.'],
@@ -78,7 +75,7 @@ func run() -> void:
 
 	await _pinny.instruct(
 		[
-			"Now, the tedious work starts: copy the LINK manually. Then click Send. Better links pay more. You can do it pal! I believe in you!",
+			"Now, the tedious work starts: copy that LINK, then click Send. Better links pay more. You can do it buddy! I believe in you!",
 		],
 		func(): return _level_state.resolved_requests > 0,
 		_level_state.request_resolved
@@ -90,7 +87,7 @@ func run() -> void:
 		. say(
 			[
 				"This customer was exceptionally patient, but most customer will demand you to answer within a limited time, so, no time to slack off pal.",
-				"In Youpi, we value individual performances. With you hardly-earned money, you can buy some tools from us that we reserve for our best employees.",
+				"At Youpi, we value individual performance. With your hardly-earned money, you can buy some tools from us that we reserve for our most cherished employees.",
 			],
 			Pinny.Mood.NEUTRAL
 		)
