@@ -30,6 +30,7 @@ var _loading := false
 var _busy := false
 
 @onready var _title_bar: Button = $VBoxContainer/Bar/Bar
+@onready var _close_button: TextureButton = $VBoxContainer/Bar/CloseButton
 
 
 func _ready() -> void:
@@ -81,6 +82,9 @@ func _get_desktop() -> Desktop:
 
 
 func _on_close_button_pressed() -> void:
+	# a busy window (e.g. the setup installing) can't be closed
+	if _busy:
+		return
 	closed.emit()
 
 
@@ -97,6 +101,8 @@ func _on_bar_button_up() -> void:
 
 func set_busy(value: bool) -> void:
 	_busy = value
+	_close_button.disabled = value
+	_close_button.modulate.a = 0.5 if value else 1.0
 
 
 func is_busy() -> bool:
