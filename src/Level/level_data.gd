@@ -10,6 +10,8 @@ enum LevelType { BROWSER }
 @export var type := LevelType.BROWSER
 @export var requests_json: JSON
 @export var ransom := 10
+# Killed if the ransom is not paid at the end of the day
+@export var hostage: FamilyMemberData
 
 # Loaded from level json
 var requests: Array[Request]

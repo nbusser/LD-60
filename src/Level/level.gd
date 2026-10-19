@@ -53,7 +53,7 @@ func _ready():
 		_:
 			assert(false, "No scenario for level %d" % GameState.current_level_number)
 
-	# TODO: teloche qui seteint
+	await _turn_off_screen()
 	Globals.end_scene(Globals.EndSceneStatus.LEVEL_END)
 
 
@@ -152,6 +152,11 @@ func _run_level_1(level_data: LevelData) -> void:
 
 	await _play_day()
 
+	# EN laissant la derniere mission timeout, _play_day() est reste bloque!
+
+	# TODO quand la journee se termine: ouvrir une popup qui dit que la journee se finit.
+	# Quand on la ferme ca ferme toutes les fenetres, et on empeche l'user d'ouvrir lui meme d'autres fenetres puis on commence la cutscene de fin de niveau
+
 	await _pinny.appear()
 	await _pinny.say(
 		[
@@ -197,7 +202,11 @@ func _run_level_1(level_data: LevelData) -> void:
 		)
 		await _pinny.leave()
 
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(1.3).timeout
+		await Sfx.play_kill()
+		await get_tree().create_timer(0.5).timeout
+		await Sfx.play_photo()
+		await get_tree().create_timer(0.5).timeout
 
 		await _pinny.appear()
 		await (
@@ -210,10 +219,14 @@ func _run_level_1(level_data: LevelData) -> void:
 			)
 		)
 
-		# TODO: afficher l'image du papa terminated
-		# TODO: set papa a dead
+		await get_tree().create_timer(0.5).timeout
 
-		await get_tree().create_timer(1.0).timeout
+		GameState.kill(level_data.hostage)
+		_desktop.show_image(
+			level_data.hostage.terminated_file_name(), level_data.hostage.portrait_terminated
+		)
+
+		await get_tree().create_timer(2.2).timeout
 
 		await (
 			_pinny
@@ -317,24 +330,23 @@ func _finish_day() -> void:
 	day_finished.emit()
 
 
-# func _collect_fee() -> void:
-# 	var fee := GameState.protection_fee
-# 	var target := GameState.threatened_name()
-# 	var player := GameState.is_player_threatened()
+# Old CRT turning off: the screen collapses into a line, then into a dot
+func _turn_off_screen() -> void:
+	var backdrop := CanvasLayer.new()
+	backdrop.layer = -1
+	var black := ColorRect.new()
+	black.color = Color.BLACK
+	black.set_anchors_preset(Control.PRESET_FULL_RECT)
+	backdrop.add_child(black)
+	add_child(backdrop)
 
-# 	var lines: Array[String]
-# 	if GameState.resolve_protection():
-# 		if player:
-# 			lines = ["You paid. I will see you tomorrow.", "$%d, right on time." % fee]
-# 		else:
-# 			lines = ["$%d. %s lives." % [fee, target], "Pleasure doing business."]
-# 		await _pinny.visit(lines, Pinny.Mood.NEUTRAL)
-# 	else:
-# 		if player:
-# 			lines = ["You are short. You know what happens now."]
-# 		else:
-# 			lines = ["You are short. I take everything.", "%s is gone." % target]
-# 		await _pinny.visit(lines, Pinny.Mood.LAUGH)
+	_desktop.pivot_offset = _desktop.size / 2.0
+	var tween := create_tween()
+	tween.tween_property(_desktop, "modulate", Color(4.0, 4.0, 4.0), 0.12)
+	tween.parallel().tween_property(_desktop, "scale:y", 0.004, 0.15)
+	tween.tween_property(_desktop, "scale:x", 0.0, 0.2)
+	await tween.finished
+	await get_tree().create_timer(0.5).timeout
 
 
 func _update_clock() -> void:

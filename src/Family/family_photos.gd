@@ -7,7 +7,7 @@ const FAMILY_PHOTO_PRELOAD := preload("res://src/Family/family_photo.tscn")
 
 
 func _ready() -> void:
-	for member in Family.MEMBERS:
+	for member in GameState.FAMILY:
 		var photo: FamilyPhoto = FAMILY_PHOTO_PRELOAD.instantiate()
 		photo.member = member
 		_entries.add_child(photo)

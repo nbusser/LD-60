@@ -17,12 +17,13 @@ func _ready() -> void:
 
 
 func _result_text() -> String:
-	if GameState.current_level_number == 0:
+	var hostage := GameState.hostage()
+	if hostage == null:
 		return "Pinny is proud of you."
-	var target := GameState.threatened_name()
-	if GameState.last_day_success:
-		return "Protection paid for %s: $%d" % [target, GameState.protection_fee]
-	return "Pinny took everything. %s is gone." % target
+	if GameState.is_alive(hostage):
+		var ransom := GameState.level_state.level_data.ransom
+		return "Ransom paid for %s: $%d" % [hostage.display_name, ransom]
+	return "Pinny took everything. %s is gone." % hostage.display_name
 
 
 func _on_NextLevelButton_pressed() -> void:

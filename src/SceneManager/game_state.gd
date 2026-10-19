@@ -10,6 +10,14 @@ signal setup_completed
 # Names of the categories shown in the Youpi? directory, from the root
 signal category_browsed(path: PackedStringArray)
 
+# Shown in the family photos, each LevelData sets its hostage
+const FAMILY: Array[FamilyMemberData] = [
+	preload("res://assets/data/family/father.tres"),
+	preload("res://assets/data/family/mother.tres"),
+	preload("res://assets/data/family/son.tres"),
+	preload("res://assets/data/family/daughter.tres"),
+]
+
 var current_level_number := 0
 var money := 0:
 	set(value):
@@ -17,9 +25,7 @@ var money := 0:
 		money_changed.emit(money)
 var level_state: LevelState
 
-var family := Family.new()
-var threatened_member_id: StringName
-var last_day_success := false
+var dead_members: Dictionary[StringName, bool] = {}
 
 var owned_upgrades: Dictionary[String, bool] = {}
 
@@ -32,9 +38,7 @@ func reset() -> void:
 	current_level_number = 0
 	money = 0
 	level_state = null
-	family = Family.new()
-	threatened_member_id = &""
-	last_day_success = false
+	dead_members.clear()
 	owned_upgrades.clear()
 	total_money_earned = 0
 	total_fees_paid = 0
@@ -43,16 +47,18 @@ func reset() -> void:
 	upgrades_changed.emit()
 
 
-func threatened_member() -> FamilyMemberData:
-	return Family.member(threatened_member_id)
+func is_alive(member: FamilyMemberData) -> bool:
+	return not dead_members.has(member.id)
 
 
-func threatened_name() -> String:
-	return Family.name_of(threatened_member_id)
+func kill(member: FamilyMemberData) -> void:
+	dead_members[member.id] = true
+	family_changed.emit()
 
 
-func is_player_threatened() -> bool:
-	return threatened_member_id == Family.PLAYER_ID
+# Today's hostage, null if Pinny holds nobody
+func hostage() -> FamilyMemberData:
+	return level_state.level_data.hostage if level_state != null else null
 
 
 func add_money(amount: int) -> void:

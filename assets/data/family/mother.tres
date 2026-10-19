@@ -8,7 +8,6 @@
 script = ExtResource("1_script")
 id = &"mother"
 display_name = "Mother"
-relation = "your mother"
 file_name = "mother.png"
 portrait = ExtResource("1_a8bk8")
 portrait_terminated = ExtResource("3_terminated")
