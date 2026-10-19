@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://q6n3ky01wxku" path="res://src/BrowserGame/Shop/shop.tscn" id="1_ujaol"]
 [ext_resource type="Texture2D" uid="uid://b7042jusg4k50" path="res://assets/sprites/icons/serenity/32x32/theming-effects.png" id="2_6vukf"]
-[ext_resource type="Texture2D" uid="uid://27fqqa36quip" path="res://assets/sprites/icons/serenity/16x16/themes.png" id="4_6vukf16"]
 [ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_nkuej"]
+[ext_resource type="Texture2D" uid="uid://27fqqa36quip" path="res://assets/sprites/icons/serenity/16x16/themes.png" id="4_6vukf16"]
 
 [resource]
 script = ExtResource("3_nkuej")

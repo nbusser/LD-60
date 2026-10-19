@@ -283,9 +283,10 @@ func _run_level_2(level_data: LevelData) -> void:
 
 func _run_level_3(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
+	await _pinny.appear()
 	await (
 		_pinny
-		. visit(
+		. say(
 			[
 				"Halfway through the week. You look tired.",
 				"$%d for your Son. Same rules." % [level_data.ransom],
@@ -294,10 +295,19 @@ func _run_level_3(level_data: LevelData) -> void:
 			Pinny.Mood.ANGRY
 		)
 	)
+	await (
+		_pinny
+		. say(
+			[
+				"Do you mind if I stay here? I just want to make sure that you are handling everything well.",
+				"Please just pretend I'm not here."
+			],
+			Pinny.Mood.NEUTRAL
+		)
+	)
 
 	await _play_day()
 
-	await _pinny.appear()
 	await _pinny.say(
 		["Ding ding! Day's over, pal. Let's see that wallet. I hope for you it is heavy enough."],
 		Pinny.Mood.NEUTRAL
