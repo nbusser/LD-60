@@ -10,9 +10,6 @@ signal setup_completed
 # Names of the categories shown in the Youpi? directory, from the root
 signal category_browsed(path: PackedStringArray)
 
-const FEE_BASE := 20
-const FEE_STEP := 15
-
 var current_level_number := 0
 var money := 0:
 	set(value):
@@ -22,7 +19,6 @@ var level_state: LevelState
 
 var family := Family.new()
 var threatened_member_id: StringName
-var protection_fee := 0
 var last_day_success := false
 
 var owned_upgrades: Dictionary[String, bool] = {}
@@ -38,7 +34,6 @@ func reset() -> void:
 	level_state = null
 	family = Family.new()
 	threatened_member_id = &""
-	protection_fee = 0
 	last_day_success = false
 	owned_upgrades.clear()
 	total_money_earned = 0
@@ -46,12 +41,6 @@ func reset() -> void:
 	total_requests_answered = 0
 	family_changed.emit()
 	upgrades_changed.emit()
-
-
-func start_day(day: int) -> void:
-	threatened_member_id = family.target_for_day(day)
-	protection_fee = FEE_BASE + FEE_STEP * day
-	family_changed.emit()
 
 
 func threatened_member() -> FamilyMemberData:
@@ -64,19 +53,6 @@ func threatened_name() -> String:
 
 func is_player_threatened() -> bool:
 	return threatened_member_id == Family.PLAYER_ID
-
-
-## Collects today's fee. On failure, takes all the money and kills the target.
-func resolve_protection() -> bool:
-	last_day_success = money >= protection_fee
-	if last_day_success:
-		money -= protection_fee
-		total_fees_paid += protection_fee
-	else:
-		money = 0
-		family.kill(threatened_member_id)
-		family_changed.emit()
-	return last_day_success
 
 
 func add_money(amount: int) -> void:

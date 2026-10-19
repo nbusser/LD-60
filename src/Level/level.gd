@@ -45,18 +45,17 @@ func _ready():
 		0:
 			await _run_level_0()
 		1:
-			await _run_level_1()
+			await _run_level_1(self.level_state.level_data)
 		2:
-			await _run_level_2()
+			await _run_level_2(self.level_state.level_data)
 		3:
-			await _run_level_3()
+			await _run_level_3(self.level_state.level_data)
 		4:
-			await _run_level_4()
-		5:
-			await _run_level_5()
+			await _run_level_4(self.level_state.level_data)
 		_:
 			assert(false, "No scenario for level %d" % GameState.current_level_number)
 
+	# TODO: teloche qui seteint
 	Globals.end_scene(Globals.EndSceneStatus.LEVEL_END)
 
 
@@ -112,11 +111,7 @@ func _on_setup_install_started() -> void:
 	)
 
 
-func _run_level_1() -> void:
-	GameState.start_day(0)
-	var fee := GameState.protection_fee
-	var relation := GameState.threatened_member().relation
-
+func _run_level_1(level_data: LevelData) -> void:
 	await _pinny.appear()
 	await (
 		_pinny
@@ -138,7 +133,7 @@ func _run_level_1() -> void:
 	)
 
 	# Let the player look at the photos before coming back
-	await get_tree().create_timer(4.0).timeout
+	await get_tree().create_timer(8.0).timeout
 
 	await (
 		_pinny
@@ -147,8 +142,8 @@ func _run_level_1() -> void:
 				"Lovely family, isn't it? I heard a lot about you from them.",
 				"Did you hear from them since they left for vacations two days ago? Don't worry, they are safe. I keep them safe... for now.",
 				(
-					"Let's cut to the chase, the fee for %s is $%d. Pay by 20:00. If you don't, you will never see him again, except in photo."
-					% [relation, fee]
+					"Let's cut to the chase, the fee for your Dad is $%d. Pay by the end of your work day. If you don't, you will never see him again, except in photo."
+					% [level_data.ransom]
 				),
 				"Enjoy your day, and don't overthink it."
 			],
@@ -158,21 +153,90 @@ func _run_level_1() -> void:
 	await _pinny.leave()
 
 	await _play_day()
-	await _collect_fee()
+
+	await _pinny.appear()
+	await _pinny.say(
+		[
+			"Well, well, well, how was your day, pal?",
+			"Oh dear, you have a terrible face. Please don't burn yourself out."
+		],
+		Pinny.Mood.LAUGH
+	)
+	await (
+		_pinny
+		. say(
+			[
+				"Do you have the money I kindly asked to you?",
+			],
+			Pinny.Mood.NEUTRAL
+		)
+	)
+
+	var could_pay: bool = GameState.money >= level_data.ransom
+	GameState.money = max(0, GameState.money - level_data.ransom)
+
+	await get_tree().create_timer(1.5).timeout
+
+	if could_pay:
+		await _pinny.say(
+			[
+				"Good! You learned fast. You Dad is safe for now.",
+				"See you tomorrow, don't be late.",
+				"Sleep well pal."
+			],
+			Pinny.Mood.NEUTRAL
+		)
+	else:
+		await (
+			_pinny
+			. say(
+				[
+					"Oh... Too bad...",
+					"Don't worry, I know this is your first day. You know I have a heart. Let me bring you back some chocolate. You deserved it.",
+				],
+				Pinny.Mood.NEUTRAL
+			)
+		)
+		await _pinny.leave()
+
+		await get_tree().create_timer(2.0).timeout
+
+		await _pinny.appear()
+		await (
+			_pinny
+			. say(
+				[
+					"Sorry, I changed my mind. No chocolate for you. But I have this instead.",
+				],
+				Pinny.Mood.NEUTRAL
+			)
+		)
+
+		# TODO: afficher l'image du papa terminated
+		# TODO: set papa a dead
+
+		await get_tree().create_timer(1.0).timeout
+
+		await (
+			_pinny
+			. say(
+				[
+					"Dad is gone... How sad... He would be alive if his son was not SLACKING OFF. See you tomorrow for the next round.",
+				],
+				Pinny.Mood.ANGRY
+			)
+		)
+
+	await _pinny.leave()
 
 
-func _run_level_2() -> void:
-	GameState.start_day(1)
-	var fee := GameState.protection_fee
-	var relation := GameState.threatened_member().relation
-
+func _run_level_2(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
 		_pinny
 		. visit(
 			[
-				"You paid last time. I noticed.",
-				"Today I want $%d for %s." % [fee, relation],
+				"Today I want $%d for Mommy." % [level_data.ransom],
 				"Don't get sentimental. It's just business.",
 			],
 			Pinny.Mood.ANGRY
@@ -180,21 +244,18 @@ func _run_level_2() -> void:
 	)
 
 	await _play_day()
-	await _collect_fee()
+
+	# TODO: write ransom dialog
 
 
-func _run_level_3() -> void:
-	GameState.start_day(2)
-	var fee := GameState.protection_fee
-	var relation := GameState.threatened_member().relation
-
+func _run_level_3(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
 		_pinny
 		. visit(
 			[
 				"Halfway through the week. You look tired.",
-				"$%d for %s. Same rules." % [fee, relation],
+				"$%d for your Son. Same rules." % [level_data.ransom],
 				"The directory remembers everything. So do I.",
 			],
 			Pinny.Mood.ANGRY
@@ -202,21 +263,18 @@ func _run_level_3() -> void:
 	)
 
 	await _play_day()
-	await _collect_fee()
+
+	# TODO: write ransom dialog
 
 
-func _run_level_4() -> void:
-	GameState.start_day(3)
-	var fee := GameState.protection_fee
-	var relation := GameState.threatened_member().relation
-
+func _run_level_4(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
 		_pinny
 		. visit(
 			[
 				"One more photo after this one.",
-				"$%d for %s. Then we talk about you." % [fee, relation],
+				"$%d for your sweet Daughter. Then we talk about you." % [level_data.ransom],
 				"You can spend your money in the shop. Just not on them.",
 			],
 			Pinny.Mood.ANGRY
@@ -224,29 +282,8 @@ func _run_level_4() -> void:
 	)
 
 	await _play_day()
-	await _collect_fee()
 
-
-# Day 6: the player is the target
-func _run_level_5() -> void:
-	GameState.start_day(4)
-	var fee := GameState.protection_fee
-
-	_desktop.add_program(FAMILY_PHOTOS)
-	await (
-		_pinny
-		. visit(
-			[
-				"Last day. No more family photos.",
-				"$%d for your own life." % fee,
-				"You paid for them. Now pay for yourself.",
-			],
-			Pinny.Mood.ANGRY
-		)
-	)
-
-	await _play_day()
-	await _collect_fee()
+	# TODO: write ransom dialog
 
 
 # Helpers
@@ -282,25 +319,24 @@ func _finish_day() -> void:
 	day_finished.emit()
 
 
-# Pinny takes the fee, or everything and the threatened member
-func _collect_fee() -> void:
-	var fee := GameState.protection_fee
-	var target := GameState.threatened_name()
-	var player := GameState.is_player_threatened()
+# func _collect_fee() -> void:
+# 	var fee := GameState.protection_fee
+# 	var target := GameState.threatened_name()
+# 	var player := GameState.is_player_threatened()
 
-	var lines: Array[String]
-	if GameState.resolve_protection():
-		if player:
-			lines = ["You paid. I will see you tomorrow.", "$%d, right on time." % fee]
-		else:
-			lines = ["$%d. %s lives." % [fee, target], "Pleasure doing business."]
-		await _pinny.visit(lines, Pinny.Mood.NEUTRAL)
-	else:
-		if player:
-			lines = ["You are short. You know what happens now."]
-		else:
-			lines = ["You are short. I take everything.", "%s is gone." % target]
-		await _pinny.visit(lines, Pinny.Mood.LAUGH)
+# 	var lines: Array[String]
+# 	if GameState.resolve_protection():
+# 		if player:
+# 			lines = ["You paid. I will see you tomorrow.", "$%d, right on time." % fee]
+# 		else:
+# 			lines = ["$%d. %s lives." % [fee, target], "Pleasure doing business."]
+# 		await _pinny.visit(lines, Pinny.Mood.NEUTRAL)
+# 	else:
+# 		if player:
+# 			lines = ["You are short. You know what happens now."]
+# 		else:
+# 			lines = ["You are short. I take everything.", "%s is gone." % target]
+# 		await _pinny.visit(lines, Pinny.Mood.LAUGH)
 
 
 func _update_clock() -> void:
