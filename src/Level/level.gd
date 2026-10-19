@@ -544,6 +544,7 @@ func _run_level_5(level_data: LevelData) -> void:
 		await _pinny.leave()
 		return
 
+	GameState.is_player_dead = true
 	_set_music_muted(true)
 	await get_tree().create_timer(10.0).timeout
 	var sentence: Array[String] = ["..."]

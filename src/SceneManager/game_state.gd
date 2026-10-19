@@ -25,6 +25,8 @@ var money := 0:
 var level_state: LevelState
 
 var dead_members: Dictionary[StringName, bool] = {}
+# Set when the last ransom is not paid
+var is_player_dead := false
 
 var owned_upgrades: Dictionary[String, bool] = {}
 
@@ -38,6 +40,7 @@ func reset() -> void:
 	money = 0
 	level_state = null
 	dead_members.clear()
+	is_player_dead = false
 	owned_upgrades.clear()
 	total_money_earned = 0
 	total_fees_paid = 0

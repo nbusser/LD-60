@@ -88,10 +88,7 @@ func _run_level_selector() -> void:
 
 
 func _on_end_of_level() -> void:
-	if GameState.current_level_number >= levels.size() - 1:
-		_load_stats_screen()
-	else:
-		_load_score_screen()
+	_load_score_screen()
 
 
 func _on_game_over() -> void:

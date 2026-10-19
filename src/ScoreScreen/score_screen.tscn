@@ -27,17 +27,17 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1778920465]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = "Day "
 
 [node name="LevelNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1671376088]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = "/"
 
 [node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=331589538]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = " complete"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/VBoxContainer" unique_id=341817654]
@@ -48,21 +48,23 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2" unique_id=2024845484]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = "Money left: "
 
 [node name="CoinsNumber" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/HBoxContainer2" unique_id=1714051742]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 
 [node name="Result" type="Label" parent="CenterContainer/VBoxContainer" unique_id=206120066]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+custom_minimum_size = Vector2(700, 0)
+theme_override_font_sizes/font_size = 22
 text = "Pinny is proud of you."
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="PhotosSpacer" type="Control" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 mouse_filter = 2
 
@@ -74,28 +76,28 @@ mouse_filter = 2
 theme_override_constants/separation = 10
 
 [node name="Dad" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=454973177]
-custom_minimum_size = Vector2(320, 320)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Mom" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=24926829]
-custom_minimum_size = Vector2(320, 320)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Son" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=1595651933]
-custom_minimum_size = Vector2(320, 320)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Daughter" type="TextureRect" parent="CenterContainer/VBoxContainer/Entries" unique_id=1024880355]
-custom_minimum_size = Vector2(320, 320)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 mouse_filter = 2
 expand_mode = 1
@@ -110,7 +112,7 @@ layout_mode = 2
 
 [node name="NextLevelButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer3" unique_id=1381557439]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 size_flags_horizontal = 0
 text = "Next day"
 

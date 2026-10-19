@@ -89,7 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qc8yu")
 levels = Array[ExtResource("2_38vrh")]([SubResource("Resource_tutorial_day"), SubResource("Resource_r4gm4"), SubResource("Resource_day2"), SubResource("Resource_day3"), SubResource("Resource_day4"), SubResource("Resource_day5")])
-debug_only_start_level = 4
+debug_only_start_level = 5
 
 [node name="Backdrop" type="ColorRect" parent="." unique_id=352300368]
 layout_mode = 1
