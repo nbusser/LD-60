@@ -18,7 +18,6 @@ var level_state: LevelState
 
 var _desktop: Desktop
 var _pinny: Pinny
-var _time_left := 0.0
 var _running := false
 
 @onready var _desktop_scene := preload("res://src/BrowserGame/Desktop/desktop.tscn")
@@ -37,7 +36,6 @@ func _ready():
 	_desktop = map as Desktop
 	_pinny = _desktop.pinny
 
-	_time_left = float(level_state.level_data.timer_duration)
 	_update_clock()
 
 	$UI/Fadein.fade()
@@ -289,22 +287,22 @@ func _run_level_4(level_data: LevelData) -> void:
 # Helpers
 
 
-# Runs the clock and sends the requests until the end of the day
+# Sends the requests until they are all answered or timed out
 func _play_day() -> void:
-	level_state.all_requests_resolved.connect(_finish_day)
 	_running = true
 	level_state.is_clock_running = true
 	level_state.start_day()
 	await day_finished
 
 
-func _process(delta: float) -> void:
+# Polled rather than signaled: requests may all be resolved before _play_day(),
+# and day_finished must not be emitted before _play_day() awaits it
+func _process(_delta: float) -> void:
 	if not _running:
 		return
 
-	_time_left = maxf(_time_left - delta, 0.0)
 	_update_clock()
-	if _time_left <= 0.0:
+	if level_state.resolved_requests >= level_state.total_requests:
 		_finish_day()
 
 
@@ -343,11 +341,10 @@ func _update_clock() -> void:
 	if _desktop == null:
 		return
 
-	var duration := float(level_state.level_data.timer_duration)
-	var elapsed := duration - _time_left
+	# The clock follows the resolved requests, the day ends with the last one
+	var total := level_state.total_requests
+	var progress := float(level_state.resolved_requests) / total if total > 0 else 1.0
 	var day_minutes := (DAY_END_HOUR - DAY_START_HOUR) * 60
-	var total_minutes := DAY_START_HOUR * 60
-	if duration > 0.0:
-		total_minutes += int(round(elapsed / duration * day_minutes))
+	var total_minutes := DAY_START_HOUR * 60 + int(round(progress * day_minutes))
 	total_minutes = clampi(total_minutes, DAY_START_HOUR * 60, DAY_END_HOUR * 60)
 	_desktop.set_clock(total_minutes / 60, total_minutes % 60)
