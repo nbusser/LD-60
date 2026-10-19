@@ -359,84 +359,75 @@ func _run_level_4(level_data: LevelData) -> void:
 
 	await (_collect_ransom(
 		level_data,
-		[
-			# paid
-			(
-				(func():
-					var res = []
-					if (
-						GameState.is_alive(GameState.DAD)
-						and GameState.is_alive(GameState.MOM)
-						and GameState.is_alive(GameState.SON)
-					):
-						(
-							res
-							. append_array(
-								[
-									"I have to admit I am impressed.",
-									"In more than 2 years of career, I rarely saw that.",
-									"You whole family is safe. I should feel it is unfair, but I am happy for you pal.",
-								]
-							)
-						)
-					if (
-						not GameState.is_alive(GameState.DAD)
-						and not GameState.is_alive(GameState.MOM)
-						and not GameState.is_alive(GameState.SON)
-					):
-						res.append_array(
-							[
-								"Everyone dead... But your daughter...",
-								"I don't know if she should considered herself lucky or not..."
-							]
-						)
-					if not GameState.is_alive(GameState.SON):
-						res.append_array(["So sad that she is single child now..."])
+		# paid
+		(
+			(func():
+				var res = []
+				if (
+					GameState.is_alive(GameState.DAD)
+					and GameState.is_alive(GameState.MOM)
+					and GameState.is_alive(GameState.SON)
+				):
 					(
 						res
 						. append_array(
 							[
-								"Anyway! Tomorrow is your last day. Make sure to come for your offboarding."
+								"I have to admit I am impressed.",
+								"In more than 2 years of career, I rarely saw that.",
+								"You whole family is safe. I should feel it is unfair, but I am happy for you pal.",
 							]
 						)
 					)
-					return res)
-				. call()
-			)
-		],
-		[
-			# unpaid
-			(
-				(func():
-					var res = []
-					if (
-						GameState.is_alive(GameState.DAD)
-						and GameState.is_alive(GameState.MOM)
-						and GameState.is_alive(GameState.SON)
-					):
-						res.append_array(
-							[
-								"Oh pal, you were so close!",
-								"But I'm sorry, you play the game, you earn the prize..."
-							]
-						)
-					if (
-						not GameState.is_alive(GameState.DAD)
-						and not GameState.is_alive(GameState.MOM)
-						and not GameState.is_alive(GameState.SON)
-					):
-						res.append_array(
-							[
-								"Everyone dead... But your daughter...",
-								"I don't know if she should considered herself lucky or not..."
-							]
-						)
-					if not GameState.is_alive(GameState.SON):
-						res.append_array(["So sad that she is single child now..."])
-					return res)
-				. call()
-			)
-		],
+				if (
+					not GameState.is_alive(GameState.DAD)
+					and not GameState.is_alive(GameState.MOM)
+					and not GameState.is_alive(GameState.SON)
+				):
+					res.append_array(
+						[
+							"Everyone dead... But your daughter...",
+							"I don't know if she should considered herself lucky or not..."
+						]
+					)
+				if not GameState.is_alive(GameState.SON):
+					res.append_array(["So sad that she is single child now..."])
+				res.append_array(
+					["Anyway! Tomorrow is your last day. Make sure to come for your offboarding."]
+				)
+				return res)
+			. call()
+		),
+		# unpaid
+		(
+			(func():
+				var res = []
+				if (
+					GameState.is_alive(GameState.DAD)
+					and GameState.is_alive(GameState.MOM)
+					and GameState.is_alive(GameState.SON)
+				):
+					res.append_array(
+						[
+							"Oh pal, you were so close!",
+							"But I'm sorry, you play the game, you earn the prize..."
+						]
+					)
+				if (
+					not GameState.is_alive(GameState.DAD)
+					and not GameState.is_alive(GameState.MOM)
+					and not GameState.is_alive(GameState.SON)
+				):
+					res.append_array(
+						[
+							"Everyone dead... But your daughter...",
+							"I don't know if she should considered herself lucky or not..."
+						]
+					)
+				if not GameState.is_alive(GameState.SON):
+					res.append_array(["So sad that she is single child now..."])
+				return res)
+			. call()
+		),
 		[
 			# reveal
 			"The last picture. Keep it somewhere safe.",
@@ -448,31 +439,115 @@ func _run_level_4(level_data: LevelData) -> void:
 	))
 
 
-# Pinny holds nobody today: the ransom is for the player
-# TODO: write the dialogs and the ending, these lines are placeholders
 func _run_level_5(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
-	await (
-		_pinny
-		. visit(
-			[
-				"Last day, pal.",
-				"$%d for yourself. Let's see how much you are worth." % [level_data.ransom],
-			],
-			Pinny.Mood.ANGRY
-		)
-	)
+	await (_pinny.visit(
+		(
+			(func():
+				var res = ["It's already your last day, pal. Aren't you sad?"]
+				if GameState.total_death() == 4:
+					res.append_array(
+						[
+							"My sincere condoleances for your family.",
+							"You must hate me, but I ensure you that my job is not easy.",
+							"I feel remorse sometimes, and I have the bad role of the story.",
+							"But someone has to do it right?"
+						]
+					)
+				elif GameState.total_death() == 0:
+					(
+						res
+						. append_array(
+							[
+								"I'm glad that you will finally meet your whole family again. What an adventure!"
+							]
+						)
+					)
+				else:
+					res.append_array(
+						["At least you will meet your family again... I mean what remains of it..."]
+					)
+				return res)
+			. call()
+		),
+		Pinny.Mood.NEUTRAL
+	))
+
+	await (_pinny.visit(
+		[
+			"Oh! I almost forgot!",
+			"Don't miss your offboarding after your workday!",
+			(
+				"I wish you can collect at least $%d, it would be great for your last day"
+				% level_data.ransom
+			)
+		],
+		Pinny.Mood.LAUGH
+	))
 
 	await _play_day()
 
 	await _pinny.appear()
-	await _pinny.say(["So, how much are you worth?"], Pinny.Mood.NEUTRAL)
+	await _pinny.say(
+		["Finally... Your last day ended.", "It's time for your onboarding!"], Pinny.Mood.LAUGH
+	)
+	await _pinny.say(["So, did you gather $%d?" % level_data.ransom], Pinny.Mood.LAUGH)
 
-	if _pay_ransom(level_data):
-		await _pinny.say(["You bought your freedom. Goodbye pal."], Pinny.Mood.NEUTRAL)
+	var could_pay := _pay_ransom(level_data)
+
+	if could_pay:
+		await get_tree().create_timer(4.0).timeout
+		await _pinny.say(
+			["That's great!", "You shown incredible individual performances!"], Pinny.Mood.LAUGH
+		)
+		await _pinny.say(["Sadly..."], Pinny.Mood.NEUTRAL)
+		_set_music_muted(true)
+		await get_tree().create_timer(4.0).timeout
+		_set_music_muted(false)
+		await _pinny.say(
+			[
+				"We cannot get your contract extended...",
+				"I'm so sorry...",
+				"Let's stay connected! I wish you good luck!"
+			],
+			Pinny.Mood.NEUTRAL
+		)
+		await _pinny.leave()
+		return
+
+	_set_music_muted(true)
+	await get_tree().create_timer(10.0).timeout
+	var sentence = []
+	if GameState.total_death() == 0:
+		(
+			sentence
+			. append_array(
+				[
+					"So, you performed well under pressure, but now that Iam nice to you, you just slack off?",
+					"Your family will miss you!"
+				]
+			)
+		)
+	elif GameState.is_alive(GameState.SON) and not GameState.is_alive(GameState.DAUGHTER):
+		sentence.append_array(["...", "You made your son orphan!"])
+	elif not GameState.is_alive(GameState.SON) and GameState.is_alive(GameState.DAUGHTER):
+		sentence.append_array(["...", "You made your daughter orphan!"])
+	elif GameState.is_alive(GameState.SON) and GameState.is_alive(GameState.DAUGHTER):
+		sentence.append_array(["...", "You made your children orphan!"])
+	elif GameState.total_death() == 4:
+		sentence.append_array(
+			[
+				"You are a waste. You bring no value to the company.",
+				"I tried to push you upwards with healthy pressure, but you keep slacking off.",
+				"Time to join your whole family pal..."
+			]
+		)
 	else:
-		await _pinny.say(["Not enough. You work for me now. Forever."], Pinny.Mood.ANGRY)
-	await _pinny.leave()
+		sentence.append_array(["Your performances were mediocre. You are terminated!"])
+	await _pinny.say(sentence, Pinny.Mood.ANGRY)
+
+	# TODO: kill cutscene
+	await get_tree().create_timer(1.0).timeout
 
 
 # MARK: Cutscenes

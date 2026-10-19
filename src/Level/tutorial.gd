@@ -20,12 +20,16 @@ func _init(desktop: Desktop, level_state: LevelState) -> void:
 
 func run() -> void:
 	await _pinny.appear()
-	await _pinny.say(
-		[
-			"Let me onboard you for this first day.",
-			"Your position in Youpi is SEARCH ENGINEER. A very prestigious job! Lucky you!"
-		],
-		Pinny.Mood.LAUGH
+	await (
+		_pinny
+		. say(
+			[
+				"Let me onboard you for this first day.",
+				"Your position in Youpi is SEARCH ENGINEER. A very prestigious job! Lucky you!",
+				"You contract is only one week, Monday to Saturday. If you are performing well, we might propose to extend you."
+			],
+			Pinny.Mood.LAUGH
+		)
 	)
 	await _pinny.say(
 		["Your job is to manually reply to our CUSTOMERS queries' EMAIL with appropriate RESULTS."],

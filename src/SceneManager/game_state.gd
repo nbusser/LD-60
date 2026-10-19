@@ -25,6 +25,7 @@ var money := 0:
 var level_state: LevelState
 
 var dead_members: Dictionary[StringName, bool] = {}
+var total_dead: int = 0
 
 var owned_upgrades: Dictionary[String, bool] = {}
 
@@ -38,6 +39,7 @@ func reset() -> void:
 	money = 0
 	level_state = null
 	dead_members.clear()
+	total_dead = 0
 	owned_upgrades.clear()
 	total_money_earned = 0
 	total_fees_paid = 0
@@ -53,6 +55,10 @@ func is_alive(member: FamilyMemberData) -> bool:
 func kill(member: FamilyMemberData) -> void:
 	dead_members[member.id] = true
 	family_changed.emit()
+
+
+func total_death() -> int:
+	return dead_members.size()
 
 
 # Today's hostage, null if Pinny holds nobody
