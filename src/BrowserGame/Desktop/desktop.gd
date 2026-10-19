@@ -25,6 +25,7 @@ var desktop_window_scene = preload("res://src/BrowserGame/DesktopWindow/desktop_
 
 
 func _window_to_foreground(selected_window: DesktopWindow):
+	_unselect_icons()
 	%Windows.move_child(selected_window, -1)
 	_update_task_buttons()
 
@@ -142,6 +143,7 @@ func _center_window(desktop_window: DesktopWindow) -> void:
 
 
 func _open_or_show_window(program: Program):
+	_unselect_icons()
 	var desktop_window: DesktopWindow = _programs_to_window.get(program)
 	if desktop_window == null or not is_instance_valid(desktop_window):
 		# Create the window
