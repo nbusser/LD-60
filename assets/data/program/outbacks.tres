@@ -10,6 +10,6 @@ script = ExtResource("3_lsxnk")
 id = "outbacks"
 icon_texture = ExtResource("2_nhrm0")
 icon_texture_16 = ExtResource("4_mail16")
-icon_label = "Outbacks"
+icon_label = "Inlook"
 app_scene = ExtResource("1_bi8d0")
 metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"

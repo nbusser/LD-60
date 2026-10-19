@@ -45,7 +45,7 @@ func run() -> void:
 		_pinny
 		. instruct(
 			[
-				'First, check your email inbox by opening "Outbacks"',
+				'First, check your email inbox by opening "Inlook"',
 			],
 			_is_running.bind("outbacks"),
 			_desktop.program_opened
