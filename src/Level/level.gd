@@ -269,7 +269,6 @@ func _run_level_2(level_data: LevelData) -> void:
 	))
 
 
-# TODO: write the dialogs, these lines are placeholders
 func _run_level_3(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
@@ -287,30 +286,55 @@ func _run_level_3(level_data: LevelData) -> void:
 	await _play_day()
 
 	await _pinny.appear()
-	await _pinny.say(["Day's over, pal. Let's see that wallet."], Pinny.Mood.NEUTRAL)
+	await _pinny.say(
+		["Ding ding! Day's over, pal. Let's see that wallet. I hope for you it is heavy enough."],
+		Pinny.Mood.NEUTRAL
+	)
 
-	await (_collect_ransom(
+	await _collect_ransom(
 		level_data,
-		[
-			# paid
-			"Your brother thanks you.",
-		],
-		[
-			# unpaid
-			"Not enough... Your poor brother.",
-		],
+		# paid
+		(
+			(func():
+				var res = [
+					"It seems like you did not miss a single penny.",
+					"Your lineage is partly saved."
+				]
+				if not GameState.is_alive(GameState.DAD) and not GameState.is_alive(GameState.MOM):
+					res = (
+						res
+						+ ["Finally you started to understand your job..."]
+						+ ["It just took enough time to deprive your son from his grandparents..."]
+					)
+				return res + ["Stay focused."])
+			. call()
+		),
+		# unpaid
+		(
+			(func():
+				if not GameState.is_alive(GameState.DAD) and not GameState.is_alive(GameState.MOM):
+					return [
+						"I'm so sorry, you are really bad at this job...",
+						"You could not keep a single one yet."
+					]
+				if GameState.is_alive(GameState.DAD) and GameState.is_alive(GameState.MOM):
+					return [
+						"Saving your parents... to deprive them of their grandson... Aren't you ashamed?"
+					]
+				return ["I'm sure you can do better..."])
+			. call()
+		),
 		[
 			# reveal
-			"Say cheese!",
+			"I hate doing that.",
 		],
 		[
 			# aftermath
-			"Only your sister left. Think about her tonight.",
+			"Only your daughter left. Think about her tonight.",
 		]
-	))
+	)
 
 
-# TODO: write the dialogs, these lines are placeholders
 func _run_level_4(level_data: LevelData) -> void:
 	_desktop.add_program(FAMILY_PHOTOS)
 	await (
