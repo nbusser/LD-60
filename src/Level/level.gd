@@ -576,8 +576,12 @@ func _run_level_5(level_data: LevelData) -> void:
 		sentence.append_array(["Your performances were mediocre. You are terminated!"])
 	await _pinny.say(sentence, Pinny.Mood.ANGRY)
 
-	# TODO: kill cutscene
+	# Kill cutscene
+	var scene_manager := get_tree().current_scene as SceneManager
+	if scene_manager:
+		scene_manager.play_big_pinny_animation()
 	await get_tree().create_timer(1.0).timeout
+	_pinny.hide()
 
 
 # MARK: Cutscenes
