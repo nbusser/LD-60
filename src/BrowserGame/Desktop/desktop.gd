@@ -224,6 +224,9 @@ func _create_icon(program: Program) -> void:
 	icon.texture_normal = program.icon_texture
 	icon.double_clicked.connect(
 		func():
+			# programs can't be opened while the setup is installing
+			if program != _setup_program and _is_any_window_busy():
+				return
 			_open_or_show_window(program)
 			Sfx.click()
 	)
