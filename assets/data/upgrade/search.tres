@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://caugbnh6mvfi3"]
+
+[ext_resource type="Script" uid="uid://ctts1botj6v2b" path="res://src/BrowserGame/Shop/upgrade_data.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bg6ularykexye" path="res://assets/sprites/icons/serenity/32x32/app-file-manager.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_script")
+id = "search"
+name = "Youpi? Search"
+description = "Search the Youpi? Central Directory using keywords."
+price = 0
+icon = ExtResource("2_icon")
+metadata/_custom_type_script = "uid://ctts1botj6v2b"

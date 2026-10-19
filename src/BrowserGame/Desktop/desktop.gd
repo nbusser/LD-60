@@ -6,6 +6,7 @@ signal program_opened(program_id: String)
 const IMAGE_WINDOW_ICON_16 := preload(
 	"res://assets/sprites/icons/serenity/16x16/filetype-image.png"
 )
+const SEARCH_PROGRAM_PATH := "res://assets/data/program/search.tres"
 
 @export var programs: Array[Program]
 # The player can't open programs, e.g. during a cutscene
@@ -18,6 +19,7 @@ var _image_programs: Dictionary[String, Program] = {}
 var _is_selecting := false
 var _selection_origin := Vector2.ZERO
 var _selection_base: Array[Icon] = []
+var _search_program: Program
 
 @onready var icon_scene = preload("res://src/BrowserGame/Icon/icon.tscn")
 @onready
@@ -75,6 +77,14 @@ func remove_program(program: Program) -> void:
 
 func _spawn_credits() -> void:
 	add_program(credits_program)
+
+
+func _on_upgrades_changed() -> void:
+	if not GameState.is_upgrade_owned("search"):
+		return
+	if _search_program == null:
+		_search_program = load(SEARCH_PROGRAM_PATH)
+	add_program(_search_program)
 
 
 # Hide every icon, they come back one by one with reveal_next_icon()
@@ -322,6 +332,8 @@ func _ready() -> void:
 
 	GameState.money_changed.connect(_on_money_changed)
 	_on_money_changed(GameState.money)
+	GameState.upgrades_changed.connect(_on_upgrades_changed)
+	_on_upgrades_changed()
 	Globals.credits_restored.connect(_spawn_credits)
 
 

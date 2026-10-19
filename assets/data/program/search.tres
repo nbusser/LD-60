@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Program" format=3 uid="uid://cfcnwfndcteud"]
+
+[ext_resource type="PackedScene" uid="uid://s9bw1if4qyy9b" path="res://src/BrowserGame/Search/search.tscn" id="1_scene"]
+[ext_resource type="Texture2D" uid="uid://bg6ularykexye" path="res://assets/sprites/icons/serenity/32x32/app-file-manager.png" id="2_icon"]
+[ext_resource type="Script" uid="uid://dvj5u1bh4ebdt" path="res://src/BrowserGame/Desktop/program.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://cwahg13es8154" path="res://assets/sprites/icons/serenity/16x16/app-file-manager.png" id="4_icon16"]
+
+[resource]
+script = ExtResource("3_script")
+id = "search"
+icon_texture = ExtResource("2_icon")
+icon_texture_16 = ExtResource("4_icon16")
+icon_label = "Youpi? Search"
+app_scene = ExtResource("1_scene")
+metadata/_custom_type_script = "uid://dvj5u1bh4ebdt"

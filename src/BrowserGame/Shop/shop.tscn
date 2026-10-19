@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvd1ghn5a3ynu" path="res://assets/sprites/rich_sick_2.png" id="5_c1huf"]
 [ext_resource type="Texture2D" uid="uid://fgnwyx77xq8p" path="res://assets/sprites/thc.jpg" id="6_u6den"]
 [ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="8_bold"]
+[ext_resource type="Resource" uid="uid://caugbnh6mvfi3" path="res://assets/data/upgrade/search.tres" id="9_search"]
 
 [sub_resource type="Resource" id="Resource_bmnu7"]
 script = ExtResource("2_a1lay")
@@ -55,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 script = ExtResource("1_my65c")
-upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), SubResource("Resource_sskbs")])
+upgrades = Array[ExtResource("2_a1lay")]([SubResource("Resource_v6nhd"), SubResource("Resource_sskbs"), ExtResource("9_search")])
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=221064382]
 layout_mode = 2

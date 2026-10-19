@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://s9bw1if4qyy9b"]
+
+[ext_resource type="Script" uid="uid://c2i3g1wc0atek" path="res://src/BrowserGame/Search/search.gd" id="1_search"]
+[ext_resource type="Theme" uid="uid://dpjtu32jaq8eh" path="res://assets/ui/Browser.tres" id="2_browser"]
+[ext_resource type="PackedScene" uid="uid://bmpojdeg73w6v" path="res://src/BrowserGame/Browser/entry_clickable.tscn" id="3_entry"]
+[ext_resource type="Texture2D" uid="uid://bg6ularykexye" path="res://assets/sprites/icons/serenity/32x32/app-file-manager.png" id="4_icon"]
+[ext_resource type="FontFile" uid="uid://b8ws0vqdlupw1" path="res://assets/fonts/w95fa_13_bold.fnt" id="5_bold"]
+[ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="6_loading"]
+
+[node name="Search" type="VBoxContainer"]
+custom_minimum_size = Vector2(560, 400)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_search")
+
+[node name="LockedPanel" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LockedPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="IconCenter" type="CenterContainer" parent="LockedPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="LockedPanel/VBoxContainer/IconCenter"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_filter = 1
+texture = ExtResource("4_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="RichTextLabel" parent="LockedPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font=res://assets/fonts/times/timB24.fnt][font_size=24]Youpi? Search[/font_size][/font][/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Description" type="Label" parent="LockedPanel/VBoxContainer"]
+layout_mode = 2
+text = "Find any entry in the Youpi? Central Directory."
+horizontal_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="LockedPanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_bold")
+text = "Price: $150"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="LockedPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35, 0.35, 0.35, 1)
+text = "Available in the Shop."
+horizontal_alignment = 1
+
+[node name="SearchPanel" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Margin" type="MarginContainer" parent="SearchPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="SearchPanel/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="SearchPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="SearchPanel/Margin/VBox/Header"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture_filter = 1
+texture = ExtResource("4_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleBox" type="VBoxContainer" parent="SearchPanel/Margin/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Title" type="RichTextLabel" parent="SearchPanel/Margin/VBox/Header/TitleBox"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font=res://assets/fonts/times/timB24.fnt][font_size=24]Youpi? Search[/font_size][/font]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Subtitle" type="Label" parent="SearchPanel/Margin/VBox/Header/TitleBox"]
+layout_mode = 2
+text = "Search the Youpi? Central Directory."
+
+[node name="SearchRow" type="HBoxContainer" parent="SearchPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="SearchInput" type="LineEdit" parent="SearchPanel/Margin/VBox/SearchRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+keep_editing_on_text_submit = true
+placeholder_text = "Type one or more words..."
+
+[node name="SearchButton" type="Button" parent="SearchPanel/Margin/VBox/SearchRow"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Search"
+
+[node name="ClearButton" type="Button" parent="SearchPanel/Margin/VBox/SearchRow"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "Clear"
+
+[node name="StatusLabel" type="Label" parent="SearchPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Click the Search button to start searching."
+
+[node name="LoadingBar" parent="SearchPanel/Margin/VBox" instance=ExtResource("6_loading")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="SearchPanel/Margin/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ResultsMargin" type="MarginContainer" parent="SearchPanel/Margin/VBox/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Results" type="VBoxContainer" parent="SearchPanel/Margin/VBox/Scroll/ResultsMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_browser")
+theme_override_constants/separation = 10
