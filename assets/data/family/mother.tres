@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://deduatusu4p7n" path="res://assets/sprites/family/mother.png" id="1_a8bk8"]
 [ext_resource type="Script" uid="uid://ct5svq7pavid" path="res://src/Family/family_member_data.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://yu43l2eyd3k8" path="res://assets/sprites/family/terminated/mother.png" id="3_terminated"]
 
 [resource]
 script = ExtResource("1_script")
@@ -10,3 +11,4 @@ display_name = "Mother"
 relation = "your mother"
 file_name = "mother.png"
 portrait = ExtResource("1_a8bk8")
+portrait_terminated = ExtResource("3_terminated")

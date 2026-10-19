@@ -24,7 +24,7 @@ func _gui_input(event: InputEvent) -> void:
 		and event.pressed
 		and event.button_index == MOUSE_BUTTON_LEFT
 	):
-		Desktop.find_from(self).show_image(_file_name.text, member.portrait)
+		Desktop.find_from(self).show_image(_file_name.text, _photo.texture)
 
 
 func _refresh() -> void:
@@ -32,8 +32,7 @@ func _refresh() -> void:
 		return
 
 	var alive := GameState.is_family_alive(member.id)
-	_photo.texture = member.portrait
-	_photo.modulate = Color.WHITE if alive else Color(1.0, 0.3, 0.3)
+	_photo.texture = member.portrait if alive else member.portrait_terminated
 	_file_name.text = member.file_name if alive else _terminated_name(member.file_name)
 
 	if not alive:
