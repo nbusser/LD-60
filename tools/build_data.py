@@ -30,26 +30,13 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_CSV = ROOT / "assets/data/data.csv"
 QUERIES_CSV = ROOT / "assets/data/queries.csv"
 DATA_JSON = ROOT / "assets/data/data.json"
+CATEGORY_ICONS_JSON = ROOT / "assets/data/category_icons.json"
+CATEGORY_ICONS_DIR = ROOT / "assets/sprites/icons/categories"
+CATEGORY_ICON_PREFIX = "res://assets/sprites/icons/categories/"
 LEVELS_DIR = ROOT / "assets/data/levels"
 
 DATA_HEADER = ("title", "description", "url", "image")
 QUERIES_HEADER = ("query", "link", "score")
-
-# Icons used by the existing root categories. Unknown roots get no icon.
-ROOT_ICONS = {
-    "Art": "res://assets/sprites/icons/serenity/32x32/app-pixel-paint.png",
-    "Recreation": "res://assets/sprites/icons/serenity/32x32/app-gradient.png",
-    "People": "res://assets/sprites/icons/serenity/32x32/app-user-settings.png",
-    "Health": "res://assets/sprites/icons/serenity/32x32/app-hearts.png",
-    "Science": "res://assets/sprites/icons/serenity/32x32/app-starfield.png",
-    "Business &[br]Getting Rich": (
-        "res://assets/sprites/icons/serenity/32x32/app-calculator.png"
-    ),
-    "Regional": "res://assets/sprites/icons/serenity/32x32/app-maps.png",
-    "Adult (18+)": (
-        "res://assets/sprites/icons/serenity/32x32/filetype-folder-inaccessible.png"
-    ),
-}
 
 
 class CategoryNode:
@@ -70,14 +57,63 @@ def category_node(root: CategoryNode, parts: list[str]) -> CategoryNode:
     return node
 
 
-def category_to_json(node: CategoryNode, is_root: bool) -> dict[str, Any]:
+def load_category_icons(errors: list[str]) -> dict[str, str]:
+    if not CATEGORY_ICONS_JSON.is_file():
+        errors.append(
+            f"Missing category icon mapping: {CATEGORY_ICONS_JSON.relative_to(ROOT)}"
+        )
+        return {}
+
+    try:
+        raw_icons = json.loads(CATEGORY_ICONS_JSON.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        errors.append(
+            f"{CATEGORY_ICONS_JSON.relative_to(ROOT)}: invalid JSON: {error}"
+        )
+        return {}
+
+    if not isinstance(raw_icons, dict):
+        errors.append(
+            f"{CATEGORY_ICONS_JSON.relative_to(ROOT)}: expected a JSON object"
+        )
+        return {}
+
+    icons: dict[str, str] = {}
+    for category, filename in raw_icons.items():
+        if not isinstance(filename, str) or not filename:
+            errors.append(
+                f"{CATEGORY_ICONS_JSON.relative_to(ROOT)}: "
+                f"invalid icon for category {category!r}"
+            )
+            continue
+        if not (CATEGORY_ICONS_DIR / filename).is_file():
+            errors.append(
+                f"{CATEGORY_ICONS_JSON.relative_to(ROOT)}: "
+                f"missing icon file {filename!r} for category {category!r}"
+            )
+            continue
+        icons[category] = CATEGORY_ICON_PREFIX + filename
+    return icons
+
+
+def category_to_json(
+    node: CategoryNode,
+    path: list[str],
+    icons: dict[str, str],
+    errors: list[str],
+) -> dict[str, Any]:
+    full_path = "/".join(path)
+    icon = icons.get(full_path)
+    if icon is None:
+        errors.append(f"Missing icon for category {full_path!r}")
     result: dict[str, Any] = {
         "name": node.name,
-        "icon": ROOT_ICONS.get(node.name) if is_root else None,
+        "icon": icon,
     }
     if node.children:
         result["subcategories"] = [
-            category_to_json(child, False) for child in node.children.values()
+            category_to_json(child, path + [child.name], icons, errors)
+            for child in node.children.values()
         ]
     # Leaf categories always get an entries array, even when empty. Categories
     # that have both subcategories and direct entries get both keys.
@@ -187,6 +223,7 @@ def read_data_rows(
 def build_directory(
     entries: list[dict[str, Any]],
     category_paths: list[list[str]],
+    icons: dict[str, str],
     errors: list[str],
     warnings: list[str],
 ) -> dict[str, Any]:
@@ -243,7 +280,8 @@ def build_directory(
     check_case_duplicates(root, "")
 
     categories = [
-        category_to_json(child, True) for child in root.children.values()
+        category_to_json(child, [child.name], icons, errors)
+        for child in root.children.values()
     ]
     return {"categories": categories}
 
@@ -459,7 +497,8 @@ def main() -> int:
     warnings: list[str] = []
 
     entries, category_paths = read_data_rows(errors, warnings)
-    directory = build_directory(entries, category_paths, errors, warnings)
+    icons = load_category_icons(errors)
+    directory = build_directory(entries, category_paths, icons, errors, warnings)
     entry_links = {entry["link"] for entry in entries}
     groups = read_queries(entry_links, errors, warnings)
     levels_data = split_requests(
