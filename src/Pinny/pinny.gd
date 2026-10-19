@@ -39,9 +39,7 @@ func appear() -> void:
 	if is_present:
 		return
 	is_present = true
-	_animation_player.play("appear")
-	_play_move()
-	await _animation_player.animation_finished
+	await _play_animation(&"appear")
 	_sprite.play(_MOOD_ANIMATIONS[Mood.NEUTRAL])
 
 
@@ -78,11 +76,16 @@ func leave() -> void:
 		return
 	_talk_id += 1
 	_message.visible = false
-	_animation_player.play("leave")
-	_play_move()
-	await _animation_player.animation_finished
+	await _play_animation(&"leave")
 	_sprite.stop()
 	is_present = false
+
+
+# Waits for the animation length: animation_finished may not be emitted
+func _play_animation(animation: StringName) -> void:
+	_animation_player.play(animation)
+	_play_move()
+	await get_tree().create_timer(_animation_player.get_animation(animation).length).timeout
 
 
 func _play_move() -> void:

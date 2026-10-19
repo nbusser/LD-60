@@ -78,15 +78,18 @@ func play_jump() -> void:
 
 
 func play_kill() -> void:
-	_kill_player.play()
-	await _kill_player.finished
+	await _play_and_wait(_kill_player)
 
 
 func play_photo() -> void:
-	_photo_player.play()
-	await _photo_player.finished
+	await _play_and_wait(_photo_player)
 
 
 func play_shut_down() -> void:
-	_shut_down_player.play()
-	await _shut_down_player.finished
+	await _play_and_wait(_shut_down_player)
+
+
+# Waits for the stream length: the finished signal is not always emitted
+func _play_and_wait(player: AudioStreamPlayer) -> void:
+	player.play()
+	await get_tree().create_timer(player.stream.get_length()).timeout
