@@ -40,7 +40,9 @@ func _ready():
 
 	_update_clock()
 
-	$UI/Fadein.fade()
+	get_tree().create_timer(0.3)
+	await $UI/Fadein.fade()
+
 	match GameState.current_level_number:
 		0:
 			await _run_level_0()
@@ -58,6 +60,10 @@ func _ready():
 			assert(false, "No scenario for level %d" % GameState.current_level_number)
 
 	await _turn_off_screen()
+
+	get_tree().create_timer(0.2)
+	await $UI/Fadeout.fade()
+
 	Globals.end_scene(Globals.EndSceneStatus.LEVEL_END)
 
 
