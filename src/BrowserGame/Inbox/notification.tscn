@@ -4,88 +4,87 @@
 [ext_resource type="PackedScene" uid="uid://cimnfmsjswo3e" path="res://src/BrowserGame/UI/progress_bar.tscn" id="2_arrhu"]
 [ext_resource type="Texture2D" uid="uid://bgamsk6qbrlc" path="res://assets/sprites/icons/serenity/16x16/paste.png" id="3_4ilos"]
 [ext_resource type="Texture2D" uid="uid://bmm067oupdlue" path="res://assets/sprites/icons/serenity/32x32/key.png" id="4_2tj0t"]
-[ext_resource type="StyleBoxTexture" path="res://assets/ui/textures/button/icon_button_normal.tres" id="5_iconnormal"]
-[ext_resource type="StyleBoxTexture" path="res://assets/ui/textures/button/icon_button_pressed.tres" id="6_iconpressed"]
+[ext_resource type="StyleBox" path="res://assets/ui/textures/button/icon_button_normal.tres" id="5_iconnormal"]
+[ext_resource type="StyleBox" path="res://assets/ui/textures/button/icon_button_pressed.tres" id="6_iconpressed"]
+[ext_resource type="Texture2D" uid="uid://dutkwevgmgqpe" path="res://assets/ui/textures/window/close_normal.png" id="7_closenormal"]
+[ext_resource type="Texture2D" uid="uid://dmi0rwi7854a4" path="res://assets/ui/textures/window/close_pressed.png" id="8_closepressed"]
 
-[node name="Notification" type="Control" unique_id=736615540]
+[node name="Notification" type="PanelContainer" unique_id=736615540]
 custom_minimum_size = Vector2(0, 108)
+custom_maximum_size = Vector2(400, -1)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 script = ExtResource("1_e0xgp")
 
-[node name="Panel" type="Panel" parent="." unique_id=1167664385]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=745356627]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Header" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1254109469]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=745356627]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/Header" unique_id=1487896876]
+[node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=1254109469]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Header" unique_id=1487896876]
 layout_mode = 2
 text = "QUERY:"
 
-[node name="QueryLabel" type="Label" parent="Panel/VBoxContainer/Header" unique_id=1254109470]
+[node name="QueryLabel" type="Label" parent="VBoxContainer/Header" unique_id=1254109470]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "query"
+text = "query query query query query query query query query query query "
+clip_text = true
 
-[node name="TimerLabel" type="Label" parent="Panel/VBoxContainer/Header" unique_id=1254109471]
+[node name="TimerLabel" type="Label" parent="VBoxContainer/Header" unique_id=1254109471]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 text = "20s"
 horizontal_alignment = 2
 
-[node name="ProgressBar" parent="Panel/VBoxContainer" unique_id=1505447566 instance=ExtResource("2_arrhu")]
+[node name="DismissButton" type="TextureButton" parent="VBoxContainer/Header" unique_id=1254109472]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("7_closenormal")
+texture_pressed = ExtResource("8_closepressed")
+
+[node name="ProgressBar" parent="VBoxContainer" unique_id=1505447566 instance=ExtResource("2_arrhu")]
 unique_name_in_owner = true
 layout_mode = 2
 value = 1.0
 
-[node name="Submit" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1505447567]
+[node name="Submit" type="HBoxContainer" parent="VBoxContainer" unique_id=1505447567]
 layout_mode = 2
 
-[node name="LinkInput" type="LineEdit" parent="Panel/VBoxContainer/Submit" unique_id=1505447568]
+[node name="LinkInput" type="LineEdit" parent="VBoxContainer/Submit" unique_id=1505447568]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Paste a link"
 keep_editing_on_text_submit = true
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer/Submit" unique_id=1587511275]
+[node name="Button" type="Button" parent="VBoxContainer/Submit" unique_id=1587511275]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_vertical = 4
-tooltip_text = "Paste link"
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = ExtResource("5_iconnormal")
-theme_override_styles/hover = ExtResource("5_iconnormal")
 theme_override_styles/pressed = ExtResource("6_iconpressed")
+theme_override_styles/hover = ExtResource("5_iconnormal")
 theme_override_styles/disabled = ExtResource("5_iconnormal")
 icon = ExtResource("3_4ilos")
 icon_alignment = 1
 
-[node name="LockIcon" type="TextureRect" parent="Panel/VBoxContainer/Submit/Button" unique_id=1176272068]
+[node name="LockIcon" type="TextureRect" parent="VBoxContainer/Submit/Button" unique_id=1176272068]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -98,12 +97,12 @@ texture = ExtResource("4_2tj0t")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SendButton" type="Button" parent="Panel/VBoxContainer/Submit" unique_id=1505447569]
+[node name="SendButton" type="Button" parent="VBoxContainer/Submit" unique_id=1505447569]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Send"
 
-[node name="StatusLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1505447570]
+[node name="StatusLabel" type="Label" parent="VBoxContainer" unique_id=1505447570]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Error message"

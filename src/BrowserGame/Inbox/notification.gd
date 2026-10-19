@@ -1,8 +1,9 @@
 class_name Notification
-extends Control
+extends PanelContainer
 
 signal timed_out
 signal processed(points: int)
+signal dismissed
 
 # Polled by the level as a fallback to the signals to end the day
 const GROUP := &"notifications"
@@ -31,6 +32,7 @@ var _processed := false
 @onready var _status_label: Label = %StatusLabel
 @onready var _paste_button: Button = %Button
 @onready var _lock_icon: TextureRect = %LockIcon
+@onready var _dismiss_button: TextureButton = %DismissButton
 
 
 func _ready() -> void:
@@ -43,6 +45,7 @@ func _ready() -> void:
 	_link_input.text_submitted.connect(_on_link_submitted)
 	_link_input.text_changed.connect(_update_send_button)
 	_paste_button.pressed.connect(_on_paste_pressed)
+	_dismiss_button.pressed.connect(_on_dismiss_pressed)
 	GameState.upgrades_changed.connect(_refresh_paste_lock)
 	_refresh_paste_lock()
 
@@ -72,6 +75,7 @@ func _start_timer() -> void:
 	_query_label.modulate = Color.WHITE
 	_timer_label.modulate = Color.WHITE
 	_status_label.text = ""
+	_dismiss_button.visible = false
 	_set_editable(true)
 	_time_left = request.duration if request != null else 0.0
 	_update_timer()
@@ -107,6 +111,7 @@ func _mark_timed_out() -> void:
 	_query_label.modulate = Color.GRAY
 	_set_editable(false)
 	_blink(TIMEOUT_BLINK_COUNT)
+	_show_dismiss_button()
 	timed_out.emit()
 
 
@@ -160,7 +165,18 @@ func _accept_link(request_link: RequestLink) -> void:
 	else:
 		Sfx.play_wrong()
 
+	_show_dismiss_button()
 	processed.emit(points)
+
+
+func _show_dismiss_button() -> void:
+	_dismiss_button.visible = true
+
+
+func _on_dismiss_pressed() -> void:
+	Sfx.click()
+	dismissed.emit()
+	queue_free()
 
 
 func _set_status(text: String, color: Color) -> void:

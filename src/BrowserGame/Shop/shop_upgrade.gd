@@ -52,7 +52,3 @@ func _refresh() -> void:
 	_price_label.add_theme_color_override(
 		"font_color", Color(0.5, 0.5, 0.5) if owned or not affordable else Color.BLACK
 	)
-	if owned or affordable:
-		_buy_button.tooltip_text = ""
-	else:
-		_buy_button.tooltip_text = "You need $%d more" % (upgrade_data.price - GameState.money)
