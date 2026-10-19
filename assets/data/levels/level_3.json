@@ -1,91 +1,82 @@
 {
 	"requests": [
 		{
-			"time": 8.0,
-			"query": "doctor",
+			"time": 10.0,
+			"query": "learning swahili",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "http://dr-franky-vincent.com",
-					"points": 10
+					"link": "mozambique-airlines.mz",
+					"points": 1
 				},
 				{
-					"link": "http://bite_by_dre",
-					"points": 8
-				}
-			]
-		},
-		{
-			"time": 40.0,
-			"query": "get rich",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "richandsick.gov",
-					"points": 10
+					"link": "language-pals.com",
+					"points": 2
 				},
 				{
-					"link": "everytutorial.com/marrying-a-billionaire",
-					"points": 9
+					"link": "east-african-culture-hall.uk",
+					"points": 2
 				}
 			]
 		},
 		{
-			"time": 75.0,
-			"query": "thc",
+			"time": 60.0,
+			"query": "become a cult leader",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "http://thc.com",
-					"points": 12
+					"link": "korean-culture-hall.uk",
+					"points": 1
+				},
+				{
+					"link": "sos-friendship.com",
+					"points": 3
+				},
+				{
+					"link": "namaste-cafe.com",
+					"points": 3
+				},
+				{
+					"link": "hare-krishna-culture-club.com",
+					"points": 3
 				}
 			]
 		},
 		{
-			"time": 115.0,
-			"query": "franky",
+			"time": 110.0,
+			"query": "attaining enlightenment",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "http://dr-franky-vincent.com",
-					"points": 10
+					"link": "dharma-center-lookup.org",
+					"points": 1
+				},
+				{
+					"link": "easy-moksha.org",
+					"points": 1
+				},
+				{
+					"link": "my-prostate.com",
+					"points": 5
+				},
+				{
+					"link": "dalai-lama.cn",
+					"points": 3
 				}
 			]
 		},
 		{
 			"time": 160.0,
-			"query": "billionaire",
+			"query": "rplac brokn lttr kyboard",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "everytutorial.com/marrying-a-billionaire",
-					"points": 10
-				}
-			]
-		},
-		{
-			"time": 205.0,
-			"query": "rich",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "richandsick.gov",
-					"points": 9
-				}
-			]
-		},
-		{
-			"time": 250.0,
-			"query": "doctor again",
-			"duration": 55.0,
-			"links": [
-				{
-					"link": "http://dr-franky-vincent.com",
-					"points": 10
+					"link": "eevblog.com/forum",
+					"points": 3
 				},
 				{
-					"link": "http://bite_by_dre",
-					"points": 8
+					"link": "computer-store-nerds.com",
+					"points": 2
 				}
 			]
 		}

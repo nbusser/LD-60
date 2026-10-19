@@ -14,8 +14,8 @@ static func from_json(data: Dictionary) -> Category:
 	if data["icon"] != null:
 		category.icon = load(data["icon"])
 	assert(
-		data.has("subcategories") != data.has("entries"),
-		"Category '%s' needs exactly one of 'subcategories' or 'entries'" % category.name
+		data.has("subcategories") or data.has("entries"),
+		"Category '%s' needs 'subcategories' or 'entries'" % category.name
 	)
 	for sub in data.get("subcategories", []):
 		category.subcategories.append(Category.from_json(sub))

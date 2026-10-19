@@ -6,53 +6,46 @@
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "http://dr-franky-vincent.com",
-					"points": 8
+					"link": "bite-by-dre.com",
+					"points": 2
 				},
 				{
-					"link": "http://bite_by_dre",
-					"points": 5
+					"link": "dr-franky-vincent.com",
+					"points": 1
 				}
 			]
 		},
 		{
 			"time": 60.0,
 			"query": "get rich",
-			"duration": 50.0,
-			"links": [
-				{
-					"link": "richandsick.gov",
-					"points": 8
-				},
-				{
-					"link": "everytutorial.com/marrying-a-billionaire",
-					"points": 6
-				}
-			]
-		},
-		{
-			"time": 120.0,
-			"query": "thc",
 			"duration": 55.0,
 			"links": [
 				{
-					"link": "http://thc.com",
-					"points": 10
+					"link": "everytutorial.com/marrying-a-billionaire.html",
+					"points": 2
+				},
+				{
+					"link": "richandsick.gov",
+					"points": 1
 				}
 			]
 		},
 		{
-			"time": 190.0,
-			"query": "cheap meds",
-			"duration": 50.0,
+			"time": 110.0,
+			"query": "best hlel food",
+			"duration": 55.0,
 			"links": [
 				{
-					"link": "http://dr-franky-vincent.com",
+					"link": "furry-petshop.com",
 					"points": 5
 				},
 				{
-					"link": "richandsick.gov",
-					"points": 5
+					"link": "ataturk-kebab.tr",
+					"points": 1
+				},
+				{
+					"link": "falaf-hlel.lb",
+					"points": 2
 				}
 			]
 		}

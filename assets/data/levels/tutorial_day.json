@@ -6,11 +6,11 @@
 			"duration": 0.0,
 			"links": [
 				{
-					"link": "http://dr-franky-vincent.com",
+					"link": "dr-franky-vincent.com",
 					"points": 8.0
 				},
 				{
-					"link": "http://bite_by_dre",
+					"link": "bite-by-dre.com",
 					"points": 5.0
 				}
 			]
@@ -25,7 +25,7 @@
 					"points": 8.0
 				},
 				{
-					"link": "everytutorial.com/marrying-a-billionaire",
+					"link": "everytutorial.com/marrying-a-billionaire.html",
 					"points": 6.0
 				}
 			]
@@ -36,7 +36,7 @@
 			"duration": 90.0,
 			"links": [
 				{
-					"link": "http://thc.com",
+					"link": "thc.com",
 					"points": 8.0
 				}
 			]

@@ -34,15 +34,22 @@ func _show(category: Category) -> void:
 		return
 	%CategoryIcon.texture = category.icon
 	%CategoryDescription.text = "[br][br][color=black]" + category.name
-	if category.subcategories:
-		_build_categories(category.subcategories)
-	else:
-		_build_category_entries(category.entries)
+	_build_category_contents(category)
+
+
+# A category can have both subcategories and entries of its own.
+func _build_category_contents(category: Category) -> void:
+	_clear_directory()
+	_add_categories(category.subcategories)
+	_add_entries(category.entries)
 
 
 func _build_categories(categories: Array[Category]) -> void:
 	_clear_directory()
+	_add_categories(categories)
 
+
+func _add_categories(categories: Array[Category]) -> void:
 	for category in categories:
 		var category_clickable: CategoryClickable = CATEGORY_CLICKABLE_PRELOAD.instantiate()
 		category_clickable.category = category
@@ -50,9 +57,7 @@ func _build_categories(categories: Array[Category]) -> void:
 		directory.add_child(category_clickable)
 
 
-func _build_category_entries(entries: Array[Entry]) -> void:
-	_clear_directory()
-
+func _add_entries(entries: Array[Entry]) -> void:
 	for entry in entries:
 		var entry_clickable: EntryClickable = ENTRY_CLICKABLE_PRELOAD.instantiate()
 		entry_clickable.entry = entry
