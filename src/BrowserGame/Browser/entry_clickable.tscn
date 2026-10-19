@@ -30,23 +30,30 @@ theme_override_constants/line_separation = 4
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CopyButton" type="Control" parent="VBoxContainer" unique_id=29928252]
+[node name="CopyMargin" type="MarginContainer" parent="." unique_id=1873220145]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 13
+
+[node name="CopyButton" type="Control" parent="CopyMargin" unique_id=29928252]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="Button" type="TextureButton" parent="VBoxContainer/CopyButton" unique_id=1776856226]
+[node name="Button" type="TextureButton" parent="CopyMargin/CopyButton" unique_id=1776856226]
 unique_name_in_owner = true
 layout_mode = 1
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 32.0
+offset_bottom = 32.0
 texture_normal = ExtResource("3_55m3a")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LockIcon" type="TextureRect" parent="VBoxContainer/CopyButton" unique_id=1274148578]
+[node name="LockIcon" type="TextureRect" parent="CopyMargin/CopyButton" unique_id=1274148578]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_right = 32.0
+offset_bottom = 32.0
 mouse_filter = 2
 texture = ExtResource("4_6hmxu")
 expand_mode = 1

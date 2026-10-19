@@ -42,6 +42,7 @@ func _on_meta_clicked(_meta: Variant) -> void:
 func _refresh_copy_lock() -> void:
 	var unlocked := GameState.is_upgrade_owned("copy_paste")
 	copy_button.disabled = not unlocked
+	copy_button.modulate.a = 1.0 if unlocked else 0.4
 	lock_icon.visible = not unlocked
 
 
