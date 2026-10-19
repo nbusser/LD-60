@@ -8,11 +8,10 @@ signal selected
 
 var is_selected := false:
 	set(value):
-		if value:
-			modulate = Color("#008080")
-			selected.emit(self)
-		else:
-			modulate = Color.WHITE
+		if is_selected == value:
+			return
+		is_selected = value
+		modulate = Color("#008080") if value else Color.WHITE
 
 
 func _ready():
@@ -25,4 +24,4 @@ func _gui_input(event: InputEvent) -> void:
 		if event.double_click:
 			double_clicked.emit()
 		else:
-			is_selected = true
+			selected.emit(self)

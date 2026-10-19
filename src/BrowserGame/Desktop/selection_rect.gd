@@ -1,7 +1,6 @@
 class_name DesktopSelectionRect
 extends Control
 
-const FILL_COLOR := Color("#00808066")
 const BORDER_COLOR := Color.WHITE
 const BORDER_DOT_SIZE := 1
 
@@ -16,7 +15,6 @@ func _draw() -> void:
 	if rect.size == Vector2.ZERO:
 		return
 
-	draw_rect(rect, FILL_COLOR)
 	_draw_dotted_border(rect)
 
 

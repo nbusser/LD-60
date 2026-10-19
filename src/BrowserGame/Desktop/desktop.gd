@@ -12,6 +12,7 @@ var _image_programs: Dictionary[String, Program] = {}
 var _setup_program: Program
 var _is_selecting := false
 var _selection_origin := Vector2.ZERO
+var _selection_base: Array[Icon] = []
 
 @onready var icon_scene = preload("res://src/BrowserGame/Icon/icon.tscn")
 @onready
@@ -84,7 +85,7 @@ func _input(event: InputEvent) -> void:
 				_window_to_foreground(desktop_window)
 				return
 			node = node.get_parent()
-		if not _is_icon(hovered):
+		if not _is_icon(hovered) and not _is_additive_select_pressed():
 			_unselect_icons()
 
 
@@ -262,15 +263,8 @@ func _create_icon(program: Program) -> void:
 			_open_or_show_window(program)
 			Sfx.click()
 	)
-	# On icon selected, un-select all other icons
-	icon.selected.connect(
-		func(selected: Icon):
-			for other in %Icons.get_children():
-				assert(other is Icon)
-				if other == selected:
-					continue
-				other.is_selected = false
-	)
+	# On icon selected, un-select all other icons unless selecting additively
+	icon.selected.connect(_on_icon_selected)
 	%Icons.add_child(icon)
 	_program_to_icon[program] = icon
 
@@ -304,13 +298,15 @@ func _on_money_changed(value: int) -> void:
 
 func _on_background_color_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		_unselect_icons()
 		_start_selection()
 
 
 func _start_selection() -> void:
 	_is_selecting = true
 	_selection_origin = _clamp_to_window_area(_selection_rect.get_local_mouse_position())
+	if not _is_additive_select_pressed():
+		_unselect_icons()
+	_selection_base = _get_selected_icons()
 	_selection_rect.clear()
 
 
@@ -318,12 +314,55 @@ func _update_selection_rect() -> void:
 	if not _is_selecting:
 		return
 	var current := _clamp_to_window_area(_selection_rect.get_local_mouse_position())
-	_selection_rect.selection_rect = Rect2(_selection_origin, Vector2.ZERO).expand(current)
+	var rect := Rect2(_selection_origin, Vector2.ZERO).expand(current)
+	_selection_rect.selection_rect = rect
+	_apply_selection_rect(rect)
+
+
+# Select every icon touched by the rectangle, on top of the selection that was
+# already active when the drag started.
+func _apply_selection_rect(rect: Rect2) -> void:
+	var global_rect := Rect2(_selection_rect.global_position + rect.position, rect.size)
+	for icon in %Icons.get_children():
+		if icon is Icon:
+			icon.is_selected = (
+				_selection_base.has(icon) or global_rect.intersects(icon.get_global_rect())
+			)
 
 
 func _end_selection() -> void:
+	_update_selection_rect()
 	_is_selecting = false
 	_selection_rect.clear()
+	_selection_base.clear()
+
+
+func _on_icon_selected(selected_icon: Icon) -> void:
+	var toggle := Input.is_key_pressed(KEY_CTRL) or Input.is_key_pressed(KEY_META)
+	var additive := toggle or Input.is_key_pressed(KEY_SHIFT)
+	if not additive:
+		_unselect_icons()
+
+	if toggle and selected_icon.is_selected:
+		selected_icon.is_selected = false
+	else:
+		selected_icon.is_selected = true
+
+
+func _is_additive_select_pressed() -> bool:
+	return (
+		Input.is_key_pressed(KEY_CTRL)
+		or Input.is_key_pressed(KEY_META)
+		or Input.is_key_pressed(KEY_SHIFT)
+	)
+
+
+func _get_selected_icons() -> Array[Icon]:
+	var selected: Array[Icon] = []
+	for icon in %Icons.get_children():
+		if icon is Icon and icon.is_selected:
+			selected.append(icon)
+	return selected
 
 
 func _clamp_to_window_area(point: Vector2) -> Vector2:
