@@ -510,7 +510,6 @@ func _is_hovering_link() -> bool:
 
 func _is_hovering_text() -> bool:
 	var hovered := get_viewport().gui_get_hovered_control()
-	print(hovered)
 	if hovered == null:
 		return false
 	return hovered.get_cursor_shape(hovered.get_local_mouse_position()) == Control.CURSOR_IBEAM
