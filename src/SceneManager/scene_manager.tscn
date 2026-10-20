@@ -651,3 +651,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Postjam" type="ColorRect" parent="." unique_id=1462462632]
+layout_mode = 0
+offset_left = 1680.0
+offset_top = 26.0
+offset_right = 1888.0
+offset_bottom = 106.0
+color = Color(0.80784315, 0.23921569, 0.23921569, 1)
+
+[node name="Label" type="Label" parent="Postjam" unique_id=520027445]
+layout_mode = 0
+offset_right = 207.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 42
+text = "Postjam"
+horizontal_alignment = 1
+vertical_alignment = 1
