@@ -12,6 +12,10 @@
 				{
 					"link": "el-television-aficionados.mx/ingles/invitado/viejo-chocho.html",
 					"points": 3.0
+				},
+				{
+					"link": "good-old-days.com/tech/screens.html",
+					"points": 3.0
 				}
 			]
 		},
@@ -79,11 +83,11 @@
 					"points": 3.0
 				},
 				{
-					"link": "death-practical-guide.com",
+					"link": "vatican.ca/guides/death.html",
 					"points": 3.0
 				},
 				{
-					"link": "afterlife-packing.net",
+					"link": "plato.stanford.edu/entries/death",
 					"points": 3.0
 				}
 			]
@@ -121,8 +125,8 @@
 					"points": 3.0
 				},
 				{
-					"link": "payment-plans-forever.net",
-					"points": 3.0
+					"link": "tax-office.gouv.au/the-tax-song.html",
+					"points": 1.0
 				}
 			]
 		},

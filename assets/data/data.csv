@@ -31,13 +31,10 @@ Not Eating Rocks;;;;Health/Diet/Not Eating Rocks;
 The Danger of Eating Plastic Bags;;;;Health/Diet/The Danger of Eating Plastic Bags;
 Scientology;;;;Science/Scientology;
 Astrology;;;;Science/Astrology;
-Enlightenment;;;;Science/Theology/Enlightenment;
 Comparative Theology;;;;Science/Theology/Comparative Theology;
 Physics (who cares?);;;;Science/Lame Sciences/Physics (who cares?);
-Loops;;;;Science/Lame Sciences/Computer Science (BOOORING)/Loops;
 Chemistry;;;;Science/Lame Sciences/Chemistry;
 Combinatorial Species;;;;Science/Lame Sciences/Mathematics/Combinatorial Species;
-Cycles;;;;Science/Lame Sciences/Mathematics/Cycles;
 Buying a Winning Lottery Ticket;;;;Business/Getting Rich Quick/Buying a Winning Lottery Ticket;
 Finding a Big Bag of Money;;;;Business/Getting Rich Quick/Finding a Big Bag of Money;
 Expensive Cars;;;;Business/Expensive Cars;
@@ -53,7 +50,6 @@ UK;;;;Regional/Old World/Europe/Islands/UK;
 Not Islands;;;;Regional/Old World/Europe/Not Islands;
 France;;;;Regional/Old World/Europe/Not Islands/France;
 Islands;;;;Regional/Old World/Europe/Not Islands/France/Islands;
-Canada;;;;Regional/New World/Americas/America 1/Canada;
 Mexico;;;;Regional/New World/Americas/America 1/Mexico;
 USA;;;;Regional/New World/Americas/America 1/USA;
 Saint-Pierre;;;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Saint-Pierre;
@@ -84,10 +80,10 @@ Teuchiland Haute Couture;45 sa meurt pa;thc.com;res://assets/sprites/thc.jpg;Art
 Dr. Dre;Beat Doctor;beats-by-dre.com;res://assets/sprites/dr-dre.png;Health/Doctors;Regional/New World/Americas/America 1/USA
 Dr. Pedro Clarinetto's expert tips for a fast and efficient coagulation;Expert tips for stopping aretral bleeding;clarinetto-tips.com/bleeding-profusely.html;;Health/Doctors;
 Dr. Franky Vincent;Zouk Therapy;dr-franky-vincent.com;res://assets/sprites/franky-vincent.png;Health/Doctors;Regional/Old World/Europe/Not Islands/France/Islands
-The Richest and Most Sick Singles in your Area;Until death do you appart;richandsick.gov;res://assets/sprites/rich_sick.png;Business/Getting Rich Quick/Marrying an Old and Sick Rich Person;
-Marrying Sick Billionaires: a Tutorial;Tutorials for everything;everytutorial.com/marrying-a-billionaire.html;res://assets/sprites/rich_sick_2.png;Business/Getting Rich Quick/Marrying an Old and Sick Rich Person;
+The Richest and Most Sick Singles in your Area;Until death do you apart;richandsick.gov;res://assets/sprites/rich_sick.png;Business/Getting Rich Quick/Marrying an Old and Sick Rich Person;Services/Mariage
+Marrying Sick Billionaires: a Tutorial;Tutorials for everything;everytutorial.com/marrying-a-billionaire.html;res://assets/sprites/rich_sick_2.png;Business/Getting Rich Quick/Marrying an Old and Sick Rich Person;Services/Mariage
 ;;;;;
-Furry petshop;Find your next best furry friend in here!;furry-petshop.com;;Lifestyle/Animals;
+Furry petshop;Find your next best furry friend in here!;furry-petshop.com;;Lifestyle/Animals;Consumerism/Buy
 Ataturk Kebab;Delicious oriental kebab fried in the best oil of all of Central Anatolia;ataturk-kebab.tr;;Food/World Cuisine;Regional/Old World/Asia/Asia Minor
 Gruik gruik Butchery;Butchery specialized in pork meat.;gruik-gruik-butchery.com;;Food/Shops;
 Falaf' Hlel;Delicious falafel restaurant. Guaranteed 100% hlel!;falaf-hlel.lb;;Food/World Cuisine;Regional/Old World/Asia/Asia Medium
@@ -95,17 +91,17 @@ Falaf' Hlel;Delicious falafel restaurant. Guaranteed 100% hlel!;falaf-hlel.lb;;F
 Jacques Chirac Fan Club;Official fan club of Jacques Chirac;jacques-chirac-fan-club.fr;;People/Famous;Regional/Old World/Europe/Not Islands/France
 Bakery Le Baguette;The best baguette to be found in London;baguette-bakery.gov.uk;;Food/Shops;Regional/Old World/Europe/Islands/UK
 ;;;;;
-Legal Mistakes;The law firm that has your back. Victory awaits! (terms of conditions may apply);legal-mistakes.com;;Services/Mariage;
-Morgue showroom;Forum for dedicated Morgue and Photography enthousiasts;morgue-showroom.net;;Art/Photography;
+Legal Mistakes;The law firm that has your back. Victory awaits! (terms and conditions may apply);legal-mistakes.com;;Services/Mariage;
+Morgue showroom;Forum for dedicated Morgue and Photography enthousiasts;morgue-showroom.net;;Art/Photography;Adult (18+)/Retirement/Old People Issues/Death
 ;;;;;
 Civil Code UK;Latest updates on the law, updated daily;justice.gov.uk;;Regional/Old World/Europe/Islands/UK;
 Self-reporting;Are you a criminal? This page is for you;fbi.gov;;Regional/New World/Americas/America 1/USA;
 The Joke Bank;Thousands of jokes for the 21st century dad;thejokebank.org;;Family/Parenting;Services/Money
 The Philosophy of Humour;The Ethics of Laughter: Ridicule, Irony, and Moral Judgment;plato.stanford.edu/entries/humor;;Recreation/Humour;
-The Social Life of Laughter;A sociological study: laughter as a social signal;jsr.org/laughter-study;;Recreation/Humour;
+The Social Life of Laughter;A sociological study: laughter as a social signal;jsr.org/laughter-study;;Recreation/Humour;Health/Social
 ;;;;;
-The Nevada landing site;Evidence the 1969 landing was filmed at the Nevada Test Site.;nevada-moon.com;;Regional/New World/Americas/America 1/USA;
-Moon Landing Reenactment Society;Annual reenactment of the 1969 broadcast. Volunteers welcome.;moonlanding-reenactment.org;;Recreation/Acting;
+The Nevada landing site;Evidence the 1969 landing was filmed at the Nevada Test Site.;nevada-moon.com;;Regional/New World/Americas/America 1/USA;Science/Space
+Moon Landing Reenactment Society;Annual reenactment of the 1969 broadcast. Volunteers welcome.;moonlanding-reenactment.org;;Recreation/Acting;Science/Space
 The Moon;Authentic Chinese-American cuisine.;the-moon-restaurant.com;;Science/Space;Regional/New World/Americas/America 1/USA
 ;;;;;
 Grandma's Thanksgiving Recipes;Traditional recipes for social gatherings;grandmas-thanksgiving.com;;Food/Recipes;Regional/New World/Americas/America 1/USA
@@ -113,11 +109,11 @@ The American Turkey;A practical guide to raising turkeys at home.;americanturkey
 Thanksgiving Food Safety;Official guidelines for handling and cooking poultry.;fsis.usda.gov/thanksgiving;;Health/Diet/Food Safety;Regional/New World/Americas/America 1/USA
 ;;;;;
 Argentina Tourism;Official tourism portal: destinations, culture and travel tips.;tourism.argentina.org;;Regional/New World/Americas/America 2;
-Hitler Sightings Hotline;Report a sighting. Operators are standing by.;hitler-sightings-hotline.org;;Services/Helplines;
+Hitler Sightings Hotline;Report a sighting. Operators are standing by.;hitler-sightings-hotline.org;;Services/Helplines;History/WW2
 Adolf Hitler and the Nazis;Battles, timelines and biographies of the Second World War.;ww2db.com;;History/WW2;Regional/Old World/Europe
 ;;;;;
 Mozambique Airlines;Fly safely to Maputo;mozambique-airlines.mz;;Regional/Old World/Africa;
-Language Pals;Find your language pal... and maybe more!;language-pals.com;;Lifestyle/Education/Languages;
+Language Pals;Find your language pal... and maybe more!;language-pals.com;;Lifestyle/Education/Languages;Health/Social
 London's West African Culture Hall;Discover the amazing culture of the people from West Africa.;west-african-culture-hall.uk;;Lifestyle/Culture;Regional/Old World/Africa
 London's East African Culture Hall;Discover the amazing culture of the people from East Africa.;east-african-culture-hall.uk;;Lifestyle/Culture;Regional/Old World/Africa
 ;;;;;
@@ -128,12 +124,12 @@ Hare Krishna Culture Club;Hare Krishna my friend, free prashadam here.;hare-kris
 ;;;;;
 Dharma Center Lookup;Find the closest Dharma center to your home.;dharma-center-lookup.org;;Lifestyle/Religion;
 Easy Moksha;Follow Jain classes and meet the community.;easy-moksha.org;;Lifestyle/Religion;Regional/Old World/Asia/Asia Major
-The Wonders of Prostate;Your prostate is not only here to get cancer. It has marvels to reveal!;my-prostate.com;;Adult (18+)/Making Babies/Anatomy;
-Dalai Lama Blog;Personal blog of Tenzin Gyatso to read classes about tantric buddhism or his favorite receipes.;dalai-lama.cn;;People/Famous;Regional/Old World/Asia/Asia Major
+The Wonders of Prostate;Your prostate is not only here to get cancer. It has marvels to reveal!;my-prostate.com;;Adult (18+)/Making Babies/Anatomy;Science/Lame Sciences/Biology
+Dalai Lama Blog;Personal blog of Tenzin Gyatso to read classes about tantric buddhism or his favorite recipes.;dalai-lama.cn;;People/Famous;Regional/Old World/Asia/Asia Major
 ;;;;;
 Electronics Repair Forum;The number one place for the electronics enthousiast on the World Wide Web;eevblog.com/forum;;Hobbies/Electronics;
-Computer Accessories Wharehouse;Buy speakers, mice, keyboards, sound cards...;computer-store-nerds.com;;Consumerism/Buy;
-Keyboard fetish club;The bigger, the better. Share your photos and ASCII art of best keyboard positions;keyboards-fans.net;;Hobbies/Electronics;
+Computer Accessories Warehouse;Buy speakers, mice, keyboards, sound cards...;computer-store-nerds.com;;Consumerism/Buy;Hobbies/Electronics
+Keyboard fetish club;The bigger, the better. Share your photos and ASCII art of best keyboard positions;keyboards-fans.net;;Hobbies/Electronics;Adult (18+)/Making Babies/Fetish
 ;;;;;
 WW3 is near;The early signs of WW3 are here, and we better be prepared;survivalist.net/WW3;;Hobbies/Survivalism;
 Idiocracy;Interview with Mike Judge on his new script idea;movie-addicts.net/1996/feb/idiocracy;;Recreation/Movies;
@@ -142,7 +138,7 @@ Utopia Future;A bright future with the dawn of the Internet, or how technology w
 Montana Fried Chicken;A chicken restaurant chain run by actual live chicken.;montana-fried-chicken.com;;Food/Fast food;Regional/New World/Americas/America 1/USA
 McKenzy Ranch;The website of McKenzy's ranch. You can buy any kind of farming material there;mc-kenzy-ranch.com;;Consumerism/Buy;
 Fishermen's Hub;Buy fishing furnitures: worms, hooks...;fishermen-hub.com;;Consumerism/Buy;
-The Lazy Fisherman;Buy pre-fished fishes to impress your loved ones.;lazy-fisherman.pl;;Consumerism/Buy;
+The Lazy Fisherman;Buy pre-fished fishes to impress your loved ones.;lazy-fisherman.pl;;Consumerism/Buy;Food/Shops
 Chicken World Encyclopedia;Everything about our feathery friends.;chicken-world-encyclopedia.org;;Lifestyle/Animals;
 ;;;;;
 I'm in love with my car;Got a feel for my automobile;tellement-vrai.fr/roger-taylor.html;;Adult (18+)/Making Babies/Fetish;Regional/Old World/Europe/Islands/UK
@@ -152,7 +148,7 @@ Cryptids Appreciation Society;Fictional animals are worthy of love too;cryptozoo
 ;;;;;
 Dr. Shukran - Dentist;Dr. Shukran is worldly known dentist. Prepare your insurance documents.;dr-shukran.com;;Health/Doctors;
 The Toothpaste Emporium;The world's biggest toothpaste store. Find the closest to your place.;the-toothpaste-emporium.com;;Consumerism/Buy;
-Sweet Tooth;Gourmet toothpastes for discerning customers.;sweet-tooth-toothpaste-buy.de;;Consumerism/Buy;
+Sweet Tooth;Gourmet toothpastes for discerning customers.;sweet-tooth-toothpaste-buy.de;;Consumerism/Buy;Art/Gastronomy
 ;;;;;
 Lern Englese;Whilrwibe web best Englesh website... Lern spek Englesh better as Quin Elizabeet;royal-englesh.it;;Lifestyle/Education/Languages;Regional/Old World/Europe/Islands/UK
 English lernen mit Heinrich;Englisch ist total geil Brüdi;henrych-englich.de;;Lifestyle/Education/Languages;Regional/Old World/Europe/Not Islands
@@ -160,28 +156,28 @@ Facile French - 24H to C1;Learn to speak French fast with our renowned intensive
 Gelataliano oOo Italiano Moderno per Persone Anziane;Impara espressioni moderne e accattivanti per fare colpo sui tuoi nipoti;gelataliano.it;;Lifestyle/Education/Languages;Regional/Old World/Europe/Not Islands
 I Fucking Swear;Practical, swearing focused English course;fucking-fuck.shit.gov.uk;;Lifestyle/Education/Languages;Regional/Old World/Europe/Islands/UK
 ;;;;;
-Do not eat plastic bags!;Plastic bags are meant to feed turtles. If you eat the bags, turtles will starve.;save-the-turtles.is;;Health/Diet/The Danger of Eating Plastic Bags;
+Do not eat plastic bags!;Plastic bags are meant to feed turtles. If you eat the bags, turtles will starve.;save-the-turtles.is;;Health/Diet/The Danger of Eating Plastic Bags;Lifestyle/Animals
 Eating: dos and donts;Is it ok to eat an egg? a pencil? a deceased family member? Simple answers to everyday questions;all-the-tutorials.com/eating;;Health/Diet/The Danger of Eating Plastic Bags;
 ;;;;;
 The Busser method 101;A beginner guide to being fit and sexy.;science.com/busser-method/101.html;;Health/Being Fit & Sexy/The Busser Method;
 First steps in the Busser method;A healthier life begins here;busser-busser-busser.fr/start.html;;Health/Being Fit & Sexy/The Busser Method;
 The Busser method cheatsheet;Eat only salad. Open your Chakras. Cultivate a positive mindset. Smoke one pack a day. Be naturally sexy.;busser-fanclub-marrakech.ma/cheatsheet;;Health/Being Fit & Sexy/The Busser Method;Regional/Old World/Africa
-The Busser method: advanced techniques; Eat only rucola and smoke two packs a day.;the-busser-method.com/advanced;;Health/Being Fit & Sexy/The Busser Method;
-Get your kids to talk to you again with the Busser method;They are just ashamed of how negative your mindset is;marlboro.com/busser-method;;Health/Being Fit & Sexy/The Busser Method;
+The Busser method: advanced techniques;Eat only rucola and smoke two packs a day.;the-busser-method.com/advanced;;Health/Being Fit & Sexy/The Busser Method;
+Get your kids to talk to you again with the Busser method;They are just ashamed of how negative your mindset is;marlboro.com/busser-method;;Health/Being Fit & Sexy/The Busser Method;Family/Parenting
 ;;;;;
-The Mouhat method Offical World Internet Website;Finally a weightloss journey that does not cost an arm and a leg!;mouhat-lose-weight-official-copyrighted.fr;;Health/Being Fit & Sexy/The Mouhat Method;
+The Mouhat method Official World Internet Website;Finally a weightloss journey that does not cost an arm and a leg!;mouhat-lose-weight-official-copyrighted.fr;;Health/Being Fit & Sexy/The Mouhat Method;
 Why the Mouhat method sucks;How I lost the ability to walk;ideal-leg-number.sp;;Health/Being Fit & Sexy/The Mouhat Method;
 Do not try the Mouhat method;Read this very carefully;i-have-no-mouth-and-i-must-scream.pt;;Health/Being Fit & Sexy/The Mouhat Method;
 The Mouhat method: amputation-based weight loss;Lose several pounds in under a minute thanks to modern amputation methods. Safe and fun! Bring your own disinfectant.;mouhat-lose-weight-official-copyrighted.fr/about;;Health/Being Fit & Sexy/The Mouhat Method;
 ;;;;;
-Never trust a Scorpio;They just want to exploit your naivety to perpetrate identity fraud;scorpio-whisteblower.com;;Science/Astrology/Comparative Astrology;
+Never trust a Scorpio;They just want to exploit your naivety to perpetrate identity fraud;scorpio-whistleblower.com;;Science/Astrology/Comparative Astrology;Adult (18+)/Taxes/Fraud
 Fuck the Aries;An Aries was mean to me one day: field report;aries-are-no.dk/blog/post-503.html;;Science/Astrology/Comparative Astrology;
 Why I Would Neeeeeeever date a Sagittarius;They stink and they are rude;list-of-people-i-would-not-date.jar/sagittariuses;;Science/Astrology/Comparative Astrology;
-Killing all capricons to bring about world peace;Because fuck them that's why;a-modest-proposal.com/master-plan;;Science/Astrology/Comparative Astrology;Regional/Old World/Europe/Islands
+Killing all capricorns to bring about world peace;Because fuck them that's why;a-modest-proposal.com/master-plan;;Science/Astrology/Comparative Astrology;Regional/Old World/Europe/Islands
 Pisces suck;As we all know;mocking-leos.fanspace.org/guest-post/pisces-suck;;Science/Astrology/Comparative Astrology;
-Cancers are a Cancer on society; We should get rid of Cancers. Sounds reasonable, right?;american-cancer-society.com/our-fight-against-cancer.html;;Science/Astrology/Comparative Astrology;Regional/New World/Americas/America 1/USA
+Cancers are a Cancer on society;We should get rid of Cancers. Sounds reasonable, right?;american-cancer-society.com/our-fight-against-cancer.html;;Science/Astrology/Comparative Astrology;Regional/New World/Americas/America 1/USA
 Virgo? Virgone;A practical guide to avoiding Virgos in your day-to-day life;astrological-observatory-paris.gouv.fr/publications/virgone.pdf;;Science/Astrology/Comparative Astrology;Regional/Old World/Europe/Not Islands/France
-I have a growing dislike of Gemini;I will not elaborate;vatican.ca/popes/latest/encyclicals/pereant-gemimi.html;;Science/Astrology/Comparative Astrology;Regional/Old World/Europe/Not Islands
+I have a growing dislike of Gemini;I will not elaborate;vatican.ca/popes/latest/encyclicals/pereant-gemini.html;;Science/Astrology/Comparative Astrology;Regional/Old World/Europe/Not Islands
 Torturing Tauruses;Giving the little shits what they deserve;applied-astrology.ru/taurus.html;;Science/Astrology/Comparative Astrology;
 Aquarius are fine;They are so nice and I like the way they smile when they go around giving free money to the disenfranchised;cool-guys.sb/top-1-aquarius.html;;Science/Astrology/Comparative Astrology;
 You are a Leo? Let me laugh;Hahaha, such a lousy sign. When will you stop being a net cost to society you loser?;mocking-leos.fanspace.org;;Science/Astrology/Comparative Astrology;
@@ -189,46 +185,46 @@ Libras are terrible people;I would know it, I'm one.;being-a-libra.com/about;;Sc
 ;;;;;
 How I let the stars guide my life;A personal memoir;margaret-thatcher.skyblog.com;;Science/Astrology/Testimonies;Regional/Old World/Europe/Islands/UK
 ;;;;;
-Do pets go to pet heaven after they drown?;Only the good ones and we're not completely sure.;faith-answers.com/drowning-kittens.html;;Science/Theology/Heaven;
+Do pets go to pet heaven after they drown?;Only the good ones and we're not completely sure.;faith-answers.com/drowning-kittens.html;;Science/Theology/Heaven;Lifestyle/Animals
 Will I still go to heaven if I'm rude?;No you fucking won't.;faith-answers.com/rudeness.html;;Science/Theology/Heaven;
-Do people of different religions go to the same heaven?;No, we put them in different ones to avoid religious conflicts. There is only one hell though.;faith-answers.com/organization.html;;Science/Theology/Heaven;
-Will I still go to heaven if I don't eat my greens?;Yes but only if you buy enough indulgences.;faith-answers.com/the-eleventh-commandment.html;;Science/Theology/Heaven;
+Do people of different religions go to the same heaven?;No, we put them in different ones to avoid religious conflicts. There is only one hell though.;faith-answers.com/organization.html;;Science/Theology/Heaven;Science/Theology/Comparative Theology
+Will I still go to heaven if I don't eat my greens?;Yes but only if you buy enough indulgences.;faith-answers.com/the-eleventh-commandment.html;;Science/Theology/Heaven;Health/Diet/Eating Vegetables
 Fastest way of getting to heaven?;Be polite, eat your greens, and live a risky lifestyle.;faith-answers.com/speedrun.html;;Science/Theology/Heaven;
-Top 3 best religions - official;The christian, muslim and jewish popes finally met and reached an historical agreement on the question. Number two will suprise you.;religions.com/official-ranking.html;;Science/Theology/Heaven;
-Can humans end up in pet heaven accidentally?;It only happened once and the issue is fixed now.;faith-answers.com/sorting-system.html;;Science/Theology/Heaven;
+Top 3 best religions - official;The christian, muslim and jewish popes finally met and reached an historical agreement on the question. Number two will surprise you.;religions.com/official-ranking.html;;Science/Theology/Comparative Theology;
+Can humans end up in pet heaven accidentally?;It only happened once and the issue is fixed now.;faith-answers.com/sorting-system.html;;Science/Theology/Heaven;Lifestyle/Animals
 ;;;;;
-The Ghetto Blaster - Special Edition on Gang Feuds;the art of killing without getting killed;newspaper-archives.ca/ghetto-blaster/96/08/paper.pdf;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Murdering People;
+The Ghetto Blaster - Special Edition on Gang Feuds;the art of killing without getting killed;newspaper-archives.ca/ghetto-blaster/96/08/paper.pdf;;Adult (18+)/Guns, Hitmen & Gang Life/Murdering People;
 The Ghetto Blaster - Special Edition on Gang Therapy;treat the gang to a group psychology session;newspaper-archives.ca/ghetto-blaster/96/12/paper.pdf;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Outreach;
-Post Turf War Blues is Real and you Deserve to be Heard;My top ten tips to get over it;murderous-mike.com/post-turf-war-blues.html;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Murdering People;
-The Ethics of Murder;Should we avoid bloodshed when we can?;plato.stanford.edu/entries/concrete-philosophy/is-murder-ethical.hmlt;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Murdering People;
+Post Turf War Blues is Real and you Deserve to be Heard;My top ten tips to get over it;murderous-mike.com/post-turf-war-blues.html;;Adult (18+)/Guns, Hitmen & Gang Life/Murdering People;
+The Ethics of Murder;Should we avoid bloodshed when we can?;plato.stanford.edu/entries/concrete-philosophy/is-murder-ethical.html;;Adult (18+)/Guns, Hitmen & Gang Life/Murdering People;
 Cannon Fodder is not what it used to be;A respected gang leader's take on the ongoing wimpification of the youth;mafia.com/opinions/o-tempora.html;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Outreach;Regional/Old World/Europe/Not Islands
 ;;;;;
 5 tips for looking stunning on mugshots;Make that policeman blush;the-favela-fashionisto.br/mugshot-tips.html;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Public Image;Regional/New World/Americas/America 2
-Best charities to put on your will;Giving back to the people we steal from;ghettout-of-here.com/giving-back.html;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Public Image;
+Best charities to put on your will;Giving back to the people we steal from;ghettout-of-here.com/giving-back.html;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Public Image;Adult (18+)/Retirement/Old People Issues/Death
 ;;;;;
-Can fish drown?;Yes but only the ones who cannot swim.;ask-a-florist.pk/can-fish-drown.html;;Science/Lame Sciences/Biology;
+Can fish drown?;Yes but only the ones who cannot swim.;ask-a-florist.pk/can-fish-drown.html;;Science/Lame Sciences/Biology;Lifestyle/Animals
 ;;;;;
 The quest for the rarest STD;A hidden tribe's jealously guarded secret;nationalgeographics.com/anthropology/article/the-rarest-std.html;;Recreation/Collecting Things/STDs;
 Why Everyone Should Collect STDs;A motivational piece;bad-advice.org/get-some-fresh-stds.html;;Recreation/Collecting Things/STDs;
 Stepping away from STD collecting;I'm starting to think that this hobby is not as smart as it once sounded;gatesfoundation.org/blog/stepping-away-from-std-collecting.html;;Recreation/Collecting Things/STDs;
 ;;;;;
 Celebrities Nail Clippings Archive;NEW: Arnold Schwarzenegger little finger nail clipping. Auctioning starting soon.;celebs-clippings.jp;;Recreation/Collecting Things/Nail Clippings;Regional/New World/Americas/America 1/USA
-Nail Clippings Exchange Platform;Buy and Sell. Do not mind our 25% margin.;you-sell-you-buy-we-take-a-cut.com/misc/weird/nail-clippings.html;;Recreation/Collecting Things/Nail Clippings;
+Nail Clippings Exchange Platform;Buy and Sell. Do not mind our 25% margin.;you-sell-you-buy-we-take-a-cut.com/misc/weird/nail-clippings.html;;Recreation/Collecting Things/Nail Clippings;Consumerism/Buy
 How I started collecting nail clippings;It all started on a beautiful summer night on a steamer bound to Liverpool;passages-from-the-life-of-a-philosopher.jp/nails.html;;Recreation/Collecting Things/Nail Clippings;Regional/Old World/Europe/Islands/UK
 Sell your nail clippings for money;There has never been a better time to enter the market than now;sell-your-byproducts.de/naggelklippungen.html;;Recreation/Collecting Things/Nail Clippings;Regional/Old World/Europe/Not Islands
 ;;;;;
 Free-fighting: avoid paved or concrete areas;Hard floors are painful to fall on and other tips;all-about-floors.com/free-fighting.html;;Recreation/Free-Fighting;
 Fighting children for easier wins;The average child is surprisingly bad at free fighting;alpha-man.es/punching-children-tut.html;;Recreation/Free-Fighting;
-Street-fighting vs. dogfighting; Would you rather fight a street or a dog?;comparison.org/street-fight-vs-dogfighting.html;;Recreation/Free-Fighting;
+Street-fighting vs. dogfighting;Would you rather fight a street or a dog?;comparison.org/street-fight-vs-dogfighting.html;;Recreation/Free-Fighting;
 Paying destitutes to fight in your name;An easy trick to avoid getting hurt;the-cowardly-warrior.com/news/daily/mercenaries.html;;Recreation/Free-Fighting;
 The Modern Knights: fighting people on Walmart parking lots;Noble and unwavering in victory as in defeat;walmart.com/modern-chivalry-initiative.html;;Recreation/Free-Fighting;Regional/New World/Americas/America 1/USA
 ;;;;;
-Buy paint;Low prices all year round on a selection of reds and green paints;daltonian-paintshop.com/shop/buckets.html;;Recreation/Watching Paint Dry;
+Buy paint;Low prices all year round on a selection of reds and green paints;daltonian-paintshop.com/shop/buckets.html;;Recreation/Watching Paint Dry;Consumerism/Buy
 Watching paint dry, letting pain die;What a freshly painted wall taught me about my cheating husband;the-joyous-widower.se/paint-therapy.html;;Recreation/Watching Paint Dry;
 Mudwatching as an ecological alternative to watching paint dry;Abstract: mud is a natural substance. Is paint natural? Science says no.;science.org/science2/mudwatching_final_final.pdf;;Recreation/Watching Paint Dry;
 ;;;;;
 TVs showdown 1997 - Sony Trinitron KV-27S22 Color TV vs. JVC AV-27850;Smart consumers read Frugal Magazine;frugal-magazine-online.com/tvs/1997/sponsored/KV-27S22-vs-JVC-AV-27850.html;;Recreation/Watching TV;Regional/Old World/Asia/Asia Major
-TV watchers beware: turning the screen on may be damaging to your retina;A guest post by a concerned opthalmologist;el-television-aficionados.mx/ingles/invitado/viejo-chocho.html;;Recreation/Watching TV;Regional/Old World/Europe/Not Islands
+TV watchers beware: turning the screen on may be damaging to your retina;A guest post by a concerned ophthalmologist;el-television-aficionados.mx/ingles/invitado/viejo-chocho.html;;Recreation/Watching TV;Regional/Old World/Europe/Not Islands
 Lady Diana's live burial;Live broadcast with a friendly cast;my-tv-program.com/burials/live/upcoming.html;;Recreation/Watching TV;Regional/Old World/Europe/Islands/UK
 ;;;;;
 Collecting debt for fun and profit;"Answering classical beginner questions such as ""what grey tie should I wear on my first day""";irish-debt-collection-society.com/onboarding.html;;Recreation/Collecting Things/Debt;Regional/Old World/Europe/Islands
@@ -250,19 +246,19 @@ Is the appropriation of private lost property considered theft?;Yes, you will be
 ;;;;;
 Dsilexia magaizne: redaing in the age of the intrenet;It's nto easy evryday;disxlexic-unitde.com/post/readdign.html;;Lifestyle/Education/Reading;
 ;;;;;
-Even single fathers can paint;How a paintbrush helped me bound with my estranged octuplets;family-today.com/surprising/family-painting.html;;Art/Painting;
+Even single fathers can paint;How a paintbrush helped me bond with my estranged octuplets;family-today.com/surprising/family-painting.html;;Art/Painting;Family/Parenting
 Painting with Pencils;Some would call this drawing;pencil-painters.net;;Art/Painting;
 Art therapy for the gastrically challenged;An experience report;lutton-family-clinic.com/experience-reports/inconclusive/explosive-art.html;;Art/Painting;
 Is the brush stronger than the sword too?;No.;science.org/breakthroughs/brush-sword.html;;Art/Painting;
 ;;;;;
 Water Sculpting Workshop at University of Miquelon;Bring your own Water, this is not Versailles;miquelon.uni.fr/outreach/water-sculpting-workshop.html;;Art/Sculpting;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Miquelon
-5th. Saudi Butter Sculpting Competition;NEW speed sculpting even presented by Bashir al-Breizhi;butter-sculpt.sa;;Art/Sculpting;Regional/Old World/Asia/Asia Medium
-Why are most famous sculptors dead?;Probably some sort of curse;ask-a-florist.pk/why-sculptors-die.html;;Art/Sculpting;
-Fund collection: restoring the Venus de Milo to its former glory; Please give us money;louvre.fr/begging/restoring-venus.html;;Art/Sculpting;Regional/Old World/Europe/Not Islands/France
+5th. Saudi Butter Sculpting Competition;NEW speed sculpting event presented by Bashir al-Breizhi;butter-sculpt.sa;;Art/Sculpting;Regional/Old World/Asia/Asia Medium
+Why are most famous sculptors dead?;Probably some sort of curse;ask-a-florist.pk/why-sculptors-die.html;;Art/Sculpting;People/Famous Deaths
+Restoring the Venus de Milo to its former glory;Please give us money;louvre.fr/begging/restoring-venus.html;;Art/Sculpting;Regional/Old World/Europe/Not Islands/France
 Monument to the Unknown Bureaucrat about to turn three;Iceland declares a new national holiday;ruv.is/frettir/innlent/embaettismadurinn.html;;Art/Sculpting;Regional/Old World/Europe/Islands
-Even single fathers can sculpt;How a chisel helped me rekindle love with my estranged wife;family-today.com/surprising/family-sculpting.html;;Art/Sculpting;
+Even single fathers can sculpt;How a chisel helped me rekindle love with my estranged wife;family-today.com/surprising/family-sculpting.html;;Art/Sculpting;Family/Parenting
 ;;;;;
-Even single fathers can garden;How a shovel helped me find grace in the eyes of my estranged father;family-today.com/surprising/family-gardening.html;;Art/The Art of Gardening;
+Even single fathers can garden;How a shovel helped me find grace in the eyes of my estranged father;family-today.com/surprising/family-gardening.html;;Art/The Art of Gardening;Family/Parenting
 ;;;;;
 Even single fathers can nail 95 theses to church doors;How weird performance art helped me to get my estranged brother out of the streets;family-today.com/surprising/family-happening.html;;Art/Weird Art;Regional/Old World/Europe/Not Islands
 ;;;;;
@@ -270,12 +266,12 @@ New Lada Super Moderna Cosmik to Include a Steering Wheel;Where will progress st
 Renault Kangoo Business Executive Edition With Heating Cup Holder;Only for our most special customers;renault.fr/deluxe/executive/kangoo.html;;Business/Expensive Cars;Regional/Old World/Europe/Not Islands/France
 Do not waste money in race cars;With the money it costs to buy a race car, you could dig four wells in developing countries such as the UK;invest-in-humanity.fr/moralistic-charity/wells-for-wales.html;;Business/Expensive Cars;Regional/Old World/Europe/Islands/UK
 Dodge Sidewinder unveiled at SEMA in Las Vegas;It looks expensive;vroomvroom.no/news/oh-my-god-finally.html;;Business/Expensive Cars;Regional/New World/Americas/America 1/USA
-Pedestrian Comfort Reviw;Here are the five cars that were rated the most comfortable to be rolled over by;flat-pedestrians-society.com/top5/cars.html;;Business/Expensive Cars;
+Pedestrian Comfort Review;Here are the five cars that were rated the most comfortable to be rolled over by;flat-pedestrians-society.com/top5/cars.html;;Business/Expensive Cars;
 ;;;;;
 My secret dish for burials;Let's turn these frowns upside down through the magic of traditional black pudding!;foodista.fo/burials-trick.html;;Art/Gastronomy;Regional/Old World/Europe/Islands
 Eight recipes for the British;Variations on Mac&cheese;gourmet.gouv.uk/certified-hood-classics.html;;Art/Gastronomy;Regional/Old World/Europe/Islands/UK
 Fuck spices;A love letter to bland food;gourmet.gov.uk/spice-must-flop.html;;Art/Gastronomy;Regional/Old World/Europe/Islands/UK
-Should I eat one raw onion before a date;Yes, it is important for the morale.;onions-producers-assocation.cz/should-i-eat-a-raw-onion-before-x/date.html;;Art/Gastronomy;
+Should I eat one raw onion before a date;Yes, it is important for the morale.;onions-producers-association.cz/should-i-eat-a-raw-onion-before-x/date.html;;Art/Gastronomy;
 ;;;;;
 Putting the baby back in: conditions;It is recommended to let the baby out at least once every six month until its 18th birthday.;putting-the-baby-back-in.fi;;Adult (18+)/Making Babies/Unmaking Babies;
 Abortion past the 168th month;This is actually illegal in most countries.;law.org/abortion-deadline/168-months.html;;Adult (18+)/Making Babies/Unmaking Babies;
@@ -294,128 +290,96 @@ Dark Oaks Orphanage;Instructions for baby delivery: try coming on a dark and sto
 ;;;;;
 Do I need to be an adult to start adopting children;Frequently Asked Questions;orphelinat-henri-des.fr/faq.html;;Adult (18+)/Making Babies/Orphanages/Pickup;Regional/Old World/Europe/Not Islands/France
 ;;;;;
-The Vienna Boys Choir reunion tour;The sopranos have retired, but the tenors still argue about tempo.;vienna-boys-reunion.com;;Art/Music/Good Singers;Regional/Old World/Europe/Not Islands
-Singing in tune: a practical guide;Includes a chapter on lip-syncing and a chapter on giving up;sing-in-tune.net;;Art/Music/Good Singers;
+The Vienna Boys Choir reunion tour;Now with upgraded Birkenstock.;vienna-boys-reunion.com;;Art/Music/Good Singers;Regional/Old World/Europe/Not Islands
+Francis Lalanne décoré du prestigieux prix Tristan-Tzara;Chapeau, l'artiste !;francis-prends-moi-sur-la-table-basse-je-ten-conjure.fr/actus/tristan-tzara.html;;Art/Music/Good Singers;Regional/Old World/Europe/Not Islands/France
 ;;;;;
-The adequate vocalist;A newsletter for people who can hold a note but not a room;adequate-vocalist.org;;Art/Music/OK Singers;
-Karaoke night at the DMV;The waiting room has never been so emotionally available.;karaoke-dmv.com;;Art/Music/OK Singers;Regional/New World/Americas/America 1/USA
+Hot take: Puff Daddy is overrated;Seriously, what's up with that name?;hot-takes.cn/westerners/puff-daddy/overrated;;Art/Music/OK Singers;
+Famous guy releases new album;The critique calls it "adequate";the-thrill-of-the-arts.org/new-releases/press-reviews/famous-guy.html;;Art/Music/OK Singers;
 ;;;;;
-My uncle's birthday speech;Forty-five minutes of gratitude and a slideshow of his medical history;uncle-birthday-speech.com;;Art/Music/Lame Singers;
-The whisper choir;Their Bohemian Rhapsody is best enjoyed with subtitles;whisper-choir.net;;Art/Music/Lame Singers;Regional/Old World/Europe/Islands/UK
+Francis Lalanne is overrated;At least that's what I think;musical-musings.pl/lalanne/review_final_2.html;;Art/Music/Lame Singers;Regional/Old World/Europe/Not Islands/France
+Yet another Queen tribute band;Don't bother with this one;i-have-good-taste.net/reviews/princess.html;;Art/Music/Lame Singers;Regional/Old World/Europe/Islands/UK
 ;;;;;
-Posthumous duets: a legal guide;Twelve unreleased tracks and one very confused medium;posthumous-duets.com;;Art/Music/Dead Singers;
-The afterlife open mic;Sign-up starts at 6 p.m., eternity starts whenever the host remembers.;afterlife-open-mic.org;;Art/Music/Dead Singers;
+Elvis Presley is still dead;We asked around and he still is;is-elvis-still-dead.com;;Art/Music/Dead Singers;People/Famous Deaths
+Remembering Tupac Shakur;And getting concert refunds;i-see-dead-people.com;;Art/Music/Dead Singers;People/Famous Deaths
 ;;;;;
-The art of the instrumental;For listeners who find vowels confrontational;instrumental-art.net;;Art/Music/Music Without Singers;
-Whistling for beginners;A complete orchestra in your mouth and none of the job security;whistling-beginners.com;;Art/Music/Music Without Singers;
+Is the triangle even an instrument?;The polarizing debate claims yet another victim following a double car bomb attack;art-attack.net/news/triangle-of-death.html;;Art/Music/Music Without Singers;
+Bach complete piano partitas played by a relatively incompetent self-proclaimed child genius at the Opera of Helsinki;Only this weekend;helsinki-opera.fi/upcoming.html;;Art/Music/Music Without Singers;Regional/Old World/Europe/Not Islands
 ;;;;;
-The Lawrence Welk appreciation society;Meetings start at 4 p.m. and end when the sherry runs out.;lawrence-welk-society.org;;Art/Music/Music for Old People;Regional/New World/Americas/America 1/USA
-Songs your grandmother will dance to;A wedding playlist made entirely of requests shouted at the DJ;grandma-dance-list.com;;Art/Music/Music for Old People;
+Antoine Brûlé just came down to grace the Earth with his presence;As the prophecies foretold;waiting-for-godot.com/the-prophets-second-coming.html;;People/Famous Births;
+Justin Bieber was born three years ago;Though who's that kid?;people.com/bieber-turns-three.html;;People/Famous Births;
 ;;;;;
-So you want to be a teen idol;A guide to synchronized hair flips and contractual despair;teen-idol-guide.com;;Art/Music/Boys Band;
-Choreography for five left feet;The audition was open to everyone, which was the first mistake.;five-left-feet.net;;Art/Music/Boys Band;
+Growing devil's lettuce indoors;It needs warmth and water just like you and me;indoor-lettuce.com;;Adult (18+)/Drugs & Illicit Substances/Devil's Lettuce;Art/The Art of Gardening
+The Zion cookbook;Careful, the agents of Babylon must not read this;zion-cookbook.net;;Adult (18+)/Drugs & Illicit Substances/Devil's Lettuce;Food/Recipes
 ;;;;;
-Hospital waiting room gossip;Sources inside the maternity ward vending machine;waiting-room-gossip.com;;People/Famous Births;
-The star-studded crib mobile;Every nursery needs a tiny paparazzi.;crib-mobile-stars.org;;People/Famous Births;
+Prefilled accident forms for your next crash;Better safe than sorry;accident-forms.net/prefill.html;;Adult (18+)/Driving/Driving and drinking/Declaring Accident;
 ;;;;;
-Obituary writing for beginners;Start with the good parts and omit the restraining order.;obituary-beginners.com;;People/Famous Deaths;
-The celebrity tombstone tour;Bring comfortable shoes and a respectful camera.;tombstone-tour.net;;People/Famous Deaths;
+Just floor it!;Hesitation is for losers;bad-advice.org/drinking-and-driving-best-done-fast-to-minimize-duration.html;;Adult (18+)/Driving/Driving and drinking/Tips and tricks;
+Just take the bus my friend;Seriously, don't be that guy;bus-schedule.brazzaville.cg/drunk.html;;Adult (18+)/Driving/Driving and drinking/Tips and tricks;Regional/Old World/Africa
 ;;;;;
-Blind items for the blind;We can't tell you who it is, and neither can your optometrist.;blind-items.org;;People/Latest Gossip;
-The rumor mill quarterly;All the news that nobody has confirmed;rumor-mill-quarterly.com;;People/Latest Gossip;
+What am I writing again;The society for the Alzheimer sufferers, by the... who again?;forget-me-not.com;;Adult (18+)/Retirement/Old People Issues/Memory Loss;
+Memory loss: first time?;Ok, first thing: look in your favorites. Is this page there?;memory-loss-guide.org;;Adult (18+)/Retirement/Old People Issues/Memory Loss;
 ;;;;;
-How to lose a friend in 10 days;A step-by-step retreat from everyone who knew you before the fame;lose-a-friend.com;;People/Becoming Famous/Cutting Bridges with Childhood Friends;
-Blocked: a memoir;The story of a group chat that no longer includes you;blocked-memoir.net;;People/Becoming Famous/Cutting Bridges with Childhood Friends;
+Receipts: a creative writing workshop;It doesn't take a genius to trick the IRS;receipts-workshop.org;;Adult (18+)/Taxes/Fraud;
+The audited life;I was legally obligated to write this book;the-audited-life.com;;Adult (18+)/Taxes/Fraud;Regional/New World/Americas/America 1/USA
 ;;;;;
-Fire safety for the wealthy;Keep your cash pile at least three feet from the curtains.;wealthy-fire-safety.com;;People/Becoming Famous/Burning Money;
-Cash bonfire etiquette;Which bills to burn first and which to leave for the tax auditor;cash-bonfire.org;;People/Becoming Famous/Burning Money;
+Kevin Costner's real name is actually Andrej Kakas;The unexpected reconversion of a Yugoslavian war criminal;fake-news-wasnt-a-word-in-1997.org/war-criminals/costner.html;;People/Latest Gossip;
+Michael Jackson five months pregnant!;He cannot hide it anymore: he's expecting triplets;prego-mag.com/news/michael-jackson-madeup.html;;People/Latest Gossip;People/Famous Births
 ;;;;;
-Spa or clinic?;A helpful quiz for people who just need a nap and a lawyer;spa-or-clinic.com;;People/Becoming Famous/Going to Rehab;
-The celebrity rehab gift shop;Souvenirs for the friend who checked in for the weekend;rehab-gift-shop.net;;People/Becoming Famous/Going to Rehab;
+Saint-Pierre: between tradition and modernity;Discover an island that is in France but also not in France;saint-pierre.gouv.fr/tourism;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Saint-Pierre;
+Ferry schedules to Miquelon;Departures everyday at 1PM;jacquouilles-ferries.fr/to-miquelon.html;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Saint-Pierre;
 ;;;;;
-Red carpet for retrievers;The only awards show where every nominee is a good boy;retriever-red-carpet.com;;People/Famous Animals;
-Paparazzi and pigeons;Street birds have finally learned to charge for photographs.;pigeon-paparazzi.org;;People/Famous Animals;
+Miquelon: the other island;Discover an island that is surrounded by water on all sides;miquelon.gouv.fr/tourism;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Miquelon;
+Ferry schedules to Saint-Pierre;Departures everyday at 3PM;jacquouilles-ferries.fr/to-saint-pierre.html;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Miquelon;
 ;;;;;
-Auditing your thetan;Ask your invisible roommate for references and prepare for silence.;audit-your-thetan.com;;Science/Scientology;
-The volcano clearance sale;Everything must go, including the thetans.;volcano-clearance.net;;Science/Scientology;
+Death: a practical guide;What to bring, whom to notify and how to dress;vatican.ca/guides/death.html;;Adult (18+)/Retirement/Old People Issues/Death;
+The afterlife: leading theories;What is death? Why is death? Who benefits from this mess?;plato.stanford.edu/entries/death;;Adult (18+)/Retirement/Old People Issues/Death;Science/Theology/Heaven
 ;;;;;
-How to become enlightened in 30 days;Includes a money-back guarantee and a meditation app you will never open;enlightened-30-days.com;;Science/Theology/Enlightenment;
-The enlightenment return policy;If you are not satisfied with nirvana, please retain your receipt.;enlightenment-returns.org;;Science/Theology/Enlightenment;
+Boris and The Dentures Shakers;No holding back when every dance might be your last;boris-yeltsin.ru/side-gig.html;;Art/Music/Music for Old People;Regional/Old World/Europe/Not Islands
 ;;;;;
-Which heaven has the best snacks?;A peer-reviewed ranking of the afterlife's vending options;heaven-snacks.com;;Science/Theology/Comparative Theology;
-Comparative hells: a consumer guide;Temperature, ambience and eternal torment, compared;comparative-hells.net;;Science/Theology/Comparative Theology;
+Scientology is very cool;If celebs do something you probably should do it too;scientology.com/create-account.html;;Science/Scientology;
 ;;;;;
-Gravity: an oral history;Interviews with people who have fallen and cannot get up;gravity-still-free.com;;Science/Lame Sciences/Physics (who cares?);
-Quantum mechanics for people who don't care;Both explanations are correct and neither is helpful.;quantum-meh.org;;Science/Lame Sciences/Physics (who cares?);
+Black-and-white TVs for the nostalgic;It was better back in the day before there were all these stupid kids around, right?;good-old-days.com/tech/screens.html;;Adult (18+)/Retirement/Old Tech;Recreation/Watching TV
+The Floppy Society;Shareware is dead, long live shareware;floppy-society.org/new-members;;Adult (18+)/Retirement/Old Tech;Hobbies/Electronics
 ;;;;;
-Infinite loops for beginners;Learn to repeat yourself, learn to repeat yourself.;infinite-loops.net;;Science/Lame Sciences/Computer Science (BOOORING)/Loops;
-While true: a love story;The romance that never reaches a break statement;while-true-romance.com;;Science/Lame Sciences/Computer Science (BOOORING)/Loops;
+Mexico: beyond the wall;A travel guide that focuses on the parts without walls;mexico-beyond-the-wall.com;;Regional/New World/Americas/America 1/Mexico;Regional/New World/Americas/America 1/USA
+Why is Mexico called that way?;The other names were already taken and other reasons;international-etymological-society.org/countries/new-world/americas/america-1/mexico;;Regional/New World/Americas/America 1/Mexico;
 ;;;;;
-Chemistry for people who failed chemistry;A second chance at the periodic table, with no labs;chemistry-bonding.com;;Science/Lame Sciences/Chemistry;
-The periodic table of bad dates;Element 118: the one who never calls back;periodic-bad-dates.org;;Science/Lame Sciences/Chemistry;
+How to Cheat at Bingo Parties;Advanced treachery for the ambitious retiree;my-golden-years.ar/cheating-at-bingo.html;;Adult (18+)/Retirement/Retirement Homes;
+Retirement home frat houses;How to get into the most elite private societies;the-social-retiree.com;;Adult (18+)/Retirement/Retirement Homes;Health/Social
 ;;;;;
-Counting sheep combinatorially;There are more ways to fall asleep than you think.;counting-sheep-math.com;;Science/Lame Sciences/Mathematics/Combinatorial Species;
-Species: a field guide to counting;Bring a notebook and a tolerance for factorials.;species-counting.net;;Science/Lame Sciences/Mathematics/Combinatorial Species;
+My Chemistry Tutor;Wasting my organic chem PhD on your stupid kids;my-chemistry-tutor.com;;Science/Lame Sciences/Chemistry;Family/Parenting
 ;;;;;
-The cycle cycle;A quarterly review of cycles, reviewed quarterly;life-is-a-cycle.com;;Science/Lame Sciences/Mathematics/Cycles;
-Cycles: a retrospective;We look back at the cycles that brought us here.;cycles-reboot.net;;Science/Lame Sciences/Mathematics/Cycles;
+Combinatorial Species: a Lean Formalization;Now we just have to invent Lean.;ugla.hi.is/flettufraedi.html;;Science/Lame Sciences/Mathematics/Combinatorial Species;Regional/Old World/Europe/Islands
 ;;;;;
-Lottery strategy for losers;Pick the numbers that have never won before. They are due.;lottery-for-losers.com;;Business/Getting Rich Quick/Buying a Winning Lottery Ticket;
-The winning ticket: a buyer's guide;Step one: buy a winning ticket.;winning-ticket-guide.org;;Business/Getting Rich Quick/Buying a Winning Lottery Ticket;
+Burning money and fire hazards;An often overlooked source of domestic accidents;fire-safety.au/rich/money-fire;;People/Becoming Famous/Burning Money;
+How to lose money fast and reliably;Buy useless overpriced gadgets;lose-money-fast.org/home;;People/Becoming Famous/Burning Money;Consumerism/Buy
 ;;;;;
-Penguin real estate listings;Waterfront igloos with excellent insulation and noisy neighbors;penguin-realestate.net;;Regional/Antarctica;
-How to dress for the South Pole;Layers, layers and one more layer for luck;south-pole-fashion.com;;Regional/Antarctica;
+The winning ticket: a buyer's guide;Step one: buy the ticket with the winning numbers printed on it.;easy-lotto.org/strategy-guide/buy-winning.html;;Business/Getting Rich Quick/Buying a Winning Lottery Ticket;
 ;;;;;
-Canada: sorry, eh?;A national apology for apologizing so much;canada-sorry-eh.com;;Regional/New World/Americas/America 1/Canada;
-Maple syrup futures;The sticky business of breakfast commodities;maple-syrup-futures.net;;Regional/New World/Americas/America 1/Canada;
+This Belgian cow holds the bovine weightlifting world record;She's called Mauricette;bleu-blanc-belge.be/grand-molenbeek/record;;People/Famous Animals;Regional/Old World/Europe/Not Islands
+The Ugliest Dog of 1997 is a Poodle;It is quite ugly indeed;ugliest-dogs.bl/1997/winners.html;;People/Famous Animals;
 ;;;;;
-Mexico: beyond the wall;A travel guide that focuses on the parts without walls;mexico-beyond-walls.com;;Regional/New World/Americas/America 1/Mexico;Regional/New World/Americas/America 1/USA
-Taco cartography;Mapping the world one filling at a time;taco-cartography.org;;Regional/New World/Americas/America 1/Mexico;
+Gravity: an oral history;Interviews with people who have fallen and fail to get up;downfall.com;;Science/Lame Sciences/Physics (who cares?);
+New tax on gravity to be introduced in Mexico;Implementation details left unspecified.;breaking-news.com/1997/10/international/mexico/gravity-tax;;Science/Lame Sciences/Physics (who cares?);Regional/New World/Americas/America 1/Mexico
 ;;;;;
-Saint-Pierre: the island that time forgot;A charming destination with no rush and no WiFi;saint-pierre-forgot.com;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Saint-Pierre;
-Ferry schedules to nowhere;Service is infrequent, but the view is lovely.;ferry-to-nowhere.net;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Saint-Pierre;
+Paying Taxes is Fun!;A motivational song by the Australian tax services;tax-office.gouv.au/the-tax-song.html;;Adult (18+)/Taxes/Payment;
 ;;;;;
-Miquelon: the other island;Everything Saint-Pierre has, but slightly quieter;miquelon-other-island.com;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Miquelon;
-Miquelon on a budget;There is no budget. There is only Miquelon.;miquelon-budget.org;;Regional/New World/Americas/America 1/Saint-Pierre-et-Miquelon/Miquelon;
+Antarctican Independentist Front;Promoting the Antarctican culture and language;terra-nullius.aq;;Regional/Antarctica;
 ;;;;;
-How to pay taxes with a smile;A guide to hiding your tears behind a receipt;taxes-with-a-smile.com;;Adult (18+)/Taxes/Payment;
-Payment plans for people who owe everything;Choose between monthly installments and eternal dread;payment-plans-forever.net;;Adult (18+)/Taxes/Payment;
+Glue Sniffing: a Primer;Stick with the classics, then branch out into epoxy.;glue-sniffing.com/primer.html;;Adult (18+)/Drugs & Illicit Substances/Sniffing Glue;
 ;;;;;
-Receipts: a creative writing workshop;Learn to invent expenses that are almost believable.;receipts-workshop.org;;Adult (18+)/Taxes/Fraud;
-The audited life;A memoir about making eye contact with the IRS;the-audited-life.com;;Adult (18+)/Taxes/Fraud;Regional/New World/Americas/America 1/USA
+Obituary writing for beginners;Yeah, maybe omit those parts;obituary.com/tutorials/beginners;;People/Famous Deaths;
+Lady Died;A bit tasteless to make puns about a young life cut short but you gotta sell newspapers;obituary.com/famous/lady-di;;People/Famous Deaths;Regional/Old World/Europe/Islands/UK
 ;;;;;
-Growing lettuce indoors;A completely legal guide to leafy greens;indoor-lettuce.com;;Adult (18+)/Drugs & Illicit Substances/Devil's Lettuce;
-The Devil's Lettuce cookbook;Recipes that are definitely about salad;devils-lettuce-cookbook.net;;Adult (18+)/Drugs & Illicit Substances/Devil's Lettuce;
+Rehab gift shop;Can a rehab center also be a positional good?;expensive-retreat.net/giftshop.html;;People/Becoming Famous/Going to Rehab;Consumerism/Buy
 ;;;;;
-The glue enthusiast's handbook;Stick with the classics, then branch out into epoxy.;glue-beginners-guide.com;;Adult (18+)/Drugs & Illicit Substances/Sniffing Glue;
-Aromatic adhesives of the world;A scratch-and-sniff tour of office supplies;aromatic-adhesives.org;;Adult (18+)/Drugs & Illicit Substances/Sniffing Glue;
+The Beatles;A retrospective;beatl.es/retrospective;;Art/Music/Boys Band;Regional/Old World/Europe/Islands/UK
 ;;;;;
-The ayahuasca business trip;Expense reports from the spirit realm;ayahuasca-business-trip.com;;Adult (18+)/Drugs & Illicit Substances/Ayahuasca;Regional/New World/Americas/America 2
-Shamanic customer service;Please hold while we consult the ancestors.;shamanic-support.net;;Adult (18+)/Drugs & Illicit Substances/Ayahuasca;
+How to lose your friends easily;Just drop them on a highway rest area and drive on;all-the-tutorials.com/losing-friends.html;;People/Becoming Famous/Cutting Bridges with Childhood Friends;
+Making needlessly controversial statement;No such thing as bad advertisement, right?;all-the-tutorials.com/becoming-controversial-to-get-media-attention.html;;People/Becoming Famous/Cutting Bridges with Childhood Friends;
 ;;;;;
-Murder mystery parties for introverts;Someone dies, but nobody has to make small talk.;introvert-murder-mystery.com;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Murdering People;
-How to get away with a bad review;A public relations guide for unpopular assassins;bad-review-escape.org;;Adult (18+)/Guns, Hitmen & Gang Life/Being a Good Gang Leader/Murdering People;
+Hood running guide;From building a cardio base to picking the right shoes;hood-runners.com/guide/intro.html;;Adult (18+)/Guns, Hitmen & Gang Life/Escaping the Police;Health/Being Fit & Sexy
 ;;;;;
-Police chase: a runner's guide;Cardio, corners and comfortable shoes;police-chase-running.com;;Adult (18+)/Guns, Hitmen & Gang Life/Escaping the Police;
-How to hide in plain sight;Stand very still near a lamppost and hope for the best.;hide-in-plain-sight.net;;Adult (18+)/Guns, Hitmen & Gang Life/Escaping the Police;
+The improvised heist challenge;The classical challenge that took the internet by storm in 1995;improvised-heist.org;;Adult (18+)/Guns, Hitmen & Gang Life/Disorganized Crime;
 ;;;;;
-Crime without a plan;A chaotic approach to a career in lawbreaking;crime-without-plan.com;;Adult (18+)/Guns, Hitmen & Gang Life/Disorganized Crime;
-The unstructured heist;Everyone brings a mask, nobody brings a blueprint.;unstructured-heist.org;;Adult (18+)/Guns, Hitmen & Gang Life/Disorganized Crime;
-;;;;;
-Bingo strategy for the golden years;Advanced daubing techniques for the competitive retiree;bingo-golden-years.com;;Adult (18+)/Retirement/Retirement Homes;
-Retirement home: a user's manual;How to complain about the food and still make friends;retirement-home-manual.net;;Adult (18+)/Retirement/Retirement Homes;
-;;;;;
-I forget what this article is about;A helpful reminder that you were reading something;forget-this-article.com;;Adult (18+)/Retirement/Old People Issues/Memory Loss;
-Memory loss: a beginner's guide;By the end of this page you will have forgotten the beginning.;memory-loss-guide.org;;Adult (18+)/Retirement/Old People Issues/Memory Loss;
-;;;;;
-Death: a practical guide;What to bring, whom to notify and how to dress;death-practical-guide.com;;Adult (18+)/Retirement/Old People Issues/Death;
-The afterlife: what to pack;Sunscreen is optional, unresolved issues are not.;afterlife-packing.net;;Adult (18+)/Retirement/Old People Issues/Death;
-;;;;;
-VCR repair for the nostalgic;Rewind your life to a simpler time.;vcr-repair-nostalgia.com;;Adult (18+)/Retirement/Old Tech;
-The floppy disk appreciation society;1.44 megabytes of pure romance;floppy-disk-society.org;;Adult (18+)/Retirement/Old Tech;
-;;;;;
-How to declare an accident without admitting fault;A form-filling guide for the eternally blameless;declare-accident.com;;Adult (18+)/Driving/Driving and drinking/Declaring Accident;
-Accident forms for beginners;Draw a little car. Draw a bigger car. Sign here.;accident-forms.net;;Adult (18+)/Driving/Driving and drinking/Declaring Accident;
-;;;;;
-Tips and tricks for getting a designated driver;A phone tree for people who should not be driving;designated-driver-tips.com;;Adult (18+)/Driving/Driving and drinking/Tips and tricks;
-The hitchhiker's guide to the bus schedule;Because the number 42 bus is always late;bus-schedule-guide.org;;Adult (18+)/Driving/Driving and drinking/Tips and tricks;
+All-inclusive ayahuasca business trip;Led by an actual Tibetan shaman;ayahuasca-business-trips.com;;Adult (18+)/Drugs & Illicit Substances/Ayahuasca;Regional/New World/Americas/America 2
