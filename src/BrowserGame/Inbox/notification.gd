@@ -12,6 +12,14 @@ const BLINK_COUNT := 2
 const TIMEOUT_BLINK_COUNT := 3
 const BLINK_INTERVAL := 0.08
 
+# Every whitespace and invisible break character that could sneak into a link
+# when typing or pasting (including the zero-width spaces EntryClickable
+# inserts so links wrap). Removed before matching so links round-trip.
+# Includes ASCII \s, unicode spaces, and zero-width/invisible formatting chars.
+static var _link_cleaner := RegEx.create_from_string(
+	"[\\s\u00a0\u1680\u2000-\u200a\u200b\u200c\u200d\u2028\u2029\u202f\u205f\u2060\ufeff\u3000]"
+)
+
 @export var request: Request:
 	set(value):
 		request = value
@@ -139,7 +147,7 @@ func _submit() -> void:
 	if GameState.level_state != null and GameState.level_state.is_day_over:
 		return
 
-	var link := _link_input.text.strip_edges()
+	var link := _sanitize_link(_link_input.text)
 	if link.is_empty():
 		return
 
@@ -154,6 +162,13 @@ func _submit() -> void:
 
 	_set_status("Invalid link", Color.DARK_RED)
 	Sfx.play_error()
+
+
+# Links are displayed with zero-width spaces (see EntryClickable) so they wrap,
+# and other space/invisible characters can sneak in when typing or pasting.
+# Strip all of them so the link matches the stored, unmodified value.
+func _sanitize_link(text: String) -> String:
+	return _link_cleaner.sub(text, "", true)
 
 
 func _accept_link(request_link: RequestLink) -> void:
@@ -203,7 +218,7 @@ func _update_send_button(_text: String = "") -> void:
 		not _link_input.editable
 		or _processed
 		or is_timed_out
-		or _link_input.text.strip_edges().is_empty()
+		or _sanitize_link(_link_input.text).is_empty()
 	)
 
 
