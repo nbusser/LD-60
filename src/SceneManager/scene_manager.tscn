@@ -26,29 +26,31 @@ ransom = 0
 script = ExtResource("2_38vrh")
 name = "Day 2: A little gift"
 requests_json = ExtResource("5_level")
-ransom = 100
+ransom = 30
 
 [sub_resource type="Resource" id="Resource_day2"]
 script = ExtResource("2_38vrh")
 name = "Day 3: The first warning"
 requests_json = ExtResource("5_level1")
+ransom = 35
 
 [sub_resource type="Resource" id="Resource_day3"]
 script = ExtResource("2_38vrh")
 name = "Day 4: Word gets around"
 requests_json = ExtResource("5_level2")
+ransom = 40
 
 [sub_resource type="Resource" id="Resource_day4"]
 script = ExtResource("2_38vrh")
 name = "Day 5: The last photo"
 requests_json = ExtResource("5_level3")
-ransom = 100
+ransom = 45
 
 [sub_resource type="Resource" id="Resource_day5"]
 script = ExtResource("2_38vrh")
 name = "Day 6: You"
 requests_json = ExtResource("5_level4")
-ransom = 100
+ransom = 50
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_crt"]
 shader = ExtResource("6_crt")
