@@ -510,7 +510,10 @@ func _is_hovering_link() -> bool:
 
 func _is_hovering_text() -> bool:
 	var hovered := get_viewport().gui_get_hovered_control()
-	return hovered is LineEdit or hovered is TextEdit
+	print(hovered)
+	if hovered == null:
+		return false
+	return hovered.get_cursor_shape(hovered.get_local_mouse_position()) == Control.CURSOR_IBEAM
 
 
 func _process(_delta: float) -> void:

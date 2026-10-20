@@ -8,11 +8,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
 theme_override_constants/underline_alpha = 100
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+selection_enabled = true
 script = ExtResource("1_lkslu")
 
 [connection signal="meta_clicked" from="." to="." method="_on_meta_clicked"]
