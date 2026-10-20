@@ -155,22 +155,28 @@ func _run_level_1(level_data: LevelData) -> void:
 	# Let the player look at the photos before coming back
 	await get_tree().create_timer(8.0, false).timeout
 
+	_set_music_muted(true)
 	await (
 		_pinny
 		. say(
 			[
 				"Lovely family, isn't it? I heard a lot about you from them.",
-				"Have you heard from them since they left for vacation two days ago? Don't worry, they are safe. I keep them safe... for now.",
-				(
-					"Let's cut to the chase. I need money to buy cigarettes. The fee for your Dad is $%d. Pay by the end of your work day."
-					% [level_data.ransom]
-				),
-				"Enjoy your day, and don't overthink it."
+				"Have you heard from them since they left for vacation two days ago? Don't worry, they are safe.",
+				"...",
+				"...as long as you pay, that is. I need money to buy cigarettes, you know...",
+				"...",
+				"I keep them comfortably in my basement. Your kids cried a lot, but at some point they realized it was pointless. Your parents, however, are slowly starting to panic...",
+				"Let's cut to the chase. The fee for your Dad is $%d." % [level_data.ransom],
+				"...",
+				"Pay by the end of your work day."
 			],
 			Pinny.Mood.ANGRY
 		)
 	)
+	await (_pinny.say(["Enjoy your day, and don't overthink it."], Pinny.Mood.LAUGH))
+
 	await _pinny.leave()
+	_set_music_muted(false)
 
 	await _play_day()
 
