@@ -16,8 +16,8 @@ custom_maximum_size = Vector2(400, -1)
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 760.0
-offset_right = -760.0
-offset_bottom = 114.0
+offset_right = -878.0
+offset_bottom = 138.0
 grow_horizontal = 2
 script = ExtResource("1_e0xgp")
 
@@ -34,6 +34,7 @@ text = "QUERY:"
 
 [node name="QueryLabel" type="Label" parent="VBoxContainer/Header" unique_id=1254109470]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(200, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -43,6 +44,7 @@ autowrap_mode = 2
 [node name="TimerLabel" type="Label" parent="VBoxContainer/Header" unique_id=1254109471]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "20s"
 horizontal_alignment = 2
