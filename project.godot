@@ -32,6 +32,7 @@ GameState="*res://src/SceneManager/game_state.gd"
 Sfx="*res://src/sfx.gd"
 ScrollDefaults="*res://src/scroll_defaults.gd"
 ContextMenuDefaults="*res://src/context_menu_defaults.gd"
+KeyboardGuard="*res://src/keyboard_guard.gd"
 
 [display]
 
