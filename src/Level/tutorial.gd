@@ -98,14 +98,15 @@ func run() -> void:
 		)
 	)
 
-	await _pinny.instruct(
-		["Open the Shop application, pal."],
-		# I don't know why but the shop is not properly detected
-		# TODO: debug it
-		# _is_running.bind("shop"),
-		# _desktop.program_opened
-		func(): return true,
-		get_tree().create_timer(0.2, false).timeout
+	await (
+		_pinny
+		. instruct(
+			[
+				"Open the Shop application, pal.",
+			],
+			_is_running.bind("shop"),
+			_desktop.program_opened
+		)
 	)
 	await get_tree().create_timer(1.5, false).timeout
 
