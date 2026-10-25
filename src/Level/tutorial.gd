@@ -86,7 +86,13 @@ func run() -> void:
 		_level_state.request_resolved
 	)
 
-	await _pinny.say(["Well done! See? Easy money."], Pinny.Mood.LAUGH)
+	if GameState.money > 0:
+		await _pinny.say(["Well done! See? Easy money."], Pinny.Mood.LAUGH)
+	else:
+		await _pinny.say(
+			["If you chose a better link, you would have earned some money."], Pinny.Mood.LAUGH
+		)
+
 	await (
 		_pinny
 		. say(
